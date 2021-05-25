@@ -1,29 +1,29 @@
 {
-  "name": "ecell-website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build-css": "postcss ./src/styles.css -o ./public/css/styles.css",
-    "dev": "nodemon server.js",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "aos": "^2.3.4",
-    "autoprefixer": "^10.2.5",
-    "cors": "^2.8.5",
-    "dotenv": "^9.0.2",
-    "ejs": "^3.1.6",
-    "ejs-mate": "^3.0.0",
-    "express": "^4.17.1",
-    "joi": "^17.4.0",
-    "mongoose": "^5.12.10",
-    "path": "^0.12.7",
-    "postcss-cli": "^8.3.1",
-    "sanitize-html": "^2.4.0",
-    "tailwindcss": "^2.1.2"
-  }
+    "name": "ecell-website",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build-css": "postcss ./src/styles.css -o ./public/css/styles.css",
+        "dev": "nodemon server.js",
+        "start": "node server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "aos": "^2.3.4",
+        "autoprefixer": "^10.2.5",
+        "cors": "^2.8.5",
+        "dotenv": "^9.0.2",
+        "ejs": "^3.1.6",
+        "ejs-mate": "^3.0.0",
+        "express": "^4.17.1",
+        "joi": "^17.4.0",
+        "mongoose": "^5.12.10",
+        "path": "^0.12.7",
+        "postcss-cli": "^8.3.1",
+        "sanitize-html": "^2.4.0",
+        "tailwindcss": "^2.1.2"
+    }
 }
