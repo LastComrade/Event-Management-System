@@ -1,0 +1,35 @@
+<%- include("./partials/head.ejs") %> 
+<%- include("./partials/links.ejs") %>
+
+<body class="h-screen">
+<div class="min-w-screen min-h-screen bg-blue-100 flex items-center p-5 lg:p-10 overflow-hidden relative">
+    <div class="flex-1 min-h-full min-w-full rounded-3xl bg-white shadow-xl p-10 lg:p-20 text-gray-800 relative md:flex items-center text-center md:text-left">
+        <div class="w-full md:w-1/2">
+            <div class="mb-10 lg:mb-20">
+               <span class="text-4xl font-bold">E-Cell, GNDEC</span>
+            </div>
+            <div class="mb-10 md:mb-20 text-gray-600 font-light">
+                <% if(!error) { %>
+                <h1 class="font-black uppercase text-3xl lg:text-5xl text-indigo-700 mb-10">Message<br>Sent successfully</h1>
+                    <p class="font-semibold">Your message is successfully sent!</p>
+                    <p class="font-normal">We will get back to you in 1 or 2 working days</p>
+                <% } else { %>
+                    <h1 class="font-black uppercase text-3xl lg:text-5xl text-indigo-700 mb-10">Message<br>failed to sent</h1>
+                    <p class="font-semibold">Your message doesn't pass the validation</p>
+                    <p class="font-normal"><%= message %></p>
+                <% } %>  
+            </div>
+            <div class="mb-20 md:mb-0">
+                <a href="/" class="text-lg p-2 rounded bg-indigo-700 font-light outline-none focus:outline-none transform transition-all hover:scale-110 text-white">Go Back</a>
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 text-center">
+           <img src="/img/contact-confirmation.png" class="w-64 h-64">
+        
+        </div>
+    </div>
+    <div class="w-64 md:w-96 h-96 md:h-full bg-blue-200 bg-opacity-30 absolute -top-64 md:-top-96 right-20 md:right-32 rounded-full pointer-events-none -rotate-45 transform"></div>
+    <div class="w-96 h-full bg-indigo-200 bg-opacity-20 absolute -bottom-96 right-64 rounded-full pointer-events-none -rotate-45 transform"></div>
+</div>
+</body>
+</html>

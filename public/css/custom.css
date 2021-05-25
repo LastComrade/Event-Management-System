@@ -1,0 +1,203 @@
+:root {
+    --primary: #e92c36;
+    --dark: #292727;
+    --pure: #ffffff;
+    --ternary: #a09999c7;
+    --light: #eaeff5;
+    --secondary: #070606;
+}
+
+.gradient-border {
+    background: linear-gradient(
+        60deg,
+        #f79533,
+        #f37055,
+        #ef4e7b,
+        #a166ab,
+        #5073b8,
+        #1098ad,
+        #07b39b,
+        #6fba82
+    );
+    background-size: 300% 300%;
+    color: #fff;
+    /* padding: 8px 16px; */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: solid 2px black;
+    font-weight: 600;
+}
+
+body {
+    height: 2000px;
+}
+.gradient-border:hover {
+    background: transparent;
+    color: black;
+}
+
+.meeting-image {
+    height: 10%;
+    width: 100%;
+}
+
+.height-gray-bg {
+    height: 550px;
+}
+
+.width-red-bg {
+    width: 97%;
+    height: 93%;
+}
+
+.bg-quote {
+    background: url(https://picsum.photos/1600/1600/?random) center center
+        no-repeat;
+    background-attachment: fixed;
+}
+
+hero {
+    padding: 100px;
+}
+
+/* Respinsive Navbar */
+:root {
+    --light: #edf2f9;
+    --dark: #152e4d;
+    --darker: #12263f;
+}
+
+.dark .dark\:text-light {
+    color: var(--light);
+}
+
+.dark .dark\:bg-dark {
+    background-color: var(--dark);
+}
+
+.dark .dark\:bg-darker {
+    background-color: var(--darker);
+}
+
+.dark .dark\:text-gray-300 {
+    color: #d1d5db;
+}
+
+.dark .dark\:text-indigo-500 {
+    color: #6366f1;
+}
+
+.dark .dark\:text-indigo-100 {
+    color: #e0e7ff;
+}
+
+.dark .dark\:hover\:text-light:hover {
+    color: var(--light);
+}
+
+.dark .dark\:border-indigo-800 {
+    border-color: #3730a3;
+}
+
+.dark .dark\:border-indigo-700 {
+    border-color: #4338ca;
+}
+
+.dark .dark\:bg-indigo-600 {
+    background-color: #4f46e5;
+}
+
+.dark .dark\:hover\:bg-indigo-600:hover {
+    background-color: #4f46e5;
+}
+
+.dark .dark\:border-indigo-500 {
+    border-color: #6366f1;
+}
+
+.hover\:overflow-y-auto:hover {
+    overflow-y: auto;
+}
+
+.social {
+    display: flex;
+}
+
+.social a {
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: var(--pure);
+    margin-right: 0.8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social a:hover {
+    background: -webkit-linear-gradient(var(--primary), var(--pure));
+    color: var(--dark);
+}
+
+.content-div-1 {
+    background-image: url("/img/event1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.content-div-1:hover {
+    background-image: linear-gradient(
+            to right,
+            rgb(0, 0, 255),
+            hsl(240, 100%, 50%, 0.5)
+        ),
+        url("/img/event1.jpg");
+}
+.content-div-2 {
+    background-image: url("/img/event2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.content-div-2:hover {
+    background-image: linear-gradient(
+            to right,
+            rgb(0, 0, 255),
+            hsl(240, 100%, 50%, 0.5)
+        ),
+        url("/img/event2.jpg");
+}
+.content-div-3 {
+    background-image: url("/img/event3.jpg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.content-div-3:hover {
+    background-image: linear-gradient(
+            to right,
+            rgb(0, 0, 255),
+            hsl(240, 100%, 50%, 0.5)
+        ),
+        url("/img/event3.jpg");
+}
+
+.image-cover {
+    height: 260px;
+}
+
+.content-div:hover .fd-cl {
+    opacity: 0.25;
+}
+
+.content-div:hover .fd-sh {
+    opacity: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
