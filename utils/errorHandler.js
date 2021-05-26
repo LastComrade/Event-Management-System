@@ -12,7 +12,7 @@ class ErrorHandler {
         return new ErrorHandler(404, message);
     }
 
-    static serverError(message = "Internal Error") {
+    static serverError(message = "Something went wrong") {
         return new ErrorHandler(500, message);
     }
 
