@@ -1,3 +1,5 @@
+// Custom css file to write custom css code
+
 :root {
     --primary: #e92c36;
     --dark: #292727;
@@ -61,7 +63,7 @@ hero {
     padding: 100px;
 }
 
-/* Respinsive Navbar */
+/* Responsive Navbar */
 :root {
     --light: #edf2f9;
     --dark: #152e4d;

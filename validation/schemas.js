@@ -1,5 +1,5 @@
-const baseJoi = require("joi");
-const sanitizeHtml = require("sanitize-html");
+const baseJoi = require("joi"); // JOI validation NPM package read the docs for more info
+const sanitizeHtml = require("sanitize-html"); // To sanitize any type of html like <script> tags with malacious code
 
 const extension = (joi) => ({
     type: "string",
@@ -22,10 +22,15 @@ const extension = (joi) => ({
     },
 });
 
+// Giving base joi package an extension order to also sanitize html with "sanitize-html" package
 const Joi = baseJoi.extend(extension);
 
+// Directly exporting the functions
+ 
 module.exports.contactSchema = Joi.object({
     name: Joi.string().required().label("Name"),
+    // minDomainSegments mean konarklohat123456@gmail.com has two segments i.e 
+    // (gmail.com) gmail and com which is good enough to pass the validation
     email: Joi.string().required().email({
         minDomainSegments: 2,
     }).label("E-Mail"),
