@@ -1,4 +1,4 @@
-const Contact = require("../models/contact");
+const Contact = require("../models/contact"); // Contact schema
 const ErrorHandler = require("../utils/errorHandler");
 
 const homeCont = {
@@ -7,15 +7,17 @@ const homeCont = {
     },
 
     contact: async (req, res, next) => {
-        const { name, email, message } = req.body.contact;
-        console.log(name, email, message);
-        const contactData = new Contact(req.body.contact);
-        await contactData.save();
-        const confirmation_message = "All good";
-        res.render("layouts/contact-confirmation", {
-            message: confirmation_message,
-            error: false,
-        });
+        try {
+            const { name, email, message } = req.body.contact; // Destructuring data out of contact object
+            console.log(name, email, message);
+            const contactData = new Contact(req.body.contact); // Creating instance of the contact model
+            await contactData.save(); // Saving that instance onto the DB, which takes some time so await is used
+            res.render("layouts/contact-confirmation", {
+                error: false,
+            });
+        } catch (err) {
+            next(ErrorHandler.serverError());
+        }
     },
 };
 

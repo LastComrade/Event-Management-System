@@ -1,4 +1,5 @@
 const Staff = require("../models/staff");
+const ErrorHandler = require("../utils/errorHandler");
 
 const staffCont = {
     staffLogin: (req, res) => {
@@ -12,23 +13,30 @@ const staffCont = {
     },
 
     checkStaff: async (req, res) => {
-        const { username, password } = req.body;
-        Staff.find({ username }, (err, user) => {
-            if (err) {
-                return res.json({
-                    message: "User do not exist",
-                });
-            }
-            if (user[0].password.toString() === password) {
-                return res.json({
-                    message: "Successfully LogedIn!",
-                });
-            }
-            return res.json({
-                message: "Invalid username or password",
-            });
-        });
-        return res.send("User found!");
+        try {
+            console.log("This is check staff");
+            console.log(req.body);
+            const { username, password } = req.body;
+            console.log(username, password);
+            const user = await Staff.find(
+                { username, password },
+                (err, user) => {
+                    if (!user.length) {
+                        return res.json({
+                            message: "User do not exist",
+                        });
+                    } else if (user.length) {
+                        return res.json({
+                            message: "Successfully LogedIn!",
+                        });
+                    }
+                    next(ErrorHandler.serverError());
+                }
+            );
+            console.log(user);
+        } catch (err) {
+            next(ErrorHandler.serverError());
+        }
     },
 };
 

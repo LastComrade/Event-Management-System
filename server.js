@@ -53,11 +53,6 @@ app.use(express.static(path.join(__dirname, "public"))); // Setting up the publi
 // Routes Middleware
 app.use("/", homeRoutes); // For home routes
 
-// For 404 Page Not Found route!
-app.get("*", (req, res) => {
-    res.render("layouts/error-404");
-});
-
 // Error handling middleware to handle all the errors from the controllers or middlewares
 app.use((err, req, res, next) => {
     if (err instanceof ErrorHandler) {
@@ -68,13 +63,13 @@ app.use((err, req, res, next) => {
             },
         });
     } else {
-        res.status(err.status).json({
-            error: {
-                message: err.message,
-                status: err.status,
-            },
-        });
+        return ErrorHandler.serverError();
     }
+});
+
+// For 404 Page Not Found route!
+app.get("*", (req, res) => {
+    res.render("layouts/error-404");
 });
 
 // Creating server with a port number of 3000 locally

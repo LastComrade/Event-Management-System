@@ -3,19 +3,25 @@ const ErrorHandler = require("../utils/errorHandler");
 
 const validate = {
     contact: (req, res, next) => {
-        // console.log("This is contact valiator");
-        const { error } = contactSchema.validate(req.body.contact);
+        try {
+            // console.log("This is contact valiator");
+            const { error } = contactSchema.validate(req.body.contact);
+            if (error) {
+                next(ErrorHandler.validationError(error.message));
+            }
+            next();
+        } catch (err) {
+            next(ErrorHandler.serverError());
+        }
+    },
+    staffLogin: (req, res, next) => {
+        // console.log("This is staff validator");
+        const { error } = loginSchema.validate(req.body);
         if (error) {
             next(ErrorHandler.validationError(error.message));
         }
         next();
     },
-    staffLogin: (req, res, next) => {
-        console.log("This is a staff validator");
-        const { error } = loginSchema.validate(req.body);
-    
-        next();
-    },
-}
+};
 
 module.exports = validate;
