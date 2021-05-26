@@ -1,12 +1,12 @@
 const Contact = require("../models/contact");
-const Staff = require("../models/staff");
+const ErrorHandler = require("../utils/errorHandler");
 
 const homeCont = {
     index: (req, res) => {
         res.render("layouts/home");
     },
 
-    contact: async (req, res) => {
+    contact: async (req, res, next) => {
         const { name, email, message } = req.body.contact;
         console.log(name, email, message);
         const contactData = new Contact(req.body.contact);
@@ -16,36 +16,6 @@ const homeCont = {
             message: confirmation_message,
             error: false,
         });
-    },
-
-    staffLogin: (req, res) => {
-        res.render("layouts/admin-login");
-    },
-
-    createStaff: async (req, res) => {
-        const loginData = new Staff(req.body);
-        await loginData.save();
-        return res.send("Ok created!");
-    },
-
-    checkStaff: async (req, res) => {
-        const { username, password } = req.body;
-        Staff.find({ username }, (err, user) => {
-            if (err) {
-                return res.json({
-                    message: "User do not exist",
-                });
-            }
-            if (user[0].password.toString() === password) {
-                return res.json({
-                    message: "Successfully LogedIn!",
-                });
-            }
-            return res.json({
-                message: "Invalid username or password",
-            });
-        });
-        return res.send("User found!");
     },
 };
 
