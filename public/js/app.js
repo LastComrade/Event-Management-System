@@ -225,6 +225,13 @@ const contactMessage = document.querySelector("#contact-message");
 const contactConfGood = document.querySelector("#contact-conf-good");
 const contactConfBad = document.querySelector("#contact-conf-bad");
 const contactConfServer = document.querySelector("#contact-conf-server");
+const contactConfEmail = document.querySelector("#contact-conf-email");
+
+function validateEmail(mail) {
+    const mailFormat =
+        /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    return mailFormat.test(mail);
+}
 
 const sendContactData = async () => {
     const contact = {
@@ -238,12 +245,22 @@ const sendContactData = async () => {
     if (contact.name === "" || contact.email === "" || contact.message === "") {
         contactConfGood.classList.value = "hidden";
         contactConfServer.classList.value = "hidden";
+        contactConfEmail.classList.value = "hidden";
         contactConfBad.classList.value = "";
-
         setTimeout(() => {
             contactConfBad.classList.value = "hidden";
         }, 3000);
-
+        return;
+    }
+    if (!validateEmail(contact.email)) {
+        contactEmail.value = "";
+        contactConfBad.classList.value = "hidden";
+        contactConfServer.classList.value = "hidden";
+        contactConfGood.classList.value = "hidden";
+        contactConfEmail.classList.value = "";
+        setTimeout(() => {
+            contactConfEmail.classList.value = "hidden";
+        }, 3000);
         return;
     }
     await fetch("https://glacial-journey-62719.herokuapp.com/", {
@@ -257,6 +274,7 @@ const sendContactData = async () => {
             if (res.status === 200) {
                 contactConfBad.classList.value = "hidden";
                 contactConfServer.classList.value = "hidden";
+                contactConfEmail.classList.value = "hidden";
                 contactConfGood.classList.value = "";
                 setTimeout(() => {
                     contactConfGood.classList.value = "hidden";
@@ -267,20 +285,20 @@ const sendContactData = async () => {
             } else {
                 contactConfBad.classList.value = "hidden";
                 contactConfGood.classList.value = "hidden";
-                if (contactConfGood.classList.value === "hidden")
-                    contactConfGood.classList.toggle("hidden");
+                contactConfEmail.classList.value = "hidden";
+                contactConfServer.classList.value = "";
                 setTimeout(() => {
-                    contactConfGood.classList.value = "hidden";
+                    contactConfServer.classList.value = "hidden";
                 }, 3000);
             }
         })
         .catch((err) => {
             contactConfBad.classList.value = "hidden";
             contactConfGood.classList.value = "hidden";
-            if (contactConfGood.classList.value === "hidden")
-                contactConfGood.classList.toggle("hidden");
+            contactConfServer.classList.value = "";
+            contactConfEmail.classList.value = "hidden";
             setTimeout(() => {
-                contactConfGood.classList.value = "hidden";
+                contactConfServer.classList.value = "hidden";
             }, 3000);
         });
 };
