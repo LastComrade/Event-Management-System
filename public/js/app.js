@@ -22,7 +22,7 @@ function toggleTheme() {
     switchTheme();
 }
 
-// To switch the theme of the website from dark to light or vice - versa 
+// To switch the theme of the website from dark to light or vice - versa
 function switchTheme() {
     if (JSON.parse(localStorage.getItem("isDarkmode"))) {
         switchToggle.classList.remove("bg-yellow-500", "-translate-x-2");
@@ -217,4 +217,75 @@ function showAllDepartments() {
 `;
 }
 
- 
+// Contact Form
+const contactButton = document.getElementById("contact-modal");
+const contactName = document.querySelector("#contact-name");
+const contactEmail = document.querySelector("#contact-email");
+const contactMessage = document.querySelector("#contact-message");
+const contactConfGood = document.querySelector("#contact-conf-good");
+const contactConfBad = document.querySelector("#contact-conf-bad");
+const contactConfServer = document.querySelector("#contact-conf-server");
+
+const sendContactData = async () => {
+    const contact = {
+        name: contactName.value,
+        email: contactEmail.value,
+        message: contactMessage.value,
+    };
+    const contactData = {
+        contact,
+    };
+    if (contact.name === "" || contact.email === "" || contact.message === "") {
+        contactConfGood.classList.value = "hidden";
+        contactConfServer.classList.value = "hidden";
+        contactConfBad.classList.value = "";
+
+        setTimeout(() => {
+            contactConfBad.classList.value = "hidden";
+        }, 3000);
+
+        return;
+    }
+    await fetch("http://localhost:3000/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactData),
+    })
+        .then((res) => {
+            if (res.status === 200) {
+                contactConfBad.classList.value = "hidden";
+                contactConfServer.classList.value = "hidden";
+                contactConfGood.classList.value = "";
+                setTimeout(() => {
+                    contactConfGood.classList.value = "hidden";
+                }, 3000);
+                contactName.value = "";
+                contactEmail.value = "";
+                contactMessage.value = "";
+            } else {
+                contactConfBad.classList.value = "hidden";
+                contactConfGood.classList.value = "hidden";
+                if (contactConfGood.classList.value === "hidden")
+                    contactConfGood.classList.toggle("hidden");
+                setTimeout(() => {
+                    contactConfGood.classList.value = "hidden";
+                }, 3000);
+            }
+        })
+        .catch((err) => {
+            contactConfBad.classList.value = "hidden";
+            contactConfGood.classList.value = "hidden";
+            if (contactConfGood.classList.value === "hidden")
+                contactConfGood.classList.toggle("hidden");
+            setTimeout(() => {
+                contactConfGood.classList.value = "hidden";
+            }, 3000);
+        });
+};
+
+contactButton.addEventListener("click", async (e) => {
+    e.preventDefault();
+    sendContactData();
+});
