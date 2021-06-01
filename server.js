@@ -47,7 +47,7 @@ app.set("views", path.join(__dirname, "views"));
 // Middlewares
 app.use(cors(corsOptions)); // Cors
 app.use(express.json()); // To process the requests and parse them into json
-app.use(express.urlencoded({ extended: true })); // If you want to operate data requests through classic way
+// app.use(express.urlencoded({ extended: false })); // If you want to operate data requests through classic way
 app.use(express.static(path.join(__dirname, "public"))); // Setting up the public folder
 
 // Routes Middleware
