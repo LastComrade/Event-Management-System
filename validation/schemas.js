@@ -41,3 +41,11 @@ module.exports.loginSchema = Joi.object({
     username: Joi.string().required().label("Userame"),
     password: Joi.string().required().label("Password"),
 });
+
+module.exports.deptSchema = Joi.object({
+    name: Joi.string().required().label("department name"),
+    tagline: Joi.string().required().label("department tagline"),
+    description: Joi.string().required().label("department description"),
+    recruiting: Joi.boolean().label("it should be a true or false"),
+    head: Joi.string().required().label("department head")
+});
