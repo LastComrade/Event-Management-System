@@ -2,6 +2,7 @@ const router = require("express").Router(); // Router is a function in the expre
 const validate = require("../middleware/validation"); // Joi validaiton for contact and staffLogin
 const homeCont = require("../controllers/homeCont"); // Controller functions for home routes
 const staffCont = require("../controllers/staffCont"); // Controller functions for staff-login routes
+const deptCont = require("../controllers/deptCont");
 
 // Whenever "/" -> root route is initiated with a GET request then homeCont.index function will run 
 // Whenever "/" -> root route is initiated with a POST request then validate.contact and homeCont.contact function will run 
@@ -17,5 +18,10 @@ router
     .get(staffCont.staffLogin)
     .post(validate.staffLogin, staffCont.checkStaff);
 
+router
+    .route("/department-create-101")
+    .get(deptCont.deptCreate)
+    .post(validate.deptCreate, deptCont.createDept);
+    
 // Exporting routes
 module.exports = router;
