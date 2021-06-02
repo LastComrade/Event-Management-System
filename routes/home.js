@@ -3,16 +3,14 @@ const validate = require("../middleware/validation"); // Joi validaiton for cont
 const homeCont = require("../controllers/homeCont"); // Controller functions for home routes
 const staffCont = require("../controllers/staffCont"); // Controller functions for staff-login routes
 const deptCont = require("../controllers/deptCont");
+const eventCont = require("../controllers/eventCont");
 
-// Whenever "/" -> root route is initiated with a GET request then homeCont.index function will run 
-// Whenever "/" -> root route is initiated with a POST request then validate.contact and homeCont.contact function will run 
+// Whenever "/" -> root route is initiated with a GET request then homeCont.index function will run
+// Whenever "/" -> root route is initiated with a POST request then validate.contact and homeCont.contact function will run
 // See below route to better understand
-router
-    .route("/")
-    .get(homeCont.index)
-    .post(validate.contact, homeCont.contact);
+router.route("/").get(homeCont.index).post(validate.contact, homeCont.contact);
 
-// Same way for "/staff-login" route 
+// Same way for "/staff-login" route
 router
     .route("/staff-login")
     .get(staffCont.staffLogin)
@@ -20,8 +18,13 @@ router
 
 router
     .route("/department-create-101")
-    .get(deptCont.deptCreate)
+    .get(deptCont.index)
     .post(validate.deptCreate, deptCont.createDept);
-    
+
+router
+    .route("/event-create-101")
+    .get(eventCont.index)
+    .post(validate.eventCreate, eventCont.createEvent);
+
 // Exporting routes
 module.exports = router;

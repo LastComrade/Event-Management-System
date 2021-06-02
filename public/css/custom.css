@@ -141,7 +141,7 @@ hero {
 }
 
 .social a:hover {
-    background: -webkit-linear-gradient(var(--primary), var(--pure));
+    background: var(--light);
     color: var(--dark);
 }
 

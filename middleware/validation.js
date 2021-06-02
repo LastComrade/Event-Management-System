@@ -1,8 +1,12 @@
-const { contactSchema, loginSchema, deptSchema } = require("../validation/schemas"); // JOI schema to validate the from data on backend
+const {
+    contactSchema,
+    loginSchema,
+    deptSchema,
+    eventSchema,
+} = require("../validation/schemas"); // JOI schema to validate the from data on backend
 const ErrorHandler = require("../utils/errorHandler"); // Error handler
 
 const validate = {
-
     // Validates the contact form data and if an error is encountered then that error is also handled
     contact: (req, res, next) => {
         try {
@@ -27,15 +31,24 @@ const validate = {
         next();
     },
 
-    // this will validate department form data
+    // This will validate department form data
     deptCreate: (req, res, next) => {
         // console.log("dept validator started");
-        const {error} = deptSchema.validate(req.body.department);
-        if(error){
-            next(ErrorHandler.validationError("Invalid Data"));
+        const { error } = deptSchema.validate(req.body.department);
+        if (error) {
+            next(ErrorHandler.validationError(error.message));
         }
         next();
-    }
+    },
+
+    // This will validate events form data
+    eventCreate: (req, res, next) => {
+        const { error } = eventSchema.validate(req.body.event);
+        if (error) {
+            next(ErrorHandler.validationError(error.message));
+        }
+        next();
+    },
 };
 
 module.exports = validate;

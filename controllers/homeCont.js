@@ -1,7 +1,6 @@
 const Contact = require("../models/contact"); // Contact schema
 const ErrorHandler = require("../utils/errorHandler"); // Error handler class
 const nodeMailer = require("nodemailer");
-const { serverError } = require("../utils/errorHandler");
 
 const homeCont = {
     // Index controller render the home page from layout section in views folder
@@ -13,8 +12,8 @@ const homeCont = {
     contact: async (req, res, next) => {
         try {
             const { name, email, message } = req.body.contact; // Destructuring data out of contact object
-            console.log(name, email, message);
-            // Nodemailer testing
+
+            // Nodemailer Transport
             const transporter = nodeMailer.createTransport({
                 service: "gmail",
                 auth: {
@@ -22,7 +21,7 @@ const homeCont = {
                     pass: process.env.EMAIL_PASSWORD,
                 },
             });
-
+            
             const mailOptions = {
                 from: process.env.EMAIL_ID,
                 to: "konarklohat123456@gmail.com",
@@ -34,7 +33,7 @@ const homeCont = {
             transporter.sendMail(mailOptions, (error, data) => {
                 if (error) {
                     console.log(error);
-                    next(ErrorHandler(serverError()));
+                    next(ErrorHandler.serverError());
                 } else {
                     console.log("Email sent: " + data.response);
                 }

@@ -26,14 +26,17 @@ const extension = (joi) => ({
 const Joi = baseJoi.extend(extension);
 
 // Directly exporting the functions
- 
+
 module.exports.contactSchema = Joi.object({
     name: Joi.string().required().label("Name"),
-    // minDomainSegments mean konarklohat123456@gmail.com has two segments i.e 
+    // minDomainSegments mean konarklohat123456@gmail.com has two segments i.e
     // (gmail.com) gmail and com which is good enough to pass the validation
-    email: Joi.string().required().email({
-        minDomainSegments: 2,
-    }).label("E-Mail"),
+    email: Joi.string()
+        .required()
+        .email({
+            minDomainSegments: 2,
+        })
+        .label("E-Mail"),
     message: Joi.string().required().label("Message"),
 });
 
@@ -47,5 +50,27 @@ module.exports.deptSchema = Joi.object({
     tagline: Joi.string().required().label("department tagline"),
     description: Joi.string().required().label("department description"),
     recruiting: Joi.boolean().label("it should be a true or false"),
-    head: Joi.string().required().label("department head")
+    head: Joi.string().required().label("department head"),
+    members: Joi.array().items(Joi.object()),
+});
+
+module.exports.eventSchema = Joi.object({
+    name: Joi.string().required().label("Event Name"),
+    description: Joi.string().required().label("Event Description"),
+    category: Joi.string().required().label("Event Category"),
+    registration_starts: Joi.date()
+        .iso()
+        .required()
+        .label("Registration Starts"),
+    registration_ends: Joi.date()
+        .iso()
+        .min(Joi.ref("registration_starts"))
+        .required()
+        .label("Registration Ends"),
+    event_starts: Joi.date().iso().required().label("Event Start Date"),
+    event_ends: Joi.date()
+        .iso()
+        .min(Joi.ref("event_starts"))
+        .label("Event End Date"),
+    organizers: Joi.array().items(Joi.object()),
 });
