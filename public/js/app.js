@@ -91,7 +91,7 @@ const sendContactData = async () => {
         }, 3000);
         return;
     }
-    await fetch("https://glacial-journey-62719.herokuapp.com/", {
+    await fetch("/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
