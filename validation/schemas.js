@@ -33,9 +33,7 @@ module.exports.contactSchema = Joi.object({
     // (gmail.com) gmail and com which is good enough to pass the validation
     email: Joi.string()
         .required()
-        .email({
-            minDomainSegments: 2,
-        })
+        .email({ tlds: { allow: ["org", "com", "net", "in"] } })
         .label("E-Mail"),
     message: Joi.string().required().label("Message"),
 });
@@ -73,4 +71,11 @@ module.exports.eventSchema = Joi.object({
         .min(Joi.ref("event_starts"))
         .label("Event End Date"),
     organizers: Joi.array().items(Joi.object()),
+});
+
+module.exports.newsletterSchema = Joi.object({
+    email: Joi.string()
+        .email({ tlds: { allow: ["org", "com", "net", "in"] } })
+        .required()
+        .label("Newsletter Email"),
 });

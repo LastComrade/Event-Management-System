@@ -26,5 +26,8 @@ router
     .get(eventCont.index)
     .post(validate.eventCreate, eventCont.createEvent);
 
+router.route("/newsletter-sub")
+.post(validate.newsletter, homeCont.newsletter)
+
 // Exporting routes
 module.exports = router;

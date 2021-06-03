@@ -1,4 +1,5 @@
 const Contact = require("../models/contact"); // Contact schema
+const Newsletter = require("../models/newsletter"); // Newsletter schema
 const ErrorHandler = require("../utils/errorHandler"); // Error handler class
 const nodeMailer = require("nodemailer");
 
@@ -21,7 +22,7 @@ const homeCont = {
                     pass: process.env.EMAIL_PASSWORD,
                 },
             });
-            
+
             const mailOptions = {
                 from: process.env.EMAIL_ID,
                 to: "konarklohat123456@gmail.com",
@@ -47,6 +48,32 @@ const homeCont = {
             return res.status(200).json();
         } catch (err) {
             next(ErrorHandler.serverError()); // If try block encounters any error then error handler will come to play to make it look like generic server error
+        }
+    },
+
+    newsletter: async (req, res) => {
+        try {
+            const { email } = req.body.newsletter;
+            await Newsletter.findOne({ email }, async (err, existingEmail) => {
+                if (err) {
+                    next(ErrorHandler.serverError());
+                } else if (existingEmail) {
+                    return res.status(200).json({
+                        message: "Entered E-Mail is already subscribed",
+                    });
+                } else {
+                    const newNewsletter = new Newsletter({
+                        email,
+                    });
+                    await newNewsletter.save();
+                    return res.status(200).json({
+                        message: "Successfully Subscribed",
+                    });
+                }
+            });
+        } catch (err) {
+            console.log(err);
+            next(ErrorHandler.serverError());
         }
     },
 };

@@ -1,5 +1,5 @@
 const Department = require("../models/dept");
-const Errorhandler = require("../utils/errorHandler");
+const ErrorHandler = require("../utils/errorHandler");
 
 const deptCont = {
     index: (req, res) => {
@@ -12,7 +12,7 @@ const deptCont = {
                 req.body.department;
             await Department.findOne({ name }, async (err, existingDept) => {
                 if (err) {
-                    next(Errorhandler.serverError());
+                    next(ErrorHandler.serverError());
                 } else if (existingDept) {
                     return res.status(200).json({
                         message: "Entered department already exists",
@@ -34,7 +34,7 @@ const deptCont = {
             });
         } catch (err) {
             console.log(err);
-            next(Errorhandler.serverError());
+            next(ErrorHandler.serverError());
         }
     },
 };
