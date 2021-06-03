@@ -214,3 +214,14 @@ html {
 .owl-prev {
     width: 10%;
 }
+
+#hero {
+    background-image: url("https://images.pexels.com/photos/2045600/pexels-photo-2045600.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-attachment: fixed;
+    background-position: left;
+}
+
+::selection {
+    color: white;
+    background-color: #331acc;
+}
