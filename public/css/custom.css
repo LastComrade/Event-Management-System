@@ -229,3 +229,70 @@ html {
     color: white;
     background-color: #331acc;
 }
+/* Department page */
+.banner {
+    background-image: url("https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+    .quote_test{
+    position: relative;
+    font-family: 'Sanchez', serif;
+    font-size: 2.4em;
+    line-height: 1.5em;
+    font-style: italic;
+    }
+    .quote_test:after{
+    position: absolute;
+    content: "”";
+    color: rgba(255, 255, 255, 1);
+    font-size: 6rem;
+    line-height: 0;
+    bottom: 0px;
+    padding-right: 22px;
+    padding-bottom: 5px;
+    margin-bottom: 2px;
+    opacity: 0.5;
+    }
+
+    .item {
+        position: relative;
+        width: 100%;
+      }
+  
+      .image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+  
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #424344;
+      }
+  
+      .item:hover .overlay {
+        opacity: 1;
+      }
+  
+      .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
