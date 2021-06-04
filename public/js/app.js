@@ -61,7 +61,7 @@ const sendContactData = async () => {
     const contactData = {
         contact,
     };
-    await fetch("/a", {
+    await fetch("/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
