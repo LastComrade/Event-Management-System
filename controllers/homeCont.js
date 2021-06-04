@@ -36,16 +36,11 @@ const homeCont = {
                     console.log(error);
                     next(ErrorHandler.serverError());
                 } else {
-                    console.log("Email sent: " + data.response);
+                    return res.status(200).json({
+                        message: "Message sent successfully! We will get back to you ASAP"
+                    });
                 }
             });
-
-            const contactData = new Contact(req.body.contact); // Creating instance of the contact model
-            await contactData.save(); // Saving that instance onto the DB, which takes some time so await is used
-            // res.render("layouts/contact-confirmation", {
-            //     error: false,
-            // });
-            return res.status(200).json();
         } catch (err) {
             next(ErrorHandler.serverError()); // If try block encounters any error then error handler will come to play to make it look like generic server error
         }
