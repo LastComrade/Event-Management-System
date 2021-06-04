@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/public/css/custom.css">
+
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+
+
+<body class="bg-gray-200" ;>
+  <!-- Start of the navbar -->
+  <div class="z-50 w-full text-gray-700 bg-indigo-900 fixed">
+    <div x-data="{ open: false }" class="flex flex-col px-3 mx-auto md:items-center md:flex-row md:px-6 lg:px-8">
+      <div class="p-3 flex flex-row items-center justify-between">
+        <a href="/"
+          class="md:text-4xl text-3xl font-bold tracking-widest text-white uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">E-Cell</a>
+        <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline outline-none" @click="open = !open">
+          <svg fill="white" viewBox="0 0 20 20" class="w-6 h-6">
+            <path x-show="!open" fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+              clip-rule="evenodd"></path>
+            <path x-show="open" fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+      <div :class="{'flex': open, 'hidden': !open}"
+        class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+        <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline active:bg-gray-600 text-white"
+          href="#hero">Home</a>
+        <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
+          href="#about">About</a>
+        <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
+          href="#department">Departments</a>
+        <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
+          href="#event">Events</a>
+        <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:mx-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
+          href="#contact">Contact</a>
+        <button
+          class="w-12 h-6 my-auto ml-3 mt-4 md:mt-2 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
+          onclick="toggleTheme()">
+          <div id="switch-toggle"
+            class="w-7 h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- End of the navbar -->
+  <br>
+    <div class="banner rounded-lg h-100 overflow-hidden w-full">
+    <div class="flex flex-col">
+      <div class="text-center">
+        <p class="md:text-2xl text-md dark:text-black text-white font-semibold">Innovate | Work Hard | Grow</p>
+        <h1 amp-fx="parallax" data-parallax-factor="1.7"
+          class="text-4xl md:text-6xl lg:text-6xl p-5 dark:text-black text-white font-bold">Technical
+          <br>Department
+        </h1>
+        <blockquote>
+          <p class="italic border-l-4 bg-neutral-100 text-neutral-600 text-gray-200 border-neutral-500 quote_test">Lorem
+            ipsum dolor sit amet consectetur, adipisicing elit.</p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+  </section>
+  <hr>
+  <section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+      <div
+        class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Our Vision
+        </h1>
+        <p class="mb-8 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore libero
+          blanditiis perspiciatis natus nihil dicta quaerat rerum impedit commodi quod iste quidem placeat consequuntur,
+          facere, nobis temporibus ea, ad id vero. Fugiat nisi provident ipsum sit vero, totam numquam assumenda
+          veritatis maxime quos voluptatibus </p>
+        <p> Provident autem ad non placeat, labore quam quidem aperiam odio, eos voluptatem est officia! Lorem ipsum
+          dolor sit amet consectetur adipisicing elit.illo dolores fugit, eum inventore ipsam vel alias id officiis
+          Fugiat nisi provident ipsum sit vero, totam numquam assuveritatis maxime quos voluptatibus illo dolores fugit,
+          eum inventore ipsam vel alias id officiis.</p>
+        <div class="flex justify-center">
+          <button
+            class="inline-flex text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg">More</button>
+
+        </div>
+      </div>
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded" alt="Technical"
+          src="https://source.unsplash.com/720x600/?departement,technical">
+      </div>
+    </div>
+  </section>
+
+  <hr>
+  <section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <img class="object-cover object-center rounded" alt="Technical"
+          src="https://source.unsplash.com/720x600/?departement,education">
+      </div>
+      <div
+        class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Achievement
+
+        </h1>
+        <p class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant
+          cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic
+          tumeric truffaut hexagon try-hard chambray.</p>
+        <p> Provident autem ad non placeat, labore quam quidem aperiam odio, eos voluptatem est officia! Lorem ipsum
+          dolor sit amet consectetur adipisicing elit.illo dolores fugit, eum inventore ipsam vel alias id officiis
+          Fugiat nisi provident ipsum sit vero, totam numquam assuveritatis maxime quos voluptatibus illo dolores fugit,
+          eum inventore ipsam vel alias id officiis.</p>
+        <div class="flex justify-center">
+          <button
+            class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">More</button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+
+  <div class="owl-carousel owl-theme">
+    <div class="item">
+      <img src="/public/img/dept_page_carousel_1.png" alt="">
+
+      <div class="overlay">
+        <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis molestias, id ae, aut
+          nobis.</div>
+      </div>
+
+
+    </div>
+    <div class="item">
+      <img src="/public/img/dept_page_carousel_2.png" alt="">
+
+
+      <div class="overlay">
+        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, sint distinctio rep.
+        </div>
+      </div>
+
+    </div>
+    <div class="item">
+      <img src="/public/img/dept_page_carousel_3.png" alt="">
+
+
+      <div class="overlay">
+        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus harum minus ipsa
+          aliquam.</div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="/public/img/dept_page_carousel_4.png" alt="">
+
+
+      <div class="overlay">
+        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus harum minus ipsa
+          aliquam.</div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="/public/img/dept_page_carousel_5.png" alt="">
+
+
+      <div class="overlay">
+        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus harum minus ipsa
+          aliquam.</div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="/public/img/dept_page_carousel_6.png" alt="">
+
+
+      <div class="overlay">
+        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus harum minus ipsa
+          aliquam.</div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="/public/img/dept_page_carousel_7.png" alt="">
+
+
+      <div class="overlay">
+        <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus harum minus ipsa
+          aliquam.</div>
+      </div>
+
+
+    </div>
+
+  </div>
+  <div class="bg-black">
+    <footer class="flex flex-wrap items-center justify-between p-3 m-auto">
+      <div class="container mx-auto flex flex-col flex-wrap items-center justify-between">
+        <ul class="flex mx-auto text-white text-center">
+          <div class="my-2 lg:mt-3">
+            <div class="text-center mb-4">
+              <span class="text-4xl text-blue-300 ">Follow Us</span>
+            </div>
+            <div class="social justify-center">
+              <a href="#" class="fab fa-facebook-f"></a>
+              <a href="#" class="fab fa-linkedin-in"></a>
+              <a href="#" class="fab fa-instagram"></a>
+              <a href="#" class="far fa-envelope"></a>
+              <a href="#" class="fab fa-twitter"></a>
+            </div>
+          </div>
+        </ul>
+        <div class="flex mx-auto text-white text-center">
+          <p>
+            E-Cell © 2021.
+            <br>
+            Developed with &#10084;&#65039; By <a href="#" class="hover:underline">E-Cell Technical Team</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: false,
+      autoplay: true,
+      autoplaytime: 500,
+      dots: false,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1000: {
+          items: 3
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
