@@ -26,6 +26,10 @@ router
     .get(eventCont.index)
     .post(validate.eventCreate, eventCont.createEvent);
 
+router
+    .route("/departments/:name")
+    .get(deptCont.index);
+
 router.route("/newsletter-sub")
 .post(validate.newsletter, homeCont.newsletter)
 

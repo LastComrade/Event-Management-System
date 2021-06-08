@@ -11,7 +11,11 @@ const DeptSchema = Schema(
             type: String,
             required: true,
         },
-        description: {
+        description1: {
+            type: String,
+            required: true,
+        },
+        description2: {
             type: String,
             required: true,
         },
@@ -19,10 +23,6 @@ const DeptSchema = Schema(
         recruiting: {
             type: Boolean,
             default: false,
-        },
-        head: {
-            type: String,
-            required: true,
         },
     },
     { timestamps: true }

@@ -1,4 +1,4 @@
-// Custom css file to write custom css code
+/* Custom css file to write custom css code */
 
 :root {
     --primary: #e92c36;
@@ -204,7 +204,7 @@ html {
     scroll-behavior: smooth;
 }
 
-// Owl Carousel
+/* Owl Carousel */
 .owl-next:focus,
 .owl-prev:focus {
     outline: none;

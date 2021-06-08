@@ -48,7 +48,6 @@ module.exports.deptSchema = Joi.object({
     tagline: Joi.string().required().label("department tagline"),
     description: Joi.string().required().label("department description"),
     recruiting: Joi.boolean().label("it should be a true or false"),
-    head: Joi.string().required().label("department head"),
     members: Joi.array().items(Joi.object()),
 });
 
