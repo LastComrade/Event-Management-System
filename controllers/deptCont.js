@@ -2,7 +2,12 @@ const Department = require("../models/dept");
 const ErrorHandler = require("../utils/errorHandler");
 
 const deptCont = {
-    index: async (req, res, next) => {
+
+    index: (req, res) => {
+        res.redirect("/");
+    },
+
+    finder: async (req, res, next) => {
         await Department.findOne(
             { name: req.params.name },
             (err, foundDept) => {
