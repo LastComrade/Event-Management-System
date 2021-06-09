@@ -1,0 +1,1319 @@
+<%- include("./partials/head.ejs") %>
+    <%- include("./partials/links.ejs") %>
+
+        <body class="">
+            <div class="dark:bg-gray-700 bg-gray-100">
+
+
+                <!-- Start of the navbar -->
+                <div class="z-50 w-full mb-10 text-gray-700 bg-indigo-900 fixed">
+                    <div x-data="{ open: false }"
+                        class="flex flex-col px-3 mx-auto md:items-center md:flex-row md:px-6 lg:px-8">
+                        <div class="p-3 flex flex-row items-center justify-between">
+                            <a href="/"
+                                class="md:text-4xl text-3xl font-bold tracking-widest text-white uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">E-Cell</a>
+                            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline outline-none"
+                                @click="open = !open">
+                                <svg fill="white" viewBox="0 0 20 20" class="w-6 h-6">
+                                    <path x-show="!open" fill-rule="evenodd"
+                                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                                        clip-rule="evenodd"></path>
+                                    <path x-show="open" fill-rule="evenodd"
+                                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div :class="{'flex': open, 'hidden': !open}"
+                            class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                            <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
+                                href="#feature">Featured</a>
+                            <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
+                                href="#live">Live</a>
+                            <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
+                                href="#webinar">Webinars</a>
+                            <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:mx-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
+                                href="#upcoming">Upcoming</a>
+                            <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline active:bg-gray-600 text-white"
+                                href="#archived">Past</a>
+                            <button
+                                class="w-12 h-6 my-auto ml-3 mt-4 md:mt-2 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-7 h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of the navbar -->
+
+                <!-- banner -->
+                <div id="banner" class="pt-28 pb-10 banner overflow-hidden w-full">
+                    <div class="flex flex-col">
+                        <div class="text-center">
+                            <p class="md:text-2xl text-md dark:text-black text-black font-semibold">Innovate | Work Hard
+                                | Grow
+                            </p>
+                            <h1 class="text-6xl lg:text-8xl p-2 dark:text-black text-black font-bold"
+                                style="line-height: 1em;">Events
+                            </h1>
+
+                            <blockquote>
+                                <p
+                                    class="italic bg-neutral-100 text-neutral-600 text-gray-700 border-neutral-500 quote_test">
+                                    Lorem
+                                    ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Event page starts  -->
+                <div class="mt-7 ">
+
+                    <!--FEATURED EVENTS-->
+                    <div id="feature" class="">
+                        <div class="mt-16">
+
+                            <!-- Heading -->
+                            <div class="bg-gray-100 dark:bg-gray-700 text-center h-20">
+                                <h1
+                                    class="text-5xl font-bold text-center bg-gradient-to-r from-red-500 via-blue-600 to-green-100 text-transparent bg-clip-text">
+                                    Featured
+                                </h1>
+                            </div>
+                            <div class="flex lg:flex-row md:flex-col sm:flex-col justify-center items-center mt-5">
+                                <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700 dark:text-gray-200">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div class="text-center my-2">
+                                                <div class="text-left">
+                                                    <a type="button" href="#"
+                                                        class="focus:outline-none border-2 border-black text-black dark:text-white font-semibold  text-md uppercase px-2 py-1     rounded-md bg-transparent hover:text-white hover:bg-black dark:hover:bg-gray-900 dark:hover:text-white duration-200 dark:bg-gray-100">Register</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--LIVE EVENTS-->
+                    <div id="live">
+                        <div class="mt-16 py-10 bg-gray-200">
+                            <!-- Heading -->
+                            <div class=" h-20">
+                                <h1
+                                    class="text-5xl font-bold text-center bg-gradient-to-r from-red-500 via-blue-600 to-green-100 text-transparent bg-clip-text">
+                                    Live
+                                </h1>
+                            </div>
+                            <div class="flex lg:flex-row md:flex-col sm:flex-col justify-center items-center mt-5">
+                                <div class="grid gap-10 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- LIVE WEBINARS -->
+                    <div id="webinar">
+                        <div class="mt-16">
+                            <!-- Heading -->
+                            <div class="bg-gray-100 h-20">
+                                <h1
+                                    class="text-5xl py-3 font-bold text-center bg-gradient-to-r from-red-500 via-blue-600 to-green-100 text-transparent bg-clip-text">
+                                    Ongoing
+                                </h1>
+                            </div>
+                            <div class="flex lg:flex-row md:flex-col sm:flex-col justify-center items-center mt-5">
+                                <div class="grid gap-10 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- UPCOMING EVENTS -->
+                    <div id="upcoming">
+                        <div class="mt-16 bg-gray-200 py-10">
+                            <!-- Heading -->
+                            <div class="h-20">
+                                <h1
+                                    class="text-5xl py-3 font-bold text-center bg-gradient-to-r from-red-500 via-blue-600 to-green-100 text-transparent bg-clip-text">
+                                    Upcoming
+                                </h1>
+                            </div>
+                            <div class="flex lg:flex-row md:flex-col sm:flex-col justify-center items-center mt-5">
+                                <div class="grid gap-10 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="p-4 bg-white shadow-md transition ease-in hover:shadow-lg max-w-xl rounded flex justify-center dark:bg-gray-800 md:flex-row flex-col gap-4">
+                                        <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                            class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                                        <div class="relative">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <div
+                                                class="flex items-start justify-between text-gray-700 dark:text-white my-2 md:m-0">
+                                                <p class="text-xl leading-5">
+                                                    Lorem Ipsum
+                                                </p>
+                                                <button class="text-red-400 hover:text-red-600">
+                                                    <svg width="25" height="25" fill="currentColor"
+                                                        viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1664 596q0-81-21.5-143t-55-98.5-81.5-59.5-94-31-98-8-112 25.5-110.5 64-86.5 72-60 61.5q-18 22-49 22t-49-22q-24-28-60-61.5t-86.5-72-110.5-64-112-25.5-98 8-94 31-81.5 59.5-55 98.5-21.5 143q0 168 187 355l581 560 580-559q188-188 188-356zm128 0q0 221-229 450l-623 600q-18 18-44 18t-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="text-sm">
+                                                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing
+                                                    elit.<br>
+                                                    Voluptatibus quia, nulla! Maiores et perferendis eaque,
+                                                    exercitationem
+                                                    praesentium
+                                                    nihil.</p>
+                                            </div>
+                                            <div
+                                                class="flex items-center text-gray-500 dark:text-gray-400 text-xs my-2 md:m-0">
+                                                <svg width="10" height="10" fill="currentColor" class="mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M1664 960q-152-236-381-353 61 104 61 225 0 185-131.5 316.5t-316.5 131.5-316.5-131.5-131.5-316.5q0-121 61-225-229 117-381 353 133 205 333.5 326.5t434.5 121.5 434.5-121.5 333.5-326.5zm-720-384q0-20-14-34t-34-14q-125 0-214.5 89.5t-89.5 214.5q0 20 14 34t34 14 34-14 14-34q0-86 61-147t147-61q20 0 34-14t14-34zm848 384q0 34-20 69-140 230-376.5 368.5t-499.5 138.5-499.5-139-376.5-368q-20-35-20-69t20-69q140-229 376.5-368t499.5-139 499.5 139 376.5 368q20 35 20 69z">
+                                                    </path>
+                                                </svg>
+                                                123,344,893 views
+                                                <svg width="10" height="10" fill="currentColor" class="ml-6 mr-2"
+                                                    viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26t-55.5-65.5-68-97.5-53.5-121-23.5-138q0-220 127-344t351-124q62 0 126.5 21.5t120 58 95.5 68.5 76 68q36-36 76-68t95.5-68.5 120-58 126.5-21.5q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z">
+                                                    </path>
+                                                </svg>
+                                                45 876 likes
+                                            </div>
+                                            <div>
+                                                <button
+                                                    class="border-2 border-purple-900 mt-1 p-1 px-5 rounded text-purple-900 uppercase hover:shadow hover:bg-purple-900 hover:text-white">Book
+                                                    a Seat</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Past Events Carousel -->
+                    <div id="archived">
+                        <div class="mt-16 bg-gray-100 h-20">
+                            <h1
+                                class="text-5xl py-3 font-bold text-center bg-gradient-to-r from-red-500 via-blue-600 to-green-100 text-transparent bg-clip-text">
+                                Archived
+                            </h1>
+                        </div>
+                        <div
+                            class="mt-10 owl-carousel owl-theme px-5 grid grid-cols-1 gap-8 text-center md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-3 rounded">
+                            <div
+                                class="relative item dark:bg-gray-800 bg-white py-6 px-6 rounded my-4 shadow-lg hover:shadow-lg">
+                                <div class="mt-2">
+                                    <p class="text-xl font-semibold dark:text-white">Lorem Ipsum</p>
+                                    <img class="rounded shadow-xl my-4" src="/img/team.jpg" alt="">
+                                </div>
+                                <div class="flex space-x-2 text-gray-400 text-sm my-3">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, aperiam
+                                        cumque
+                                        odit vero
+                                        repudiandae
+                                        maxime. Numquam vel praesentium aperiam accusantium eum atque vitae sapiente
+                                        iusto
+                                        doloribus
+                                        tempora! Cumque, aut!</p>
+                                </div>
+                                <div class="border-t-2"></div>
+                                <div class="flex justify-between">
+                                    <div class="my-2">
+                                        <span>
+                                            <p class="font-semibold text-base mb-2 text-left"></p>Total Participation <i
+                                                class="fa fa-users"></i></p>
+                                        </span>
+                                        <div class="flex text-left text-sm">
+                                            <p><br>741</p>
+                                        </div>
+                                    </div>
+                                    <div class="my-2">
+                                        <a href="#"
+                                            class="mt-12 font-bold tracking-wide flex text-indigo-500 dark:hover:text-indigo-700 hover:text-indigo-700"><span>Learn
+                                                More
+                                            </span><svg class="w-4 h-4 ml-2 mt-2" xmlns="http://www.w3.org/2000/svg"
+                                                class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="relative dark:bg-gray-800 bg-white py-6 px-6 rounded my-4 shadow-lg hover:shadow-xl">
+                                <div class="mt-2">
+                                    <p class="text-xl font-semibold dark:text-white">Lorem Ipsum</p>
+                                    <img class="rounded shadow-xl my-4" src="/img/team.jpg" alt="">
+                                </div>
+                                <div class="flex space-x-2 text-gray-400 text-sm my-3">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, aperiam
+                                        cumque
+                                        odit vero
+                                        repudiandae
+                                        maxime. Numquam vel praesentium aperiam accusantium eum atque vitae sapiente
+                                        iusto
+                                        doloribus
+                                        tempora! Cumque, aut!</p>
+                                </div>
+                                <div class="border-t-2"></div>
+                                <div class="flex justify-between">
+                                    <div class="my-2">
+                                        <span>
+                                            <p class="font-semibold text-base mb-2 text-left"></p>Total Participation <i
+                                                class="fa fa-users"></i></p>
+                                        </span>
+                                        <div class="flex text-left text-sm">
+                                            <p><br>741</p>
+                                        </div>
+                                    </div>
+                                    <div class="my-2">
+                                        <a href="#"
+                                            class="mt-12 font-bold tracking-wide flex text-indigo-500 dark:hover:text-indigo-700 hover:text-indigo-700"><span>Learn
+                                                More
+                                            </span><svg class="w-4 h-4 ml-2 mt-2" xmlns="http://www.w3.org/2000/svg"
+                                                class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="relative dark:bg-gray-800 bg-white py-6 px-6 rounded my-4 shadow-lg hover:shadow-xl">
+                                <div class="mt-2">
+                                    <p class="text-xl font-semibold dark:text-white">Lorem Ipsum</p>
+                                    <img class="rounded shadow-xl my-4" src="/img/team.jpg" alt="">
+                                </div>
+                                <div class="flex space-x-2 text-gray-400 text-sm my-3">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, aperiam
+                                        cumque
+                                        odit vero
+                                        repudiandae
+                                        maxime. Numquam vel praesentium aperiam accusantium eum atque vitae sapiente
+                                        iusto
+                                        doloribus
+                                        tempora! Cumque, aut!</p>
+                                </div>
+                                <div class="border-t-2"></div>
+                                <div class="flex justify-between">
+                                    <div class="my-2">
+                                        <span>
+                                            <p class="font-semibold text-base mb-2 text-left"></p>Total Participation <i
+                                                class="fa fa-users"></i></p>
+                                        </span>
+                                        <div class="flex text-left text-sm">
+                                            <p><br>741</p>
+                                        </div>
+                                    </div>
+                                    <div class="my-2">
+                                        <a href="#"
+                                            class="mt-12 font-bold tracking-wide flex text-indigo-500 dark:hover:text-indigo-700 hover:text-indigo-700"><span>Learn
+                                                More
+                                            </span><svg class="w-4 h-4 ml-2 mt-2" xmlns="http://www.w3.org/2000/svg"
+                                                class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="relative dark:bg-gray-800 bg-white py-6 px-6 rounded my-4 shadow-lg hover:shadow-xl">
+                                <div class="mt-2">
+                                    <p class="text-xl font-semibold dark:text-white">Lorem Ipsum</p>
+                                    <img class="rounded shadow-xl my-4" src="/img/team.jpg" alt="">
+                                </div>
+                                <div class="flex space-x-2 text-gray-400 text-sm my-3">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, aperiam
+                                        cumque
+                                        odit vero
+                                        repudiandae
+                                        maxime. Numquam vel praesentium aperiam accusantium eum atque vitae sapiente
+                                        iusto
+                                        doloribus
+                                        tempora! Cumque, aut!</p>
+                                </div>
+                                <div class="border-t-2"></div>
+                                <div class="flex justify-between">
+                                    <div class="my-2">
+                                        <span>
+                                            <p class="font-semibold text-base mb-2 text-left"></p>Total Participation <i
+                                                class="fa fa-users"></i></p>
+                                        </span>
+                                        <div class="flex text-left text-sm">
+                                            <p><br>741</p>
+                                        </div>
+                                    </div>
+                                    <div class="my-2">
+                                        <a href="#"
+                                            class="mt-12 font-bold tracking-wide flex text-indigo-500 dark:hover:text-indigo-700 hover:text-indigo-700"><span>Learn
+                                                More
+                                            </span><svg class="w-4 h-4 ml-2 mt-2" xmlns="http://www.w3.org/2000/svg"
+                                                class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Counter -->
+                    <section class="counters">
+                        <div class="container">
+                            <div>
+                                <i class="fas fa-medal fa-4x"></i>
+                                <div class="counter" data-target="50">0</div>
+                                <h3>Events</h3>
+                            </div>
+                            <div>
+                                <i class="fas fa-hashtag fa-4x"></i>
+                                <div class="counter" data-target="5000">0</div>
+                                <h3>Followers</h3>
+                            </div>
+                            <div>
+                                <i class="fas fa-certificate fa-4x"></i>
+                                <div class="counter" data-target="2000">0</div>
+                                <h3>Certificates</h3>
+                            </div>
+                            <div>
+                                <i class="fas fa-laugh-beam fa-4x"></i>
+                                <div class="counter" data-target="150">0</div>
+                                <h3>Participants</h3>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Include Footer Section -->
+            <%- include("../sections/footer.ejs") %>
+
+                <!-- JQuery -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+                    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+                    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+                <!-- Owl Carousel Script -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+                    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+                    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+                <script>
+                    // for counter
+                    const counters = document.querySelectorAll('.counter');
+                    const speed = 200; // The lower the slower
+
+                    counters.forEach(counter => {
+                        const updateCount = () => {
+                            const target = +counter.getAttribute('data-target');
+                            const count = +counter.innerText;
+
+                            // Lower inc to slow and higher to slow
+                            const inc = Math.ceil(target / speed);
+
+                            // console.log(inc);
+                            // console.log(count);
+
+                            // Check if target is reached
+                            if (count < target) {
+                                // Add inc to count and output in counter
+                                counter.innerText = count + inc;
+                                // Call function every ms
+                                setTimeout(updateCount, 1);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+
+                        updateCount();
+                    });
+
+                    // for owl carousel 
+                    $('.owl-carousel').owlCarousel({
+                        loop: true,
+                        margin: 10,
+                        nav: false,
+                        autoplay: true,
+                        autoplaytime: 500,
+                        dots: false,
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 2
+                            },
+                            1000: {
+                                items: 3
+                            }
+                        }
+                    });
+
+                    // On Scroll Counter
+                    var a = 0;
+                    $(window).scroll(function () {
+
+                        var oTop = $('.counters').offset().top - window.innerHeight;
+                        if (a == 0 && $(window).scrollTop() > oTop) {
+                            $('.counter').each(function () {
+                                var $this = $(this),
+                                    countTo = $this.attr('data-target');
+                                $({
+                                    countNum: $this.text()
+                                }).animate({
+                                    countNum: countTo
+                                },
+
+                                    {
+
+                                        duration: 2000,
+                                        easing: 'swing',
+                                        step: function () {
+                                            $this.text(Math.floor(this.countNum));
+                                        },
+                                        complete: function () {
+                                            $this.text(this.countNum);
+                                            //alert('finished');
+                                        }
+
+                                    });
+                            });
+                            a = 1;
+                        }
+
+                    });
+                </script>
+                <!-- JQuery Script -->
+
+                <%- include("./partials/toggle-script.ejs") %>
+
+        </body>
+
+        </html>

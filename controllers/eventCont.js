@@ -3,7 +3,7 @@ const Errorhandler = require("../utils/errorHandler");
 
 const eventCont = {
     index: (req, res) => {
-        return res.redirect("/");
+        return res.render("layouts/event-page");
     },
 
     createEvent: async (req, res, next) => {

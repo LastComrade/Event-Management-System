@@ -6,6 +6,7 @@ const nodeMailer = require("nodemailer");
 const homeCont = {
     // Index controller render the home page from layout section in views folder
     index: (req, res) => {
+        console.log(req.connection.remoteAddress)
         res.render("layouts/home"); // res means response and render is another function applied on this res object which renders the html page
     },
 
