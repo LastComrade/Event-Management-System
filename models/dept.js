@@ -15,14 +15,14 @@ const DeptSchema = Schema(
             type: String,
             required: true,
         },
+        // description2: {
+        //     type: String,
+        //     required: true,
+        // },
         members: [Object],
         recruiting: {
             type: Boolean,
             default: false,
-        },
-        head: {
-            type: String,
-            required: true,
         },
     },
     { timestamps: true }
