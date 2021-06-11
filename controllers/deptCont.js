@@ -3,11 +3,7 @@ const ErrorHandler = require("../utils/errorHandler");
 
 const deptCont = {
 
-    index: (req, res) => {
-        res.redirect("/");
-    },
-
-    finder: async (req, res, next) => {
+    index: async (req, res, next) => {
         await Department.findOne(
             { name: req.params.name },
             (err, foundDept) => {

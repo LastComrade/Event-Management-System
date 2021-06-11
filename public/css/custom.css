@@ -54,8 +54,6 @@ body {
 }
 
 .bg-quote {
-    background: url(https://picsum.photos/1600/1600/?random) center center
-        no-repeat;
     background-attachment: fixed;
 }
 
@@ -290,15 +288,15 @@ header h1 {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    }
-    .quote_test{
+}
+.quote_test {
     position: relative;
-    font-family: 'Sanchez', serif;
-    font-size: 2.4em;
-    line-height: 1.5em;
+    font-family: "Sanchez", serif;
+    font-size: 2rem;
+    line-height: 1.5rem;
     font-style: italic;
-    }
-    .quote_test:after{
+}
+.quote_test:after {
     position: absolute;
     content: "”";
     color: rgba(255, 255, 255, 1);
@@ -309,44 +307,44 @@ header h1 {
     padding-bottom: 5px;
     margin-bottom: 2px;
     opacity: 0.5;
-    }
+}
 
-    .item {
-        position: relative;
-        width: 100%;
-      }
-  
-      .image {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-  
-      .overlay {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        transition: .5s ease;
-        background-color: #424344;
-      }
-  
-      .item:hover .overlay {
-        opacity: 1;
-      }
-  
-      .text {
-        color: white;
-        font-size: 20px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        text-align: center;
-      }
+.item {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: #424344;
+}
+
+.item:hover .overlay {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}

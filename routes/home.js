@@ -28,7 +28,7 @@ router
 
 router
     .route("/departments/:name")
-    .get(deptCont.finder);
+    .get(deptCont.index);
 
 router.route("/newsletter-sub")
 .post(validate.newsletter, homeCont.newsletter)
