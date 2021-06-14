@@ -7,6 +7,11 @@ const NewsletterSchema = Schema(
             type: String,
             required: true,
         },
+        
+        subscribe: {
+            type: Boolean,
+            default: true,
+        }
     },
     { timestamps: true }
 );

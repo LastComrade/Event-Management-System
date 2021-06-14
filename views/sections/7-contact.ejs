@@ -185,8 +185,8 @@
                                     " name="contact[message]" id="contact-message" required id="message"
                                     placeholder="Message"></textarea>
                             </div>
-                            <div class="mt-3">
-                                <button id="contact-modal" type="submit" class="
+                            <div class="mt-3 ">
+                                <button id="contact-button" type="submit" class="
                                         w-full
                                         focus:outline-none
                                         text-white
@@ -200,8 +200,12 @@
                                         dark:hover:bg-indigo-900
                                         dark:hover:text-white
                                         duration-200
+                                        flex justify-center items-center
                                     ">
-                                    Submit
+                                    <img id="contact-spinner" class="hidden fill-current text-white rounded-full animate-spin h-6 w-6 ..." src="/img/spinner.svg" viewBox="0 0 24 24">
+                                        
+                                      </img>
+                                    <span id="submit-span" class="">Submit</span>
                                 </button>
                                 <div>
                                     <div id="contact-conf" class="hidden">

@@ -2,13 +2,17 @@
 AOS.init();
 
 // Contact Form
-const contactButton = document.getElementById("contact-modal");
+const contactButton = document.getElementById("contact-button");
 const contactName = document.querySelector("#contact-name");
 const contactEmail = document.querySelector("#contact-email");
 const contactMessage = document.querySelector("#contact-message");
 const contactConf = document.querySelector("#contact-conf");
+const contactSubmitSpan = document.querySelector("#submit-span");
+const contactSpinner = document.querySelector("#contact-spinner");
 
 const sendContactData = async () => {
+    contactSubmitSpan.classList.toggle("hidden");
+    contactSpinner.classList.toggle("hidden");
     const contact = {
         name: contactName.value,
         email: contactEmail.value,
@@ -17,7 +21,7 @@ const sendContactData = async () => {
     const contactData = {
         contact,
     };
-    await fetch("/", {      
+    await fetch("/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -28,12 +32,16 @@ const sendContactData = async () => {
             const data = await res.json();
             if (data.message) {
                 setTimeout(() => {
+                    contactSubmitSpan.classList.toggle("hidden");
+                    contactSpinner.classList.toggle("hidden");
                     contactConf.classList.value = "text-green-700";
                     contactConf.firstElementChild.innerText = data.message;
                 }, 3000);
                 contactConf.classList.value = "hidden";
             } else {
                 setTimeout(() => {
+                    contactSubmitSpan.classList.toggle("hidden");
+                    contactSpinner.classList.toggle("hidden");
                     contactConf.classList.value = "text-red-700";
                     contactConf.firstElementChild.innerText =
                         data.error.message;
@@ -43,6 +51,8 @@ const sendContactData = async () => {
         })
         .catch((err) => {
             setTimeout(() => {
+                contactSubmitSpan.classList.toggle("hidden");
+                contactSpinner.classList.toggle("hidden");
                 contactConf.classList.value = "text-red-700";
                 contactConf.firstElementChild.innerText =
                     "An unexpected error has accured. Please try again later";
@@ -69,30 +79,10 @@ const sendNewsletterEmail = async () => {
     })
         .then(async (res) => {
             const data = await res.json();
-            console.log(data);  
-            // if (data.message) {
-            //     setTimeout(() => {
-            //         contactConf.classList.value = "text-green-700";
-            //         contactConf.firstElementChild.innerText = data.message;
-            //     }, 3000);
-            //     contactConf.classList.value = "hidden";
-            // } else {
-            //     setTimeout(() => {
-            //         contactConf.classList.value = "text-red-700";
-            //         contactConf.firstElementChild.innerText =
-            //             data.error.message;
-            //     }, 3000);
-            //     contactConf.classList.value = "hidden";
-            // }
+            console.log(data);
         })
         .catch((err) => {
             console.log(err);
-            // setTimeout(() => {
-            //     contactConf.classList.value = "text-red-700";
-            //     contactConf.firstElementChild.innerText =
-            //         "An unexpected error has accured. Please try again later";
-            // }, 3000);
-            // contactConf.classList.value = "hidden";
         });
 };
 

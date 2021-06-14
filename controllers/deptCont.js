@@ -4,6 +4,10 @@ const ErrorHandler = require("../utils/errorHandler");
 const deptCont = {
 
     index: async (req, res, next) => {
+        return res.render("layouts/department_page")
+    },
+
+    finder: async (req, res, next) => {
         await Department.findOne(
             { name: req.params.name },
             (err, foundDept) => {
@@ -13,7 +17,7 @@ const deptCont = {
                 } else if (!foundDept) {
                     next(ErrorHandler.notFoundError());
                 } else {
-                    return res.render("layouts/department_page.ejs", {
+                    return res.render("layouts/department_page", {
                         foundDept,
                     });
                 }
