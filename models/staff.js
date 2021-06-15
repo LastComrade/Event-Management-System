@@ -5,35 +5,44 @@ const Schema = mongoose.Schema;
 // defines that no username in the DB can be same
 
 const StaffSchema = new Schema({
-    fullname: {
+    firstname: {
         type: String,
         required: true,
-        unique: true, // No same username can be there in the DB
     },
-    password: {
+    lastname: {
         type: String,
-        required: true,
+        required: true
     },
     email: {
         type: String,
         required: true,
         unique: true
     },
+    password: {
+        type: String,
+        required: true,
+    },
+
+    // Department will be verified in the registration middleware
     department: {
         type: String,
         required: true
     },
-    role: {
-        type: String,
-        default: "member"
-    },
     designation: {
         type: String,
-        required: true
+        default: "Active Member"
     },
     profile_pic_url: {
         type: String,
         default: process.env.PROFILE_PIC_URL
+    },
+    key: {
+        type: String,
+        required: true
+    },
+    accActive: {
+        type: Boolean,
+        default: true,
     }
 });
 

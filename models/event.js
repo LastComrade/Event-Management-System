@@ -31,6 +31,10 @@ const EventSchema = Schema(
             type: Date,
             required: true,
         },
+        result_declaration: {
+            type: Date,
+            default: "0000-00-00",
+        },
         organizers: [Object],
     },
     { timestamps: true }
