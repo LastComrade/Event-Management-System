@@ -5,6 +5,18 @@ const eventCont = {
     index: (req, res) => {
         return res.render("layouts/event-page");
     },
+    
+    finder: async (req, res, next) => {
+        await Event.findOne({name:req.params.name},(err,foundEvent) => {
+        if(err){
+            next(Errorhandler.serverError()); 
+        }else if(!foundEvent){
+            next(Errorhandler.notFoundError("Event not found"));
+        }else{
+         return res.render("layouts/event-page",{foundEvent});
+        }
+        })
+    },
 
     createEvent: async (req, res, next) => {
         try {
