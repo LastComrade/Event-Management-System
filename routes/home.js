@@ -27,6 +27,10 @@ router
     .post(validate.eventCreate, eventCont.createEvent);
 
 router
+    .route("/events/:name")
+    .get(eventCont.finder);
+
+router
     .route("/departments/:name")
     .get(deptCont.index);
 
