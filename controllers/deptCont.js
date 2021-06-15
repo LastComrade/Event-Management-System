@@ -27,7 +27,7 @@ const deptCont = {
 
     createDept: async (req, res, next) => {
         try {
-            const { name, head, tagline, description, recruiting, members } =
+            const { name, tagline, description, recruiting, members } =
                 req.body.department;
             await Department.findOne({ name }, async (err, existingDept) => {
                 if (err) {
