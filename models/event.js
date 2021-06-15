@@ -36,6 +36,7 @@ const EventSchema = Schema(
             default: "0000-00-00",
         },
         organizers: [Object],
+        participants: [Object],
     },
     { timestamps: true }
 );

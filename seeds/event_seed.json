@@ -18,13 +18,37 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Shantnuu",
+                "lastname": "Kumar",
+                "email": "shantuu0546@gmail.com",
+                "collagename": "professoo engineering college",
+                "collagerollNo": "1903345"
+            },
+            {
+                "firstname": "Aryanvi",
+                "lastname": "shuklaa",
+                "email": "shuklaa0611@gmail.com",
+                "collagename": "professoo engineering college",
+                "collagerollNo": "1902445"
+            },
+            {
+                "firstname": "paranav",
+                "lastname": "Bhatia",
+                "email": "Bhati0461@gmail.com",
+                "collagename": "institute of engineering ",
+                "collagerollNo": "1903345"
+            }
+        ],
         "name": "Stock Market",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "Finance",
         "registration_starts": "2021-01-12",
         "registration_ends": "2021-01-13",
         "event_starts": "2021-02-06",
-        "event_ends": "2021-02-07"
+        "event_ends": "2021-02-07",
+        "result_declaration": "2021-02-10"
     },
     {
         "organisers": [
@@ -45,13 +69,37 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Ayush",
+                "lastname": "Kumar",
+                "email": "ayuuu0236@gmail.com",
+                "collagename": "Vidyavi engineering college",
+                "collagerollNo": "1203345"
+            },
+            {
+                "firstname": "Alexa",
+                "lastname": "shuklaa",
+                "email": "aalexx0112@gmail.com",
+                "collagename": "georgiaa engineering college",
+                "collagerollNo": "1822425"
+            },
+            {
+                "firstname": "Max",
+                "lastname": "stratia",
+                "email": "maxi0331@gmail.com",
+                "collage_name": "State of engineering College ",
+                "collage_RollNo": "2403345"
+            }
+        ],
         "name": "Group singing",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "Skill performance",
         "registration_starts": "2021-01-12",
         "registration_ends": "2021-01-12",
         "event_starts": "2021-02-07",
-        "event_ends": "2021-02-08"
+        "event_ends": "2021-02-08",
+        "result_declaration": "2021-02-10"
     },
     {
         "organisers": [
@@ -72,13 +120,37 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "prixi",
+                "lastname": "finonia",
+                "email": "Ayuuu0236@gmail.com",
+                "collagename": "Ferodia engineering college",
+                "collagerollNo": "1203345"
+            },
+            {
+                "firstname": "Alexa",
+                "lastname": "shuklaa",
+                "email": "Alexx0112@gmail.com",
+                "collagename": "georgiaa engineering college",
+                "collagerollNo": "1822425"
+            },
+            {
+                "firstname": "Max",
+                "lastname": "stratia",
+                "email": "Promi0551@gmail.com",
+                "collagename": "State of engineering College ",
+                "collagerollNo": "2403345"
+            }
+        ],
         "name": "Cyber Security",
         "category": "Technical",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "registration_starts": "2021-01-13",
         "registration_ends": "2021-01-16",
         "event_starts": "2021-02-08",
-        "event_ends": "2021-02-09"
+        "event_ends": "2021-02-09",
+        "result_declaration": "2021-02-11"
     },
     {
         "organisers": [
@@ -99,13 +171,37 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Finona",
+                "lastname": "ryss",
+                "email": "ryss2326@gmail.com",
+                "collagename": "Perima engineering college",
+                "collagerollNo": "1223345"
+            },
+            {
+                "firstname": "Alnaa",
+                "lastname": "findroo",
+                "email": "Alnnn11332@gmail.com",
+                "collagename": "georgia engineering college",
+                "collagerollNo": "123425"
+            },
+            {
+                "firstname": "Maxii",
+                "lastname": "Firendia",
+                "email": "FIrenia0351@gmail.com",
+                "collagename": "Toronto of engineering College ",
+                "collagerollNo": "6403345"
+            }
+        ],
         "name": "Stunts",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "Gaming",
         "registration_starts": "2021-01-13",
         "registration_ends": "2021-01-17",
         "event_starts": "2021-02-09",
-        "event_ends": "2021-02-10"
+        "event_ends": "2021-02-10",
+        "result_declaration": "2021-02-12"
     },
     {
         "organisers": [
@@ -126,13 +222,37 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Vandona",
+                "lastname": "Pricia",
+                "email": "Priciaa5678@gmail.com",
+                "collagename": "Kentucky engineering college",
+                "collagerollNo": "1245345"
+            },
+            {
+                "firstname": "Finona",
+                "lastname": "Risuaa",
+                "email": "RIsuaa0112@gmail.com",
+                "collagename": "Prominene College Of accounts",
+                "collagerollNo": "18342425"
+            },
+            {
+                "firstname": "Fendoria",
+                "lastname": "Lpinoo",
+                "email": "Fendoo0551@gmail.com",
+                "collagename": "Astra College of Medical Science ",
+                "collagerollNo": "2233345"
+            }
+        ],
         "name": "Marshalats",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "Skill presentation",
         "registration_starts": "2021-01-17",
         "registration_ends": "2021-01-21",
         "event_starts": "2021-02-10",
-        "event_ends": "2021-02-11"
+        "event_ends": "2021-02-11",
+        "result_declaration": "2021-02-14"
     },
     {
         "organisers": [
@@ -153,13 +273,37 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Priya",
+                "lastname": "Singh",
+                "email": "priya01111@gmail.com",
+                "collagename": "Mexican engineering college",
+                "collagerollNo": "1203345"
+            },
+            {
+                "firstname": "Reynaa",
+                "lastname": "Fendroo",
+                "email": "Rey01112@gmail.com",
+                "collagename": "Michigan engineering college",
+                "collagerollNo": "1345425"
+            },
+            {
+                "firstname": "Russel",
+                "lastname": "Stacky",
+                "email": "stacky0331@gmail.com",
+                "collagename": "Duke engineering College ",
+                "collagerollNo": "2555545"
+            }
+        ],
         "name": "Photography",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "Skill presentation",
         "registration_starts": "2021-01-19",
         "registration_ends": "2021-01-22",
         "event_starts": "2021-02-11",
-        "event_ends": "2021-02-12"
+        "event_ends": "2021-02-12",
+        "result_declaration": "2021-02-15"
     },
     {
         "organisers": [
@@ -180,13 +324,30 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Taylor",
+                "lastname": "Lanciaa",
+                "email": "Lancii3456@gmail.com",
+                "collagename": "Asssam University",
+                "collagerollNo": "1204590"
+            },
+            {
+                "firstname": "Goluu",
+                "lastname": "supnaa",
+                "email": "goluu12332@gmail.com",
+                "collagename": "Bihar engineering college",
+                "collagerollNo": "1833425"
+            }
+        ],
         "name": "Coding Champ",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "Coding",
         "registration_starts": "2021-01-18",
         "registration_ends": "2021-01-23",
         "event_starts": "2021-02-12",
-        "event_ends": "2021-02-13"
+        "event_ends": "2021-02-13",
+        "result_declaration": "2021-02-16"
     },
     {
         "organisers": [
@@ -205,6 +366,29 @@
             {
                 "name": "piccio",
                 "designation": "member"
+            }
+        ],
+        "paricipants": [
+            {
+                "firstname": "Levii",
+                "lastname": "Zendouu",
+                "email": "Levii098@gmail.com",
+                "collagename": "Concordia engineering college",
+                "collagerollNo": "67483"
+            },
+            {
+                "firstname": "Minaa",
+                "lastname": "kunlii",
+                "email": "Minaa0223@gmail.com",
+                "collagename": "georgia engineering college",
+                "collagerollNo": "233435"
+            },
+            {
+                "firstname": "Mandy",
+                "lastname": "Henstoch",
+                "email": "Hens0871@gmail.com",
+                "collagename": " Fendriaa College Of Commerce ",
+                "collagerollNo": "236534"
             }
         ],
         "name": "General Knowledge",
@@ -213,7 +397,8 @@
         "registration_starts": "2021-01-22",
         "registration_ends": "2021-01-24",
         "event_starts": "2021-02-14",
-        "event_ends": "2021-02-15"
+        "event_ends": "2021-02-15",
+        "result_declaration": "2021-02-18"
     },
     {
         "organisers": [
@@ -234,13 +419,37 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Phoenix",
+                "lastname": "Fandroo",
+                "email": "Phoenix0332@gmail.com",
+                "collagename": "Norway University",
+                "collagerollNo": "1203345"
+            },
+            {
+                "firstname": "Anupeet",
+                "lastname": "Kaur",
+                "email": "Anuu0332@gmail.com",
+                "collagename": "American University",
+                "collagrollNo": "74356342"
+            },
+            {
+                "firstname": "Kulunaa",
+                "lastname": "Findromi",
+                "email": "Findroi9544@gmail.com",
+                "collagename": "Kerala UNiversity",
+                "collagerollNo": "9656345"
+            }
+        ],
         "name": "Auto Cad",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "Technical",
         "registration_starts": "2021-02-01",
         "registration_ends": "2021-02-03",
         "event_starts": "2021-02-15",
-        "event_ends": "2021-02-16"
+        "event_ends": "2021-02-16",
+        "result_declaration": "2021-02-20"
     },
     {
         "organisers": [
@@ -261,13 +470,30 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Normii",
+                "lastname": "Troxii",
+                "email": "troxii4444@gmail.com",
+                "collagename": "Concordia engineering college",
+                "collageRollNo": "1845625"
+            },
+            {
+                "firstname": "Alinaa",
+                "lastname": "Sumaana",
+                "email": "sumanaa0222@gmail.com",
+                "collagename": "georgia engineering college",
+                "collageollNo": "1824325"
+            }
+        ],
         "name": "Importance of Soft Skill",
         "category": "Seminar",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "registration_starts": "2021-02-04",
         "registration_ends": "2021-02-05",
         "event_starts": "2021-02-16",
-        "event_ends": "2021-02-17"
+        "event_ends": "2021-02-17",
+        "result_declaration": "2021-02-20"
     },
     {
         "organisers": [
@@ -288,13 +514,30 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "prixi",
+                "lastname": "finonia",
+                "email": "Ayuuu0236@gmail.com",
+                "collagename": "Ferodia engineering college",
+                "collagerollNo": "1203345"
+            },
+            {
+                "firstname": "Fendii",
+                "lastname": "Trixi",
+                "email": "Trixi5566@gmail.com",
+                "collagename": "Western engineering college",
+                "collagerollNo": "1824556"
+            }
+        ],
         "name": "Think the box",
         "category": "Debate",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "registration_starts": "2021-02-06",
         "registration_ends": "2021-02-07",
         "event_starts": "2021-02-18",
-        "event_ends": "2021-02-19"
+        "event_ends": "2021-02-19",
+        "result_declaration": "2021-02-22"
     },
     {
         "organisers": [
@@ -315,13 +558,30 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Yingyung",
+                "lastname": "Shimuchi",
+                "email": "Shimu0236@gmail.com",
+                "collagename": "Japan University",
+                "collagerollNo": "1204543"
+            },
+            {
+                "firstname": "Eendora",
+                "lastname": "Trinoo",
+                "email": "Trnoo34552@gmail.com",
+                "collagename": "Institute of Miami engineering college",
+                "collagerollNo": "1822556"
+            }
+        ],
         "name": "Sword fight",
         "category": "Sport",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "registration_starts": "2021-02-06",
         "registration_ends": "2021-02-07",
         "event_starts": "2021-02-20",
-        "event_ends": "2021-02-21"
+        "event_ends": "2021-02-21",
+        "result_declaration": "2021-02-24"
     },
     {
         "organisers": [
@@ -342,13 +602,38 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Minaa",
+                "lastname": "fendoiaa",
+                "email": "minaa023456@gmail.com",
+                "collagename": "Denmark engineering college",
+                "collagerollNo": "1203543",
+                "state": "Sydney"
+            },
+            {
+                "firstname": "Piyush",
+                "lastname": "Kumar",
+                "email": "piyush4543@gmail.com",
+                "collagename": "Hyderabad engineering college",
+                "collagerollNo": "18245425"
+            },
+            {
+                "firstname": "antonio",
+                "lastname": "Kintana",
+                "email": "antoo03451@gmail.com",
+                "collagename": "Dehradun University ",
+                "collagerollNo": "24045456"
+            }
+        ],
         "name": "Best use of recycle",
         "category": "Art",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "registration_starts": "2021-02-08",
         "registration_ends": "2021-02-09",
         "event_starts": "2021-02-21",
-        "event_ends": "2021-02-22"
+        "event_ends": "2021-02-22",
+        "result_declaration": "2021-02-25"
     },
     {
         "organisers": [
@@ -369,13 +654,30 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Chintuu",
+                "lastname": "Pentlii",
+                "email": "chintu0245656@gmail.com",
+                "collagename": "Japan engineering college",
+                "collagerollNo": "12345543"
+            },
+            {
+                "firstname": "Parmish",
+                "lastname": "tripathi",
+                "email": "tripathi4656@gmail.com",
+                "collagename": "Hyderabad engineering college",
+                "collagerollNo": "18244465"
+            }
+        ],
         "name": "Buzz Quiz",
         "category": "Public Interaction",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "registration_starts": "2021-02-09",
         "registration_ends": "2021-02-10",
         "event_starts": "2021-02-22",
-        "event_ends": "2021-02-23"
+        "event_ends": "2021-02-23",
+        "result_declaration": "2021-02-26"
     },
     {
         "organisers": [
@@ -396,12 +698,29 @@
                 "designation": "member"
             }
         ],
+        "paricipants": [
+            {
+                "firstname": "Himavari",
+                "lastname": "Nohara",
+                "email": "nohara23546@gmail.com",
+                "collagename": "Standford engineering college",
+                "collagerollNo": "1204664"
+            },
+            {
+                "firstname": "Manviaa",
+                "lastname": "Tixinoo",
+                "email": "manviaa4543@gmail.com",
+                "collagename": "Sontixi engineering college",
+                "collagerollNo": "18454325"
+            }
+        ],
         "name": "Focus and locus",
         "category": "Debate",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "registration_starts": "2021-02-09",
         "registration_ends": "2021-02-10",
         "event_starts": "2021-02-24",
-        "event_ends": "2021-02-25"
+        "event_ends": "2021-02-25",
+        "result_declaration": "2021-02-28"
     }
 ]
