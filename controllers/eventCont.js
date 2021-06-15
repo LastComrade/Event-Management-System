@@ -5,17 +5,19 @@ const eventCont = {
     index: (req, res) => {
         return res.render("layouts/event-page");
     },
-    
+
     finder: async (req, res, next) => {
-        await Event.findOne({name:req.params.name},(err,foundEvent) => {
-        if(err){
-            next(Errorhandler.serverError()); 
-        }else if(!foundEvent){
-            next(Errorhandler.notFoundError("Event not found"));
-        }else{
-         return res.render("layouts/event-page",{foundEvent});
-        }
-        })
+        await Event.findOne({ name: req.params.name }, (err, foundEvent) => {
+            if (err) {
+                next(Errorhandler.serverError());
+            } else if (!foundEvent) {
+                next(Errorhandler.notFoundError());
+            } else {
+                return res.render("layouts/event-page", {
+                    foundEvent
+                });
+            }
+        });
     },
 
     createEvent: async (req, res, next) => {
@@ -28,7 +30,7 @@ const eventCont = {
                 registration_ends,
                 event_starts,
                 event_ends,
-                organizers
+                organizers,
             } = req.body.event;
             await Event.findOne({ name }, async (err, existingEvent) => {
                 if (err) {
