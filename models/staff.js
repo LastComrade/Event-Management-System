@@ -18,11 +18,6 @@ const StaffSchema = new Schema({
         required: true,
         unique: true
     },
-    phno: {
-        type: String,
-        required: true,
-        unique: true,
-    },
     password: {
         type: String,
         required: true,
