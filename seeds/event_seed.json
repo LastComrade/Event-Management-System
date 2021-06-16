@@ -1,6 +1,6 @@
 [
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "trina",
                 "designation": "Head"
@@ -18,27 +18,27 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Shantnuu",
                 "lastname": "Kumar",
                 "email": "shantuu0546@gmail.com",
                 "collagename": "professoo engineering college",
-                "collagerollNo": "1903345"
+                "collageRollNo": "1903345"
             },
             {
                 "firstname": "Aryanvi",
                 "lastname": "shuklaa",
                 "email": "shuklaa0611@gmail.com",
                 "collagename": "professoo engineering college",
-                "collagerollNo": "1902445"
+                "collageRollNo": "1902445"
             },
             {
                 "firstname": "paranav",
                 "lastname": "Bhatia",
                 "email": "Bhati0461@gmail.com",
                 "collagename": "institute of engineering ",
-                "collagerollNo": "1903345"
+                "collageRollNo": "1903345"
             }
         ],
         "name": "Stock Market",
@@ -51,7 +51,7 @@
         "result_declaration": "2021-02-10"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "jacob",
                 "designation": "Head"
@@ -69,27 +69,27 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Ayush",
                 "lastname": "Kumar",
                 "email": "ayuuu0236@gmail.com",
                 "collagename": "Vidyavi engineering college",
-                "collagerollNo": "1203345"
+                "collageRollNo": "1203345"
             },
             {
                 "firstname": "Alexa",
                 "lastname": "shuklaa",
                 "email": "aalexx0112@gmail.com",
                 "collagename": "georgiaa engineering college",
-                "collagerollNo": "1822425"
+                "collageRollNo": "1822425"
             },
             {
                 "firstname": "Max",
                 "lastname": "stratia",
                 "email": "maxi0331@gmail.com",
-                "collage_name": "State of engineering College ",
-                "collage_RollNo": "2403345"
+                "collagename": "State of engineering College ",
+                "collageRollNo": "2403345"
             }
         ],
         "name": "Group singing",
@@ -102,7 +102,7 @@
         "result_declaration": "2021-02-10"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "ciranaa",
                 "designation": "Head"
@@ -120,27 +120,27 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "prixi",
                 "lastname": "finonia",
                 "email": "Ayuuu0236@gmail.com",
                 "collagename": "Ferodia engineering college",
-                "collagerollNo": "1203345"
+                "collageRollNo": "1203345"
             },
             {
                 "firstname": "Alexa",
                 "lastname": "shuklaa",
                 "email": "Alexx0112@gmail.com",
                 "collagename": "georgiaa engineering college",
-                "collagerollNo": "1822425"
+                "collageRollNo": "1822425"
             },
             {
                 "firstname": "Max",
                 "lastname": "stratia",
                 "email": "Promi0551@gmail.com",
                 "collagename": "State of engineering College ",
-                "collagerollNo": "2403345"
+                "collageRollNo": "2403345"
             }
         ],
         "name": "Cyber Security",
@@ -153,7 +153,7 @@
         "result_declaration": "2021-02-11"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "kristinna",
                 "designation": "Head"
@@ -171,27 +171,27 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Finona",
                 "lastname": "ryss",
                 "email": "ryss2326@gmail.com",
                 "collagename": "Perima engineering college",
-                "collagerollNo": "1223345"
+                "collageRollNo": "1223345"
             },
             {
                 "firstname": "Alnaa",
                 "lastname": "findroo",
                 "email": "Alnnn11332@gmail.com",
                 "collagename": "georgia engineering college",
-                "collagerollNo": "123425"
+                "collageRollNo": "123425"
             },
             {
                 "firstname": "Maxii",
                 "lastname": "Firendia",
                 "email": "FIrenia0351@gmail.com",
                 "collagename": "Toronto of engineering College ",
-                "collagerollNo": "6403345"
+                "collageRollNo": "6403345"
             }
         ],
         "name": "Stunts",
@@ -204,7 +204,7 @@
         "result_declaration": "2021-02-12"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "Promini",
                 "designation": "Head"
@@ -222,27 +222,27 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Vandona",
                 "lastname": "Pricia",
                 "email": "Priciaa5678@gmail.com",
                 "collagename": "Kentucky engineering college",
-                "collagerollNo": "1245345"
+                "collageRollNo": "1245345"
             },
             {
                 "firstname": "Finona",
                 "lastname": "Risuaa",
                 "email": "RIsuaa0112@gmail.com",
                 "collagename": "Prominene College Of accounts",
-                "collagerollNo": "18342425"
+                "collageRollNo": "18342425"
             },
             {
                 "firstname": "Fendoria",
                 "lastname": "Lpinoo",
                 "email": "Fendoo0551@gmail.com",
                 "collagename": "Astra College of Medical Science ",
-                "collagerollNo": "2233345"
+                "collageRollNo": "2233345"
             }
         ],
         "name": "Marshalats",
@@ -255,7 +255,7 @@
         "result_declaration": "2021-02-14"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "ristaa",
                 "designation": "Head"
@@ -273,27 +273,27 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Priya",
                 "lastname": "Singh",
                 "email": "priya01111@gmail.com",
                 "collagename": "Mexican engineering college",
-                "collagerollNo": "1203345"
+                "collageRollNo": "1203345"
             },
             {
                 "firstname": "Reynaa",
                 "lastname": "Fendroo",
                 "email": "Rey01112@gmail.com",
                 "collagename": "Michigan engineering college",
-                "collagerollNo": "1345425"
+                "collageRollNo": "1345425"
             },
             {
                 "firstname": "Russel",
                 "lastname": "Stacky",
                 "email": "stacky0331@gmail.com",
                 "collagename": "Duke engineering College ",
-                "collagerollNo": "2555545"
+                "collageRollNo": "2555545"
             }
         ],
         "name": "Photography",
@@ -306,7 +306,7 @@
         "result_declaration": "2021-02-15"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "trina",
                 "designation": "Head"
@@ -324,20 +324,20 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Taylor",
                 "lastname": "Lanciaa",
                 "email": "Lancii3456@gmail.com",
                 "collagename": "Asssam University",
-                "collagerollNo": "1204590"
+                "collageRollNo": "1204590"
             },
             {
                 "firstname": "Goluu",
                 "lastname": "supnaa",
                 "email": "goluu12332@gmail.com",
                 "collagename": "Bihar engineering college",
-                "collagerollNo": "1833425"
+                "collageRollNo": "1833425"
             }
         ],
         "name": "Coding Champ",
@@ -350,7 +350,7 @@
         "result_declaration": "2021-02-16"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "pironna",
                 "designation": "Head"
@@ -368,27 +368,27 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Levii",
                 "lastname": "Zendouu",
                 "email": "Levii098@gmail.com",
                 "collagename": "Concordia engineering college",
-                "collagerollNo": "67483"
+                "collageRollNo": "67483"
             },
             {
                 "firstname": "Minaa",
                 "lastname": "kunlii",
                 "email": "Minaa0223@gmail.com",
                 "collagename": "georgia engineering college",
-                "collagerollNo": "233435"
+                "collageRollNo": "233435"
             },
             {
                 "firstname": "Mandy",
                 "lastname": "Henstoch",
                 "email": "Hens0871@gmail.com",
                 "collagename": " Fendriaa College Of Commerce ",
-                "collagerollNo": "236534"
+                "collageRollNo": "236534"
             }
         ],
         "name": "General Knowledge",
@@ -401,7 +401,7 @@
         "result_declaration": "2021-02-18"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "pironna",
                 "designation": "Head"
@@ -419,13 +419,13 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Phoenix",
                 "lastname": "Fandroo",
                 "email": "Phoenix0332@gmail.com",
                 "collagename": "Norway University",
-                "collagerollNo": "1203345"
+                "collageRollNo": "1203345"
             },
             {
                 "firstname": "Anupeet",
@@ -439,7 +439,7 @@
                 "lastname": "Findromi",
                 "email": "Findroi9544@gmail.com",
                 "collagename": "Kerala UNiversity",
-                "collagerollNo": "9656345"
+                "collageRollNo": "9656345"
             }
         ],
         "name": "Auto Cad",
@@ -452,7 +452,7 @@
         "result_declaration": "2021-02-20"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "piya",
                 "designation": "Head"
@@ -470,7 +470,7 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Normii",
                 "lastname": "Troxii",
@@ -496,7 +496,7 @@
         "result_declaration": "2021-02-20"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "rioo",
                 "designation": "Head"
@@ -514,20 +514,20 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "prixi",
                 "lastname": "finonia",
                 "email": "Ayuuu0236@gmail.com",
                 "collagename": "Ferodia engineering college",
-                "collagerollNo": "1203345"
+                "collageRollNo": "1203345"
             },
             {
                 "firstname": "Fendii",
                 "lastname": "Trixi",
                 "email": "Trixi5566@gmail.com",
                 "collagename": "Western engineering college",
-                "collagerollNo": "1824556"
+                "collageRollNo": "1824556"
             }
         ],
         "name": "Think the box",
@@ -540,7 +540,7 @@
         "result_declaration": "2021-02-22"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "perry",
                 "designation": "Head"
@@ -558,20 +558,20 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Yingyung",
                 "lastname": "Shimuchi",
                 "email": "Shimu0236@gmail.com",
                 "collagename": "Japan University",
-                "collagerollNo": "1204543"
+                "collageRollNo": "1204543"
             },
             {
                 "firstname": "Eendora",
                 "lastname": "Trinoo",
                 "email": "Trnoo34552@gmail.com",
                 "collagename": "Institute of Miami engineering college",
-                "collagerollNo": "1822556"
+                "collageRollNo": "1822556"
             }
         ],
         "name": "Sword fight",
@@ -584,7 +584,7 @@
         "result_declaration": "2021-02-24"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "piya",
                 "designation": "Head"
@@ -602,13 +602,13 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Minaa",
                 "lastname": "fendoiaa",
                 "email": "minaa023456@gmail.com",
                 "collagename": "Denmark engineering college",
-                "collagerollNo": "1203543",
+                "collageRollNo": "1203543",
                 "state": "Sydney"
             },
             {
@@ -616,14 +616,14 @@
                 "lastname": "Kumar",
                 "email": "piyush4543@gmail.com",
                 "collagename": "Hyderabad engineering college",
-                "collagerollNo": "18245425"
+                "collageRollNo": "18245425"
             },
             {
                 "firstname": "antonio",
                 "lastname": "Kintana",
                 "email": "antoo03451@gmail.com",
                 "collagename": "Dehradun University ",
-                "collagerollNo": "24045456"
+                "collageRollNo": "24045456"
             }
         ],
         "name": "Best use of recycle",
@@ -636,7 +636,7 @@
         "result_declaration": "2021-02-25"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "Trishaa",
                 "designation": "Head"
@@ -654,20 +654,20 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Chintuu",
                 "lastname": "Pentlii",
                 "email": "chintu0245656@gmail.com",
                 "collagename": "Japan engineering college",
-                "collagerollNo": "12345543"
+                "collageRollNo": "12345543"
             },
             {
                 "firstname": "Parmish",
                 "lastname": "tripathi",
                 "email": "tripathi4656@gmail.com",
                 "collagename": "Hyderabad engineering college",
-                "collagerollNo": "18244465"
+                "collageRollNo": "18244465"
             }
         ],
         "name": "Buzz Quiz",
@@ -680,7 +680,7 @@
         "result_declaration": "2021-02-26"
     },
     {
-        "organisers": [
+        "organizers": [
             {
                 "name": "Rammuu",
                 "designation": "Head"
@@ -698,20 +698,20 @@
                 "designation": "member"
             }
         ],
-        "paricipants": [
+        "participants": [
             {
                 "firstname": "Himavari",
                 "lastname": "Nohara",
                 "email": "nohara23546@gmail.com",
                 "collagename": "Standford engineering college",
-                "collagerollNo": "1204664"
+                "collageRollNo": "1204664"
             },
             {
                 "firstname": "Manviaa",
                 "lastname": "Tixinoo",
                 "email": "manviaa4543@gmail.com",
                 "collagename": "Sontixi engineering college",
-                "collagerollNo": "18454325"
+                "collageRollNo": "18454325"
             }
         ],
         "name": "Focus and locus",

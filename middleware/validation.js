@@ -3,6 +3,7 @@ const {
     loginSchema,
     deptSchema,
     eventSchema,
+    participantSchema,
     newsletterSchema,
 } = require("../validation/schemas"); // JOI schema to validate the from data on backend
 const ErrorHandler = require("../utils/errorHandler"); // Error handler
@@ -46,6 +47,15 @@ const validate = {
     eventCreate: (req, res, next) => {
         const { error } = eventSchema.validate(req.body.event);
         if (error) {
+            next(ErrorHandler.validationError(error.message));
+        }
+        next();
+    },
+
+    // This will validate participant form data
+    participantRegister: (req, res, next) => {
+        const { error } = participantSchema.validate(req.body.participant);
+        if(error){
             next(ErrorHandler.validationError(error.message));
         }
         next();
