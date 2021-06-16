@@ -28,7 +28,8 @@ router
 
 router
     .route("/events/:name")
-    .get(eventCont.finder);
+    .get(eventCont.finder)
+    .post(validate.participantRegister, eventCont.registerParticipant);
 
 router
     .route("/departments/:name")
