@@ -105,7 +105,7 @@ const eventCont = {
                                         await foundEvent.save();
                                         return res.status(200).json({
                                             message:
-                                                "Participant registered successfully1",
+                                                "Participant registered successfully",
                                         });
                                     } catch (err) {
                                         console.log(err);
