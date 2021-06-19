@@ -13,7 +13,6 @@ const ErrorHandler = require("./utils/errorHandler");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const flash = require("connect-flash");
-const { stripPublicDir } = require("laravel-mix/src/File");
 const port = process.env.PORT || 3000;
 
 // Cors policy option for safety of routes in production
