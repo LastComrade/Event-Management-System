@@ -109,7 +109,7 @@ const staffCont = {
                 html: `
                     <h1>Hello, ${firstname + " " + lastname}</h1>
                     <p>Click button below to verify your account</p>
-                    <a href="http://localhost:3000/staff-account/activation/${token}">Activate</a>
+                    <a href="${process.env.CLIENT_URL}/staff-account/activation/${token}">Activate</a>
                 `,
             };
 
@@ -249,7 +249,7 @@ const staffCont = {
                     //     message: "Member with this email does not exists",
                     // });
                     req.flash("error", "Invalid email or password");
-                    res.redirect("/staff-login");
+                    res.redirect("back");
                 } else {
                     bcrypt.compare(
                         password,
@@ -360,7 +360,7 @@ const staffCont = {
                                         html: `
                                             <h1>Hello, ${staff.fullname}</h1>
                                             <p>Click button below to reset your account password</p>
-                                            <a href="http://localhost:3000/password-reset/${token}">Activate</a>
+                                            <a href="${process.env.CLIENT_URL}/password-reset/${token}">Activate</a>
                                         `,
                                     };
 
