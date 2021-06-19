@@ -42,7 +42,7 @@ const staffCont = {
 
     staffActualPasswordResetPage: (req, res) => {
         console.log(req.cookies.jwt_token);
-        const {token} = req.params;
+        const { token } = req.params;
         if (req.cookies.jwt_token) {
             res.redirect("/staff-dashboard");
         }
@@ -75,58 +75,60 @@ const staffCont = {
                     // });
                     req.flash("error", "Member with this email already exists");
                     return res.redirect("/staff-register");
-                }
-            });
-
-            const token = jwt.sign(
-                {
-                    firstname,
-                    lastname,
-                    email,
-                    department,
-                    designation,
-                    profile_pic_url,
-                    key,
-                },
-                process.env.JWT_ACCOUNT_ACTIVATION_SECRET,
-                {
-                    expiresIn: "5m",
-                }
-            );
-
-            const transporter = nodeMailer.createTransport({
-                service: "gmail",
-                auth: {
-                    user: process.env.EMAIL_ID,
-                    pass: process.env.EMAIL_PASSWORD,
-                },
-            });
-
-            const mailOptions = {
-                from: process.env.EMAIL_ID,
-                to: email,
-                subject: "Account activation link | E-Cell, GNDEC",
-                html: `
-                    <h1>Hello, ${firstname + " " + lastname}</h1>
-                    <p>Click button below to verify your account</p>
-                    <a href="${process.env.CLIENT_URL}/staff-account/activation/${token}">Activate</a>
-                `,
-            };
-
-            transporter.sendMail(mailOptions, (error, data) => {
-                if (error) {
-                    console.log(error);
-                    next(ErrorHandler.serverError());
                 } else {
-                    // console.log(data);
-                    // return res.status(200).json({
-                    //     message: "Account activation link sent successfully!",
-                    // });
-                    req.flash(
-                        "success",
-                        "Account activation link sent successfully!"
+                    const token = jwt.sign(
+                        {
+                            firstname,
+                            lastname,
+                            email,
+                            department,
+                            designation,
+                            profile_pic_url,
+                            key,
+                        },
+                        process.env.JWT_ACCOUNT_ACTIVATION_SECRET,
+                        {
+                            expiresIn: "5m",
+                        }
                     );
-                    res.redirect("/staff-register");
+
+                    const transporter = nodeMailer.createTransport({
+                        service: "gmail",
+                        auth: {
+                            user: process.env.EMAIL_ID,
+                            pass: process.env.EMAIL_PASSWORD,
+                        },
+                    });
+
+                    const mailOptions = {
+                        from: process.env.EMAIL_ID,
+                        to: email,
+                        subject: "Account activation link | E-Cell, GNDEC",
+                        html: `
+                        <h1>Hello, ${firstname + " " + lastname}</h1>
+                        <p>Click button below to verify your account</p>
+                        <a href="${
+                            process.env.CLIENT_URL
+                        }/staff-account/activation/${token}">Activate</a>
+                    `,
+                    };
+
+                    transporter.sendMail(mailOptions, (error, data) => {
+                        if (error) {
+                            console.log(error);
+                            next(ErrorHandler.serverError());
+                        } else {
+                            // console.log(data);
+                            // return res.status(200).json({
+                            //     message: "Account activation link sent successfully!",
+                            // });
+                            req.flash(
+                                "success",
+                                "Account activation link sent successfully!"
+                            );
+                            res.redirect("/staff-register");
+                        }
+                    });
                 }
             });
         } catch (err) {
@@ -436,7 +438,7 @@ const staffCont = {
                             "error",
                             "Invalid or expired link. Please try again"
                         );
-                        return res.redirect("back")
+                        return res.redirect("back");
                     }
                     console.log("NONONONNONNONONO");
                     await Staff.findOne(
@@ -512,7 +514,7 @@ const staffCont = {
                                         "error",
                                         "Something went wrong. Please try again"
                                     );
-                                    return res.redirect("back")
+                                    return res.redirect("back");
                                 } else if (staff) {
                                     console.log("This is staff", staff);
                                     await Staff.findByIdAndUpdate(
@@ -536,7 +538,7 @@ const staffCont = {
                                                     "error",
                                                     "Something went wrong. Please try again"
                                                 );
-                                                return res.redirect("back")
+                                                return res.redirect("back");
                                             } else {
                                                 // return res.json({
                                                 //     message:
@@ -546,7 +548,7 @@ const staffCont = {
                                                     "success",
                                                     "Password changed successfully"
                                                 );
-                                                return res.redirect("back")
+                                                return res.redirect("back");
                                             }
                                         }
                                     );
@@ -556,7 +558,7 @@ const staffCont = {
                                         "error",
                                         "Password reset link is already used"
                                     );
-                                    return res.redirect("back")
+                                    return res.redirect("back");
                                 }
                             }
                         );
