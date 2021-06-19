@@ -74,7 +74,7 @@ const staffCont = {
                     //     message: "Member with this email already exists",
                     // });
                     req.flash("error", "Member with this email already exists");
-                    res.redirect("/staff-register");
+                    return res.redirect("/staff-register");
                 }
             });
 
