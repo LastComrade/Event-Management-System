@@ -4,6 +4,10 @@ const {
     deptSchema,
     eventSchema,
     newsletterSchema,
+    staffRegisterSchema,
+    staffPaswordRegisterSchema,
+    emailSchema,
+    updatePasswordSchema,
 } = require("../validation/schemas"); // JOI schema to validate the from data on backend
 const ErrorHandler = require("../utils/errorHandler"); // Error handler
 
@@ -11,8 +15,9 @@ const validate = {
     // Validates the contact form data and if an error is encountered then that error is also handled
     contact: (req, res, next) => {
         try {
+            // console.log(req.body);
             // console.log("This is contact valiator");
-            const { error } = contactSchema.validate(req.body.contact);
+            const { error } = contactSchema.validate(req.body);
             if (error) {
                 next(ErrorHandler.validationError(error.message));
             }
@@ -24,10 +29,13 @@ const validate = {
 
     // Validates the admin-login form data and (if) errors are also handled
     staffLogin: (req, res, next) => {
+        // console.log(req.body);
         // console.log("This is staff validator");
         const { error } = loginSchema.validate(req.body);
         if (error) {
-            next(ErrorHandler.validationError(error.message));
+            req.flash("error", error.message);
+            return res.redirect("back");
+            // next(ErrorHandler.validationError(error.message));
         }
         next();
     },
@@ -58,6 +66,44 @@ const validate = {
             next(ErrorHandler.validationError(error.message));
         }
         next();
+    },
+
+    staffRegister: (req, res, next) => {
+        const { error } = staffRegisterSchema.validate(req.body);
+        if (error) {
+            next(ErrorHandler.validationError(error.message));
+        }
+        next();
+    },
+
+    staffPasswordRegister: (req, res, next) => {
+        const { error } = staffPaswordRegisterSchema.validate(req.body);
+        if (error) {
+            req.flash("error", error.message);
+            return res.redirect("back");
+            // next(ErrorHandler.validationError(error.message));
+        } else {
+            next();
+        }
+    },
+
+    email: (req, res, next) => {
+        const { error } = emailSchema.validate(req.body);
+        if (error) {
+            next(ErrorHandler.validationError(error.message));
+        }
+        next();
+    },
+
+    updatePassword: (req, res, next) => {
+        const { error } = updatePasswordSchema.validate(req.body);
+        if (error) {
+            req.flash("error", error.message);
+            return res.redirect("back");
+            // next(ErrorHandler.validationError(error.message));
+        } else {
+            next();
+        }
     },
 };
 

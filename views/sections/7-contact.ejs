@@ -127,8 +127,7 @@
                         <form data-aos="fade-down" data-aos-once="true" class="p-6 flex flex-col justify-center">
                             <div class="flex flex-col">
                                 <label for="name" class="hidden">Full Name</label>
-                                <input type="name" required name="contact[name]" id="contact-name"
-                                    placeholder="Full Name" class="
+                                <input type="name" required name="name" id="contact-name" placeholder="Full Name" class="
                                         w-100
                                         mt-2
                                         py-3
@@ -147,8 +146,7 @@
 
                             <div class="flex flex-col mt-2">
                                 <label for="email" class="hidden">Email</label>
-                                <input type="email" required name="contact[email]" id="contact-email"
-                                    placeholder="Email" class="
+                                <input type="email" required name="email" id="contact-email" placeholder="Email" class="
                                         w-100
                                         mt-2
                                         py-3
@@ -182,7 +180,7 @@
                                         dark:text-white
                                         focus:border-indigo-500
                                         focus:outline-none
-                                    " name="contact[message]" id="contact-message" required id="message"
+                                    " name="message" id="contact-message" required id="message"
                                     placeholder="Message"></textarea>
                             </div>
                             <div class="mt-3 ">
@@ -202,37 +200,16 @@
                                         duration-200
                                         flex justify-center items-center
                                     ">
-                                    <img id="contact-spinner" class="hidden fill-current text-white rounded-full animate-spin h-6 w-6 ..." src="/img/spinner.svg" viewBox="0 0 24 24">
-                                        
-                                      </img>
+                                    <img id="contact-spinner"
+                                        class="hidden fill-current text-white rounded-full animate-spin h-6 w-6 ..."
+                                        src="/img/spinner.svg" viewBox="0 0 24 24">
+
+                                    </img>
                                     <span id="submit-span" class="">Submit</span>
                                 </button>
-                                <div>
-                                    <div id="contact-conf" class="hidden">
-                                        <div class="flex mt-3">
-                                            <svg id="Layer_1" class="my-1 mx-2"
-                                                enable-background="new 0 0 512.063 512.063" height="20"
-                                                viewBox="0 0 512.063 512.063" width="20"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <g>
-                                                    <g>
-                                                        <ellipse cx="256.032" cy="256.032" fill="#00df76" rx="255.949"
-                                                            ry="256.032" />
-                                                    </g>
-                                                    <path
-                                                        d="m256.032 0c-.116 0-.231.004-.347.004v512.055c.116 0 .231.004.347.004 141.357 0 255.949-114.629 255.949-256.032s-114.592-256.031-255.949-256.031z"
-                                                        fill="#00ab5e" />
-                                                    <path
-                                                        d="m111.326 261.118 103.524 103.524c4.515 4.515 11.836 4.515 16.351 0l169.957-169.957c4.515-4.515 4.515-11.836 0-16.351l-30.935-30.935c-4.515-4.515-11.836-4.515-16.351 0l-123.617 123.615c-4.515 4.515-11.836 4.515-16.351 0l-55.397-55.397c-4.426-4.426-11.571-4.526-16.119-.226l-30.83 29.149c-4.732 4.475-4.837 11.973-.232 16.578z"
-                                                        fill="#fff5f5" />
-                                                    <path
-                                                        d="m370.223 147.398c-4.515-4.515-11.836-4.515-16.351 0l-98.187 98.187v94.573l145.473-145.473c4.515-4.515 4.515-11.836 0-16.352z"
-                                                        fill="#dfebf1" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
+                            <div class="mt-4 mx-2">
+                                <span id="contact-notify" class="text-lg"></span>
                             </div>
                         </form>
                     </div>

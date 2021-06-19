@@ -8,8 +8,12 @@ const path = require("path");
 const ejsMate = require("ejs-mate");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const homeRoutes = require("./routes/home");
+const allRoutes = require("./routes/allRoutes");
 const ErrorHandler = require("./utils/errorHandler");
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const flash = require("connect-flash");
+const { stripPublicDir } = require("laravel-mix/src/File");
 const port = process.env.PORT || 3000;
 
 // Cors policy option for safety of routes in production
@@ -47,11 +51,21 @@ app.set("views", path.join(__dirname, "views"));
 // Middlewares
 app.use(cors(corsOptions)); // Cors
 app.use(express.json()); // To process the requests and parse them into json
-// app.use(express.urlencoded({ extended: false })); // If you want to operate data requests through classic way
+app.use(express.urlencoded({ extended: true })); // If you want to operate data requests through classic way
 app.use(express.static(path.join(__dirname, "public"))); // Setting up the public folder
+app.use(cookieParser());
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+        cookie: { maxAge: 1000 * 10 * 60 },
+    })
+);
+app.use(flash());
 
 // Routes Middleware
-app.use("/", homeRoutes); // For home routes
+app.use("/", allRoutes); // For home routes
 
 // Error handling middleware to handle all the errors from the controllers or middlewares
 app.use((err, req, res, next) => {

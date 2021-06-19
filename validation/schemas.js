@@ -39,7 +39,10 @@ module.exports.contactSchema = Joi.object({
 });
 
 module.exports.loginSchema = Joi.object({
-    username: Joi.string().required().label("Userame"),
+    email: Joi.string()
+        .email({ tlds: { allow: ["org", "com", "net", "in"] } })
+        .required()
+        .label("Email"),
     password: Joi.string().required().label("Password"),
 });
 
@@ -72,9 +75,40 @@ module.exports.eventSchema = Joi.object({
     organizers: Joi.array().items(Joi.object()),
 });
 
-module.exports.newsletterSchema = Joi.object({
+module.exports.staffRegisterSchema = Joi.object({
+    firstname: Joi.string().trim().min(1).required().label("First Name"),
+    lastname: Joi.string().trim().min(1).required().label("Last Name"),
     email: Joi.string()
         .email({ tlds: { allow: ["org", "com", "net", "in"] } })
         .required()
-        .label("Newsletter Email"),
+        .label("Email"),
+    department: Joi.string().required().trim().min(1).label("Department"),
+    designation: Joi.string().required().trim().min(1).label("Designation"),
+    profile_pic_url: Joi.string().required().trim().min(1).label("Profile URL"),
+    key: Joi.string().required().trim().min(1).label("Registration Key"),
+});
+
+module.exports.staffPaswordRegisterSchema = Joi.object({
+    password: Joi.string().trim().min(8).max(16).required().label("Password"),
+    confirmPassword: Joi.any()
+        .equal(Joi.ref("password"))
+        .required()
+        .label("Confirm Password")
+        .messages({ "any.only": "{{#label}} does not match" }),
+});
+
+module.exports.emailSchema = Joi.object({
+    email: Joi.string()
+        .email({ tlds: { allow: ["org", "com", "net", "in"] } })
+        .required()
+        .label("Email"),
+});
+
+module.exports.updatePasswordSchema = Joi.object({
+    password: Joi.string().trim().min(8).max(16).required().label("Password"),
+    confirmPassword: Joi.any()
+        .equal(Joi.ref("password"))
+        .required()
+        .label("Confirm Password")
+        .messages({ "any.only": "{{#label}} does not match" }),
 });

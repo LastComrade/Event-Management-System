@@ -12,7 +12,8 @@ const homeCont = {
     // Contact controller is an async function which saves contact data onto the DB which requires the functionality of await keyword
     contact: async (req, res, next) => {
         try {
-            const { name, email, message } = req.body.contact; // Destructuring data out of contact object
+            // console.log(req.body);
+            const { name, email, message } = req.body; // Destructuring data out of contact object
 
             // Nodemailer Transport
             const transporter = nodeMailer.createTransport({

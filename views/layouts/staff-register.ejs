@@ -1,0 +1,189 @@
+<%- include("./partials/head.ejs") %>
+    <%- include("./partials/links.ejs") %>
+
+        <body class="font-mont">
+            <div class="login bg-cover">
+                <div class="
+                container
+                mx-auto
+                h-full
+                flex flex-1
+                justify-center
+                items-center
+            ">
+                    <div class="w-full max-w-lg">
+                        <div class="my-10">
+                            <form class="
+                            m-4
+                            py-5
+                            px-5
+                            bg-white bg-opacity-25
+                            backdrop-filter backdrop-blur backdrop-brightness-90
+                            rounded
+                            shadow-xl
+                        " action="/staff-register" method="POST">
+                                <p class="font-semibold text-center md:text-xl text-2xl ">
+                                    Staff Register
+                                </p>
+                                <div class="flex mt-2">
+                                    <div class="pr-3">
+                                        <label class="block text-sm text-white" for="email">First Name</label>
+                                        <input class="
+                                        w-full
+                                        px-5
+                                        py-1
+                                        text-gray-700
+                                        bg-gray-300
+                                        rounded
+                                        focus:outline-none
+                                        focus:bg-white
+                                    " type="name" placeholder="First Name" required name="firstname" />
+                                    </div>
+                                    <div class="pl-3">
+                                        <label class="block text-sm text-white" for="email">Last Name</label>
+                                        <input class="
+                                        w-full
+                                        px-5
+                                        py-1
+                                        text-gray-700
+                                        bg-gray-300
+                                        rounded
+                                        focus:outline-none
+                                        focus:bg-white
+                                    " type="name" placeholder="Last Name" required name="lastname" />
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <label class="block text-sm text-white" for="email">Email Address</label>
+                                    <input class="
+                                    w-full
+                                    px-5
+                                    py-1
+                                    text-gray-700
+                                    bg-gray-300
+                                    rounded
+                                    focus:outline-none
+                                    focus:bg-white
+                                " type="email" placeholder="Email" required name="email" />
+                                </div>
+                                <!-- DropDown -->
+                                <div class="mt-2">
+                                    <label class="block text-sm text-white">Select Department</label>
+                                    <select class=" w-full
+                                        px-5
+                                        py-1
+                                        text-gray-700
+                                        bg-gray-300
+                                        rounded
+                                        focus:outline-none
+                                        focus:bg-white" required name="department">
+                                        <option value="">Seleted Department</option>
+                                        <option value="Department - 1">Department - 1</option>
+                                        <option value="Department - 2">Department - 2</option>
+                                        <option value="Department - 3">Department - 3</option>
+                                        <option value="Department - 4">Department - 4</option>
+                                        <option value="Department - 5">Department - 5</option>
+                                        <option value="Department - 6">Department - 6</option>
+                                        <option value="Department - 7">Department - 7</option>
+                                        <option value="Department - 8">Department - 8</option>
+                                        <option value="Department - 9">Department - 9</option>
+                                    </select>
+                                    <p class="text-sm text-red-900 hidden mt-3" id="error">Please fill all the required
+                                        fields.
+                                    </p>
+                                </div>
+                                <!-- DropDown -->
+
+                                <div class="mt-2">
+                                    <label class="block text-sm text-white" for="email">Designation</label>
+                                    <input class="
+                                    w-full
+                                    px-5
+                                    py-1
+                                    text-gray-700
+                                    bg-gray-300
+                                    rounded
+                                    focus:outline-none
+                                    focus:bg-white
+                                " type="name" placeholder="Designation" required name="designation" />
+                                </div>
+
+                                <div class="mt-2">
+                                    <label class="block text-sm text-white" for="email">Profile Pic URL</label>
+                                    <input class="
+                                    w-full
+                                    px-5
+                                    py-1
+                                    text-gray-700
+                                    bg-gray-300
+                                    rounded
+                                    focus:outline-none
+                                    focus:bg-white
+                                " type="name" placeholder="URL" required name="profile_pic_url" />
+                                </div>
+
+                                <div class="mt-2">
+                                    <label class="block text-sm text-white" for="email">Registration Key</label>
+                                    <input class="
+                                    w-full
+                                    px-5
+                                    py-1
+                                    text-gray-700
+                                    bg-gray-300
+                                    rounded
+                                    focus:outline-none
+                                    focus:bg-white
+                                " type="password" placeholder="Registration Key" required name="key" />
+                                </div>
+
+                                <div class="mt-4 items-center flex justify-between mb-2">
+                                    <button class="
+                                    px-4
+                                    py-1
+                                    text-white
+                                    font-light
+                                    tracking-wider
+                                    bg-gray-900
+                                    hover:bg-gray-800
+                                    rounded
+                                " type="submit">
+                                        Register
+                                    </button>
+                                    <a class="
+                                    inline-block
+                                    right-0
+                                    align-baseline
+                                    font-semibold
+                                    text-white
+                                    text-lg text-500
+                                    cursor-pointer
+                                " href="/">
+                                        E-Cell, GNDEC
+                                    </a>
+                                </div>
+                                <div class="flex justify-center">
+                                    <span id="login-notify"
+                                        class="text-md bg-gray-900 <%= error.length === 1 ? "py-1 px-2 my-2 text-red-500" : "" %> 
+                                        <%= success.length === 1 ? "py-1 px-2 my-2 text-green-400" : "" %> 
+                                        rounded
+                                        font-semibold">
+                                        <%= error %>
+                                        <%= success %> 
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+        <style>
+            body {
+                background: url("https://images.pexels.com/photos/4101555/pexels-photo-4101555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+                background-attachment: fixed;
+                background-position: fit;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+        </html>
