@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const ParticipantSchema = require("../models/participant");
 const Schema = mongoose.Schema;
 
 const EventSchema = Schema(
@@ -33,9 +34,13 @@ const EventSchema = Schema(
         },
         result_declaration: {
             type: Date,
-            default: "0000-00-00",
+            default: 0000-00-00,
         },
         organizers: [Object],
+        participants: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Participant"
+        }],
     },
     { timestamps: true }
 );

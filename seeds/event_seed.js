@@ -7,7 +7,9 @@ const DBaddress =
 
 /*
     run "node ./seeds/event_seed.js"
-    to seed the departments collection
+    to seed the events collection
+
+    make sure to seed participant too, use "node ./seeds/participant_seed.js"
 */
 
 mongoose.connect(DBaddress, {

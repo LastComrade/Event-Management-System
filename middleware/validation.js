@@ -3,6 +3,7 @@ const {
     loginSchema,
     deptSchema,
     eventSchema,
+    participantSchema,
     newsletterSchema,
     staffRegisterSchema,
     staffPaswordRegisterSchema,
@@ -54,6 +55,15 @@ const validate = {
     eventCreate: (req, res, next) => {
         const { error } = eventSchema.validate(req.body.event);
         if (error) {
+            next(ErrorHandler.validationError(error.message));
+        }
+        next();
+    },
+
+    // This will validate participant form data
+    participantRegister: (req, res, next) => {
+        const { error } = participantSchema.validate(req.body.participant);
+        if(error){
             next(ErrorHandler.validationError(error.message));
         }
         next();

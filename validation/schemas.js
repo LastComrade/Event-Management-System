@@ -55,23 +55,31 @@ module.exports.deptSchema = Joi.object({
 });
 
 module.exports.eventSchema = Joi.object({
-    name: Joi.string().required().label("Event Name"),
+    name: Joi.string().trim().min(1).required().label("Event Name"),
     description: Joi.string().required().label("Event Description"),
     category: Joi.string().required().label("Event Category"),
     registration_starts: Joi.date()
         .iso()
         .required()
-        .label("Registration Starts"),
+        .label("Registration Start Date"),
     registration_ends: Joi.date()
         .iso()
         .min(Joi.ref("registration_starts"))
         .required()
-        .label("Registration Ends"),
-    event_starts: Joi.date().iso().required().label("Event Start Date"),
+        .label("Registration End Date"),
+    event_starts: Joi.date()
+        .iso()
+        .min(Joi.ref("registration_ends"))
+        .required()
+        .label("Event Start Date"),
     event_ends: Joi.date()
         .iso()
         .min(Joi.ref("event_starts"))
         .label("Event End Date"),
+    result_declaration: Joi.date()
+        .iso()
+        .min(Joi.ref("event_ends"))
+        .label("Event Result Declaration Date"),
     organizers: Joi.array().items(Joi.object()),
 });
 
@@ -98,6 +106,32 @@ module.exports.staffPaswordRegisterSchema = Joi.object({
 });
 
 module.exports.emailSchema = Joi.object({
+    email: Joi.string()
+        .email({ tlds: { allow: ["org", "com", "net", "in"] } })
+        .required()
+        .label("Email"),
+});
+
+module.exports.participantSchema = Joi.object({
+    firstname: Joi.string()
+        .trim()
+        .min(1)
+        .required()
+        .label("Participant's Firstname"),
+    lastname: Joi.string()
+        .required()
+        .trim()
+        .min(1)
+        .label("Participant's Lastname"),
+    email: Joi.string()
+        .email({ tlds: { allow: ["org", "com", "net", "in"] } })
+        .required()
+        .label("Participant's Email"),
+    college_name: Joi.string().required().label("Participant's College Name"),
+    crn: Joi.string().required().label("Participant's College Roll Number"),
+});
+
+module.exports.newsletterSchema = Joi.object({
     email: Joi.string()
         .email({ tlds: { allow: ["org", "com", "net", "in"] } })
         .required()
