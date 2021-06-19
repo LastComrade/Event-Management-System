@@ -34,10 +34,12 @@ router
     .post(validate.staffLogin, staffCont.staffLogin);
 
 // Staff Dashboard
-router.route("/staff-dashboard").get(authMid.authRequired, authMid.staffCheck, staffCont.staffDashboard);
+router
+    .route("/staff-dashboard")
+    .get(authMid.authRequired, authMid.staffCheck, staffCont.staffDashboard);
 
 // Staff logout
-router.route("/staff-logout").get(authMid.authRequired, staffCont.staffLogout)
+router.route("/staff-logout").get(authMid.authRequired, staffCont.staffLogout);
 
 // 5. Forgot password route
 router
@@ -55,7 +57,6 @@ router
         staffCont.updatePassword
     );
 
-
 // Protected Routes
 router
     .route("/department-create-101")
@@ -67,7 +68,10 @@ router
     .get(eventCont.index)
     .post(validate.eventCreate, eventCont.createEvent);
 
-router.route("/events/:name").get(eventCont.finder);
+router
+    .route("/events/:name")
+    .get(eventCont.finder)
+    .post(validate.participantRegister, eventCont.registerParticipant);
 
 router.route("/departments/:name").get(deptCont.finder);
 
