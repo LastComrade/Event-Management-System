@@ -99,10 +99,10 @@ module.exports.participantSchema = Joi.object({
         .email({ tlds: { allow: ["org", "com", "net", "in"] } })
         .required()
         .label("Participant's Email"),
-    collegename: Joi.string()
+    college_name: Joi.string()
         .required()
         .label("Participant's College Name"),
-    collegeRollNo: Joi.string()
+    crn: Joi.string()
         .required()
         .label("Participant's College Roll Number"),
 });
