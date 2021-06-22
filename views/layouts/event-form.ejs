@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
 
-    
-    <link rel="stylesheet" href="css/styles.css"/>
-    <link rel="stylesheet" href="css/custom.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-    crossorigin="anonymous"/>
 
-    
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+
 </head>
 
-<body  class="bg-purple-100 dark:border-gray-300">
+<body class="bg-purple-100 dark:border-gray-300">
 
     <!-- Start of the navbar -->
     <div class="z-50 w-full dark:border-gray-500 text-gray-700 bg-indigo-900 fixed">
@@ -50,9 +49,14 @@
                     href="#contact">Contact</a>
 
 
-                    <button id="switchTheme" class="h-10 w-10 flex justify-center items-center focus:outline-none text-yellow-500">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
-                    </button>
+                <button id="switchTheme"
+                    class="h-10 w-10 flex justify-center items-center focus:outline-none text-yellow-500">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
 
                 <!-- <button
                     class="w-12 h-6 my-auto ml-3 mt-4 md:mt-2 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
@@ -70,9 +74,9 @@
     </div>
 
     <script>
-        document.getElementById('switchTheme').addEventListener('click', function() {
+        document.getElementById('switchTheme').addEventListener('click', function () {
             let htmlClasses = document.querySelector('body').classList;
-            if(localStorage.theme == 'dark') {
+            if (localStorage.theme == 'dark') {
                 htmlClasses.remove('dark');
                 localStorage.removeItem('theme')
             } else {
@@ -82,14 +86,14 @@
         });
     </script>
 
-    
-<script>
-    if (localStorage.theme === 'dark' || (!'theme' in localStorage && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.querySelector('body').classList.add('dark')
-    } else if (localStorage.theme === 'dark') {
-        document.querySelector('body').classList.add('dark')
-    }
-</script>
+
+    <script>
+        if (localStorage.theme === 'dark' || (!'theme' in localStorage && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.querySelector('body').classList.add('dark')
+        } else if (localStorage.theme === 'dark') {
+            document.querySelector('body').classList.add('dark')
+        }
+    </script>
 
     <!-- End of the navbar -->
 
@@ -128,16 +132,15 @@
                 <div class="relative border-b-2 focus-within:border-blue-500">
                     <input type="text" name="Registered Event" placeholder=" "
                         class="block w-full appearance-none focus:outline-none bg-transparent" />
-                    <label for="Registered Event" class="absolute top-0 -z-1 duration-300 origin-0">Registered Event</label>
+                    <label for="Registered Event" class="absolute top-0 -z-1 duration-300 origin-0">Registered
+                        Event</label>
                 </div>
 
-                  <button class="text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg">Submit</button>
-                
-        
+                <button
+                    class="text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg">Submit</button>
+
+
             </form>
-           
-
-
 
         </div>
     </section>
@@ -219,9 +222,6 @@
             </div>
         </div>
     </section>
-
-
-
 </body>
 
 </html>
