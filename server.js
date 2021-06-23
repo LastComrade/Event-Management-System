@@ -22,11 +22,10 @@ const corsOptions = {
 };
 
 // Getting DB Url from the .env file of the local DB
-const { DBurl = "mongodb://localhost:27017/ecell-website" } =
-    process.env.DB_URL;
+const { DB_URL = "mongodb://localhost:27017/ecell-website" } = process.env;
 
 // Creating a mongoose connection
-mongoose.connect(DBurl, {
+mongoose.connect(DB_URL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
