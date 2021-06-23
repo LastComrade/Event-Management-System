@@ -6,7 +6,7 @@ const nodeMailer = require("nodemailer");
 const homeCont = {
     // Index controller render the home page from layout section in views folder
     index: (req, res) => {
-        res.render("layouts/home"); // res means response and render is another function applied on this res object which renders the html page
+        res.render("layouts/home-new"); // res means response and render is another function applied on this res object which renders the html page
     },
 
     // Contact controller is an async function which saves contact data onto the DB which requires the functionality of await keyword
@@ -38,7 +38,8 @@ const homeCont = {
                     next(ErrorHandler.serverError());
                 } else {
                     return res.status(200).json({
-                        message: "Message sent successfully! We will get back to you ASAP"
+                        message:
+                            "Message sent successfully! We will get back to you ASAP",
                     });
                 }
             });
@@ -49,7 +50,7 @@ const homeCont = {
 
     newsletter: async (req, res) => {
         try {
-            const { email } = req.body.newsletter;
+            const { email } = req.body;
             await Newsletter.findOne({ email }, async (err, existingEmail) => {
                 if (err) {
                     next(ErrorHandler.serverError());
