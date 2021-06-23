@@ -71,7 +71,7 @@ const validate = {
 
     // This will validate the newsletter email
     newsletter: (req, res, next) => {
-        const { error } = newsletterSchema.validate(req.body.newsletter);
+        const { error } = newsletterSchema.validate(req.body);
         if (error) {
             next(ErrorHandler.validationError(error.message));
         }

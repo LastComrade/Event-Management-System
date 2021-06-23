@@ -38,7 +38,8 @@ const homeCont = {
                     next(ErrorHandler.serverError());
                 } else {
                     return res.status(200).json({
-                        message: "Message sent successfully! We will get back to you ASAP"
+                        message:
+                            "Message sent successfully! We will get back to you ASAP",
                     });
                 }
             });
@@ -49,7 +50,7 @@ const homeCont = {
 
     newsletter: async (req, res) => {
         try {
-            const { email } = req.body.newsletter;
+            const { email } = req.body;
             await Newsletter.findOne({ email }, async (err, existingEmail) => {
                 if (err) {
                     next(ErrorHandler.serverError());

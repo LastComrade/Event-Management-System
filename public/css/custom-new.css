@@ -75,8 +75,8 @@ p {
 }
 @media (max-width: 1024px) {
     .navbar-area {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
     }
 }
 .collapse.show {
