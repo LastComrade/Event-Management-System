@@ -6,7 +6,7 @@ const nodeMailer = require("nodemailer");
 const homeCont = {
     // Index controller render the home page from layout section in views folder
     index: (req, res) => {
-        res.render("layouts/home"); // res means response and render is another function applied on this res object which renders the html page
+        res.render("layouts/home-new"); // res means response and render is another function applied on this res object which renders the html page
     },
 
     // Contact controller is an async function which saves contact data onto the DB which requires the functionality of await keyword
