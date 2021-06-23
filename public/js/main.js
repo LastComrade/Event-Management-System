@@ -46,7 +46,7 @@ $(function () {
     });
     $(".testimonial-active").slick({
         dots: true,
-        speed: 800,
+        speed: 500,
         arrows: false,
         centerMode: true,
         centerPadding: "0",
