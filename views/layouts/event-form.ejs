@@ -5,20 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
-
-
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/custom.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
-
 </head>
 
 <body class="bg-purple-100 dark:border-gray-300">
 
-    <!-- Start of the navbar -->
-    <div class="z-50 w-full dark:border-gray-500 text-gray-700 bg-indigo-900 fixed">
+<!-- Start of the navbar -->
+
+  <div class="z-50 w-full dark:border-gray-500 text-gray-700 bg-indigo-900 fixed">
         <div x-data="{ open: false }" class="flex flex-col px-3 mx-auto md:items-center md:flex-row md:px-6 lg:px-8">
             <div class="p-3 flex flex-row items-center justify-between">
                 <a href="/"
@@ -48,57 +46,14 @@
                 <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:mx-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
                     href="#contact">Contact</a>
 
-
-                <button id="switchTheme"
-                    class="h-10 w-10 flex justify-center items-center focus:outline-none text-yellow-500">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-
-                <!-- <button
-                    class="w-12 h-6 my-auto ml-3 mt-4 md:mt-2 rounded-full bg-white flex items-center transition duration-300 focus:outline-none shadow"
-                    onclick="toggleTheme()">
-                    <div id="switch-toggle"
-                        class="w-7 h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                    </div>
-                </button> -->
             </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById('switchTheme').addEventListener('click', function () {
-            let htmlClasses = document.querySelector('body').classList;
-            if (localStorage.theme == 'dark') {
-                htmlClasses.remove('dark');
-                localStorage.removeItem('theme')
-            } else {
-                htmlClasses.add('dark');
-                localStorage.theme = 'dark';
-            }
-        });
-    </script>
-
-
-    <script>
-        if (localStorage.theme === 'dark' || (!'theme' in localStorage && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.querySelector('body').classList.add('dark')
-        } else if (localStorage.theme === 'dark') {
-            document.querySelector('body').classList.add('dark')
-        }
-    </script>
-
     <!-- End of the navbar -->
 
     <section class="text-gray-600 body-font relative">
-        <div class="container pt-24 mx-auto flex sm:flex-nowrap flex-wrap">
+        <div class="container pt-24 mx-16 mr-16 flex sm:flex-nowrap flex-wrap">
 
             <!-- Starting of the Image Section -->
 
@@ -106,8 +61,10 @@
                 <img class="object-cover object-center rounded" alt="hero" src="/img/Registration-Form.png">
             </div>
 
+            <!-- End of the Image Section -->
+             <!-- Starting of the Form section-->
 
-            <form class="max-w-xs mx-auto md:w-4/6 rounded-lg shadow-xl overflow-hidden p-8 space-y-10 ">
+            <form class="max-w-xs mx-16 md:w-4/6 rounded-lg shadow-xl overflow-hidden p-8 space-y-10 ">
                 <h2 class="text-2xl font-bold text-center">Registration Form</h2>
                 <div class="relative border-b-2 focus-within:border-blue-500">
                     <input type="text" name="FName" placeholder=" "
@@ -134,16 +91,14 @@
                         class="block w-full appearance-none focus:outline-none bg-transparent" />
                     <label for="collegeName" class="absolute top-0 -z-1 duration-300 origin-0">College Name</label>
                 </div>
-
-                <button
-                    class="text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded text-lg">Submit</button>
-
-
             </form>
+
+            <!-- End of the Form section-->
 
         </div>
     </section>
 
+    <!-- Starting of the Footer section-->
 
     <footer id="footer" class="bg-gray-800 py-10 md:py-5">
         <div class="px-10">
@@ -196,7 +151,6 @@
             </div>
         </div>
     </footer>
-
     <section class="bg-gray-800 py-3 border-t-2 flex flex-col border-gray-700 border-dotted">
         <div class="w-full wow py-2 flex justify-center items-center fadeInUp" data-wow-delay="0.8s">
             <div class="mx-3 mb-2">
@@ -221,6 +175,8 @@
             </div>
         </div>
     </section>
-</body>
 
+    <!-- Starting of the Footer section-->
+
+</body>
 </html>
