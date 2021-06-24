@@ -5,18 +5,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/custom.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
 </head>
 
-<body class="bg-purple-100 dark:border-gray-300">
+<body class="bg-gray-200">
 
 <!-- Start of the navbar -->
 
-  <div class="z-50 w-full dark:border-gray-500 text-gray-700 bg-indigo-900 fixed">
+  <div class="z-50 w-full text-gray-700 bg-indigo-900 fixed">
         <div x-data="{ open: false }" class="flex flex-col px-3 mx-auto md:items-center md:flex-row md:px-6 lg:px-8">
             <div class="p-3 flex flex-row items-center justify-between">
                 <a href="/"
@@ -63,8 +63,8 @@
 
             <!-- End of the Image Section -->
              <!-- Starting of the Form section-->
-
-            <form class="max-w-xs mx-16 md:w-4/6 rounded-lg shadow-xl overflow-hidden p-8 space-y-10 ">
+            <div class="lg:ml-16 ">
+            <form class="max-w-xs mx-16 md:w-4/6 bg-gray-100 rounded-lg shadow-xl overflow-hidden p-8 space-y-10 ">
                 <h2 class="text-2xl font-bold text-center">Registration Form</h2>
                 <div class="relative border-b-2 focus-within:border-blue-500">
                     <input type="text" name="FName" placeholder=" "
@@ -92,6 +92,7 @@
                     <label for="collegeName" class="absolute top-0 -z-1 duration-300 origin-0">College Name</label>
                 </div>
             </form>
+        </div>
 
             <!-- End of the Form section-->
 
@@ -100,7 +101,7 @@
 
     <!-- Starting of the Footer section-->
 
-    <footer id="footer" class="bg-gray-800 py-10 md:py-5">
+    <footer id="footer" class="bg-gray-800 py-10 mt-10 md:py-5">
         <div class="px-10">
             <div class="flex flex-wrap">
                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 py-5 flex justify-center items-center wow fadeInUp"
