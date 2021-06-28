@@ -66,8 +66,8 @@ app.use(flash());
 // Routes Middleware
 app.use("/", allRoutes); // For home routes
 
-app.get("/event-form-abhinav", (req, res) => {
-    return res.render("layouts/event-form");
+app.get("/participantRegistration-form", (req, res) => {
+    return res.render("layouts/participantRegistration-form");
 });
 
 // Error handling middleware to handle all the errors from the controllers or middlewares
