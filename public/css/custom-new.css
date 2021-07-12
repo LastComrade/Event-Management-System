@@ -598,3 +598,29 @@ p {
 .back-to-top:hover {
     background-position: right;
 }
+
+
+.counters {
+    background: #0f479a;
+    color: #fff;
+    padding: 40px 20px;
+    border-top: 3px lightskyblue solid;
+}
+
+.counters .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    text-align: center;
+}
+
+.counters i {
+    color: lightskyblue;
+    margin-bottom: 5px;
+}
+
+.counters .counter {
+    font-size: 45px;
+    margin: 10px 0;
+}
+
