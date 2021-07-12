@@ -623,4 +623,33 @@ p {
     font-size: 45px;
     margin: 10px 0;
 }
+/* Event Page */
+
+.layered-card {
+    position: relative;
+}
+
+.layered-card:hover::before {
+    background: rgba(0, 0, 0, 0.1);
+    content: '';
+    
+    /* Position */
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: translate(0.8rem, 0.8rem);
+    filter: blur(5px);
+
+    /* Size */
+    height: 100%;
+    width: 100%;
+
+    /* Display under the main content */
+    z-index: -1152;
+}
+
+/* .featured-cards:hover{
+    border: 2px solid coral;
+}    */
+
 
