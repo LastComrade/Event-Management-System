@@ -9,7 +9,7 @@ const bcrypt = require("bcrypt");
 const staffCont = {
     // Controller to render the staff login page
     staffLoginPage: (req, res) => {
-        console.log(req.cookies.jwt_token);
+        // console.log(req.cookies.jwt_token);
         if (req.cookies.jwt_token) {
             res.redirect("/staff-dashboard");
         }
@@ -19,7 +19,7 @@ const staffCont = {
     },
 
     staffRegisterPage: (req, res) => {
-        console.log(req.cookies.jwt_token);
+        // console.log(req.cookies.jwt_token);
         if (req.cookies.jwt_token) {
             res.redirect("/staff-dashboard");
         }
@@ -30,7 +30,7 @@ const staffCont = {
     },
 
     staffPasswordResetPage: (req, res) => {
-        console.log(req.cookies.jwt_token);
+        // console.log(req.cookies.jwt_token);
         if (req.cookies.jwt_token) {
             res.redirect("/staff-dashboard");
         }
@@ -41,7 +41,7 @@ const staffCont = {
     },
 
     staffActualPasswordResetPage: (req, res) => {
-        console.log(req.cookies.jwt_token);
+        // console.log(req.cookies.jwt_token);
         const { token } = req.params;
         if (req.cookies.jwt_token) {
             res.redirect("/staff-dashboard");
@@ -140,9 +140,9 @@ const staffCont = {
     // Controller to verify the staff members in the data base
     staffActivation: async (req, res, next) => {
         try {
-            console.log("This here");
+            // console.log("This here");
             const { token } = req.params;
-            console.log(token);
+            // console.log(token);
             if (token) {
                 jwt.verify(
                     token,
@@ -193,7 +193,7 @@ const staffCont = {
 
     staffPasswordRegister: async (req, res, next) => {
         try {
-            console.log("Wrong Wroong");
+            // console.log("Wrong Wroong");
             const {
                 firstname,
                 lastname,
@@ -375,10 +375,10 @@ const staffCont = {
                                                     ErrorHandler.serverError()
                                                 );
                                             } else {
-                                                console.log(
-                                                    "This is the data",
-                                                    data
-                                                );
+                                                // console.log(
+                                                //     "This is the data",
+                                                //     data
+                                                // );
                                                 // return res.status(200).json({
                                                 //     message:
                                                 //         "Password reset link sent successfully!",
@@ -418,7 +418,7 @@ const staffCont = {
 
     resetPasswordTokenCheck: (req, res, next) => {
         try {
-            console.log(req.flash("error"));
+            // console.log(req.flash("error"));
             const { token } = req.params;
             // console.log("This is the params", token);
             jwt.verify(
@@ -450,7 +450,7 @@ const staffCont = {
                                 console.log(err);
                                 next(ErrorHandler.serverError());
                             } else if (!staff) {
-                                console.log(staff);
+                                // console.log(staff);
                                 // return res.status(400).json({
                                 //     message:
                                 //         "Password reset link is either not valid or expired. Please try again",
@@ -478,7 +478,7 @@ const staffCont = {
         try {
             console.log("After validation");
             const { token } = req.params;
-            console.log(req.params);
+            // console.log(req.params);
             const { password } = req.body;
             jwt.verify(
                 token,
@@ -553,7 +553,7 @@ const staffCont = {
                                         }
                                     );
                                 } else {
-                                    console.log(staff);
+                                    // console.log(staff);
                                     req.flash(
                                         "error",
                                         "Password reset link is already used"
