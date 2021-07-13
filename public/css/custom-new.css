@@ -648,8 +648,72 @@ p {
     z-index: -1152;
 }
 
-/* .featured-cards:hover{
-    border: 2px solid coral;
-}    */
+
+/* Department Page */
+.social-accounts-ig:hover{
+
+    background:linear-gradient(#ec4899,#ef4444,#f59e0b);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+/* .social-accounts-ig{
+    margin-top: 2.5px;
+    padding-top: 2.5px;
+}
+.social-accounts-in{
+    margin-top: 2.5px;
+    padding-top: 2.5px;
+} */
+.social-accounts-fb{
+    margin-top: 3px;
+}
+.social-accounts-fb:hover{
+
+    background: hsla(196, 100%, 31%, 1);
+    background: linear-gradient(360deg, hsla(196, 100%, 31%, 1) 0%, hsla(0, 0%, 97%, 1) 0%, hsla(196, 97%, 38%, 1) 0%);
+    background: -moz-linear-gradient(360deg, hsla(196, 100%, 31%, 1) 0%, hsla(0, 0%, 97%, 1) 0%, hsla(196, 97%, 38%, 1) 0%);
+    background: -webkit-linear-gradient(360deg, hsla(196, 100%, 31%, 1) 0%, hsla(0, 0%, 97%, 1) 0%, hsla(196, 97%, 38%, 1) 0%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#00759f", endColorstr="#f8f8f8", GradientType=1 );    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#00759F", endColorstr="#F8F8F8", GradientType=1 );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.social-accounts-in:hover{
+    background: hsla(0, 0%, 97%, 1);
+    background: linear-gradient(360deg, hsla(0, 0%, 97%, 1) 0%, hsla(196, 97%, 38%, 1) 0%, hsla(196, 97%, 39%, 1) 100%);
+    background: -moz-linear-gradient(360deg, hsla(0, 0%, 97%, 1) 0%, hsla(196, 97%, 38%, 1) 0%, hsla(196, 97%, 39%, 1) 100%);
+    background: -webkit-linear-gradient(360deg, hsla(0, 0%, 97%, 1) 0%, hsla(196, 97%, 38%, 1) 0%, hsla(196, 97%, 39%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#f8f8f8", endColorstr="#038ec0", GradientType=1 );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.team-divider{
+    font-size: 6vh;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.team-divider::before,
+.team-divider::after {
+    content: '';
+    display: block;
+    height: 0.09em;
+    min-width: 30vw;
+}
+
+.team-divider::before {
+    background: linear-gradient(to right, rgba(240,240,240,0), #D72A81);
+    margin-right: 4vh;
+}
+
+.team-divider::after {
+    background: linear-gradient(to left, rgba(240,240,240,0), #D72A81);
+    margin-left: 4vh;
+} 
+
+
 
 

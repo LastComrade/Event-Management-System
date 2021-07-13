@@ -6,51 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
     <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/custom.css" />
+    <link rel="stylesheet" href="/css/custom-new.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
 </head>
 
-<body class="bg-gray-200">
+<body class="bg-white">
 
-<!-- Start of the navbar -->
-
-  <div class="z-50 w-full text-gray-700 bg-indigo-900 fixed">
-        <div x-data="{ open: false }" class="flex flex-col px-3 mx-auto md:items-center md:flex-row md:px-6 lg:px-8">
-            <div class="p-3 flex flex-row items-center justify-between">
-                <a href="/"
-                    class="md:text-4xl text-3xl font-bold tracking-widest text-white uppercase rounded-lg dark:text-white focus:outline-none focus:shadow-outline">E-Cell</a>
-                <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline outline-none"
-                    @click="open = !open">
-                    <svg fill="white" viewBox="0 0 20 20" class="w-6 h-6">
-                        <path x-show="!open" fill-rule="evenodd"
-                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                            clip-rule="evenodd"></path>
-                        <path x-show="open" fill-rule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            </div>
-            <div :class="{'flex': open, 'hidden': !open}"
-                class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-                <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline active:bg-gray-600 text-white"
-                    href="#hero">Home</a>
-                <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
-                    href="#about">About</a>
-                <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
-                    href="#department">Departments</a>
-                <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:ml-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
-                    href="#event">Events</a>
-                <a class="px-3 transition ease-in duration-200 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-900 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-white md:mt-0 md:mx-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline text-white"
-                    href="#contact">Contact</a>
-
+    <!-- Navbar -->
+    <div class="navbar-area">
+        <div class="container relative z-50">
+            <div class="row">
+                <div class="w-full">
+                    <nav class="flex items-center justify-between navbar navbar-expand-lg">
+                        <a class="mr-4 navbar-brand" href="/">
+                            <span class="navbar-brand-name text-black text-4xl font-semibold">E-Cell</span>
+                        </a>
+                        <button class="block navbar-toggler focus:outline-none lg:hidden" type="button"
+                            data-toggle="collapse" data-target="#navbarOne" aria-controls="navbarOne"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                            <span class="toggler-icon"></span>
+                        </button>
+                        <div class="absolute mt-72 lg:mt-0 rounded left-0 z-20 hidden w-full px-5 lg:py-2 duration-300 shadow lg:w-auto collapse navbar-collapse lg:block top-100 mt-full lg:static lg:bg-gradient-to-br lg:shadow-none"
+                            id="navbarOne">
+                            <ul id="nav"
+                                class="items-center mr-auto lg:justify-end relative inline-block text-white capitalize duration-300 lg:flex">
+                                <li class="nav-item md:pb-2 active text-lg md:text-base">
+                                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#home">Home</a>
+                                </li>
+                                <li class="nav-item md:pb-2 text-lg md:text-base">
+                                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#about">About</a>
+                                </li>
+                                <li class="nav-item md:pb-2 text-lg md:text-base">
+                                    <a class="scroll-page hover:text-red-300 duration-200 mr-5"
+                                        href="#vision">Vision</a>
+                                </li>
+                                <li class="nav-item md:pb-2 text-lg md:text-base">
+                                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#team">Team</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
+                            <a class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
+                                data-scroll-nav="0" href="#" rel="nofollow">Join Us</a>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- End of the navbar -->
 
     <section class="text-gray-600 body-font relative">
         <div class="container pt-24  mr-16 flex sm:flex-nowrap flex-wrap">
@@ -62,125 +71,161 @@
             </div>
 
             <!-- End of the Image Section -->
-             <!-- Starting of the Form section-->
+            <!-- Starting of the Form section-->
             <div class="lg:ml-20 ">
-            <form class="max-w-xs mx-16 md:w-4/6 bg-gray-100 rounded-lg shadow-xl overflow-hidden p-8 space-y-10 ">
-                <h2 class="text-2xl font-bold text-center">Registration Form</h2>
-                <div class="relative border-b-2 focus-within:border-blue-500">
-                    <input type="text" name="FName" placeholder=" "
-                        class="block w-full appearance-none focus:outline-none bg-transparent " />
-                    <label for="FName" class="absolute top-0 -z-1 duration-300 origin-0">First Name</label>
-                </div>
-                <div class="relative border-b-2 focus-within:border-blue-500">
-                    <input type="text" name="LName" placeholder=" "
-                        class="block w-full appearance-none focus:outline-none bg-transparent" />
-                    <label for="LName" class="absolute top-0 -z-1 duration-300 origin-0">Last Name</label>
-                </div>
-                <div class="relative border-b-2 focus-within:border-blue-500">
-                    <input type="text" name="email" placeholder=" "
-                        class="block w-full appearance-none focus:outline-none bg-transparent" />
-                    <label for="email" class="absolute top-0 -z-1 duration-300 origin-0">Email</label>
-                </div>
-                <div class="relative border-b-2 focus-within:border-blue-500">
-                    <input type="text" name="crn" placeholder=" "
-                        class="block w-full appearance-none focus:outline-none bg-transparent" />
-                    <label for="crn" class="absolute top-0 -z-1 duration-300 origin-0">College Roll Number</label>
-                </div>
-                <div class="relative border-b-2 focus-within:border-blue-500">
-                    <input type="text" name="collegeName" placeholder=" "
-                        class="block w-full appearance-none focus:outline-none bg-transparent" />
-                    <label for="collegeName" class="absolute top-0 -z-1 duration-300 origin-0">College Name</label>
-                </div>
-                <div>
-                    <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
-                </div>
-            </form>
-        </div>
+                <form class="max-w-xs mx-16 md:w-4/6 bg-gray-100 rounded-lg shadow-xl overflow-hidden p-8 space-y-10 ">
+                    <h2 class="text-2xl font-bold text-center">Registration Form</h2>
+                    <div class="relative border-b-2 focus-within:border-blue-500">
+                        <input type="text" name="FName" placeholder=" "
+                            class="block w-full appearance-none focus:outline-none bg-transparent " />
+                        <label for="FName" class="absolute top-0 -z-1 duration-300 origin-0">First Name</label>
+                    </div>
+                    <div class="relative border-b-2 focus-within:border-blue-500">
+                        <input type="text" name="LName" placeholder=" "
+                            class="block w-full appearance-none focus:outline-none bg-transparent" />
+                        <label for="LName" class="absolute top-0 -z-1 duration-300 origin-0">Last Name</label>
+                    </div>
+                    <div class="relative border-b-2 focus-within:border-blue-500">
+                        <input type="text" name="email" placeholder=" "
+                            class="block w-full appearance-none focus:outline-none bg-transparent" />
+                        <label for="email" class="absolute top-0 -z-1 duration-300 origin-0">Email</label>
+                    </div>
+                    <div class="relative border-b-2 focus-within:border-blue-500">
+                        <input type="text" name="crn" placeholder=" "
+                            class="block w-full appearance-none focus:outline-none bg-transparent" />
+                        <label for="crn" class="absolute top-0 -z-1 duration-300 origin-0">College Roll Number</label>
+                    </div>
+                    <div class="relative border-b-2 focus-within:border-blue-500">
+                        <input type="text" name="collegeName" placeholder=" "
+                            class="block w-full appearance-none focus:outline-none bg-transparent" />
+                        <label for="collegeName" class="absolute top-0 -z-1 duration-300 origin-0">College Name</label>
+                    </div>
+                    <div>
+                        <button
+                            class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+                    </div>
+                </form>
+            </div>
 
             <!-- End of the Form section-->
 
         </div>
     </section>
 
-    <!-- Starting of the Footer section-->
-
-    <footer id="footer" class="bg-gray-800 py-10 mt-10 md:py-5">
-        <div class="px-10">
-            <div class="flex flex-wrap">
-                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 py-5 flex justify-center items-center wow fadeInUp"
-                    data-wow-delay="0.2s">
-                    <div class="mx-3 mb-8">
-                        <div class="footer-logo mb-3 flex justify-center">
-                            <img class="rounded-full w-28 h-28" src="/img/logo-footer.jpg" alt="">
-                        </div>
-                        <p class="text-gray-300 text-center">Lorem abhi ipsum dolor sit amet, consectetur adipisicing
-                            elit. Quisquam
-                            excepturi quasi, ipsam
-                            voluptatem.</p>
-                    </div>
-                </div>
-                <div class="border-t-2 md:border-none  border-gray-700 border-dotted w-full sm:w-1/2 md:w-1/2 lg:w-1/4 wow py-5  fadeInUp"
-                    data-wow-delay="0.4s">
-                    <div class="mx-3 mb-8">
-                        <h3 class="font-bold text-xl text-white mb-5">E-Cell</h3>
-                        <ul class="text-gray-200 ">
-                            <li><a href="#" class="footer-links duration-300 hover:text-indigo-600">Blog</a></li>
-                            <li><a href="#" class="footer-links duration-300 hover:text-indigo-600">Mission</a></li>
-                            <li><a href="#" class="footer-links duration-300 hover:text-indigo-600">Monthly Magazine</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 wow py-5  fadeInUp" data-wow-delay="0.4s">
-                    <div class="mx-3 mb-8">
-                        <h3 class="font-bold text-xl text-white mb-5">Events</h3>
-                        <ul class="text-gray-200 ">
-                            <li><a href="#" class="footer-links duration-300 hover:text-indigo-600">Live</a></li>
-                            <li><a href="#" class="footer-links duration-300 hover:text-indigo-600">Competitions</a>
-                            </li>
-                            <li><a href="#" class="footer-links duration-300 hover:text-indigo-600">Archived</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 wow py-5  fadeInUp" data-wow-delay="0.4s">
-                    <div class="mx-3 mb-8">
-                        <h3 class="font-bold text-xl text-white mb-5">About</h3>
-                        <ul class="text-gray-200 ">
-                            <li><a href="#" class="footer-links duration-300 hover:text-indigo-600">Career</a></li>
-                            <li><a href="#" class="footer-links duration-300 hover:text-indigo-600">Team</a></li>
-                            <li><a href="#" class="footer-links duration-300 hover:text-indigo-600">Portfolio</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <section class="bg-gray-800 py-3 border-t-2 flex flex-col border-gray-700 border-dotted">
-        <div class="w-full wow py-2 flex justify-center items-center fadeInUp" data-wow-delay="0.8s">
-            <div class="mx-3 mb-2">
-                <h3 class="font-bold text-xl text-white text-center mb-5">Find us on</h3>
-                <div class="social justify-start">
-                    <a href="#" class="fab fa-facebook-f"></a>
-                    <a href="#" class="fab fa-linkedin-in"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                    <a href="#" class="far fa-envelope"></a>
-                    <a href="#" class="fab fa-twitter"></a>
-                </div>
-            </div>
-        </div>
+    <!-- Footer Section -->
+    <footer id="footer" class="relative z-10 footer-area pt-2">
+        <div class="footer-bg" style="background-image: url(/img/footer-bg.svg);"></div>
         <div class="container">
-            <div class="flex flex-wrap">
-                <div class="w-full px-1 text-center">
-                    <p class="text-white">Developed with
-                        <i class="fas fa-heart"></i> By <a class="text-white duration-300 hover:text-indigo-600"
-                            href="#" rel="nofollow">Technical Team, E-Cell</a>
-                    </p>
+            <div class="footer-widget pb-24 pt-80 sm:pt-96 md:pt-96">
+                <div class="row">
+                    <div class="w-4/5 md:w-3/5 lg:w-2/6">
+                        <div class="mt-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <a class="inline-block mb-9 logo" href="index.html">
+                                <span class="text-white text-4xl font-bold">E-Cell</span>
+                            </a>
+                            <p class="pb-10 pr-10 leading-snug text-white">Lorem ipsum dolor sit amet consetetur
+                                sadipscing elitr,
+                                sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+                            <ul class="flex">
+                                <li><a href="javascript:void(0)"><i
+                                            class="lni lni-facebook-filled mr-10 transform hover:-translate-y-1 text-white hover:text-black duration-200 text-2xl"></i></a>
+                                </li>
+                                <li><a href="javascript:void(0)"><i
+                                            class="lni lni-twitter-filled mr-10 transform hover:-translate-y-1 text-white hover:text-black duration-200 text-2xl"></i></a>
+                                </li>
+                                <li><a href="javascript:void(0)"><i
+                                            class="lni lni-instagram-filled mr-10 transform hover:-translate-y-1 text-white hover:text-black duration-200 text-2xl"></i></a>
+                                </li>
+                                <li><a href="javascript:void(0)"><i
+                                            class="lni lni-linkedin-original transform hover:-translate-y-1 text-white hover:text-black duration-200 text-2xl"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="w-4/5 sm:w-2/3 md:w-3/5 lg:w-2/6">
+                        <div class="row">
+                            <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
+                                <div class="mt-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+                                    <div class="">
+                                        <h4 class="mb-8 text-2xl font-bold text-white">Quick Link</h4>
+                                    </div>
+                                    <ul class="text-white">
+                                        <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
+                                            <a href="javascript:void(0)">Departments</a>
+                                        </li>
+                                        <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
+                                            <a href="javascript:void(0)">Privacy Policy</a>
+                                        </li>
+                                        <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
+                                            <a href="javascript:void(0)">Register</a>
+                                        </li>
+                                        <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
+                                            <a href="javascript:void(0)">Terms of Service</a>
+                                        </li>
+                                        <li class="hover:text-red-400 hover:-translate-x-1 transform duration-200"><a
+                                                href="javascript:void(0)">Login</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
+                                <div class="mt-12 link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                                    <div>
+                                        <h4 class="mb-8 text-2xl font-bold text-white">Resources</h4>
+                                    </div>
+                                    <ul class="text-white">
+                                        <li
+                                            class="mb-3 hover:text-red-400 hover:-translate-x-1 transform  duration-200">
+                                            <a href="javascript:void(0)">Home</a>
+                                        </li>
+                                        <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
+                                            <a href="javascript:void(0)">Events</a>
+                                        </li>
+                                        <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
+                                            <a href="javascript:void(0)">Testimonials</a>
+                                        </li>
+                                        <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
+                                            <a href="javascript:void(0)">FAQ</a>
+                                        </li>
+                                        <li class="hover:text-red-400 hover:-translate-x-1 transform duration-200"><a
+                                                href="javascript:void(0)">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-4/5 sm:w-1/3 md:w-2/5 lg:w-2/6">
+                        <div class="mt-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                            <div class="footer-title">
+                                <h4 class="mb-8 text-2xl font-bold text-white">Contact Us</h4>
+                            </div>
+                            <ul class="contact">
+                                <li
+                                    class="cursor-pointer mb-3 hover:text-red-400 hover:-translate-x-1 transform  duration-200">
+                                    +91
+                                    7529856345</li>
+                                <li
+                                    class="cursor-pointer mb-3 hover:text-red-400 hover:-translate-x-1 transform  duration-200">
+                                    konarklohat123456@gmail.com</li>
+                                <li
+                                    class="cursor-pointer hover:text-red-400 hover:-translate-x-1 transform  duration-200">
+                                    Gill Park,
+                                    Gill Road, Ludhiana ,<br> Punjab 141006.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="py-8 border-t border-gray-200">
+                <p class="text-white text-center">
+                    Designed & Developed By <a class="duration-300 hover:text-red-400" href="#" rel="nofollow"
+                        target="_blank">Technical Team, E-Cell.</a>
+                </p>
+            </div>
         </div>
-    </section>
+        <div id="particles-2" class="particles"></div>
+    </footer>
 
-    <!-- Starting of the Footer section-->
-
+    <script src="/js/main.js"></script>
 </body>
+
 </html>
