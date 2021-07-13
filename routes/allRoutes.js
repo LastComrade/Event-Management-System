@@ -30,8 +30,7 @@ router
 // 4. Staff member will be redirected to the login page
 router
     .route("/staff-login")
-    .get(staffCont.staffLoginPage)
-    .post(validate.staffLogin, staffCont.staffLogin);
+    .get(staffCont.staffLoginPage);
 
 // Staff Dashboard
 router
