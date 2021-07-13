@@ -598,3 +598,58 @@ p {
 .back-to-top:hover {
     background-position: right;
 }
+
+
+.counters {
+    background: #0f479a;
+    color: #fff;
+    padding: 40px 20px;
+    border-top: 3px lightskyblue solid;
+}
+
+.counters .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    text-align: center;
+}
+
+.counters i {
+    color: lightskyblue;
+    margin-bottom: 5px;
+}
+
+.counters .counter {
+    font-size: 45px;
+    margin: 10px 0;
+}
+/* Event Page */
+
+.layered-card {
+    position: relative;
+}
+
+.layered-card:hover::before {
+    background: rgba(0, 0, 0, 0.1);
+    content: '';
+    
+    /* Position */
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: translate(0.8rem, 0.8rem);
+    filter: blur(5px);
+
+    /* Size */
+    height: 100%;
+    width: 100%;
+
+    /* Display under the main content */
+    z-index: -1152;
+}
+
+/* .featured-cards:hover{
+    border: 2px solid coral;
+}    */
+
+

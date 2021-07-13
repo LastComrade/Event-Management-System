@@ -66,6 +66,10 @@ app.use(flash());
 // Routes Middleware
 app.use("/", allRoutes); // For home routes
 
+app.get("/participantRegistration-form", (req, res) => {
+    return res.render("layouts/participantRegistration-form");
+});
+
 // Error handling middleware to handle all the errors from the controllers or middlewares
 app.use((err, req, res, next) => {
     if (err instanceof ErrorHandler) {
