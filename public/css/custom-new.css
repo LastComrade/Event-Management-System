@@ -713,7 +713,7 @@ p {
     background: linear-gradient(to left, rgba(240,240,240,0), #D72A81);
     margin-left: 4vh;
 } 
-
+/* 
 .zoom-in-zoom-out-text{
     animation: zoom-in-zoom-out 0.9s ease infinite;
 }
@@ -729,6 +729,6 @@ p {
         transform: scale(1,1);
     }
 
-}
+} */
 
 
