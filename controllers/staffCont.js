@@ -11,7 +11,7 @@ const staffCont = {
     staffLoginPage: (req, res) => {
         // console.log(req.cookies.jwt_token);
         if (req.cookies.jwt_token) {
-            res.redirect("/staff-dashboard");
+            return res.redirect("/staff-dashboard");
         }
         return res.render("layouts/staff-login", {
             error: req.flash("error"),
@@ -21,7 +21,7 @@ const staffCont = {
     staffRegisterPage: (req, res) => {
         // console.log(req.cookies.jwt_token);
         if (req.cookies.jwt_token) {
-            res.redirect("/staff-dashboard");
+            return res.redirect("/staff-dashboard");
         }
         return res.render("layouts/staff-register", {
             error: req.flash("error"),
@@ -126,7 +126,7 @@ const staffCont = {
                                 "success",
                                 "Account activation link sent successfully!"
                             );
-                            res.redirect("/staff-register");
+                            return res.redirect("/staff-register");
                         }
                     });
                 }
@@ -157,14 +157,14 @@ const staffCont = {
                                 "error",
                                 "Expired or Invalid activation link. Please try again"
                             );
-                            res.render("layouts/staff-password-register", {
+                            return res.render("layouts/staff-password-register", {
                                 error: req.flash("error"),
                                 success: req.flash("success"),
                             });
                         } else {
                             // console.log(decoded);
                             res.cookie("token", decoded);
-                            res.render("layouts/staff-password-register", {
+                            return res.render("layouts/staff-password-register", {
                                 error: req.flash("error"),
                                 success: req.flash("success"),
                             });
@@ -176,7 +176,7 @@ const staffCont = {
                 //     message: "An error occured. Please try again",
                 // });
                 req.flash("error", "An error occured. Please try again");
-                res.render("layouts/staff-password-register", {
+                return res.render("layouts/staff-password-register", {
                     error: req.flash("error"),
                     success: req.flash("success"),
                 });
@@ -211,7 +211,7 @@ const staffCont = {
                         "error",
                         "Something went wrong! Please try later"
                     );
-                    res.redirect(
+                    return res.redirect(
                         `/staff-account/activation/${req.cookies.token}`
                     );
                 } else if (!staff) {
@@ -227,10 +227,10 @@ const staffCont = {
                         password,
                     });
                     const data = await staff.save();
-                    res.redirect("/staff-login");
+                    return res.redirect("/staff-login");
                 } else {
                     req.flash("error", "Activation link is already used");
-                    res.redirect("back");
+                    return res.redirect("back");
                 }
             });
         } catch (err) {
@@ -251,7 +251,7 @@ const staffCont = {
                     //     message: "Member with this email does not exists",
                     // });
                     req.flash("error", "Invalid email or password");
-                    res.redirect("back");
+                    return res.redirect("back");
                 } else {
                     bcrypt.compare(
                         password,
@@ -268,7 +268,7 @@ const staffCont = {
                                 //         "Invalid email address or password",
                                 // });
                                 req.flash("error", "Invalid email or password");
-                                res.redirect("back");
+                                return res.redirect("back");
                             } else {
                                 const token = jwt.sign(
                                     {
@@ -284,7 +284,7 @@ const staffCont = {
                                     secure: true,
                                     maxAge: 30 * 60 * 1000,
                                 });
-                                res.redirect("/staff-dashboard");
+                                return res.redirect("/staff-dashboard");
                             }
                         }
                     );
@@ -387,7 +387,7 @@ const staffCont = {
                                                     "success",
                                                     "Password reset link sent successfully!"
                                                 );
-                                                res.redirect("back");
+                                                return res.redirect("back");
                                             }
                                         }
                                     );
@@ -400,13 +400,13 @@ const staffCont = {
                                         "error",
                                         "Expired or invalid reset link. Please try again"
                                     );
-                                    res.redirect("back");
+                                    return res.redirect("back");
                                 }
                             }
                         );
                     } else {
                         req.flash("error", "Invalid Email Addres");
-                        res.redirect("back");
+                        return res.redirect("back");
                     }
                 }
             );
@@ -493,7 +493,7 @@ const staffCont = {
                             "error",
                             "Invalid or expired link. Please try again"
                         );
-                        return res.re("layouts/password-reset", {
+                        return res.render("layouts/password-reset", {
                             error: req.flash("error"),
                             success: req.flash("success"),
                         });
