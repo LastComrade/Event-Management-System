@@ -7,6 +7,10 @@ const deptCont = {
         return res.render("layouts/department_page")
     },
 
+    allIndex: async (req, res, next) => {
+        return res.render("layouts/departments_page")
+    },
+
     finder: async (req, res, next) => {
         await Department.findOne(
             { name: req.params.name },

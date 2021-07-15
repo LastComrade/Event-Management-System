@@ -57,6 +57,8 @@ router
         staffCont.updatePassword
     );
 
+router.route("/departments").get(deptCont.allIndex);
+
 // Protected Routes
 router
     .route("/department-create-101")
@@ -84,7 +86,7 @@ router
 // Monthly Magazine subscription route
 router
     .route("/monthly-magazine")
-    .post(validate.magazineEmail,homeCont.registerMagazineEmail);
+    .post(validate.magazineEmail, homeCont.registerMagazineEmail);
 
 // Monthly Magazine unsubscribe route 
 router
