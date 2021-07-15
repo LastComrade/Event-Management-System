@@ -138,6 +138,14 @@ module.exports.newsletterSchema = Joi.object({
         .label("Email"),
 });
 
+module.exports.magazineSchema = Joi.object({
+    id: Joi.string()
+        .hex()
+        .length(24)
+        .required()
+        .label("ID"),
+});
+
 module.exports.updatePasswordSchema = Joi.object({
     password: Joi.string().trim().min(8).max(16).required().label("Password"),
     confirmPassword: Joi.any()
