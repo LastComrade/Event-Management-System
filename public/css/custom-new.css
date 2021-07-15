@@ -638,7 +638,7 @@ p {
     left: 0;
     position: absolute;
     transform: translate(0.8rem, 0.8rem);
-    filter: blur(5px);
+    filter: blur(4px);
 
     /* Size */
     height: 100%;
@@ -713,6 +713,7 @@ p {
     background: linear-gradient(to left, rgba(240,240,240,0), #D72A81);
     margin-left: 4vh;
 } 
+/* department Page (9 Pages) */
 /* 
 .zoom-in-zoom-out-text{
     animation: zoom-in-zoom-out 0.9s ease infinite;
