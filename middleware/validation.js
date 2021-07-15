@@ -5,6 +5,7 @@ const {
     eventSchema,
     participantSchema,
     newsletterSchema,
+    magazineSchema,
     staffRegisterSchema,
     staffPaswordRegisterSchema,
     emailSchema,
@@ -74,6 +75,23 @@ const validate = {
         const { error } = newsletterSchema.validate(req.body);
         if (error) {
             next(ErrorHandler.validationError(error.message));
+        }
+        next();
+    },
+
+    magazineEmail: (req, res, next) => {
+        const { error } = newsletterSchema.validate(req.body);
+        if (error) {
+            next(ErrorHandler.validationError(error.message));
+        }
+        next();
+    },
+
+    magazine: (req, res, next) => {
+        const { error } = magazineSchema.validate(req.params);
+        if (error) {
+            req.flash("error", "Not Valid");
+            return res.redirect("/");
         }
         next();
     },
