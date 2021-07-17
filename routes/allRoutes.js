@@ -35,7 +35,7 @@ router
 
 // Staff Dashboard
 router
-    .route("/staff-dashboard")
+    .route("/dashboard")
     .get(authMid.authRequired, authMid.staffCheck, staffCont.staffDashboard);
 
 router
@@ -53,6 +53,9 @@ router
 router
     .route("/staff-dashboard/participants")
     .get(authMid.authRequired, authMid.staffCheck, staffCont.participantsRetriver);
+
+router.route("/board").get(authMid.authRequired, authMid.staffCheck, staffCont.boardIndex);
+router.route("/message").get(authMid.authRequired, authMid.staffCheck, staffCont.messageIndex);
 
 // Staff logout
 router.route("/staff-logout").get(authMid.authRequired, staffCont.staffLogout);
@@ -92,6 +95,8 @@ router
     .route("/event-create-101")
     .get(eventCont.index)       
     .post(validate.eventCreate, eventCont.createEvent);     
+
+router.route("/event-landing").get(eventCont.eventIndex);
 
 // To render indivizual events via event page
 // get -> To render the page

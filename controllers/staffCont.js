@@ -5,6 +5,9 @@ const ErrorHandler = require("../utils/errorHandler");
 const jwt = require("jsonwebtoken");
 const nodeMailer = require("nodemailer");
 const bcrypt = require("bcrypt");
+const Event = require("../models/event");
+const Dept = require("../models/dept");
+const Participant = require("../models/participant");
 
 // for using mongoose methods
 const Magazines = require("../models/magazine-reciever");
@@ -17,7 +20,7 @@ const staffCont = {
     staffLoginPage: (req, res) => {
         // console.log(req.cookies.jwt_token);
         if (req.cookies.jwt_token) {
-            return res.redirect("/staff-dashboard");
+            return res.redirect("/dashboard");
         }
         return res.render("layouts/staff-login", {
             error: req.flash("error"),
@@ -27,7 +30,7 @@ const staffCont = {
     staffRegisterPage: (req, res) => {
         // console.log(req.cookies.jwt_token);
         if (req.cookies.jwt_token) {
-            return res.redirect("/staff-dashboard");
+            return res.redirect("/dashboard");
         }
         return res.render("layouts/staff-register", {
             error: req.flash("error"),
@@ -38,7 +41,7 @@ const staffCont = {
     staffPasswordResetPage: (req, res) => {
         // console.log(req.cookies.jwt_token);
         if (req.cookies.jwt_token) {
-            res.redirect("/staff-dashboard");
+            res.redirect("/dashboard");
         }
         return res.render("layouts/password-reset-email", {
             error: req.flash("error"),
@@ -50,7 +53,7 @@ const staffCont = {
         // console.log(req.cookies.jwt_token);
         const { token } = req.params;
         if (req.cookies.jwt_token) {
-            res.redirect("/staff-dashboard");
+            res.redirect("/dashboard");
         }
         return res.render("layouts/password-reset", {
             token,
@@ -113,9 +116,8 @@ const staffCont = {
                         html: `
                         <h1>Hello, ${firstname + " " + lastname}</h1>
                         <p>Click button below to verify your account</p>
-                        <a href="${
-                            process.env.CLIENT_URL
-                        }/staff-account/activation/${token}">Activate</a>
+                        <a href="${process.env.CLIENT_URL
+                            }/staff-account/activation/${token}">Activate</a>
                     `,
                     };
 
@@ -296,7 +298,7 @@ const staffCont = {
                                     secure: true,
                                     maxAge: 30 * 60 * 1000,
                                 });
-                                return res.redirect("/staff-dashboard");
+                                return res.redirect("/dashboard");
                             }
                         }
                     );
@@ -311,12 +313,60 @@ const staffCont = {
     staffDashboard: async (req, res, next) => {
         try {
             const token = req.cookies.jwt_token;
-            jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
+            jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
                 if (err) {
                     console.log(err);
                     next(ErrorHandler.forbidden());
                 } else if (decodedToken) {
-                    return res.render("layouts/staff-dashboard");
+                    const eventCount = await Event.countDocuments();
+                    const deptCount = await Dept.countDocuments();
+                    const participantCount = await Participant.countDocuments();
+                    const staffCount = await Staff.countDocuments();
+                    return res.render("layouts/dashboard/dashboard", { staffCount, eventCount, deptCount, participantCount });
+                }
+            });
+        } catch (err) {
+            console.log(err);
+            next(ErrorHandler.serverError());
+        }
+    },
+
+    boardIndex: async (req, res, next) => {
+        try {
+            const token = req.cookies.jwt_token;
+            jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+                if (err) {
+                    console.log(err);
+                    next(ErrorHandler.forbidden());
+                } else if (decodedToken) {
+                    const staff = await Staff.find().select("-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt");
+                    console.log("This should be the array of the staff", staff);
+                    const eventCount = await Event.countDocuments();
+                    const deptCount = await Dept.countDocuments();
+                    const participantCount = await Participant.countDocuments();
+                    return res.render("layouts/dashboard/board", { staffData: staff, eventCount, deptCount, participantCount });
+                }
+            });
+        } catch (err) {
+            console.log(err);
+            next(ErrorHandler.serverError());
+        }
+    },
+    
+    messageIndex: async (req, res, next) => {
+        try {
+            const token = req.cookies.jwt_token;
+            jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+                if (err) {
+                    console.log(err);
+                    next(ErrorHandler.forbidden());
+                } else if (decodedToken) {
+                    const staff = await Staff.find().select("-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt");
+                    console.log("This should be the array of the staff", staff);
+                    const eventCount = await Event.countDocuments();
+                    const deptCount = await Dept.countDocuments();
+                    const participantCount = await Participant.countDocuments();
+                    return res.render("layouts/dashboard/message", { staffData: staff, eventCount, deptCount, participantCount });
                 }
             });
         } catch (err) {

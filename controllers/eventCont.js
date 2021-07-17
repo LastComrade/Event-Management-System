@@ -8,6 +8,10 @@ const eventCont = {
         return res.render("layouts/event-page");
     },
 
+    eventIndex: (req, res) => {
+        return res.render("layouts/eventLandingPage");
+    },
+
     finder: async (req, res, next) => {
         await Event.findOne({ name: req.params.name }, (err, foundEvent) => {
             if (err) {
