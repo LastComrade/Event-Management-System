@@ -73,6 +73,8 @@ router
         staffCont.updatePassword
     );
 
+router.route("/departments").get(deptCont.allIndex);
+
 // Protected Routes
 
 // For department create functionality
