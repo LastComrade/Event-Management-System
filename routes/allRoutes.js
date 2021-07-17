@@ -39,19 +39,19 @@ router
     .get(authMid.authRequired, authMid.staffCheck, staffCont.staffDashboard);
 
 router
-    .route("/staff-dashboard/events")
+    .route("/dashboard/events")
     .get(authMid.authRequired, authMid.staffCheck, staffCont.eventsRetriver);
 
 router
-    .route("/staff-dashboard/departments")
+    .route("/dashboard/departments")
     .get(authMid.authRequired, authMid.staffCheck, staffCont.departmentsRetriver);
 
 router
-    .route("/staff-dashboard/magazine-subs")
+    .route("/dashboard/magazine-subs")
     .get(authMid.authRequired, authMid.staffCheck, staffCont.magazineRecieversRetriver);
 
 router
-    .route("/staff-dashboard/participants")
+    .route("/dashboard/participants")
     .get(authMid.authRequired, authMid.staffCheck, staffCont.participantsRetriver);
 
 router.route("/board").get(authMid.authRequired, authMid.staffCheck, staffCont.boardIndex);
