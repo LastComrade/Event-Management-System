@@ -76,41 +76,44 @@ const eventCont = {
                                     );
                                     await foundEvent.save();
 
-                                     // Sheet API code
-                                     try{
+                                    // Sheet API code
+                                    try {
                                         let client_side = new google.auth.JWT(
                                             process.env.client_email,
                                             null,
                                             process.env.private_key,
                                             [
-                                                "https://www.googleapis.com/auth/spreadsheets"
+                                                "https://www.googleapis.com/auth/spreadsheets",
                                             ]
                                         );
-                                        
-                                        client_side.authorize((err,token) => {
-                                            if(err){
+
+                                        client_side.authorize((err, token) => {
+                                            if (err) {
                                                 console.log(err);
                                                 return;
-                                            }else{
-                                                participantSheetEditor(client_side);
+                                            } else {
+                                                participantSheetEditor(
+                                                    client_side
+                                                );
                                             }
                                         });
+                                    } catch (err) {
+                                        console.log(
+                                            `An error Occured in Google auth`
+                                        );
                                     }
-                                    catch(err){
-                                        console.log(`An error Occured in Google auth`);
-                                    }
-                                    
+
                                     participantSheetEditor = async (client) => {
-                                        try{
-                                            const sheetAPI = google.sheets(
-                                                {
-                                                    version: "v4",
-                                                    auth: client
-                                                }
-                                            );
-                                            
+                                        try {
+                                            const sheetAPI = google.sheets({
+                                                version: "v4",
+                                                auth: client,
+                                            });
+
                                             const options1 = {
-                                                spreadsheetId: process.env.event_spreadsheet_id,
+                                                spreadsheetId:
+                                                    process.env
+                                                        .event_spreadsheet_id,
                                                 range: `${foundEvent.name}!A2`,
                                                 valueInputOption: "RAW",
                                                 resource: {
@@ -120,16 +123,20 @@ const eventCont = {
                                                             email,
                                                             college_name,
                                                             crn,
-                                                        ]
-                                                    ]
-                                                }
-                                            }
-                                            await sheetAPI.spreadsheets.values.append(options1);
-                                        }catch(err){
-                                            console.log(`An Error occured while saving the participant in the spreadsheet`);
+                                                        ],
+                                                    ],
+                                                },
+                                            };
+                                            await sheetAPI.spreadsheets.values.append(
+                                                options1
+                                            );
+                                        } catch (err) {
+                                            console.log(
+                                                `An Error occured while saving the participant in the spreadsheet`
+                                            );
                                             // console.log(err);
                                         }
-                                    }
+                                    };
 
                                     return res.status(200).json({
                                         message:
@@ -162,40 +169,48 @@ const eventCont = {
                                             await foundParticipant.save();
 
                                         // Sheet API code
-                                        try{
-                                            let client_side = new google.auth.JWT(
-                                                process.env.client_email,
-                                                null,
-                                                process.env.private_key,
-                                                [
-                                                    "https://www.googleapis.com/auth/spreadsheets"
-                                                ]
-                                            );
-                                            
-                                            client_side.authorize((err,token) => {
-                                                if(err){
-                                                    console.log(err);
-                                                    return;
-                                                }else{
-                                                    participantSheetEditor(client_side);
-                                                }
-                                            });
-                                        }
-                                        catch(err){
-                                            console.log(`An error Occured in Google auth`);
-                                        }
-                                        
-                                        participantSheetEditor = async (client) => {
-                                            try{
-                                                const sheetAPI = google.sheets(
-                                                    {
-                                                        version: "v4",
-                                                        auth: client
-                                                    }
+                                        try {
+                                            let client_side =
+                                                new google.auth.JWT(
+                                                    process.env.client_email,
+                                                    null,
+                                                    process.env.private_key,
+                                                    [
+                                                        "https://www.googleapis.com/auth/spreadsheets",
+                                                    ]
                                                 );
-                                                
+
+                                            client_side.authorize(
+                                                (err, token) => {
+                                                    if (err) {
+                                                        console.log(err);
+                                                        return;
+                                                    } else {
+                                                        participantSheetEditor(
+                                                            client_side
+                                                        );
+                                                    }
+                                                }
+                                            );
+                                        } catch (err) {
+                                            console.log(
+                                                `An error Occured in Google auth`
+                                            );
+                                        }
+
+                                        participantSheetEditor = async (
+                                            client
+                                        ) => {
+                                            try {
+                                                const sheetAPI = google.sheets({
+                                                    version: "v4",
+                                                    auth: client,
+                                                });
+
                                                 const info = {
-                                                    spreadsheetId: process.env.event_spreadsheet_id,
+                                                    spreadsheetId:
+                                                        process.env
+                                                            .event_spreadsheet_id,
                                                     range: `${foundEvent.name}!A2`,
                                                     valueInputOption: "RAW",
                                                     resource: {
@@ -205,15 +220,19 @@ const eventCont = {
                                                                 foundParticipant.email,
                                                                 foundParticipant.college_name,
                                                                 foundParticipant.crn,
-                                                            ]
-                                                        ]
-                                                    }
-                                                }
-                                                await sheetAPI.spreadsheets.values.append(info);
-                                            }catch(err){
-                                                console.log(`An Error occured while saving the participant in the spreadsheet`)
+                                                            ],
+                                                        ],
+                                                    },
+                                                };
+                                                await sheetAPI.spreadsheets.values.append(
+                                                    info
+                                                );
+                                            } catch (err) {
+                                                console.log(
+                                                    `An Error occured while saving the participant in the spreadsheet`
+                                                );
                                             }
-                                        }
+                                        };
 
                                         foundEvent.participants.push(
                                             savedParticipant._id
@@ -272,58 +291,55 @@ const eventCont = {
                     });
 
                     // SheetAPI code
-                    try{
+                    try {
                         let client_side = new google.auth.JWT(
                             process.env.client_email,
                             null,
                             process.env.private_key,
-                            [
-                                "https://www.googleapis.com/auth/spreadsheets"
-                            ]
+                            ["https://www.googleapis.com/auth/spreadsheets"]
                         );
-    
-                        client_side.authorize((err,token) => {
-                            if(err){
+
+                        client_side.authorize((err, token) => {
+                            if (err) {
                                 console.log(err);
                                 return;
-                            }else{
+                            } else {
                                 eventSheetAdder(client_side);
                             }
                         });
+                    } catch (err) {
+                        console.log("Error occured in Google auth");
                     }
-                    catch(err){
-                        console.log("Error occured in Google auth")
-                    }
-                   
+
                     eventSheetAdder = async (client) => {
-                        try{
-                            const sheetAPI = google.sheets(
-                                {
-                                    version: "v4",
-                                    auth: client
-                                }
-                            );
-    
+                        try {
+                            const sheetAPI = google.sheets({
+                                version: "v4",
+                                auth: client,
+                            });
+
                             const eventSheetInfo = {
                                 spreadsheetId: process.env.event_spreadsheet_id,
                                 resource: {
                                     requests: [
                                         {
-                                            "addSheet": {
-                                                "properties": {
-                                                    "title": name,
-                                                }
-                                            }
+                                            addSheet: {
+                                                properties: {
+                                                    title: name,
+                                                },
+                                            },
                                         },
                                     ],
-                                    "includeSpreadsheetInResponse": true,
-                                }
-                            }
+                                    includeSpreadsheetInResponse: true,
+                                },
+                            };
                             // let temp1 = await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
-                            await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
+                            await sheetAPI.spreadsheets.batchUpdate(
+                                eventSheetInfo
+                            );
                             // let temp2 = temp1.data.updatedSpreadsheet.sheets[temp1.data.updatedSpreadsheet.sheets.length - 1];
                             // console.log(temp2)
-    
+
                             const eventSheetInfo2 = {
                                 spreadsheetId: process.env.event_spreadsheet_id,
                                 range: `${name}!A1`,
@@ -331,17 +347,23 @@ const eventCont = {
                                 resource: {
                                     values: [
                                         [
-                                            'Name','Email','College Name','College Roll No.'
-                                        ]
-                                    ]
-                                }
-                            }
-                            await sheetAPI.spreadsheets.values.append(eventSheetInfo2);
+                                            "Name",
+                                            "Email",
+                                            "College Name",
+                                            "College Roll No.",
+                                        ],
+                                    ],
+                                },
+                            };
+                            await sheetAPI.spreadsheets.values.append(
+                                eventSheetInfo2
+                            );
+                        } catch (err) {
+                            console.log(
+                                "error occured while creating the event on spreadsheet"
+                            );
                         }
-                        catch(err){
-                            console.log("error occured while creating the event on spreadsheet")
-                        }
-                    }
+                    };
 
                     await newEvent.save();
                     return res.status(200).json({

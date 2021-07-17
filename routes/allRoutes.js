@@ -38,6 +38,22 @@ router
     .route("/dashboard")
     .get(authMid.authRequired, authMid.staffCheck, staffCont.staffDashboard);
 
+router
+    .route("/dashboard/events")
+    .get(authMid.authRequired, authMid.staffCheck, staffCont.eventsRetriver);
+
+router
+    .route("/dashboard/departments")
+    .get(authMid.authRequired, authMid.staffCheck, staffCont.departmentsRetriver);
+
+router
+    .route("/dashboard/magazine-subs")
+    .get(authMid.authRequired, authMid.staffCheck, staffCont.magazineRecieversRetriver);
+
+router
+    .route("/dashboard/participants")
+    .get(authMid.authRequired, authMid.staffCheck, staffCont.participantsRetriver);
+
 router.route("/board").get(authMid.authRequired, authMid.staffCheck, staffCont.boardIndex);
 router.route("/message").get(authMid.authRequired, authMid.staffCheck, staffCont.messageIndex);
 
@@ -63,23 +79,34 @@ router
 router.route("/departments").get(deptCont.allIndex);
 
 // Protected Routes
+
+// For department create functionality
+// get -> To render the department create form/page
+// post -> For creating the new department in database
 router
     .route("/department-create-101")
-    .get(deptCont.index)
-    .post(validate.deptCreate, deptCont.createDept);
+    .get(deptCont.index)        
+    .post(validate.deptCreate, deptCont.createDept);    
 
+// For event create functionality
+// get -> To render the event create form/page
+// post -> For creating a new event in database and googlesheets
 router
     .route("/event-create-101")
-    .get(eventCont.index)
-    .post(validate.eventCreate, eventCont.createEvent);
+    .get(eventCont.index)       
+    .post(validate.eventCreate, eventCont.createEvent);     
 
 router.route("/event-landing").get(eventCont.eventIndex);
 
+// To render indivizual events via event page
+// get -> To render the page
+// post -> For registering participants in an event
 router
     .route("/events/:name")
     .get(eventCont.finder)
     .post(validate.participantRegister, eventCont.registerParticipant);
 
+// To render department page for only a single department based on it's name
 router
     .route("/departments/:name")
     .get(deptCont.finder);
