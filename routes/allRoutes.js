@@ -38,6 +38,22 @@ router
     .route("/staff-dashboard")
     .get(authMid.authRequired, authMid.staffCheck, staffCont.staffDashboard);
 
+router
+    .route("/staff-dashboard/events")
+    .get(authMid.authRequired, authMid.staffCheck, staffCont.eventsRetriver);
+
+router
+    .route("/staff-dashboard/departments")
+    .get(authMid.authRequired, authMid.staffCheck, staffCont.departmentsRetriver);
+
+router
+    .route("/staff-dashboard/magazine-subs")
+    .get(authMid.authRequired, authMid.staffCheck, staffCont.magazineRecieversRetriver);
+
+router
+    .route("/staff-dashboard/participants")
+    .get(authMid.authRequired, authMid.staffCheck, staffCont.participantsRetriver);
+
 // Staff logout
 router.route("/staff-logout").get(authMid.authRequired, staffCont.staffLogout);
 
@@ -58,21 +74,32 @@ router
     );
 
 // Protected Routes
+
+// For department create functionality
+// get -> To render the department create form/page
+// post -> For creating the new department in database
 router
     .route("/department-create-101")
-    .get(deptCont.index)
-    .post(validate.deptCreate, deptCont.createDept);
+    .get(deptCont.index)        
+    .post(validate.deptCreate, deptCont.createDept);    
 
+// For event create functionality
+// get -> To render the event create form/page
+// post -> For creating a new event in database and googlesheets
 router
     .route("/event-create-101")
-    .get(eventCont.index)
-    .post(validate.eventCreate, eventCont.createEvent);
+    .get(eventCont.index)       
+    .post(validate.eventCreate, eventCont.createEvent);     
 
+// To render indivizual events via event page
+// get -> To render the page
+// post -> For registering participants in an event
 router
     .route("/events/:name")
     .get(eventCont.finder)
     .post(validate.participantRegister, eventCont.registerParticipant);
 
+// To render department page for only a single department based on it's name
 router
     .route("/departments/:name")
     .get(deptCont.finder);
@@ -84,7 +111,7 @@ router
 // Monthly Magazine subscription route
 router
     .route("/monthly-magazine")
-    .post(validate.magazineEmail,homeCont.registerMagazineEmail);
+    .post(validate.magazineEmail, homeCont.registerMagazineEmail);
 
 // Monthly Magazine unsubscribe route 
 router

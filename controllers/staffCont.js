@@ -6,6 +6,12 @@ const jwt = require("jsonwebtoken");
 const nodeMailer = require("nodemailer");
 const bcrypt = require("bcrypt");
 
+// for using mongoose methods
+const Magazines = require("../models/magazine-reciever");
+const Events = require("../models/event");
+const Departments = require("../models/dept");
+const Participants = require("../models/participant");
+
 const staffCont = {
     // Controller to render the staff login page
     staffLoginPage: (req, res) => {
@@ -157,17 +163,23 @@ const staffCont = {
                                 "error",
                                 "Expired or Invalid activation link. Please try again"
                             );
-                            return res.render("layouts/staff-password-register", {
-                                error: req.flash("error"),
-                                success: req.flash("success"),
-                            });
+                            return res.render(
+                                "layouts/staff-password-register",
+                                {
+                                    error: req.flash("error"),
+                                    success: req.flash("success"),
+                                }
+                            );
                         } else {
                             // console.log(decoded);
                             res.cookie("token", decoded);
-                            return res.render("layouts/staff-password-register", {
-                                error: req.flash("error"),
-                                success: req.flash("success"),
-                            });
+                            return res.render(
+                                "layouts/staff-password-register",
+                                {
+                                    error: req.flash("error"),
+                                    success: req.flash("success"),
+                                }
+                            );
                         }
                     }
                 );
@@ -311,6 +323,74 @@ const staffCont = {
             console.log(err);
             next(ErrorHandler.serverError());
         }
+    },
+
+    eventsRetriver: async (req, res, next) => {
+        // for retriving all the events list from database
+        await Events.find({}, async (err, eventsList) => {
+            if (err) {
+                console.log(
+                    `Error occur while retriving events list from database`
+                );
+                // req.flash("error","An error occured while retriving events list");
+                res.redirect("/staff-dashboard");
+            } else {
+                return res.json({
+                    eventsList,
+                });
+            }
+        });
+    },
+
+    magazineRecieversRetriver: async (req, res, next) => {
+        // for retriving all magazine subs from database
+        await Magazines.find({}, async (err, magazineSubsList) => {
+            if (err) {
+                console.log(
+                    `Error occur while retriving magazine subs list from database`
+                );
+                // req.flash("error","An error occured while retriving Magazine Recievers list");
+                res.redirect("/staff-dashboard");
+            } else {
+                return res.json({
+                    magazineSubsList,
+                });
+            }
+        });
+    },
+
+    departmentsRetriver: async (req, res, next) => {
+        // for retriving all the departments from the database
+        await Departments.find({}, async (err, departmentsList) => {
+            if (err) {
+                console.log(
+                    `Error occur while retriving departments list from database`
+                );
+                // req.flash("error","An error occured while retriving departments");
+                res.redirect("/staff-dashboard");
+            } else {
+                return res.json({
+                    departmentsList,
+                });
+            }
+        });
+    },
+
+    participantsRetriver: async (req, res, next) => {
+        // for retriving all the participants from the database
+        await Participants.find({}, async (err, participantsList) => {
+            if (err) {
+                console.log(
+                    `Error occur while retriving participants list from database`
+                );
+                // req.flash("error","An error occured while retriving participants");
+                res.redirect("/staff-dashboard");
+            } else {
+                return res.json({
+                    participantsList,
+                });
+            }
+        });
     },
 
     forgotPassword: (req, res, next) => {
