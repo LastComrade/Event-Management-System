@@ -70,6 +70,11 @@ app.get("/participantRegistration-form", (req, res) => {
     return res.render("layouts/participantRegistration-form");
 });
 
+
+app.get("/googled17d3d306196397e.html", (req, res) => {
+    return res.render("layouts/googled17d3d306196397e.html");
+});
+
 // Error handling middleware to handle all the errors from the controllers or middlewares
 app.use((err, req, res, next) => {
     if (err instanceof ErrorHandler) {
