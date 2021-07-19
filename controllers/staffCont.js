@@ -309,7 +309,7 @@ const staffCont = {
 
     // Controller to reset the password: Ask for email -> If verified then ask for new password
     forgotPassword: (req, res, next) => {
-        console.log("In forgotPassword");
+        // console.log("In forgotPassword");
         try {
             const { email } = req.body;
             Staff.findOne(
@@ -436,7 +436,6 @@ const staffCont = {
                         );
                         return res.redirect("back");
                     }
-                    console.log("NONONONNONNONONO");
                     await Staff.findOne(
                         {
                             resetPasswordLink: token,
@@ -467,13 +466,11 @@ const staffCont = {
             console.log(err);
             next(ErrorHandler.serverError());
         }
-        console.log(req.flash("error"));
     },
 
     // Controller to update the password in the DB
     updatePassword: (req, res, next) => {
         try {
-            console.log("After validation");
             const { token } = req.params;
             // console.log(req.params);
             const { password } = req.body;
@@ -513,7 +510,7 @@ const staffCont = {
                                     );
                                     return res.redirect("back");
                                 } else if (staff) {
-                                    console.log("This is staff", staff);
+                                    // console.log("This is staff", staff);
                                     await Staff.findByIdAndUpdate(
                                         decoded._id,
                                         {
