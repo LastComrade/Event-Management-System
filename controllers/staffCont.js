@@ -5,6 +5,8 @@ const ErrorHandler = require("../utils/errorHandler");
 const jwt = require("jsonwebtoken");
 const nodeMailer = require("nodemailer");
 const bcrypt = require("bcrypt");
+const uuid = require("uuid");
+const registerKey = require("../models/regKey");
 
 const staffCont = {
     // To render the staff login page
@@ -15,6 +17,7 @@ const staffCont = {
         }
         return res.render("layouts/auth/staff-login", {
             error: req.flash("error"),
+            success: req.flash("success"),
         });
     },
 
@@ -64,28 +67,16 @@ const staffCont = {
     // Controller to register the staff member
     staffRegister: async (req, res, next) => {
         try {
-            const {
-                firstname,
-                lastname,
-                email,
-                department,
-                designation,
-                profile_pic_url,
-                key,
-            } = req.body;
-            await Staff.findOne({ email }, async (err, staff) => {
-                if (err) {
-                    console.log(err);
-                    next(ErrorHandler.serverError());
-                } else if (staff) {
-                    // return res.status(200).json({
-                    //     message: "Member with this email already exists",
-                    // });
-                    req.flash("error", "Member with this email already exists");
-                    return res.redirect("/staff-register");
-                } else {
-                    const token = jwt.sign(
-                        {
+            console.log(req.body)
+            if(uuid.validate(req.body.key)){
+                await registerKey.findOne({ key: req.body.key, used: false }, async (err, foundKey) => {
+                    if(!foundKey){
+                        console.log(`Invalid key entered (wrong uuid)`);
+                        req.flash("error","Entered key is Invalid");
+                        res.redirect("/staff-register");
+                    }else{
+
+                        const {
                             firstname,
                             lastname,
                             email,
@@ -93,51 +84,79 @@ const staffCont = {
                             designation,
                             profile_pic_url,
                             key,
-                        },
-                        process.env.JWT_ACCOUNT_ACTIVATION_SECRET,
-                        {
-                            expiresIn: "5m",
-                        }
-                    );
+                        } = req.body;
+                        await Staff.findOne({ email }, async (err, staff) => {
+                            if (err) {
+                                console.log(err);
+                                next(ErrorHandler.serverError());
+                            } else if (staff) {
+                                // return res.status(200).json({
+                                //     message: "Member with this email already exists",
+                                // });
+                                req.flash("error", "Member with this email already exists");
+                                return res.redirect("/staff-register");
+                            } else {
+                                const token = jwt.sign(
+                                    {
+                                        firstname,
+                                        lastname,
+                                        email,
+                                        department,
+                                        designation,
+                                        profile_pic_url,
+                                        key,
+                                    },
+                                    process.env.JWT_ACCOUNT_ACTIVATION_SECRET,
+                                    {
+                                        expiresIn: "5m",
+                                    }
+                                );
 
-                    const transporter = nodeMailer.createTransport({
-                        service: "gmail",
-                        auth: {
-                            user: process.env.EMAIL_ID,
-                            pass: process.env.EMAIL_PASSWORD,
-                        },
-                    });
+                                const transporter = nodeMailer.createTransport({
+                                    service: "gmail",
+                                    auth: {
+                                        user: process.env.EMAIL_ID,
+                                        pass: process.env.EMAIL_PASSWORD,
+                                    },
+                                });
 
-                    const mailOptions = {
-                        from: process.env.EMAIL_ID,
-                        to: email,
-                        subject: "Account activation link | E-Cell, GNDEC",
-                        html: `
-                        <h1>Hello, ${firstname + " " + lastname}</h1>
-                        <p>Click button below to verify your account</p>
-                        <a href="${process.env.CLIENT_URL
-                            }/staff-account/activation/${token}">Activate</a>
-                    `,
-                    };
+                                const mailOptions = {
+                                    from: process.env.EMAIL_ID,
+                                    to: email,
+                                    subject: "Account activation link | E-Cell, GNDEC",
+                                    html: `
+                                    <h1>Hello, ${firstname + " " + lastname}</h1>
+                                    <p>Click button below to verify your account</p>
+                                    <a href="${process.env.CLIENT_URL
+                                        }/staff-account/activation/${token}">Activate</a>
+                                `,
+                                };
 
-                    transporter.sendMail(mailOptions, (error, data) => {
-                        if (error) {
-                            console.log(error);
-                            next(ErrorHandler.serverError());
-                        } else {
-                            // console.log(data);
-                            // return res.status(200).json({
-                            //     message: "Account activation link sent successfully!",
-                            // });
-                            req.flash(
-                                "success",
-                                "Account activation link sent successfully!"
-                            );
-                            return res.redirect("/staff-register");
-                        }
-                    });
-                }
-            });
+                                transporter.sendMail(mailOptions, (error, data) => {
+                                    if (error) {
+                                        console.log(error);
+                                        next(ErrorHandler.serverError());
+                                    } else {
+                                        // console.log(data);
+                                        // return res.status(200).json({
+                                        //     message: "Account activation link sent successfully!",
+                                        // });
+                                        req.flash(
+                                            "success",
+                                            "Account activation link sent successfully!"
+                                        );
+                                        return res.redirect("/staff-register");
+                                    }
+                                });
+                            }
+                        });
+                    }
+                })
+            }else{
+                console.log(`invalid key (that's not a uuid)`)
+                req.flash("error","Entered key is Invalid");
+                res.redirect("/staff-register"); 
+            }
         } catch (err) {
             console.log(err);
             return next(ErrorHandler.serverError());
@@ -214,35 +233,61 @@ const staffCont = {
                 key,
             } = req.cookies.token;
             // console.log("Token from cookie", req.cookies.token);
-            await Staff.findOne({ email }, async (err, staff) => {
-                if (err) {
+
+            // register key validation
+            await registerKey.findOne({ key: key, used: false }, async (err, foundKey) => {
+                if(err){
                     console.log(err);
                     req.flash(
                         "error",
                         "Something went wrong! Please try later"
                     );
-                    return res.redirect(
-                        `/staff-account/activation/${req.cookies.token}`
+                    return res.redirect(`/staff-account/activation/${req.cookies.token}`);
+                }else if(!foundKey){
+                    req.flash(
+                        "error",
+                        "Invalid or Used key entered"
                     );
-                } else if (!staff) {
-                    const { password } = req.body;
-                    const staff = new Staff({
-                        firstname,
-                        lastname,
-                        email,
-                        department,
-                        designation,
-                        profile_pic_url,
-                        key,
-                        password,
+                    res.redirect("/staff-register");
+                }else{
+
+                    await Staff.findOne({ email }, async (err, staff) => {
+                        if (err) {
+                            console.log(err);
+                            req.flash(
+                                "error",
+                                "Something went wrong! Please try later"
+                            );
+                            return res.redirect(
+                                `/staff-account/activation/${req.cookies.token}`
+                            );
+                        } else if (!staff) {
+                            const { password } = req.body;
+                            const staff = new Staff({
+                                firstname,
+                                lastname,
+                                email,
+                                department,
+                                designation,
+                                profile_pic_url,
+                                key,
+                                password,
+                            });
+                            const data = await staff.save();
+
+                            foundKey.used = true;
+                            foundKey.usedBy = email;
+                            await foundKey.save();
+                            
+                            req.flash("success", "Account Registered Successfully");
+                            return res.redirect("/staff-login");
+                        } else {
+                            req.flash("error", "Activation link is already used");
+                            return res.redirect("back");
+                        }
                     });
-                    const data = await staff.save();
-                    return res.redirect("/staff-login");
-                } else {
-                    req.flash("error", "Activation link is already used");
-                    return res.redirect("back");
                 }
-            });
+            })
         } catch (err) {
             console.log("This is the error from password register", err);
             next(ErrorHandler.serverError());
