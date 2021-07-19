@@ -13,18 +13,43 @@ router
 
 router
     .route("/dashboard/departments")
-    .get(authMid.authRequired, authMid.staffCheck, dboardCont.departmentsRetriver);
+    .get(
+        authMid.authRequired,
+        authMid.staffCheck,
+        dboardCont.departmentsRetriver
+    );
 
 router
     .route("/dashboard/magazine-subs")
-    .get(authMid.authRequired, authMid.staffCheck, dboardCont.magazineRecieversRetriver);
+    .get(
+        authMid.authRequired,
+        authMid.staffCheck,
+        dboardCont.magazineRecieversRetriver
+    );
 
 router
     .route("/dashboard/participants")
-    .get(authMid.authRequired, authMid.staffCheck, dboardCont.participantsRetriver);
+    .get(
+        authMid.authRequired,
+        authMid.staffCheck,
+        dboardCont.participantsRetriver
+    );
 
-router.route("/dashboard/board").get(authMid.authRequired, authMid.staffCheck, dboardCont.boardIndex);
-router.route("/dashboard/message").get(authMid.authRequired, authMid.staffCheck, dboardCont.messageIndex);
+router
+    .route("/dashboard/board")
+    .get(authMid.authRequired, authMid.staffCheck, dboardCont.boardIndex);
+router
+    .route("/dashboard/message")
+    .get(authMid.authRequired, authMid.staffCheck, dboardCont.messageIndex);
+
+// protected route to genetrate the register key
+router
+    .route("/dashboard/reg-key-gen/refresh-101")
+    .get(
+        authMid.authRequired,
+        authMid.staffCheck,
+        dboardCont.registerKeyGenerator
+    );
 
 // Exporting routes
 module.exports = router;

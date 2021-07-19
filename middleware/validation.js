@@ -99,9 +99,12 @@ const validate = {
     staffRegister: (req, res, next) => {
         const { error } = staffRegisterSchema.validate(req.body);
         if (error) {
-            next(ErrorHandler.validationError(error.message));
+            // next(ErrorHandler.validationError(error.message));
+            req.flash("error", error.message);
+            return res.redirect("/staff-register");
+        }else{
+            next();
         }
-        next();
     },
 
     staffPasswordRegister: (req, res, next) => {
