@@ -1,65 +1,64 @@
 // Same documentation and concepts as homeCont.js refer them if you want to understant the concepts
-
+// DRY Code - 60% (Could be improved to the extent of 40%)
 const Staff = require("../models/staff");
 const ErrorHandler = require("../utils/errorHandler");
 const jwt = require("jsonwebtoken");
 const nodeMailer = require("nodemailer");
 const bcrypt = require("bcrypt");
-const Event = require("../models/event");
-const Dept = require("../models/dept");
-const Participant = require("../models/participant");
-
-// for using mongoose methods
-const Magazines = require("../models/magazine-reciever");
-const Events = require("../models/event");
-const Departments = require("../models/dept");
-const Participants = require("../models/participant");
 
 const staffCont = {
-    // Controller to render the staff login page
+    // To render the staff login page
     staffLoginPage: (req, res) => {
         // console.log(req.cookies.jwt_token);
         if (req.cookies.jwt_token) {
             return res.redirect("/dashboard");
         }
-        return res.render("layouts/staff-login", {
+        return res.render("layouts/auth/staff-login", {
             error: req.flash("error"),
         });
     },
 
+    // Staff Register Page
     staffRegisterPage: (req, res) => {
         // console.log(req.cookies.jwt_token);
         if (req.cookies.jwt_token) {
             return res.redirect("/dashboard");
         }
-        return res.render("layouts/staff-register", {
+        return res.render("layouts/auth/staff-register", {
             error: req.flash("error"),
             success: req.flash("success"),
         });
     },
 
+    // Staff Password Reset Page (Email is asked)
     staffPasswordResetPage: (req, res) => {
         // console.log(req.cookies.jwt_token);
         if (req.cookies.jwt_token) {
             res.redirect("/dashboard");
         }
-        return res.render("layouts/password-reset-email", {
+        return res.render("layouts/auth/password-reset-email", {
             error: req.flash("error"),
             success: req.flash("success"),
         });
     },
 
+    // 2 Password input fields
     staffActualPasswordResetPage: (req, res) => {
         // console.log(req.cookies.jwt_token);
         const { token } = req.params;
         if (req.cookies.jwt_token) {
             res.redirect("/dashboard");
         }
-        return res.render("layouts/password-reset", {
+        return res.render("layouts/auth/password-reset", {
             token,
             error: req.flash("error"),
             success: req.flash("success"),
         });
+    },
+
+    // Password is registered after the activation is done
+    staffPasswordRegisterPage: (req, res) => {
+        return res.render("layouts/auth/staff-password-register");
     },
 
     // Controller to register the staff member
@@ -166,7 +165,7 @@ const staffCont = {
                                 "Expired or Invalid activation link. Please try again"
                             );
                             return res.render(
-                                "layouts/staff-password-register",
+                                "layouts/auth/staff-password-register",
                                 {
                                     error: req.flash("error"),
                                     success: req.flash("success"),
@@ -176,7 +175,7 @@ const staffCont = {
                             // console.log(decoded);
                             res.cookie("token", decoded);
                             return res.render(
-                                "layouts/staff-password-register",
+                                "layouts/auth/staff-password-register",
                                 {
                                     error: req.flash("error"),
                                     success: req.flash("success"),
@@ -190,7 +189,7 @@ const staffCont = {
                 //     message: "An error occured. Please try again",
                 // });
                 req.flash("error", "An error occured. Please try again");
-                return res.render("layouts/staff-password-register", {
+                return res.render("layouts/auth/staff-password-register", {
                     error: req.flash("error"),
                     success: req.flash("success"),
                 });
@@ -201,10 +200,7 @@ const staffCont = {
         }
     },
 
-    staffPasswordRegisterPage: (req, res) => {
-        return res.render("layouts/staff-password-register");
-    },
-
+    // Controller to register the staff and hash the password
     staffPasswordRegister: async (req, res, next) => {
         try {
             // console.log("Wrong Wroong");
@@ -253,6 +249,7 @@ const staffCont = {
         }
     },
 
+    // Controller to login the member and give a secure cookie in return
     staffLogin: async (req, res, next) => {
         try {
             const { email, password } = req.body;
@@ -310,139 +307,7 @@ const staffCont = {
         }
     },
 
-    staffDashboard: async (req, res, next) => {
-        try {
-            const token = req.cookies.jwt_token;
-            jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
-                if (err) {
-                    console.log(err);
-                    next(ErrorHandler.forbidden());
-                } else if (decodedToken) {
-                    const eventCount = await Event.countDocuments();
-                    const deptCount = await Dept.countDocuments();
-                    const participantCount = await Participant.countDocuments();
-                    const staffCount = await Staff.countDocuments();
-                    return res.render("layouts/dashboard/dashboard", { staffCount, eventCount, deptCount, participantCount });
-                }
-            });
-        } catch (err) {
-            console.log(err);
-            next(ErrorHandler.serverError());
-        }
-    },
-
-    boardIndex: async (req, res, next) => {
-        try {
-            const token = req.cookies.jwt_token;
-            jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
-                if (err) {
-                    console.log(err);
-                    next(ErrorHandler.forbidden());
-                } else if (decodedToken) {
-                    const staff = await Staff.find().select("-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt");
-                    console.log("This should be the array of the staff", staff);
-                    const eventCount = await Event.countDocuments();
-                    const deptCount = await Dept.countDocuments();
-                    const participantCount = await Participant.countDocuments();
-                    return res.render("layouts/dashboard/board", { staffData: staff, eventCount, deptCount, participantCount });
-                }
-            });
-        } catch (err) {
-            console.log(err);
-            next(ErrorHandler.serverError());
-        }
-    },
-    
-    messageIndex: async (req, res, next) => {
-        try {
-            const token = req.cookies.jwt_token;
-            jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
-                if (err) {
-                    console.log(err);
-                    next(ErrorHandler.forbidden());
-                } else if (decodedToken) {
-                    const staff = await Staff.find().select("-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt");
-                    console.log("This should be the array of the staff", staff);
-                    const eventCount = await Event.countDocuments();
-                    const deptCount = await Dept.countDocuments();
-                    const participantCount = await Participant.countDocuments();
-                    return res.render("layouts/dashboard/message", { staffData: staff, eventCount, deptCount, participantCount });
-                }
-            });
-        } catch (err) {
-            console.log(err);
-            next(ErrorHandler.serverError());
-        }
-    },
-
-    eventsRetriver: async (req, res, next) => {
-        // for retriving all the events list from database
-        await Events.find({}, async (err, eventsList) => {
-            if (err) {
-                console.log(
-                    `Error occur while retriving events list from database`
-                );
-                // req.flash("error","An error occured while retriving events list");
-                res.redirect("/staff-dashboard");
-            } else {
-                return res.json({
-                    eventsList,
-                });
-            }
-        });
-    },
-
-    magazineRecieversRetriver: async (req, res, next) => {
-        // for retriving all magazine subs from database
-        await Magazines.find({}, async (err, magazineSubsList) => {
-            if (err) {
-                console.log(
-                    `Error occur while retriving magazine subs list from database`
-                );
-                // req.flash("error","An error occured while retriving Magazine Recievers list");
-                res.redirect("/staff-dashboard");
-            } else {
-                return res.json({
-                    magazineSubsList,
-                });
-            }
-        });
-    },
-
-    departmentsRetriver: async (req, res, next) => {
-        // for retriving all the departments from the database
-        await Departments.find({}, async (err, departmentsList) => {
-            if (err) {
-                console.log(
-                    `Error occur while retriving departments list from database`
-                );
-                // req.flash("error","An error occured while retriving departments");
-                res.redirect("/staff-dashboard");
-            } else {
-                return res.json({
-                    departmentsList,
-                });
-            }
-        });
-    },
-
-    participantsRetriver: async (req, res, next) => {
-        // for retriving all the participants from the database
-        await Participants.find({}, async (err, participantsList) => {
-            if (err) {
-                console.log(
-                    `Error occur while retriving participants list from database`
-                );
-                // req.flash("error","An error occured while retriving participants");
-                res.redirect("/staff-dashboard");
-            } else {
-                return res.json({
-                    participantsList,
-                });
-            }
-        });
-    },
-
+    // Controller to reset the password: Ask for email -> If verified then ask for new password
     forgotPassword: (req, res, next) => {
         console.log("In forgotPassword");
         try {
@@ -546,6 +411,7 @@ const staffCont = {
         }
     },
 
+    // Controller to check the token for reseting the password
     resetPasswordTokenCheck: (req, res, next) => {
         try {
             // console.log(req.flash("error"));
@@ -604,6 +470,7 @@ const staffCont = {
         console.log(req.flash("error"));
     },
 
+    // Controller to update the password in the DB
     updatePassword: (req, res, next) => {
         try {
             console.log("After validation");
@@ -623,7 +490,7 @@ const staffCont = {
                             "error",
                             "Invalid or expired link. Please try again"
                         );
-                        return res.render("layouts/password-reset", {
+                        return res.render("layouts/auth/password-reset", {
                             error: req.flash("error"),
                             success: req.flash("success"),
                         });
@@ -678,7 +545,7 @@ const staffCont = {
                                                     "success",
                                                     "Password changed successfully"
                                                 );
-                                                return res.redirect("back");
+                                                return res.redirect("/staff-login");
                                             }
                                         }
                                     );
@@ -701,6 +568,7 @@ const staffCont = {
         }
     },
 
+    // Controller to update the auth cookie value to an empty string
     staffLogout: (req, res) => {
         try {
             if (res.locals.staff) {

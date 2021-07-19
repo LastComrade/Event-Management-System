@@ -8,7 +8,7 @@ const { google } = require("googleapis");
 const homeCont = {
     // Index controller render the home page from layout section in views folder
     index: (req, res) => {
-        res.render("layouts/home-new"); // res means response and render is another function applied on this res object which renders the html page
+        res.render("layouts/home/home-new"); // res means response and render is another function applied on this res object which renders the html page
     },
 
     // Contact controller is an async function which saves contact data onto the DB which requires the functionality of await keyword
@@ -50,6 +50,7 @@ const homeCont = {
         }
     },
 
+    // DEPRECATED - To be removed. Yet to be confirm from Avninder
     newsletter: async (req, res) => {
         try {
             const { email } = req.body;
@@ -76,6 +77,7 @@ const homeCont = {
         }
     },
 
+    // Controller store the subscriber email address in the DB
     registerMagazineEmail: async (req, res, next) => {
         await Magazine.findOne(
             { email: req.body.email },
@@ -177,6 +179,7 @@ const homeCont = {
         );
     },
 
+    // Controller to un-sub the user link would be given in the email
     unSubMagazineEmail: async (req, res, next) => {
         await Magazine.findOne(
             { _id: req.params.id },
