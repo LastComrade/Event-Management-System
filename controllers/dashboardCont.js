@@ -6,13 +6,9 @@ const jwt = require("jsonwebtoken");
 const Event = require("../models/event");
 const Dept = require("../models/dept");
 const Participant = require("../models/participant");
-
-// for using mongoose methods
+const registerKey = require("../models/regKey");
 const Magazines = require("../models/magazine-reciever");
-const Events = require("../models/event");
-const Departments = require("../models/dept");
-const Participants = require("../models/participant");
-
+const uuid = require("uuid");
 
 const dboardCont = {
   staffDashboard: async (req, res, next) => {
@@ -27,7 +23,10 @@ const dboardCont = {
           const deptCount = await Dept.countDocuments();
           const participantCount = await Participant.countDocuments();
           const staffCount = await Staff.countDocuments();
-          return res.render("layouts/dashboard/dashboard", { staffCount, eventCount, deptCount, participantCount, title: "Dashboard | Home" });
+          return res.render("layouts/dashboard/dashboard", { 
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount, eventCount, deptCount, participantCount, title: "Dashboard | Home" });
         }
       });
     } catch (err) {
@@ -50,7 +49,10 @@ const dboardCont = {
           const deptCount = await Dept.countDocuments();
           const participantCount = await Participant.countDocuments();
           const staffCount = staff.length;
-          return res.render("layouts/dashboard/board", { staffData: staff, staffCount, eventCount, deptCount, participantCount, title: "Dashboard | Board" });
+          return res.render("layouts/dashboard/board", { 
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffData: staff, staffCount, eventCount, deptCount, participantCount, title: "Dashboard | Board" });
         }
       });
     } catch (err) {
@@ -82,12 +84,12 @@ const dboardCont = {
 
   eventsRetriver: async (req, res, next) => {
     // for retriving all the events list from database
-    await Events.find({}, async (err, eventsList) => {
+    await Event.find({}, async (err, eventsList) => {
       if (err) {
         console.log(
           `Error occur while retriving events list from database`
         );
-        // req.flash("error","An error occured while retriving events list");
+        req.flash("error","An error occured while retriving events list");
         res.redirect("/staff-dashboard");
       } else {
         return res.json({
@@ -104,24 +106,24 @@ const dboardCont = {
         console.log(
           `Error occur while retriving magazine subs list from database`
         );
-        // req.flash("error","An error occured while retriving Magazine Recievers list");
+        req.flash("error","An error occured while retriving Magazine Recievers list");
         res.redirect("/staff-dashboard");
       } else {
-        return res.json({
-          magazineSubsList,
-        });
+          return res.json({
+            magazineSubsList,
+          });
       }
     });
   },
 
   departmentsRetriver: async (req, res, next) => {
     // for retriving all the departments from the database
-    await Departments.find({}, async (err, departmentsList) => {
+    await Dept.find({}, async (err, departmentsList) => {
       if (err) {
         console.log(
           `Error occur while retriving departments list from database`
         );
-        // req.flash("error","An error occured while retriving departments");
+        req.flash("error","An error occured while retriving departments");
         res.redirect("/staff-dashboard");
       } else {
         return res.json({
@@ -133,12 +135,12 @@ const dboardCont = {
 
   participantsRetriver: async (req, res, next) => {
     // for retriving all the participants from the database
-    await Participants.find({}, async (err, participantsList) => {
+    await Participant.find({}, async (err, participantsList) => {
       if (err) {
         console.log(
           `Error occur while retriving participants list from database`
         );
-        // req.flash("error","An error occured while retriving participants");
+        req.flash("error","An error occured while retriving participants");
         res.redirect("/staff-dashboard");
       } else {
         return res.json({
@@ -147,6 +149,28 @@ const dboardCont = {
       }
     });
   },
+  
+    registerKeyGenerator: (req, res, next) => {
+        try{
+            const newRegisterKey = new registerKey({
+                key: uuid.v4()
+            });
+            // console.log(newRegisterKey);
+            newRegisterKey.save();
+            req.flash(
+                "success",
+                "Registration key generated successfully"
+            );
+        }catch(err){
+            req.flash(
+                "error",
+                "Something went wrong! Please try later"
+            );
+        }
+        return res.redirect("/dashboard");
+    }
+
+
 }
 
 module.exports = dboardCont;
