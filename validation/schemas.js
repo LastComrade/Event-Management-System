@@ -38,6 +38,17 @@ module.exports.contactSchema = Joi.object({
     message: Joi.string().required().label("Message"),
 });
 
+module.exports.eventSuggestionSchema = Joi.object({
+    name: Joi.string().trim().min(1).required().label("Name"),
+    // minDomainSegments mean konarklohat123456@gmail.com has two segments i.e
+    // (gmail.com) gmail and com which is good enough to pass the validation
+    email: Joi.string()
+        .required()
+        .email({ tlds: { allow: ["org", "com", "net", "in"] } })
+        .label("E-Mail"),
+    description: Joi.string().trim().min(1).required().label("Event Description"),
+});
+
 module.exports.loginSchema = Joi.object({
     email: Joi.string()
         .email({ tlds: { allow: ["org", "com", "net", "in"] } })

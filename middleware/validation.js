@@ -10,6 +10,7 @@ const {
     staffPaswordRegisterSchema,
     emailSchema,
     updatePasswordSchema,
+    eventSuggestionSchema,
 } = require("../validation/schemas"); // JOI schema to validate the from data on backend
 const ErrorHandler = require("../utils/errorHandler"); // Error handler
 
@@ -64,7 +65,7 @@ const validate = {
     // This will validate participant form data
     participantRegister: (req, res, next) => {
         const { error } = participantSchema.validate(req.body.participant);
-        if(error){
+        if (error) {
             next(ErrorHandler.validationError(error.message));
         }
         next();
@@ -73,6 +74,14 @@ const validate = {
     // This will validate the newsletter email
     newsletter: (req, res, next) => {
         const { error } = newsletterSchema.validate(req.body);
+        if (error) {
+            next(ErrorHandler.validationError(error.message));
+        }
+        next();
+    },
+
+    eventSuggestion: (req, res, next) => {
+        const { error } = eventSuggestionSchema.validate(req.body);
         if (error) {
             next(ErrorHandler.validationError(error.message));
         }
@@ -102,7 +111,7 @@ const validate = {
             // next(ErrorHandler.validationError(error.message));
             req.flash("error", error.message);
             return res.redirect("/staff-register");
-        }else{
+        } else {
             next();
         }
     },

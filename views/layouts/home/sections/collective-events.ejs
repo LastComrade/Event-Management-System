@@ -141,15 +141,12 @@
                 <div class="text-left">
                   <a href="javascript:void(0)"
                     class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
-
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   </div>
 
@@ -169,9 +166,10 @@
         </div>
       </div>
       <div class="mt-5 mx-5">
-        <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
+        <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1"> 
+          <% for (const liveEvent of live) { %> 
           <div
-            class="p-4 layered-card border-2 border-transparent hover:border-green-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
+            class="p-4 layered-card border-2 border-transparent hover:border-purple-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
               src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
               class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
@@ -180,13 +178,13 @@
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
                 <p class="text-3xl leading-5 font-medium">
-                  Event Name
+                  <%= liveEvent.name %> 
                 </p>
               </div>
               <div>
                 <div class="flex flex-row space-x-3">
                   <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
+                  <p class="text-lg mt-2 text-black font-medium"><%= moment(liveEvent.event_starts).format("MMMM Do YYYY") %> </p>
                 </div>
                 <div class="flex flex-row space-x-3 mt-1 ml-1">
                   <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
@@ -196,113 +194,15 @@
               </div>
               <div class="text-center mt-2">
                 <div class="text-left">
-                  <a href="javascript:void(0)"
+                  <a href="/events/<%= liveEvent.name %>"
                     class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="p-4 layered-card border-2 border-transparent hover:border-green-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
-            <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
-            <div class="relative">
-            </div>
-            <div class="flex flex-col space-y-8">
-              <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  Event Name
-                </p>
-              </div>
-              <div>
-                <div class="flex flex-row space-x-3">
-                  <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
-                </div>
-                <div class="flex flex-row space-x-3 mt-1 ml-1">
-                  <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
-                  <p class="text-lg mt-2 text-black font-medium">6:00 PM</p>
-                </div>
-
-              </div>
-              <div class="text-center mt-2">
-                <div class="text-left">
-                  <a href="javascript:void(0)"
-                    class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="p-4 layered-card border-2 border-transparent hover:border-green-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
-            <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
-            <div class="relative">
-            </div>
-            <div class="flex flex-col space-y-8">
-              <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  Event Name
-                </p>
-              </div>
-              <div>
-                <div class="flex flex-row space-x-3">
-                  <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
-                </div>
-                <div class="flex flex-row space-x-3 mt-1 ml-1">
-                  <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
-                  <p class="text-lg mt-2 text-black font-medium">6:00 PM</p>
-                </div>
-
-              </div>
-              <div class="text-center mt-2">
-                <div class="text-left">
-                  <a href="javascript:void(0)"
-                    class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="p-4 layered-card border-2 border-transparent hover:border-green-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
-            <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
-            <div class="relative">
-            </div>
-            <div class="flex flex-col space-y-8">
-              <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  Event Name
-                </p>
-              </div>
-              <div>
-                <div class="flex flex-row space-x-3">
-                  <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
-                </div>
-                <div class="flex flex-row space-x-3 mt-1 ml-1">
-                  <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
-                  <p class="text-lg mt-2 text-black font-medium">6:00 PM</p>
-                </div>
-
-              </div>
-              <div class="text-center mt-2">
-                <div class="text-left">
-                  <a href="javascript:void(0)"
-                    class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <% } %> 
         </div>
       </div>
-
     </div>
   </div>
 
@@ -310,7 +210,6 @@
   <div id="webinar">
     <div class="mt-16 flex flex-col justify-center items-center wow fadeIn" data-wow-duration="1.5s"
       data-wow-delay="0.5s">
-
       <!-- Heading -->
       <div class="pt-3 mx-4 mt-12 h-auto">
         <div class="section-title text-center">
@@ -322,6 +221,7 @@
       </div>
       <div class="mt-5 mx-5">
         <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
+          <% for(const onEvent of ongoing) { %>  
           <div
             class="p-4 layered-card border-2 border-transparent hover:border-indigo-400 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
@@ -332,129 +232,26 @@
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
                 <p class="text-3xl leading-5 font-medium">
-                  Event Name
+                  <%= onEvent.name %> 
                 </p>
               </div>
               <div>
                 <div class="flex flex-row space-x-3">
                   <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
+                  <p class="text-lg mt-2 text-black font-medium"><%= moment(onEvent.event_starts).format("MMMM Do YYYY") %></p>
                 </div>
-                <div class="flex flex-row space-x-3 mt-1 ml-1">
-                  <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
-                  <p class="text-lg mt-2 text-black font-medium">6:00 PM</p>
-                </div>
-
               </div>
               <div class="text-center mt-2">
                 <div class="text-left">
-                  <a href="javascript:void(0)"
+                  <a href="/events/<%= onEvent.name %>"
                     class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="p-4 layered-card border-2 border-transparent hover:border-indigo-400 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
-            <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
-            <div class="relative">
-            </div>
-            <div class="flex flex-col space-y-8">
-              <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  Event Name
-                </p>
-              </div>
-              <div>
-                <div class="flex flex-row space-x-3">
-                  <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
-                </div>
-                <div class="flex flex-row space-x-3 mt-1 ml-1">
-                  <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
-                  <p class="text-lg mt-2 text-black font-medium">6:00 PM</p>
-                </div>
-
-              </div>
-              <div class="text-center mt-2">
-                <div class="text-left">
-                  <a href="javascript:void(0)"
-                    class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="p-4 layered-card border-2 border-transparent hover:border-indigo-400 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
-            <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
-            <div class="relative">
-            </div>
-            <div class="flex flex-col space-y-8">
-              <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  Event Name
-                </p>
-              </div>
-              <div>
-                <div class="flex flex-row space-x-3">
-                  <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
-                </div>
-                <div class="flex flex-row space-x-3 mt-1 ml-1">
-                  <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
-                  <p class="text-lg mt-2 text-black font-medium">6:00 PM</p>
-                </div>
-
-              </div>
-              <div class="text-center mt-2">
-                <div class="text-left">
-                  <a href="javascript:void(0)"
-                    class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="p-4 layered-card border-2 border-transparent hover:border-indigo-400 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
-            <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
-            <div class="relative">
-            </div>
-            <div class="flex flex-col space-y-8">
-              <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  Event Name
-                </p>
-              </div>
-              <div>
-                <div class="flex flex-row space-x-3">
-                  <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
-                </div>
-                <div class="flex flex-row space-x-3 mt-1 ml-1">
-                  <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
-                  <p class="text-lg mt-2 text-black font-medium">6:00 PM</p>
-                </div>
-
-              </div>
-              <div class="text-center mt-2">
-                <div class="text-left">
-                  <a href="javascript:void(0)"
-                    class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <% } %>
         </div>
       </div>
-
     </div>
   </div>
 
@@ -474,6 +271,7 @@
       </div>
       <div class="mt-5 mx-5">
         <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
+          <% for (const upEvent of upcoming) { %> 
           <div
             class="p-4 layered-card border-2 border-transparent hover:border-blue-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
@@ -484,133 +282,27 @@
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
                 <p class="text-3xl leading-5 font-medium">
-                  Event Name
+                  <%= upEvent.name %>
                 </p>
               </div>
               <div>
                 <div class="flex flex-row space-x-3">
                   <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
+                  <p class="text-lg mt-2 text-black font-medium"><%= moment(upEvent.event_starts).format("MMMM Do YYYY") %></p>
                 </div>
-                <div class="flex flex-row space-x-3 mt-1 ml-1">
-                  <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
-                  <p class="text-lg mt-2 text-black font-medium">6:00 PM</p>
-                </div>
-
               </div>
               <div class="text-center mt-2">
                 <div class="text-left">
-                  <a href="javascript:void(0)"
+                  <a href="/events/<%= upEvent.name %>"
                     class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Know
                     More</a>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="p-4 layered-card border-2 border-transparent hover:border-blue-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
-            <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
-            <div class="relative">
-            </div>
-            <div class="flex flex-col space-y-8">
-              <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  Event Name
-                </p>
-              </div>
-              <div>
-                <div class="flex flex-row space-x-3">
-                  <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
-                </div>
-                <div class="flex flex-row space-x-3 mt-1 ml-1">
-                  <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
-                  <p class="text-lg mt-2 text-black font-medium">6:00 PM</p>
-                </div>
-
-              </div>
-              <div class="text-center mt-2">
-                <div class="text-left">
-                  <a href="javascript:void(0)"
-                    class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Know
-                    More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="p-4 layered-card border-2 border-transparent hover:border-blue-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
-            <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
-            <div class="relative">
-            </div>
-            <div class="flex flex-col space-y-8">
-              <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  Event Name
-                </p>
-              </div>
-              <div>
-                <div class="flex flex-row space-x-3">
-                  <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
-                </div>
-                <div class="flex flex-row space-x-3 mt-1 ml-1">
-                  <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
-                  <p class="text-lg mt-2 text-black font-medium">6:00 PM</p>
-                </div>
-
-              </div>
-              <div class="text-center mt-2">
-                <div class="text-left">
-                  <a href="javascript:void(0)"
-                    class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Know
-                    More</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="p-4 layered-card border-2 border-transparent hover:border-blue-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
-            <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
-            <div class="relative">
-            </div>
-            <div class="flex flex-col space-y-8">
-              <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  Event Name
-                </p>
-              </div>
-              <div>
-                <div class="flex flex-row space-x-3">
-                  <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium">27th July 2021</p>
-                </div>
-                <div class="flex flex-row space-x-3 mt-1 ml-1">
-                  <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
-                  <p class="text-lg mt-2 text-black font-medium">6:00 PM</p>
-                </div>
-
-              </div>
-              <div class="text-center mt-2">
-                <div class="text-left">
-                  <a href="javascript:void(0)"
-                    class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Know
-                    More</a>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <% } %> 
         </div>
       </div>
-
     </div>
   </div>
 
@@ -627,134 +319,33 @@
         </div>
       </div>
       <div class="row testimonial-active wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+        <% for (const archEvent of archived) { %> 
         <div
           class="relative hover:shadow-2xl mb-10 item transition-shadow duration-300 ease-in-out bg-white py-6 px-6 rounded my-4 ">
           <div class="mt-2">
-            <p class="text-xl font-semibold">Event Name</p>
+            <p class="text-xl font-semibold"><%= archEvent.name %></p>
             <img class="rounded shadow-xl my-4" src="/img/team.jpg" alt="">
           </div>
           <div class="flex space-x-2 text-black  text-sm my-3">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, aperiam
-              cumque
-              odit vero
-              repudiandae
-              maxime. Numquam vel praesentium aperiam accusantium eum atque vitae sapiente
-              iusto
-              doloribus
-              tempora! Cumque, aut!</p>
+            <p><%= archEvent.description.substring(0, 200) %> ...<a href="/events/<%= archEvent.name%>" class="text-red-300">Read More</a></p>
           </div>
           <div class="border-t-2"></div>
           <div class="flex justify-between">
             <div class="my-2">
               <span>
-                <p class="font-bold text-black text-base mb-2 text-left">*Event Type*</p>
+                <p class="font-bold text-black text-base mb-2 text-left"><%= moment(archEvent.event_starts).format("MMMM Do YYYY") %></p>
               </span>
             </div>
             <div class="text-center mt-2">
               <div class="text-left">
-                <a href="javascript:void(0)"
+                <a href="/events/<%= archEvent.name%>"
                   class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Learn
                   More</a>
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="relative hover:shadow-2xl mb-10 item transition-shadow duration-300 ease-in-out bg-white py-6 px-6 rounded my-4 ">
-          <div class="mt-2">
-            <p class="text-xl font-semibold">Event Name</p>
-            <img class="rounded shadow-xl my-4" src="/img/team.jpg" alt="">
-          </div>
-          <div class="flex space-x-2 text-black  text-sm my-3">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, aperiam
-              cumque
-              odit vero
-              repudiandae
-              maxime. Numquam vel praesentium aperiam accusantium eum atque vitae sapiente
-              iusto
-              doloribus
-              tempora! Cumque, aut!</p>
-          </div>
-          <div class="border-t-2"></div>
-          <div class="flex justify-between">
-            <div class="my-2">
-              <span>
-                <p class="font-bold text-black text-base mb-2 text-left">*Event Type*</p>
-              </span>
-            </div>
-            <div class="text-center mt-2">
-              <div class="text-left">
-                <a href="javascript:void(0)"
-                  class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Learn
-                  More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="relative hover:shadow-2xl mb-10 item transition-shadow duration-300 ease-in-out bg-white py-6 px-6 rounded my-4 ">
-          <div class="mt-2">
-            <p class="text-xl font-semibold">Event Name</p>
-            <img class="rounded shadow-xl my-4" src="/img/team.jpg" alt="">
-          </div>
-          <div class="flex space-x-2 text-black  text-sm my-3">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, aperiam
-              cumque
-              odit vero
-              repudiandae
-              maxime. Numquam vel praesentium aperiam accusantium eum atque vitae sapiente
-              iusto
-              doloribus
-              tempora! Cumque, aut!</p>
-          </div>
-          <div class="border-t-2"></div>
-          <div class="flex justify-between">
-            <div class="my-2">
-              <span>
-                <p class="font-bold text-black text-base mb-2 text-left">*Event Type*</p>
-              </span>
-            </div>
-            <div class="text-center mt-2">
-              <div class="text-left">
-                <a href="javascript:void(0)"
-                  class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Learn
-                  More</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="relative hover:shadow-2xl mb-10 item transition-shadow duration-300 ease-in-out bg-white py-6 px-6 rounded my-4 ">
-          <div class="mt-2">
-            <p class="text-xl font-semibold">Event Name</p>
-            <img class="rounded shadow-xl my-4" src="/img/team.jpg" alt="">
-          </div>
-          <div class="flex space-x-2 text-black  text-sm my-3">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, aperiam
-              cumque
-              odit vero
-              repudiandae
-              maxime. Numquam vel praesentium aperiam accusantium eum atque vitae sapiente
-              iusto
-              doloribus
-              tempora! Cumque, aut!</p>
-          </div>
-          <div class="border-t-2"></div>
-          <div class="flex justify-between">
-            <div class="my-2">
-              <span>
-                <p class="font-bold text-black text-base mb-2 text-left">*Event Type*</p>
-              </span>
-            </div>
-            <div class="text-center mt-2">
-              <div class="text-left">
-                <a href="javascript:void(0)"
-                  class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Learn
-                  More</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <% } %> 
       </div>
     </div>
   </section>

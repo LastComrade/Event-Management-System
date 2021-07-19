@@ -27,5 +27,7 @@ router
     .get(eventCont.finder)
     .post(validate.participantRegister, eventCont.registerParticipant);
 
+router.route("/events-suggestion").post(validate.eventSuggestion, eventCont.eventSuggest)
+
 // Exporting routes
 module.exports = router;

@@ -2,18 +2,19 @@ const Event = require("../models/event");
 const Participant = require("../models/participant");
 const Errorhandler = require("../utils/errorHandler");
 const { google } = require("googleapis");
+const moment = require("moment");
+const eventSuggestion = require("../models/event-suggestion");
 
 const eventCont = {
 
     // Render the event page with all types
     eventIndex: async (req, res) => {
-        let eventData = [];
-        eventData.push(await Event.find({category: "live"}).select(name ).limit(4));
-        eventData.push(await Event.find({category: "upcoming"}).limit(4));
-        eventData.push(await Event.find({category: "archived"}).limit(4));
-        eventData.push(await Event.find({category: "ongoing"}).limit(4));
-        console.log(eventData);
-        return res.render("layouts/home/event-page");
+        const live = await Event.find({ category: "live" }).select("name event_starts").limit(4);
+        const upcoming = await Event.find({ category: "upcoming" }).select("name event_starts").limit(4);
+        const archived = await Event.find({ category: "archived" }).select("name event_starts description").limit(4);
+        const ongoing = await Event.find({ category: "ongoing" }).select("name event_starts").limit(4);
+        console.log(archived);
+        return res.render("layouts/home/event-page", { live, upcoming, archived, ongoing, moment });
     },
 
     finder: async (req, res, next) => {
@@ -380,6 +381,17 @@ const eventCont = {
             next(Errorhandler.serverError());
         }
     },
+
+    eventSuggest: async (req, res, next) => {
+        try {
+            const eventSuggest = new eventSuggestion(req.body);
+            await eventSuggest.save();
+            return res.redirect("back");
+        } catch(err) {
+            console.log(err);
+            next(Errorhandler.serverError());
+        }
+    }
 };
 
 module.exports = eventCont;
