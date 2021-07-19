@@ -12,7 +12,7 @@ const authMid = require("../middleware/auth");
 // post -> For creating a new event in database and googlesheets
 router
     .route("/event-create-101")
-    .post(validate.eventCreate, eventCont.createEvent);
+    .post(validate.eventCreate, eventCont.createEvent); 
 
 router.route("/event-landing").get(eventCont.eventIndex);
 

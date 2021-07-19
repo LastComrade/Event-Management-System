@@ -6,7 +6,13 @@ const { google } = require("googleapis");
 const eventCont = {
 
     // Render the event page with all types
-    eventIndex: (req, res) => {
+    eventIndex: async (req, res) => {
+        let eventData = [];
+        eventData.push(await Event.find({category: "live"}).select(name ).limit(4));
+        eventData.push(await Event.find({category: "upcoming"}).limit(4));
+        eventData.push(await Event.find({category: "archived"}).limit(4));
+        eventData.push(await Event.find({category: "ongoing"}).limit(4));
+        console.log(eventData);
         return res.render("layouts/home/event-page");
     },
 
