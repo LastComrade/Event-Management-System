@@ -4,11 +4,11 @@ const ErrorHandler = require("../utils/errorHandler");
 const deptCont = {
 
     index: async (req, res, next) => {
-        return res.render("layouts/department_page")
+        return res.render("layouts/home/department_page")
     },
 
     allIndex: async (req, res, next) => {
-        return res.render("layouts/departments_page")
+        return res.render("layouts/home/departments_page")
     },
 
     finder: async (req, res, next) => {
@@ -21,7 +21,7 @@ const deptCont = {
                 } else if (!foundDept) {
                     next(ErrorHandler.notFoundError());
                 } else {
-                    return res.render("layouts/department_page", {
+                    return res.render("layouts/home/department_page", {
                         foundDept,
                     });
                 }

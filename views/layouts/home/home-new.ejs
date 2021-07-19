@@ -31,25 +31,6 @@
 </head>
 
 <body>
-  <!-- Hidden Loader -->
-  <div class="hidden preloader">
-    <div class="loader">
-      <div class="ytp-spinner">
-        <div class="ytp-spinner-container">
-          <div class="ytp-spinner-rotator">
-            <div class="ytp-spinner-left">
-              <div class="ytp-spinner-circle"></div>
-            </div>
-            <div class="ytp-spinner-right">
-              <div class="ytp-spinner-circle"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Hidden Loader -->
-
   <!-- Navbar Section -->
   <header class="header-area">
     <!-- Navbar Section -->
@@ -716,143 +697,22 @@
     <div class="footer-bg" style="background-image: url(/img/footer-bg.svg);"></div>
     <div class="container">
       <!-- Newsletter Section -->
-      <div class="px-6 pt-5 pb-5 mb-10 bg-white rounded-lg shadow-xl md:px-12 subscribe-area wow fadeIn"
-        data-wow-duration="1s" data-wow-delay="0.5s">
-        <div class="flex flex-col justify-center items-center">
-          <div class="w-full lg:w-1/2">
-            <div class="lg:mt-12 text-center">
-              <h2 class="text-2xl font-bold sm:text-4xl ">
-                Subscribe to our
-                <span class="block font-normal">Monthly Magazine</span>
-              </h2>
-            </div>
-          </div>
-          <div class="w-full lg:w-1/2">
-            <div class="mt-12 subscribe-form">
-              <form action="/newsletter-sub" method="POST" class="relative focus:outline-none">
-                <input type="email" name="email" placeholder="Enter email"
-                  class="w-full relative py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-red-400 focus:outline-none">
-                <button
-                  class="inline-block absolute right-0 px-5 font-semibold text-white duration-200 rounded-r hover:shadow-xl h-full bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 overflow-hidden">Subscribe</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%- include("./sections/magazine-form.ejs") %> 
       <!-- Newsletter Section -->
-      <div class="footer-widget pb-24">
-        <div class="row">
-          <div class="w-4/5 md:w-3/5 lg:w-2/6">
-            <div class="mt-12  wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-              <a class="inline-block mb-8 logo" href="index.html">
-                <span class="text-white text-4xl font-bold">E-Cell</span>
-              </a>
-              <p class="pb-10 pr-10 leading-snug text-white">Lorem ipsum dolor sit amet consetetur
-                sadipscing elitr,
-                sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
-              <ul class="flex">
-                <li><a href="javascript:void(0)"><i
-                      class="lni lni-facebook-filled mr-10 transform hover:-translate-y-1 text-white hover:text-black duration-200 text-2xl"></i></a>
-                </li>
-                <li><a href="javascript:void(0)"><i
-                      class="lni lni-twitter-filled mr-10 transform hover:-translate-y-1 text-white hover:text-black duration-200 text-2xl"></i></a>
-                </li>
-                <li><a href="javascript:void(0)"><i
-                      class="lni lni-instagram-filled mr-10 transform hover:-translate-y-1 text-white hover:text-black duration-200 text-2xl"></i></a>
-                </li>
-                <li><a href="javascript:void(0)"><i
-                      class="lni lni-linkedin-original transform hover:-translate-y-1 text-white hover:text-black duration-200 text-2xl"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="w-4/5 sm:w-2/3 md:w-3/5 lg:w-2/6">
-            <div class="row">
-              <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
-                <div class="mt-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
-                  <div class="">
-                    <h4 class="mb-8 text-2xl font-bold text-white">Quick Link</h4>
-                  </div>
-                  <ul class="text-white">
-                    <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
-                      <a href="javascript:void(0)">Departments</a>
-                    </li>
-                    <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
-                      <a href="javascript:void(0)">Privacy Policy</a>
-                    </li>
-                    <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
-                      <a href="javascript:void(0)">Register</a>
-                    </li>
-                    <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
-                      <a href="javascript:void(0)">Terms of Service</a>
-                    </li>
-                    <li class="hover:text-red-400 hover:-translate-x-1 transform duration-200"><a
-                        href="javascript:void(0)">Login</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2">
-                <div class="mt-12 link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
-                  <div>
-                    <h4 class="mb-8 text-2xl font-bold text-white">Resources</h4>
-                  </div>
-                  <ul class="text-white">
-                    <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform  duration-200">
-                      <a href="javascript:void(0)">Home</a>
-                    </li>
-                    <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
-                      <a href="javascript:void(0)">Events</a>
-                    </li>
-                    <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
-                      <a href="javascript:void(0)">Testimonials</a>
-                    </li>
-                    <li class="mb-3 hover:text-red-400 hover:-translate-x-1 transform duration-200">
-                      <a href="javascript:void(0)">FAQ</a>
-                    </li>
-                    <li class="hover:text-red-400 hover:-translate-x-1 transform duration-200"><a
-                        href="javascript:void(0)">Contact</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="w-4/5 sm:w-1/3 md:w-2/5 lg:w-2/6">
-            <div class="mt-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-              <div class="footer-title">
-                <h4 class="mb-8 text-2xl font-bold text-white">Contact Us</h4>
-              </div>
-              <ul class="contact">
-                <li class="cursor-pointer mb-3 hover:text-red-400 hover:-translate-x-1 transform  duration-200">
-                  +91
-                  7529856345</li>
-                <li class="cursor-pointer mb-3 hover:text-red-400 hover:-translate-x-1 transform  duration-200">
-                  konarklohat123456@gmail.com</li>
-                <li class="cursor-pointer hover:text-red-400 hover:-translate-x-1 transform  duration-200">
-                  Gill Park,
-                  Gill Road, Ludhiana,<br> Punjab 141006.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="py-8 border-t border-gray-200">
-        <p class="text-white text-center">
-          Designed & Developed By <a class="duration-300 hover:text-red-400" href="#" rel="nofollow"
-            target="_blank">Technical Team, E-Cell.</a>
-        </p>
-      </div>
+      
+      <!-- Footer Links -->
+      <%- include("./sections/footer-links.ejs") %> 
+      <!-- Footer Links -->
+
+      <!-- Credits -->
+      <%- include("./sections/footer-credits.ejs") %> 
+      <!-- Credits -->
     </div>
     <div id="particles-2" class="particles"></div>
   </footer>
   <!-- Footer Section -->
 
-
-
   <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
-
-
-
-
 
   <script src="/js/jquery-3.5.1-min.js"></script>
   <script src="/js/modernizr-3.7.1.min.js"></script>

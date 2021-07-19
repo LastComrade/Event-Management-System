@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <%- include("./partials/head-links.ejs") %>
+</head>
+
+<body>
+  <!-- header + navbar -->
+  <%- include("./sections/header-nav.ejs") %> 
+
+
+  <!-- About Us Section -->
+  <%- include("./sections/about-us.ejs") %> 
+
+  <!-- Vision Section -->
+  <%- include("./sections/vision.ejs") %>
+
+  <!-- Team Section -->
+  <%- include("./sections/team.ejs") %> 
+
+  <!-- Footer Section -->
+  <footer id="footer" class="relative z-10 footer-area pt-2">
+    <div class="footer-bg" style="background-image: url(/img/footer-bg.svg);"></div>
+    <div class="container">
+      <!-- Newsletter Section -->
+      <%- include("./sections/internship-form.ejs") %> 
+      <!-- Newsletter Section -->
+      
+      <!-- Footer Links -->
+      <%- include("./sections/footer-links.ejs") %> 
+      <!-- Footer Links -->
+
+      <!-- Credits -->
+      <%- include("./sections/footer-credits.ejs") %> 
+      <!-- Credits -->
+    </div>
+    <div id="particles-2" class="particles"></div>
+  </footer>
+  <!-- Footer Section --> 
+
+  <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+
+  <!-- Scripts -->
+  <%- include("./partials/scripts.ejs") %> 
+  <!-- ./Scripts -->
+</body>
+
+</html>
