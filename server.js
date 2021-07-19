@@ -74,6 +74,15 @@ app.use("/", eventRoutes); // For event routes
 app.use("/", authRoutes); // For auth routes
 app.use("/", dashboardRoutes); // For dashboard routes
 
+
+app.get("/googled17d3d306196397e.html", (req, res) => {
+    return res.render("layouts/googled17d3d306196397e.html");
+});
+
+app.get("/googled17d3d306196397e", (req, res) => {
+    return res.render("layouts/googled17d3d306196397e.html");
+});
+
 // Error handling middleware to handle all the errors from the controllers or middlewares
 app.use((err, req, res, next) => {
     if (err instanceof ErrorHandler) {
