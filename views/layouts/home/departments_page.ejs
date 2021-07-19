@@ -1,0 +1,45 @@
+<!-- department page which has all 9 departments -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <%- include("./partials/head-links.ejs") %> 
+</head>
+
+<body>
+  <!-- Navbar without header -->
+  <%- include("./sections/navbar.ejs") %>
+  <!-- Navbar without header -->
+
+  <!-- All Departments -->
+  <%- include("./sections/all-departments.ejs") %> 
+  <!-- All Departments -->
+
+  <!-- Footer Section -->
+  <footer id="footer" class="relative z-10 footer-area pt-2">
+    <div class="footer-bg" style="background-image: url(/img/footer-bg.svg);"></div>
+    <div class="container">
+      <!-- Newsletter Section -->
+      <%- include("./sections/internship-form.ejs") %> 
+      <!-- Newsletter Section -->
+      
+      <!-- Footer Links -->
+      <%- include("./sections/footer-links.ejs") %> 
+      <!-- Footer Links -->
+
+      <!-- Credits -->
+      <%- include("./sections/footer-credits.ejs") %> 
+      <!-- Credits -->
+    </div>
+    <div id="particles-2" class="particles"></div>
+  </footer>
+  <!-- Footer Section -->
+
+  <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+
+  <!-- Scripts -->
+  <%- include("./partials/scripts.ejs") %> 
+  <!-- ./Scripts -->
+</body>
+
+</html>

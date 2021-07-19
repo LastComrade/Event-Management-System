@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+  <%- include("./partials/head-links.ejs") %>
+</head>
+
+<body class="bg-white">
+  <!-- Navbar & Hero -->
+  <%- include("./sections/navbar-hero.ejs") %>
+  <!-- Navbar & Hero -->
+
+  <!-- All Events Type -->
+  <%- include("./sections/collective-events.ejs") %> 
+  <!-- All Events Type -->
+
+  <!-- Footer Section -->
+  <footer id="footer" class="relative z-10 footer-area pt-2">
+    <div class="footer-bg" style="background-image: url(/img/footer-bg.svg);"></div>
+    <div class="container">
+      <!-- Newsletter Section -->
+      <%- include("./sections/suggest-event.ejs") %> 
+      <!-- Newsletter Section -->
+      
+      <!-- Footer Links -->
+      <%- include("./sections/footer-links.ejs") %> 
+      <!-- Footer Links -->
+
+      <!-- Credits -->
+      <%- include("./sections/footer-credits.ejs") %> 
+      <!-- Credits -->
+    </div>
+    <div id="particles-2" class="particles"></div>
+  </footer>
+  <!-- Footer Section -->
+
+  <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+
+  <!-- Scripts -->
+  <%- include("./partials/scripts.ejs") %>
+  <!-- ./Scripts -->
+</body>
+
+</html>

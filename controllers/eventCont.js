@@ -4,12 +4,10 @@ const Errorhandler = require("../utils/errorHandler");
 const { google } = require("googleapis");
 
 const eventCont = {
-    index: (req, res) => {
-        return res.render("layouts/event-page");
-    },
 
+    // Render the event page with all types
     eventIndex: (req, res) => {
-        return res.render("layouts/eventLandingPage");
+        return res.render("layouts/home/event-page");
     },
 
     finder: async (req, res, next) => {
@@ -19,7 +17,7 @@ const eventCont = {
             } else if (!foundEvent) {
                 next(Errorhandler.notFoundError());
             } else {
-                return res.render("layouts/event-page", {
+                return res.render("layouts/home/event-landing", {
                     foundEvent,
                 });
             }
@@ -36,7 +34,7 @@ const eventCont = {
                 } else if (!foundEvent) {
                     next(
                         Errorhandler.notFoundError(
-                            "Event you are trying to register in does not exist"
+                            "Event you are trying to register, does not exist"
                         )
                     );
                 } else {
