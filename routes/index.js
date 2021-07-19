@@ -12,16 +12,14 @@ const authMid = require("../middleware/auth");
 // See below route to better understand
 router.route("/").get(homeCont.index).post(validate.contact, homeCont.contact);
 
-router
-    .route("/newsletter-sub")
-    .post(validate.newsletter, homeCont.newsletter);
+router.route("/newsletter-sub").post(validate.newsletter, homeCont.newsletter);
 
 // Monthly Magazine subscription route
 router
     .route("/monthly-magazine")
     .post(validate.magazineEmail, homeCont.registerMagazineEmail);
 
-// Monthly Magazine unsubscribe route 
+// Monthly Magazine unsubscribe route
 router
     .route("/monthly-magazine/unsubscribe/:id")
     .post(validate.magazine, homeCont.unSubMagazineEmail);
