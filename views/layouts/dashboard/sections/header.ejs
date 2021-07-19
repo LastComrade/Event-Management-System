@@ -12,6 +12,20 @@
     </div>
   </div>
   <div class="flex justify-end items-center h-14 bg-blue-800 dark:bg-gray-800 header-right">
+    <div class="flex justify-center">
+      <span id="login-notify"
+          class="text-md bg-gray-900 <%= error.length === 1 ? "py-1 px-2 mb-2" : " " %>
+          rounded
+          font-semibold text-red-500">
+          <%= error %>
+      </span>
+      <span id="login-notify"
+          class="text-md bg-gray-900 <%= success.length === 1 ? "py-1 px-2 mb-2" : " " %>
+          rounded
+          font-semibold text-green-500">
+          <%= success %>
+      </span>
+  </div>
     <ul class="flex items-center">
       <li>
         <button aria-hidden="true" @click="toggleTheme"
