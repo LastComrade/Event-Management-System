@@ -11,15 +11,15 @@
     </div>
     <div class="w-full lg:w-1/2">
       <div id="internship" class="mt-8 subscribe-form">
-        <form action="/newsletter-sub" method="POST" class="relativeb focus:outline-none space-y-5">
-          <input type="text"
+        <form action="/departments/<%= foundDept.name %>/internship-register" method="POST" class="relativeb focus:outline-none space-y-5">
+          <input type="text" name="name"
             class="w-full relative py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-red-400 focus:outline-none"
-            id="user_name" placeholder="Your Name">
+            id="name" placeholder="Your Name">
           <input type="email" name="email" placeholder="Enter email"
             class="w-full relative py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-red-400 focus:outline-none">
-          <textarea name="idea_descrition"
+          <textarea name="description"
             class="w-full h-44 resize-none relative py-4 px-6 duration-300 border-2 rounded focus:border-red-400 focus:outline-none"
-            id="idea_descrition" maxlength="200" placeholder="Why you want to join E-cell?"></textarea>
+            id="description" maxlength="200" placeholder="Why you want to join E-cell?"></textarea>
           <button
             class="m-auto w-full h-10 text-lg relative right-0 px-5 font-semibold text-white duration-200 rounded-md hover:shadow-xl bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 overflow-hidden">Submit</button>
         </form>

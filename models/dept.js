@@ -15,10 +15,6 @@ const DeptSchema = Schema(
             type: String,
             required: true,
         },
-        // description2: {
-        //     type: String,
-        //     required: true,
-        // },
         members: [Object],
         recruiting: {
             type: Boolean,

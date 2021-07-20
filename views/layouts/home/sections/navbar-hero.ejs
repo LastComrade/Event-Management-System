@@ -14,6 +14,7 @@
               <span class="toggler-icon"></span>
               <span class="toggler-icon"></span>
             </button>
+            <% if (title === "E-Cell | Events") { %>
             <div
               class="absolute mt-72 lg:mt-0 rounded left-0 z-20 hidden w-full px-5 lg:py-2 duration-300 bg-white shadow lg:w-auto collapse navbar-collapse lg:block top-100 mt-full lg:static lg:bg-transparent lg:shadow-none"
               id="navbarOne">
@@ -43,6 +44,37 @@
               <a class="inline-block scroll-page px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
                 data-scroll-nav="0" href="#suggest" rel="nofollow">Suggest</a>
             </div>
+            <% } else if(title === "E-Cell | Events") { %>
+              <div
+              class="absolute mt-72 lg:mt-0 rounded left-0 z-20 hidden w-full px-5 lg:py-2 duration-300 bg-white shadow lg:w-auto collapse navbar-collapse lg:block top-100 mt-full lg:static lg:bg-transparent lg:shadow-none"
+              id="navbarOne">
+              <ul id="nav"
+                class="items-center mr-auto lg:justify-end relative inline-block text-white capitalize duration-300 lg:flex">
+                <li class="nav-item md:pb-2 active text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#home">Home</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#about">About</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#features">Features</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#facts">Why</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#team">Team</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200" href="#testimonial">Testimonial</a>
+                </li>
+              </ul>
+            </div>
+            <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
+              <a class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
+                data-scroll-nav="0" href="#" rel="nofollow">Join Us</a>
+            </div>
+            <% } %>
           </nav>
         </div>
       </div>
@@ -74,21 +106,12 @@
                 data-wow-duration="1.3s" data-wow-delay="1.1s">Explore</a>
             </div>
           </div>
-          <div class="slider-body -mt-36 wow fadeIn"
-          data-wow-duration="1.3s" data-wow-delay="1.1s">
-            <i class="slider-container">
-              <input class="slider-content" type="radio" name="s"
-                style="background-image: url('https://source.unsplash.com/random/700x720');" title="Random Picture 2">
-              <input class="slider-content" type="radio" name="s"
-                style="background-image: url('https://source.unsplash.com/random/700x720');" title="Random Picture 1"
-                checked>
-              <input class="slider-content" type="radio" name="s"
-                style="background-image: url('https://source.unsplash.com/random/700x720');" title="Random Picture 3">
-              <input class="slider-content" type="radio" name="s"
-                style="background-image: url('https://source.unsplash.com/random/700x720');" title="Random Picture 4">
-              <input class="slider-content" type="radio" name="s"
-                style="background-image: url('https://source.unsplash.com/random/700x720');" title="Random Picture 5">
-            </i>
+          <div class="justify-center row z-50">
+            <div class="w-full lg:w-2/3">
+              <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
+                <img class="rounded-lg" src="/img/hero-steve.jpg" alt="hero">
+              </div>
+            </div>
           </div>
         </div>
       </div>

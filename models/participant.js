@@ -3,11 +3,7 @@ const Schema = mongoose.Schema;
 
 const ParticipantSchema = Schema(
     {
-        firstname: {
-            type: String,
-            required: true,
-        },
-        lastname: {
+        name: {
             type: String,
             required: true,
         },
@@ -20,7 +16,7 @@ const ParticipantSchema = Schema(
             type: String,
             required: true,
         },
-        crn: {
+        linkedin_account: {
             type: String,
             required: true,
         },

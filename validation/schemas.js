@@ -49,6 +49,15 @@ module.exports.eventSuggestionSchema = Joi.object({
     description: Joi.string().trim().min(1).required().label("Event Description"),
 });
 
+module.exports.internshipRegisterSchema = Joi.object({
+    name: Joi.string().trim().min(1).required().label("Name"),
+    email: Joi.string()
+        .required()
+        .email({ tlds: { allow: ["org", "com", "net", "in"] } })
+        .label("E-Mail"),
+    description: Joi.string().trim().min(1).required().label("Description"),
+});
+
 module.exports.loginSchema = Joi.object({
     email: Joi.string()
         .email({ tlds: { allow: ["org", "com", "net", "in"] } })
@@ -124,22 +133,17 @@ module.exports.emailSchema = Joi.object({
 });
 
 module.exports.participantSchema = Joi.object({
-    firstname: Joi.string()
+    name: Joi.string()
         .trim()
         .min(1)
         .required()
-        .label("Participant's Firstname"),
-    lastname: Joi.string()
-        .required()
-        .trim()
-        .min(1)
-        .label("Participant's Lastname"),
+        .label("Participant's Name"),
     email: Joi.string()
         .email({ tlds: { allow: ["org", "com", "net", "in"] } })
         .required()
         .label("Participant's Email"),
     college_name: Joi.string().required().label("Participant's College Name"),
-    crn: Joi.string().required().label("Participant's College Roll Number"),
+    linkedin_account: Joi.string().required().label("Participant's College Roll Number"),
 });
 
 module.exports.newsletterSchema = Joi.object({

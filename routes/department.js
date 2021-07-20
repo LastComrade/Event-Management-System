@@ -19,5 +19,7 @@ router
     .route("/departments/:name")
     .get(deptCont.finder);
 
+router.route("/departments/:name/internship-register").post(validate.internshipRegister, deptCont.internshipRegister);
+
 // Exporting routes
 module.exports = router;

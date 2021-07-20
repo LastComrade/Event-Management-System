@@ -11,6 +11,7 @@ const {
     emailSchema,
     updatePasswordSchema,
     eventSuggestionSchema,
+    internshipRegisterSchema,
 } = require("../validation/schemas"); // JOI schema to validate the from data on backend
 const ErrorHandler = require("../utils/errorHandler"); // Error handler
 
@@ -64,7 +65,7 @@ const validate = {
 
     // This will validate participant form data
     participantRegister: (req, res, next) => {
-        const { error } = participantSchema.validate(req.body.participant);
+        const { error } = participantSchema.validate(req.body);
         if (error) {
             next(ErrorHandler.validationError(error.message));
         }
@@ -137,6 +138,17 @@ const validate = {
 
     updatePassword: (req, res, next) => {
         const { error } = updatePasswordSchema.validate(req.body);
+        if (error) {
+            req.flash("error", error.message);
+            return res.redirect("back");
+            // next(ErrorHandler.validationError(error.message));
+        } else {
+            next();
+        }
+    },
+    
+    internshipRegister: (req, res, next) => {
+        const { error } = internshipRegisterSchema.validate(req.body);
         if (error) {
             req.flash("error", error.message);
             return res.redirect("back");

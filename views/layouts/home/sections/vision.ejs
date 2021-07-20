@@ -1,37 +1,25 @@
 <section id="vision" class="text-gray-600 body-font">
-    <div class="container mx-auto flex px-5 py-16 md:flex-row flex-col items-center">
-      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-        <img class="object-cover object-center rounded" alt="Technical" src="/img/department_achievements.png">
+  <div class="container mx-auto flex px-5 py-16 md:flex-row flex-col items-center">
+    <div class="wow fadeIn lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0" data-wow-duration="1s" data-wow-delay="0.7s">
+      <img class="object-cover object-center rounded" alt="Technical" src="/img/department_achievements.png">
+    </div>
+    <div class="wow fadeIn lg:flex-grow md:w-1/2 md:pl-10 flex flex-col md:items-start md:text-left items-center text-center" data-wow-duration="1s" data-wow-delay="0.5s">
+      <div class="mb-4 section-title">
+        <!-- <div class="line"></div> -->
+        <h3 class="text-4xl font-bold border-t-4 w-3/4 text-center border-red-400 pt-4 text-black ml-7">Vision</h3>
       </div>
-      <div class="lg:flex-grow md:w-1/2 md:pl-10 flex flex-col md:items-start md:text-left items-center text-center">
-        <div class="mb-4 section-title">
-          <div class="line"></div>
-          <h3 class="text-4xl font-bold text-black ml-7">Vision</h3>
-        </div>
-
-        </h1>
-        <p data-aos="fade-up" class="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over
-          freegan heirloom neutra air
-          plant
-          cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot
-          chicken
-          authentic
-          tumeric truffaut hexagon try-hard chambray.</p>
-        <p data-aos="fade-up"> Provident autem ad non placeat, labore quam quidem aperiam odio, eos
-          voluptatem est officia!
-          Lorem
-          ipsum
-          dolor sit amet consectetur adipisicing elit.illo dolores fugit, eum inventore ipsam vel
-          alias id
-          officiis
-          Fugiat nisi provident ipsum sit vero, totam numquam assuveritatis maxime quos voluptatibus
-          illo
-          dolores fugit,
-          eum inventore ipsam vel alias id officiis.</p>
-        <div class="flex pt-8 justify-center">
-          <a class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
-            data-scroll-nav="0" href="#" rel="nofollow">Join Us!</a>
-        </div>
+      <p class="mb-8 ml-7 leading-relaxed">
+        <% if (title.length > "E-Cell | Departments".length && title.substring(0, 20) === "E-Cell | Departments") { %> 
+        <%= foundDept.description %>
+        <% } else if (title === "E-Cell | Home") { %>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, alias porro temporibus quo ullam perferendis! Ut optio eveniet laudantium corrupti sunt odit ratione numquam illo recusandae dolor, magnam deleniti placeat.
+        Officiis obcaecati necessitatibus eos repellendus amet eius asperiores quibusdam dignissimos rem, fugit non eum distinctio perferendis! Incidunt quas quis eaque temporibus voluptatibus suscipit eveniet debitis porro ullam omnis, vitae cupiditate? 
+        <% } %> 
+      </p>
+      <div class="flex ml-7 pt-8 justify-center">
+        <a class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
+         href="#" rel="nofollow">Join Us!</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>

@@ -8,7 +8,8 @@ const { google } = require("googleapis");
 const homeCont = {
     // Index controller render the home page from layout section in views folder
     index: (req, res) => {
-        res.render("layouts/home/home-new"); // res means response and render is another function applied on this res object which renders the html page
+        const title = "E-Cell | Home";
+        res.render("layouts/home/home-new", { title }); // re   s means response and render is another function applied on this res object which renders the html page
     },
 
     // Contact controller is an async function which saves contact data onto the DB which requires the functionality of await keyword

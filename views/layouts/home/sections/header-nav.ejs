@@ -1,95 +1,263 @@
 <header class="header-area">
-    <div class="navbar-area ">
-      <div class="container relative z-50">
-        <div class="row">
-          <div class="w-full">
-            <nav class="flex items-center justify-between navbar navbar-expand-lg">
-              <a class="mr-4 navbar-brand" href="/">
-                <span class="navbar-brand-name text-white text-4xl font-semibold">E-Cell</span>
-              </a>
-              <button class="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse"
-                data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-                <span class="toggler-icon"></span>
-              </button>
+  <div class="navbar-area ">
+    <div class="container relative z-50">
+      <div class="row">
+        <div class="w-full">
+          <nav class="flex items-center justify-between navbar navbar-expand-lg">
+            <a class="mr-4 navbar-brand" href="/">
+              <span class="navbar-brand-name text-white text-4xl font-semibold">E-Cell</span>
+            </a>
+            <button class="block navbar-toggler focus:outline-none lg:hidden" type="button" data-toggle="collapse"
+              data-target="#navbarOne" aria-controls="navbarOne" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+            </button>
+            <% if(title === "E-Cell | Home") { %> 
+              <div
+              class="absolute mt-72 lg:mt-0 rounded left-0 z-20 hidden w-full px-5 lg:py-2 duration-300 bg-white shadow lg:w-auto collapse navbar-collapse lg:block top-100 mt-full lg:static lg:bg-transparent lg:shadow-none"
+              id="navbarOne">
+              <ul id="nav"
+                class="items-center mr-auto lg:justify-end relative inline-block text-white capitalize duration-300 lg:flex">
+                <li class="nav-item md:pb-2 active text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/">Home</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#about">About</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#features">Features</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#facts">Why</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#team">Team</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200" href="#testimonial">Testimonial</a>
+                </li>
+              </ul>
+            </div>
+            <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
+              <a class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
+                data-scroll-nav="0" href="#" rel="nofollow">Join Us</a>
+            </div>
+            <% } else if(title === "E-Cell | Events") { %>
               <div
                 class="absolute mt-72 lg:mt-0 rounded left-0 z-20 hidden w-full px-5 lg:py-2 duration-300 bg-white shadow lg:w-auto collapse navbar-collapse lg:block top-100 mt-full lg:static lg:bg-transparent lg:shadow-none"
                 id="navbarOne">
                 <ul id="nav"
                   class="items-center mr-auto lg:justify-end relative inline-block text-white capitalize duration-300 lg:flex">
                   <li class="nav-item md:pb-2 active text-lg md:text-base">
-                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#home">Department</a>
+                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/">Home</a>
                   </li>
                   <li class="nav-item md:pb-2 text-lg md:text-base">
-                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#about">About</a>
+                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#feature">Featured</a>
                   </li>
                   <li class="nav-item md:pb-2 text-lg md:text-base">
-                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#vision">Vision</a>
+                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#live_events">Live</a>
                   </li>
                   <li class="nav-item md:pb-2 text-lg md:text-base">
-                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#team">Team</a>
+                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#webinar">Ongoing<a>
                   </li>
                   <li class="nav-item md:pb-2 text-lg md:text-base">
-                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#footer">Links</a>
+                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#upcoming">Upcoming</a>
+                  </li>
+                  <li class="nav-item md:pb-2 text-lg md:text-base">
+                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#archived">Archived</a>
                   </li>
                 </ul>
               </div>
               <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
-                <a class="scroll-page inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
-                  data-scroll-nav="0" href="#internship">Join Us</a>
+                <a class="inline-block scroll-page px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
+                  data-scroll-nav="0" href="#suggest" rel="nofollow">Suggest</a>
               </div>
-            </nav>
-
-          </div>
+            <% } else if (title.length > "E-Cell | Events".length && title.substring(0, 15) === "E-Cell | Events") { %>
+            <div
+              class="absolute mt-72 lg:mt-0 rounded left-0 z-20 hidden w-full px-5 lg:py-2 duration-300 bg-white shadow lg:w-auto collapse navbar-collapse lg:block top-100 mt-full lg:static lg:bg-transparent lg:shadow-none"
+              id="navbarOne">
+              <ul id="nav"
+                class="items-center mr-auto lg:justify-end relative inline-block text-white capitalize duration-300 lg:flex">
+                <li class="nav-item md:pb-2 active text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/">Home</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#aboutEvent">About</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#timeline">Workflow</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#organizers">Organizers</a>
+                </li>
+              </ul>
+            </div>
+            <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
+              <a class="scroll-page inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
+                data-scroll-nav="0" href="#internship">Join Us</a>
+            </div>
+            <% } else if (title === "E-Cell | Departments") { %>
+              <div
+              class="absolute mt-72 lg:mt-0 rounded left-0 z-20 hidden w-full px-5 lg:py-2 duration-300 bg-white shadow lg:w-auto collapse navbar-collapse lg:block top-100 mt-full lg:static lg:bg-transparent lg:shadow-none"
+              id="navbarOne">
+              <ul id="nav"
+                class="text-white items-center mr-auto lg:justify-end relative inline-block capitalize duration-300 lg:flex">
+                <li class="nav-item md:pb-2 active text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/">Home</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/events">Events</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/events">Events</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#footer">Links</a>
+                </li>
+              </ul>
+            </div>
+            <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
+              <a class="scroll-page inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
+                data-scroll-nav="0" href="#internship">Internship</a>
+            </div>
+            <% } else if (title.length > "E-Cell | Departments".length && title.substring(0, 20) === "E-Cell | Departments") { %>
+            <div
+              class="absolute mt-72 lg:mt-0 rounded left-0 z-20 hidden w-full px-5 lg:py-2 duration-300 bg-white shadow lg:w-auto collapse navbar-collapse lg:block top-100 mt-full lg:static lg:bg-transparent lg:shadow-none"
+              id="navbarOne">
+              <ul id="nav"
+                class="items-center mr-auto lg:justify-end relative inline-block text-white capitalize duration-300 lg:flex">
+                <li class="nav-item md:pb-2 active text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/departments/<%= foundDept.name %>">Department</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#about">About</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#vision">Vision</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#team">Members</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#footer">Links</a>
+                </li>
+              </ul>
+            </div>
+            <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
+              <a class="scroll-page inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
+                data-scroll-nav="0" href="#internship">Join Us</a>
+            </div>
+            <% } %>
+          </nav>
         </div>
       </div>
     </div>
-    <div id="home" class="header-hero relative sm:h-screen">
-      <svg class="absolute bottom-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#ffffff" fill-opacity="1"
-          d="M0,192L48,202.7C96,213,192,235,288,208C384,181,480,107,576,106.7C672,107,768,181,864,186.7C960,192,1056,128,1152,138.7C1248,149,1344,235,1392,277.3L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-        </path>
-      </svg>
-
-      <div class="w-full h-screen z-50">
-        <div class="container flex w-full flex-col justify-center">
-          <div class="justify-center row">
-            <div class="w-full lg:w-2/3">
-              <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
-                <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp"
-                  data-wow-duration="1.3s" data-wow-delay="0.2s">Entrepreneurship Cell</h3>
-                <h2 class="text-5xl my-4 font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s"
-                  data-wow-delay="0.5s">Department Name</h2>
-                <p class="mb-8 text-white text text-lg wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                  "Don't let the
-                  noise of other's opinions drown out your own inner voice.(Department Tagline)"
-                  <br>- Steve Jobs
-                </p>
-                <a href="#about"
-                  class="scroll-page bg-gray-200 text-black hover:bg-white hover:shadow-xl duration-200 p-3 rounded font-semibold wow fadeInUp"
-                  data-wow-duration="1.3s" data-wow-delay="1.1s">Explore</a>
-              </div>
+  </div>
+  <div id="home" class="header-hero relative sm:h-screen">
+    <svg class="absolute bottom-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#ffffff" fill-opacity="1"
+        d="M0,192L48,202.7C96,213,192,235,288,208C384,181,480,107,576,106.7C672,107,768,181,864,186.7C960,192,1056,128,1152,138.7C1248,149,1344,235,1392,277.3L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+      </path>
+    </svg>
+    <div class="w-full h-screen z-50">
+      <div class="container flex w-full flex-col justify-center">
+        <div class="justify-center row">
+          <div class="w-full lg:w-2/3">
+            <% if (title === "E-Cell | Home") { %>
+            <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
+              <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp"
+                data-wow-duration="1.3s" data-wow-delay="0.2s">
+                Guru Nanak Dev Engineering College
+              </h3>
+              <h2 class="text-5xl my-4 font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s"
+                data-wow-delay="0.5s">Entrepreneurship Cell</h2>
+              <p class="mb-8 text-white text text-lg wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+                "Don't let the
+                noise of other's opinions drown out your own inner voice.(Department Tagline)"
+                <br>- Steve Jobs
+              </p>
+              <a href="#about"
+                class="scroll-page bg-gray-200 text-black hover:bg-white hover:shadow-xl duration-200 p-3 rounded font-semibold wow fadeInUp"
+                data-wow-duration="1.3s" data-wow-delay="1.1s">Explore</a>
+            </div>
+            <% } else if (title === "E-Cell | Events") { %>
+            <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
+              <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp"
+                data-wow-duration="1.3s" data-wow-delay="0.2s">
+                Entrepreneurship Cell
+              </h3>
+              <h2 class="text-5xl my-4 font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s"
+                data-wow-delay="0.5s">Events</h2>
+              <p class="mb-8 text-white text text-lg wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+                "Don't let the
+                noise of other's opinions drown out your own inner voice.(Department Tagline)"
+                <br>- Steve Jobs
+              </p>
+              <a href="#feature"
+                class="scroll-page bg-gray-200 text-black hover:bg-white hover:shadow-xl duration-200 p-3 rounded font-semibold wow fadeInUp"
+                data-wow-duration="1.3s" data-wow-delay="1.1s">Explore</a>
+            </div>
+            <% } else if (title.length > "E-Cell | Events".length && title.substring(0, 15) === "E-Cell | Events") { %> 
+            <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
+              <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp"
+                data-wow-duration="1.3s" data-wow-delay="0.2s">
+                Entrepreneurship Cell
+              </h3>
+              <h2 class="text-5xl my-4 font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s"
+                data-wow-delay="0.5s"><%= foundEvent.name %> </h2>
+              <p class="mb-8 text-white text text-lg wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+                "Don't let the
+                noise of other's opinions drown out your own inner voice.(Department Tagline)"
+                <br>- Steve Jobs
+              </p>
+              <a href="#feature"
+                class="scroll-page bg-gray-200 text-black hover:bg-white hover:shadow-xl duration-200 p-3 rounded font-semibold wow fadeInUp"
+                data-wow-duration="1.3s" data-wow-delay="1.1s">Explore</a>
+            </div>
+            <% } else if (title === "E-Cell | Departments") { %>
+            <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
+              <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp"
+                data-wow-duration="1.3s" data-wow-delay="0.2s">
+                Entrepreneurship Cell
+              </h3>
+              <h2 class="text-5xl my-4 font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s"
+                data-wow-delay="0.5s">Departments</h2>
+              <p class="mb-8 text-white text text-lg wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+                "Don't let the
+                noise of other's opinions drown out your own inner voice.(Department Tagline)"
+                <br>- Steve Jobs
+              </p>
+              <a href="#feature"
+                class="scroll-page bg-gray-200 text-black hover:bg-white hover:shadow-xl duration-200 p-3 rounded font-semibold wow fadeInUp"
+                data-wow-duration="1.3s" data-wow-delay="1.1s">Explore</a>
+            </div>
+            <% } else if (title.length > "E-Cell | Departments".length && title.substring(0, 20) === "E-Cell | Departments") { %>
+            <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
+              <h3 class="text-4xl font-light leading-tight text-white header-sub-title wow fadeInUp"
+                data-wow-duration="1.3s" data-wow-delay="0.2s">
+                Entrepreneurship Cell
+              </h3>
+              <h2 class="text-5xl my-4 font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s"
+                data-wow-delay="0.5s"><%= foundDept.name %></h2>
+              <p class="mb-8 text-white text text-lg wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
+                <%= foundDept.tagline %>
+              </p>
+              <a href="#feature"
+                class="scroll-page bg-gray-200 text-black hover:bg-white hover:shadow-xl duration-200 p-3 rounded font-semibold wow fadeInUp"
+                data-wow-duration="1.3s" data-wow-delay="1.1s">Explore</a>
+            </div>
+            <% } %>  
+          </div>
+        </div>
+        <div class="justify-center row z-50">
+          <div class="w-full lg:w-2/3">
+            <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
+              <img class="rounded-lg" src="/img/hero-steve.jpg" alt="hero">
             </div>
           </div>
-          <div class="slider-body -mt-48 wow fadeIn"
-          data-wow-duration="1.3s" data-wow-delay="1.1s">
-            <i class="slider-container">
-              <input class="slider-content" type="radio" name="s"
-                style="background-image: url('https://source.unsplash.com/random/700x720');" title="Random Picture 2">
-              <input class="slider-content" type="radio" name="s"
-                style="background-image: url('https://source.unsplash.com/random/700x720');" title="Random Picture 1"
-                checked>
-              <input class="slider-content" type="radio" name="s"
-                style="background-image: url('https://source.unsplash.com/random/700x720');" title="Random Picture 3">
-              <input class="slider-content" type="radio" name="s"
-                style="background-image: url('https://source.unsplash.com/random/700x720');" title="Random Picture 4">
-              <input class="slider-content" type="radio" name="s"
-                style="background-image: url('https://source.unsplash.com/random/700x720');" title="Random Picture 5">
-            </i>
-          </div>
-
         </div>
-        <div id="particles-1" class="particles"></div>
       </div>
-  </header>
+      <div id="particles-1" class="particles"></div>
+    </div>
+</header>
