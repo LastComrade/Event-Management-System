@@ -78,10 +78,7 @@ app.use("/", dashboardRoutes); // For dashboard routes
 app.use((err, req, res, next) => {
     if (err instanceof ErrorHandler) {
         res.status(err.status).json({
-            error: {
-                message: err.message,
-                status: err.status,
-            },
+            message: err.message,
         });
     } else {
         return ErrorHandler.serverError();
