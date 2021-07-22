@@ -78,6 +78,7 @@ module.exports.eventSchema = Joi.object({
     name: Joi.string().trim().min(1).required().label("Event Name"),
     description: Joi.string().required().label("Event Description"),
     category: Joi.string().required().label("Event Category"),
+    featured: Joi.boolean().label("Featured"),
     registration_starts: Joi.date()
         .iso()
         .required()

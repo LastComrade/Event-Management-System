@@ -3,9 +3,9 @@
 class ErrorHandler {
     // Constructor is a function in JS which runs everytime the object of that class is created that's why the name constructor :P
     // Taking two arguments - status, message
-    constructor(status, message) {
+    constructor(message) {
         // this refers to the object
-        this.status = status;
+        // this.status = status;
         this.message = message;
     }
 
@@ -14,19 +14,23 @@ class ErrorHandler {
     // Error handlers have their self explanatory name and operations 
 
     static validationError(message = "All fields are required") {
-        return new ErrorHandler(422, message);
+        const validateErr = new ErrorHandler(message);
+        return validateErr.message;
     }
 
     static notFoundError(message = "Not Found") {
-        return new ErrorHandler(404, message);
+        const notFoundErr = new ErrorHandler(message);
+        return notFoundErr.message;
     }
 
     static serverError(message = "Something went wrong") {
-        return new ErrorHandler(500, message);
+        const serverErr = new ErrorHandler(message);
+        return serverErr.message;
     }
 
     static forbidden(message = "Not authorized") {
-        return new ErrorHandler(403, message);
+        const forbiddenErr = new ErrorHandler(message);
+        return forbiddenErr.message;
     }
 }
 

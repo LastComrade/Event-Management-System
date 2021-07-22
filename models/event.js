@@ -7,6 +7,10 @@ const EventSchema = Schema(
             type: String,
             required: true,
         },
+        sheetID: {
+            type: Number,
+            default: 11
+        },
         description: {
             type: String,
             required: true,
@@ -14,6 +18,10 @@ const EventSchema = Schema(
         category: {
             type: String,
             required: true,
+        },
+        featured: {
+            type: Boolean,
+            default: false,
         },
         registration_starts: {
             type: Date,
@@ -33,13 +41,15 @@ const EventSchema = Schema(
         },
         result_declaration: {
             type: Date,
-            default: 0000-00-00,
+            default: 0000 - 00 - 00,
         },
         organizers: [Object],
-        participants: [{
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Participant"
-        }],
+        participants: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Participant",
+            },
+        ],
     },
     { timestamps: true }
 );
