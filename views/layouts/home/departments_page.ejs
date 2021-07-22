@@ -37,7 +37,35 @@
   <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
 
   <!-- Scripts -->
-  <%- include("./partials/scripts.ejs") %> 
+  <%- include("./partials/scripts.ejs") %>
+    <script>
+      function convertFD2JSON(formData) {
+          let obj = {};
+          for (let key of formData.keys()) {
+              obj[key] = formData.get(key);
+          }
+          return obj;
+      }
+      document.querySelector("form").addEventListener("submit", handleForm);
+      function handleForm(ev) {
+          ev.preventDefault();
+          let myForm = ev.target;
+          fetch("/", {
+              body: JSON.stringify(convertFD2JSON(new FormData(myForm))),
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+              }
+          }).then((some) => { return some.json() })
+          .then(async (res) => {
+            // Response status - 200
+          })
+          .catch((err) => {
+            // Error response
+            // If your status code isnt 200 then it means its an error and will be catched by .catch
+          })
+      }
+  </script>
   <!-- ./Scripts -->
 </body>
 
