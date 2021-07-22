@@ -39,8 +39,28 @@ router
     .route("/dashboard/board")
     .get(authMid.authRequired, authMid.staffCheck, dboardCont.boardIndex);
 router
-    .route("/dashboard/message")
+    .route("/dashboard/messages")
     .get(authMid.authRequired, authMid.staffCheck, dboardCont.messageIndex);
+
+router
+    .route("/dashboard/messages/contact-messages")
+    .get(authMid.authRequired, authMid.staffCheck, dboardCont.contactMessages);
+
+router
+    .route("/dashboard/messages/internship-applications")
+    .get(authMid.authRequired, authMid.staffCheck, dboardCont.internshipMessages);
+
+router
+    .route("/dashboard/messages/magazine-subscribers")
+    .get(authMid.authRequired, authMid.staffCheck, dboardCont.magazineSubsIndex);
+
+router
+    .route("/dashboard/messages/contact/:id")
+    .get(authMid.authRequired, authMid.staffCheck, dboardCont.idContactMessage);
+
+router
+    .route("/dashboard/messages/internship/:id")
+    .get(authMid.authRequired, authMid.staffCheck, dboardCont.idInternshipMessage);
 
 // protected route to genetrate the register key
 router

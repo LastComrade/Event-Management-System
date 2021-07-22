@@ -15,6 +15,9 @@ const InternshipSchema = Schema(
       type: String,
       reuired: true
     }
+  },
+  {
+    timestamps: true,
   }
 );
 
