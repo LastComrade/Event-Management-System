@@ -76,9 +76,9 @@ app.use("/", dashboardRoutes); // For dashboard routes
 
 // Error handling middleware to handle all the errors from the controllers or middlewares
 app.use((err, req, res, next) => {
-    if (err instanceof ErrorHandler) {
-        res.status(err.status).json({
-            message: err.message,
+    if (typeof(err) === "string") {
+        res.json({
+            message: err,
         });
     } else {
         return ErrorHandler.serverError();

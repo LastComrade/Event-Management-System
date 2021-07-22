@@ -268,6 +268,7 @@ const eventCont = {
         name,
         description,
         category,
+        featured,
         registration_starts,
         registration_ends,
         event_starts,
@@ -275,7 +276,7 @@ const eventCont = {
         result_declaration,
         organizers,
         participants,
-      } = req.body.event;
+      } = req.body;
       await Event.findOne({ name }, async (err, existingEvent) => {
         if (err) {
           next(Errorhandler.serverError());
@@ -288,6 +289,7 @@ const eventCont = {
             name,
             description,
             category,
+            featured,
             registration_starts,
             registration_ends,
             event_starts,
@@ -344,8 +346,9 @@ const eventCont = {
               await sheetAPI.spreadsheets.batchUpdate(
                 eventSheetInfo
               );
-              // let temp2 = temp1.data.updatedSpreadsheet.sheets[temp1.data.updatedSpreadsheet.sheets.length - 1];
+              let temp2 = temp1.data.updatedSpreadsheet.sheets[temp1.data.updatedSpreadsheet.sheets.length - 1];
               // console.log(temp2)
+              // console.log(temp2.properties.sheet)
 
               const eventSheetInfo2 = {
                 spreadsheetId: process.env.event_spreadsheet_id,
@@ -357,7 +360,7 @@ const eventCont = {
                       "Name",
                       "Email",
                       "College Name",
-                      "College Roll No.",
+                      "LinkedIn Account",
                     ],
                   ],
                 },

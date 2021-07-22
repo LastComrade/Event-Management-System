@@ -1,6 +1,7 @@
 const router = require("express").Router(); // Router is a function in the express which can be used to return an array of routes and methods
 const dboardCont = require("../controllers/dashboardCont"); // Controller functions for staff-login routes
 const authMid = require("../middleware/auth");
+const validate = require("../middleware/validation");
 
 // Staff Dashboard
 router
@@ -10,6 +11,11 @@ router
 router
     .route("/dashboard/events")
     .get(authMid.authRequired, authMid.staffCheck, dboardCont.eventsRetriver);
+
+router
+    .route("/dashboard/events/:name/edit")
+    .get(dboardCont.editEventInfo)
+    .put(validate.eventCreate, dboardCont.updateEvent);
 
 router
     .route("/dashboard/departments")

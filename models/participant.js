@@ -24,7 +24,8 @@ const ParticipantSchema = Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: "Event"
         }],
-    }
+    },
+    { timestamps: true }
 );
 
 module.exports = mongoose.model("Participant", ParticipantSchema);
