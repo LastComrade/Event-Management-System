@@ -3,28 +3,28 @@
   <!-- Contact Messages -->
   <div class="md:p-8 p-2 dark:bg-gray-700 bg-white">
     <!--Tag-->
-    <p class="text-indigo-500 font-semibold text-base mt-2">Contact Message</p>
+    <p class="text-blue-300 font-semibold text-base mt-2">Contact Message</p>
     <!--Title-->
     <a href="mailto:<%= contactMessage.email %>"
-      class="font-semibold text-gray-900 leading-none text-xl mt-1"
+      class="font-semibold text-gray-900 leading-none dark:text-gray-300 text-xl mt-1"
     >
       <%= contactMessage.email %>
     </a>
     <!--Description-->
     <div class="max-w-full">
-      <p class="text-base font-medium tracking-wide text-gray-600 mt-1">
+      <p class="text-base dark:text-gray-50 font-medium tracking-wide text-gray-600 mt-1">
         <%= contactMessage.message %> 
       </p>
     </div>
     <div class="flex items-center space-x-2 mt-20">
       <div>
         <!--Author name-->
-        <p class="text-gray-900 font-semibold"><%= contactMessage.name %> </p>
-        <p class="text-gray-500 font-semibold text-sm">
+        <p class="text-gray-900 font-semibold dark:text-white"><%= contactMessage.name %> </p>
+        <p class="text-gray-500 dark:text-gray-300 font-semibold text-sm">
           <%= moment(contactMessage.createdAt).format("MMMM Do YYYY") %> 
         </p>
-        <p class="text-gray-500 font-semibold text-sm">
-          <%= moment(contactMessage.createdAt).fromNow() %> 
+        <p class="text-gray-500 font-semibold text-sm dark:text-gray-400">
+          <%= moment(contactMessage.createdAt).fromNow() %>
         </p>
       </div>
     </div>
@@ -59,7 +59,9 @@
       </div>
     </div>
   </div>
-  <% } else if (title === "Dashboard | Contact Messages") { %> 
+  <% } else if (title === "Dashboard | Contact Messages") { %>
+    <div class="relative flex flex-col min-w-0 break-words bg-gray-50 dark:bg-gray-800 mx-4 shadow-lg rounded">
+      <div class="rounded-t mb-0 px-0 border-0">
     <% for (const contactMessage of contactMessages) { %>
       <li class="flex px-4">
         <div class="w-9 h-9 rounded-full flex-shrink-0 bg-indigo-500 my-2 mr-3">
@@ -167,5 +169,8 @@
           </div>
         </li>
         <% } %>
-    <% } %>  
+      </div>
+    </div>
+    <% } %> 
+</div>
 </div>
