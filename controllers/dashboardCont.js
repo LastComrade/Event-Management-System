@@ -375,7 +375,6 @@ const dboardCont = {
           console.log(`server error`);
           next(ErrorHandler.serverError());
         } else if (!existingEvent) {
-          console.log(err);
           return res.status(404).json({
             message: "Entered Event does not exist",
           });
@@ -494,17 +493,17 @@ const dboardCont = {
                     existingEvent.save();
                     return res.status(200).json({
                       message:
-                        "Event has been updated successfully2",
+                        "Event has been updated successfully",
                     });
                   }
                 }
               );
             }
           } catch (err) {
-            console.log(err);
+            // console.log(err);
             return res.status(404).json({
               message:
-                "Something went wrong while saving the event, Please try again later2",
+                "Something went wrong while saving the event, Please try again later",
             });
           }
         }
