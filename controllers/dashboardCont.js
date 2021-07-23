@@ -513,6 +513,29 @@ const dboardCont = {
     }
   },
 
+  eventDeleter: async (req, res, next) => {
+    try {
+      Event.findOneAndDelete({ name: req.params.name }, (err, deletedEvent) => {
+        if (err) {
+          next(ErrorHandler.serverError())
+        } else if (!deletedEvent) {
+          // console.log(deletedEvent);
+          return res.status(404).json({
+            message: "Entered Event does not exist"
+          })
+        } else {
+          // console.log(deletedEvent);
+          return res.status(200).json({
+            message: "Event deleted successfully"
+          })
+        }
+      })
+    } catch (err) {
+      console.log(err);
+      next(ErrorHandler.serverError())
+    }
+  },
+
   eventsIndex: async (req, res, next) => {
     // for retriving all the events list from database
     // await Event.find({}, async (err, eventsList) => {
@@ -587,6 +610,29 @@ const dboardCont = {
         });
       }
     });
+  },
+
+  departmentDeleter: async (req, res, next) => {
+    try {
+      Dept.findOneAndDelete({ name: req.params.name }, (err, deletedDepartment) => {
+        if (err) {
+          next(ErrorHandler.serverError())
+        } else if (!deletedDepartment) {
+          // console.log(deletedDepartment);
+          return res.status(404).json({
+            message: "Entered department does not exist"
+          })
+        } else {
+          // console.log(deletedDepartment);
+          return res.json({
+            message: "Department deleted successfully"
+          })
+        }
+      })
+    } catch (err) {
+      console.log(err);
+      next(ErrorHandler.serverError())
+    }
   },
 
   participantsRetriver: async (req, res, next) => {
