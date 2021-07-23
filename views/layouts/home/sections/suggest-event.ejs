@@ -11,7 +11,7 @@
     </div>
     <div class="w-full lg:w-1/2">
       <div id="suggest" class="mt-8 subscribe-form">
-        <form action="/events-suggestion" method="POST" class="relativeb focus:outline-none space-y-5">
+        <form class="relative focus:outline-none space-y-5">
           <input type="text"
             class="w-full relative py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-red-400 focus:outline-none"
             id="name" name="name" placeholder="Your Name">
@@ -21,6 +21,7 @@
             class="w-full h-44 resize-none relative py-4 px-6 duration-300 border-2 rounded focus:border-red-400 focus:outline-none"
             id="description" maxlength="200" placeholder="We would love to know, what's in your mind"></textarea>
           <button
+            type="submit"
             class="m-auto w-full h-10 text-lg relative right-0 px-5 font-semibold text-white duration-200 rounded-md hover:shadow-xl bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 overflow-hidden">Submit</button>
         </form>
       </div>
