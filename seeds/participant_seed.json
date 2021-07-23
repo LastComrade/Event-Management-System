@@ -20,12 +20,11 @@
                 "_id": "aabb66289b2d5c444078e015"
             }
         ],
-        "firstname": "Amelia",
+        "name": "Amelia Bell",
         "_id": "60cc4f39f4b8fa3ddc00b001",
-        "lastname": "Bell",
         "email": "2021001@somedomain.com",
         "college_name": "GNDEC",
-        "crn": "2021001"
+        "linkedin_account": "Amelia11"
     },
     {
         "registered_events": [
@@ -49,12 +48,11 @@
             }
 
         ],
-        "firstname": "Carol",
+        "name": "Carol Gray",
         "_id": "60cc4f39f4b8fa3ddc00b002",
-        "lastname": "Gray",
         "email": "2021002@somedomain.com",
         "college_name": "GNDEC",
-        "crn": "2021002"
+        "linkedin_account": "Carol22"
     },
     {
         "registered_events": [
@@ -71,12 +69,11 @@
                 "_id": "aabb66289b2d5c444078e010"
             }
         ],
-        "firstname": "Faith",
+        "name": "Faith May",
         "_id": "60cc4f39f4b8fa3ddc00b003",
-        "lastname": "May",
         "email": "2021003@somedomain.com",
         "college_name": "GNDEC",
-        "crn": "2021003"
+        "linkedin_account": "Faith33"
     },
     {
         "registered_events": [
@@ -102,12 +99,11 @@
                 "_id": "aabb66289b2d5c444078e014"
             }
         ],
-        "firstname": "Alan",
+        "name": "Alan Scott",
         "_id": "60cc4f39f4b8fa3ddc00b004",
-        "lastname": "Scott",
         "email": "2021004@somedomain.com",
         "college_name": "GNDEC",
-        "crn": "2021004"
+        "linkedin_account": "Alan44"
     },
     {
         "registered_events": [
@@ -127,12 +123,11 @@
                 "_id": "aabb66289b2d5c444078e015"
             }
         ],
-        "firstname": "John",
+        "name": "John Taylor",
         "_id": "60cc4f39f4b8fa3ddc00b005",
-        "lastname": "Taylor",
         "email": "2021005@somedomain.com",
         "college_name": "GNDEC",
-        "crn": "2021005"
+        "linkedin_account": "John55"
     },
     {
         "registered_events": [
@@ -155,12 +150,11 @@
                 "_id": "aabb66289b2d5c444078e013"
             }
         ],
-        "firstname": "Oliver",
+        "name": "Oliver Mills",
         "_id": "60cc4f39f4b8fa3ddc00b006",
-        "lastname": "Mills",
         "email": "2021006@somedomain.com",
         "college_name": "GNDEC",
-        "crn": "2021006"
+        "linkedin_account": "Oliver66"
     },
     {
         "registered_events": [
@@ -180,11 +174,10 @@
                 "_id": "aabb66289b2d5c444078e011"
             }
         ],
-        "firstname": "Thomas",
+        "name": "Thomas Gibson",
         "_id": "60cc4f39f4b8fa3ddc00b007",
-        "lastname": "Gibson",
         "email": "2021007@somedomain.com",
         "college_name": "GNDEC",
-        "crn": "2021007"
+        "linkedin_account": "Thomas77"
     }
 ]
