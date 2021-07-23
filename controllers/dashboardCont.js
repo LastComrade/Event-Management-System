@@ -456,22 +456,22 @@ const dboardCont = {
     try {
       Event.findOneAndDelete({ name: req.params.name }, (err, deletedEvent) => {
         if (err) {
-          next(ErrorHandler.serverError())
+          next(ErrorHandler.serverError());
         } else if (!deletedEvent) {
           // console.log(deletedEvent);
           return res.status(404).json({
-            message: "Entered Event does not exist"
-          })
+            message: "Entered Event does not exist",
+          });
         } else {
           // console.log(deletedEvent);
           return res.status(200).json({
-            message: "Event deleted successfully"
-          })
+            message: "Event deleted successfully",
+          });
         }
-      })
+      });
     } catch (err) {
       console.log(err);
-      next(ErrorHandler.serverError())
+      next(ErrorHandler.serverError());
     }
   },
 
@@ -554,42 +554,67 @@ const dboardCont = {
 
   departmentDeleter: async (req, res, next) => {
     try {
-      Dept.findOneAndDelete({ name: req.params.name }, (err, deletedDepartment) => {
-        if (err) {
-          next(ErrorHandler.serverError())
-        } else if (!deletedDepartment) {
-          // console.log(deletedDepartment);
-          return res.status(404).json({
-            message: "Entered department does not exist"
-          })
-        } else {
-          // console.log(deletedDepartment);
-          return res.json({
-            message: "Department deleted successfully"
-          })
+      Dept.findOneAndDelete(
+        { name: req.params.name },
+        (err, deletedDepartment) => {
+          if (err) {
+            next(ErrorHandler.serverError());
+          } else if (!deletedDepartment) {
+            // console.log(deletedDepartment);
+            return res.status(404).json({
+              message: "Entered department does not exist",
+            });
+          } else {
+            // console.log(deletedDepartment);
+            return res.json({
+              message: "Department deleted successfully",
+            });
+          }
         }
-      })
+      );
     } catch (err) {
       console.log(err);
-      next(ErrorHandler.serverError())
+      next(ErrorHandler.serverError());
     }
   },
 
   participantsRetriver: async (req, res, next) => {
     // for retriving all the participants from the database
-    await Participant.find({}, async (err, participantsList) => {
-      if (err) {
-        console.log(
-          `Error occur while retriving participants list from database`
-        );
-        req.flash("error", "An error occured while retriving participants");
-        res.redirect("/staff-dashboard");
-      } else {
-        return res.json({
-          participantsList,
-        });
-      }
-    });
+    // await Participant.find({}, async (err, participantsList) => {
+    //   if (err) {
+    //     console.log(
+    //       `Error occur while retriving participants list from database`
+    //     );
+    //     req.flash("error", "An error occured while retriving participants");
+    //     res.redirect("/staff-dashboard");
+    //   } else {
+    //     return res.json({
+    //       participantsList,
+    //     });
+    //   }
+    // });
+    try {
+      const participants = await Participant.find().limit(15);
+      const staffCount = await Staff.countDocuments();
+      const eventCount = await Event.countDocuments();
+      const deptCount = await Dept.countDocuments();
+      const participantCount = await Participant.countDocuments();
+      // console.log(participants);
+      return res.render("layouts/dashboard/participants", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        title: "Dashboard | Participants",
+        participants,
+        staffCount,
+        eventCount,
+        deptCount,
+        participantCount,
+        moment,
+      });
+    } catch (err) {
+      console.log(err);
+      next(ErrorHandler.serverError());
+    }
   },
 
   eventParticipantsList: async (req, res, next) => {
@@ -614,7 +639,6 @@ const dboardCont = {
         moment,
         event,
       });
-      return res.render("layouts/dashboard/event-participants");
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
