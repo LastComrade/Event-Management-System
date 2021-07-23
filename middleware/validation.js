@@ -56,7 +56,7 @@ const validate = {
 
     // This will validate events form data
     eventCreate: (req, res, next) => {
-        const { error } = eventSchema.validate(req.body.event);
+        const { error } = eventSchema.validate(req.body);
         if (error) {
             next(ErrorHandler.validationError(error.message));
         }
@@ -146,7 +146,7 @@ const validate = {
             next();
         }
     },
-    
+
     internshipRegister: (req, res, next) => {
         const { error } = internshipRegisterSchema.validate(req.body);
         if (error) {
