@@ -19,31 +19,26 @@ const dboardCont = {
   staffDashboard: async (req, res, next) => {
     try {
       const token = req.cookies.jwt_token;
-      jwt.verify(
-        token,
-        process.env.JWT_SECRET,
-        async (err, decodedToken) => {
-          if (err) {
-            console.log(err);
-            next(ErrorHandler.forbidden());
-          } else if (decodedToken) {
-            const eventCount = await Event.countDocuments();
-            const deptCount = await Dept.countDocuments();
-            const participantCount =
-              await Participant.countDocuments();
-            const staffCount = await Staff.countDocuments();
-            return res.render("layouts/dashboard/dashboard", {
-              error: req.flash("error"),
-              success: req.flash("success"),
-              staffCount,
-              eventCount,
-              deptCount,
-              participantCount,
-              title: "Dashboard | Home",
-            });
-          }
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const staffCount = await Staff.countDocuments();
+          return res.render("layouts/dashboard/dashboard", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: "Dashboard | Home",
+          });
         }
-      );
+      });
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
@@ -53,36 +48,31 @@ const dboardCont = {
   boardIndex: async (req, res, next) => {
     try {
       const token = req.cookies.jwt_token;
-      jwt.verify(
-        token,
-        process.env.JWT_SECRET,
-        async (err, decodedToken) => {
-          if (err) {
-            console.log(err);
-            next(ErrorHandler.forbidden());
-          } else if (decodedToken) {
-            const staff = await Staff.find().select(
-              "-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt"
-            );
-            // console.log("This should be the array of the staff", staff);
-            const eventCount = await Event.countDocuments();
-            const deptCount = await Dept.countDocuments();
-            const participantCount =
-              await Participant.countDocuments();
-            const staffCount = staff.length;
-            return res.render("layouts/dashboard/board", {
-              error: req.flash("error"),
-              success: req.flash("success"),
-              staffData: staff,
-              staffCount,
-              eventCount,
-              deptCount,
-              participantCount,
-              title: "Dashboard | Board",
-            });
-          }
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staff = await Staff.find().select(
+            "-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt"
+          );
+          // console.log("This should be the array of the staff", staff);
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const staffCount = staff.length;
+          return res.render("layouts/dashboard/board", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffData: staff,
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: "Dashboard | Board",
+          });
         }
-      );
+      });
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
@@ -92,41 +82,35 @@ const dboardCont = {
   messageIndex: async (req, res, next) => {
     try {
       const token = req.cookies.jwt_token;
-      jwt.verify(
-        token,
-        process.env.JWT_SECRET,
-        async (err, decodedToken) => {
-          if (err) {
-            console.log(err);
-            next(ErrorHandler.forbidden());
-          } else if (decodedToken) {
-            const staffCount = await Staff.countDocuments();
-            const eventCount = await Event.countDocuments();
-            const deptCount = await Dept.countDocuments();
-            const participantCount =
-              await Participant.countDocuments();
-            const contactMessages = await Contact.find().limit(10);
-            const internshipMessages =
-              await Internship.find().limit(10);
-            const magazineSubs = await magazineReciever
-              .find({ subscribed: true })
-              .limit(10);
-            return res.render("layouts/dashboard/messages", {
-              error: req.flash("error"),
-              success: req.flash("success"),
-              staffCount,
-              eventCount,
-              deptCount,
-              participantCount,
-              title: "Dashboard | Messages",
-              contactMessages,
-              internshipMessages,
-              magazineSubs,
-              moment,
-            });
-          }
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const contactMessages = await Contact.find().limit(10);
+          const internshipMessages = await Internship.find().limit(10);
+          const magazineSubs = await magazineReciever
+            .find({ subscribed: true })
+            .limit(10);
+          return res.render("layouts/dashboard/messages", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: "Dashboard | Messages",
+            contactMessages,
+            internshipMessages,
+            magazineSubs,
+            moment,
+          });
         }
-      );
+      });
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
@@ -136,36 +120,31 @@ const dboardCont = {
   magazineSubsIndex: async (req, res, next) => {
     try {
       const token = req.cookies.jwt_token;
-      jwt.verify(
-        token,
-        process.env.JWT_SECRET,
-        async (err, decodedToken) => {
-          if (err) {
-            console.log(err);
-            next(ErrorHandler.forbidden());
-          } else if (decodedToken) {
-            const staffCount = await Staff.countDocuments();
-            const eventCount = await Event.countDocuments();
-            const deptCount = await Dept.countDocuments();
-            const participantCount =
-              await Participant.countDocuments();
-            const magazineSubs = await magazineReciever.find({
-              subscribed: true,
-            });
-            return res.render("layouts/dashboard/all-messages", {
-              error: req.flash("error"),
-              success: req.flash("success"),
-              staffCount,
-              eventCount,
-              deptCount,
-              participantCount,
-              title: "Dashboard | Magazine Subscribers",
-              magazineSubs,
-              moment,
-            });
-          }
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const magazineSubs = await magazineReciever.find({
+            subscribed: true,
+          });
+          return res.render("layouts/dashboard/all-messages", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: "Dashboard | Magazine Subscribers",
+            magazineSubs,
+            moment,
+          });
         }
-      );
+      });
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
@@ -175,37 +154,32 @@ const dboardCont = {
   idContactMessage: async (req, res, next) => {
     try {
       const token = req.cookies.jwt_token;
-      jwt.verify(
-        token,
-        process.env.JWT_SECRET,
-        async (err, decodedToken) => {
-          if (err) {
-            console.log(err);
-            next(ErrorHandler.forbidden());
-          } else if (decodedToken) {
-            const staffCount = await Staff.countDocuments();
-            const eventCount = await Event.countDocuments();
-            const deptCount = await Dept.countDocuments();
-            const participantCount =
-              await Participant.countDocuments();
-            const contactMessage = await Contact.findOne({
-              _id: req.params.id,
-            });
-            console.log(contactMessage);
-            return res.render("layouts/dashboard/all-messages", {
-              error: req.flash("error"),
-              success: req.flash("success"),
-              staffCount,
-              eventCount,
-              deptCount,
-              participantCount,
-              title: `Dashboard | Contact Messages | ${contactMessage.name}`,
-              contactMessage,
-              moment,
-            });
-          }
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const contactMessage = await Contact.findOne({
+            _id: req.params.id,
+          });
+          console.log(contactMessage);
+          return res.render("layouts/dashboard/all-messages", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: `Dashboard | Contact Messages | ${contactMessage.name}`,
+            contactMessage,
+            moment,
+          });
         }
-      );
+      });
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
@@ -215,35 +189,30 @@ const dboardCont = {
   contactMessages: async (req, res, next) => {
     try {
       const token = req.cookies.jwt_token;
-      jwt.verify(
-        token,
-        process.env.JWT_SECRET,
-        async (err, decodedToken) => {
-          if (err) {
-            console.log(err);
-            next(ErrorHandler.forbidden());
-          } else if (decodedToken) {
-            const staffCount = await Staff.countDocuments();
-            const eventCount = await Event.countDocuments();
-            const deptCount = await Dept.countDocuments();
-            const participantCount =
-              await Participant.countDocuments();
-            const contactMessages = await Contact.find();
-            // console.log(contactMessages)
-            return res.render("layouts/dashboard/all-messages", {
-              error: req.flash("error"),
-              success: req.flash("success"),
-              staffCount,
-              eventCount,
-              deptCount,
-              participantCount,
-              title: `Dashboard | Contact Messages`,
-              contactMessages,
-              moment,
-            });
-          }
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const contactMessages = await Contact.find();
+          // console.log(contactMessages)
+          return res.render("layouts/dashboard/all-messages", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: `Dashboard | Contact Messages`,
+            contactMessages,
+            moment,
+          });
         }
-      );
+      });
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
@@ -253,37 +222,32 @@ const dboardCont = {
   idInternshipMessage: async (req, res, next) => {
     try {
       const token = req.cookies.jwt_token;
-      jwt.verify(
-        token,
-        process.env.JWT_SECRET,
-        async (err, decodedToken) => {
-          if (err) {
-            console.log(err);
-            next(ErrorHandler.forbidden());
-          } else if (decodedToken) {
-            const staffCount = await Staff.countDocuments();
-            const eventCount = await Event.countDocuments();
-            const deptCount = await Dept.countDocuments();
-            const participantCount =
-              await Participant.countDocuments();
-            const internshipMessage = await Internship.findOne({
-              _id: req.params.id,
-            });
-            console.log(internshipMessage);
-            return res.render("layouts/dashboard/all-messages", {
-              error: req.flash("error"),
-              success: req.flash("success"),
-              staffCount,
-              eventCount,
-              deptCount,
-              participantCount,
-              title: `Dashboard | Internship Applications | ${internshipMessage.name}`,
-              internshipMessage,
-              moment,
-            });
-          }
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const internshipMessage = await Internship.findOne({
+            _id: req.params.id,
+          });
+          console.log(internshipMessage);
+          return res.render("layouts/dashboard/all-messages", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: `Dashboard | Internship Applications | ${internshipMessage.name}`,
+            internshipMessage,
+            moment,
+          });
         }
-      );
+      });
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
@@ -293,35 +257,30 @@ const dboardCont = {
   internshipMessages: async (req, res, next) => {
     try {
       const token = req.cookies.jwt_token;
-      jwt.verify(
-        token,
-        process.env.JWT_SECRET,
-        async (err, decodedToken) => {
-          if (err) {
-            console.log(err);
-            next(ErrorHandler.forbidden());
-          } else if (decodedToken) {
-            const staffCount = await Staff.countDocuments();
-            const eventCount = await Event.countDocuments();
-            const deptCount = await Dept.countDocuments();
-            const participantCount =
-              await Participant.countDocuments();
-            const internshipMessages = await Internship.find();
-            console.log(internshipMessages);
-            return res.render("layouts/dashboard/all-messages", {
-              error: req.flash("error"),
-              success: req.flash("success"),
-              staffCount,
-              eventCount,
-              deptCount,
-              participantCount,
-              title: `Dashboard | Internship Applications`,
-              internshipMessages,
-              moment,
-            });
-          }
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const internshipMessages = await Internship.find();
+          console.log(internshipMessages);
+          return res.render("layouts/dashboard/all-messages", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: `Dashboard | Internship Applications`,
+            internshipMessages,
+            moment,
+          });
         }
-      );
+      });
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
@@ -396,108 +355,88 @@ const dboardCont = {
                 message: "Event has been updated successfully",
               });
             } else {
-              Event.findOne(
-                { name: req.body.name },
-                (err, foundEvent2) => {
-                  if (err) {
-                    console.log(`server error`);
-                    next(ErrorHandler.serverError());
-                  } else if (foundEvent2) {
-                    return res.status(404).json({
-                      message:
-                        "Event with the new name already exists, Please try another name",
+              Event.findOne({ name: req.body.name }, (err, foundEvent2) => {
+                if (err) {
+                  console.log(`server error`);
+                  next(ErrorHandler.serverError());
+                } else if (foundEvent2) {
+                  return res.status(404).json({
+                    message:
+                      "Event with the new name already exists, Please try another name",
+                  });
+                } else {
+                  existingEvent.name = name;
+                  existingEvent.description = description;
+                  existingEvent.category = category;
+                  existingEvent.featured = featured;
+                  existingEvent.registration_starts = registration_starts;
+                  existingEvent.registration_ends = registration_ends;
+                  existingEvent.event_starts = event_starts;
+                  existingEvent.event_ends = event_ends;
+                  existingEvent.result_declaration = result_declaration;
+                  existingEvent.organizers = organizers;
+
+                  // SheetAPI code
+                  try {
+                    let client_side = new google.auth.JWT(
+                      process.env.client_email,
+                      null,
+                      process.env.private_key,
+                      ["https://www.googleapis.com/auth/spreadsheets"]
+                    );
+
+                    client_side.authorize((err, token) => {
+                      if (err) {
+                        console.log(err);
+                        return;
+                      } else {
+                        eventSheetEditor(client_side);
+                      }
                     });
-                  } else {
-                    existingEvent.name = name;
-                    existingEvent.description = description;
-                    existingEvent.category = category;
-                    existingEvent.featured = featured;
-                    existingEvent.registration_starts = registration_starts;
-                    existingEvent.registration_ends = registration_ends;
-                    existingEvent.event_starts = event_starts;
-                    existingEvent.event_ends = event_ends;
-                    existingEvent.result_declaration = result_declaration;
-                    existingEvent.organizers = organizers;
+                  } catch (err) {
+                    console.log(err);
+                    console.log("Error occured in Google Sheets");
+                  }
 
-                    // SheetAPI code
+                  eventSheetEditor = async (client) => {
                     try {
-                      let client_side =
-                        new google.auth.JWT(
-                          process.env.client_email,
-                          null,
-                          process.env.private_key,
-                          [
-                            "https://www.googleapis.com/auth/spreadsheets",
-                          ]
-                        );
+                      const sheetAPI = google.sheets({
+                        version: "v4",
+                        auth: client,
+                      });
 
-                      client_side.authorize(
-                        (err, token) => {
-                          if (err) {
-                            console.log(err);
-                            return;
-                          } else {
-                            eventSheetEditor(
-                              client_side
-                            );
-                          }
-                        }
-                      );
+                      const eventSheetInfo = {
+                        spreadsheetId: process.env.event_spreadsheet_id,
+                        resource: {
+                          requests: [
+                            {
+                              updateSheetProperties: {
+                                properties: {
+                                  sheetId: existingEvent.sheetID,
+                                  title: name,
+                                },
+                                fields: "title",
+                              },
+                            },
+                          ],
+                          includeSpreadsheetInResponse: true,
+                        },
+                      };
+                      await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
                     } catch (err) {
-                      console.log(err);
+                      // console.log(err);
                       console.log(
-                        "Error occured in Google Sheets"
+                        "error occured while updating the event on spreadsheet"
                       );
                     }
+                  };
 
-                    eventSheetEditor = async (client) => {
-                      try {
-                        const sheetAPI = google.sheets({
-                          version: "v4",
-                          auth: client,
-                        });
-
-                        const eventSheetInfo = {
-                          spreadsheetId:
-                            process.env
-                              .event_spreadsheet_id,
-                          resource: {
-                            requests: [
-                              {
-                                updateSheetProperties:
-                                {
-                                  properties:
-                                  {
-                                    sheetId:
-                                      existingEvent.sheetID,
-                                    title: name,
-                                  },
-                                  fields: "title",
-                                },
-                              },
-                            ],
-                            includeSpreadsheetInResponse: true,
-                          },
-                        };
-                        await sheetAPI.spreadsheets.batchUpdate(
-                          eventSheetInfo
-                        );
-                      } catch (err) {
-                        // console.log(err);
-                        console.log(
-                          "error occured while updating the event on spreadsheet"
-                        );
-                      }
-                    };
-
-                    existingEvent.save();
-                    return res.status(200).json({
-                      message:
-                        "Event has been updated successfully",
-                    });
-                  }
+                  existingEvent.save();
+                  return res.status(200).json({
+                    message: "Event has been updated successfully",
+                  });
                 }
-              );
+              });
             }
           } catch (err) {
             // console.log(err);
@@ -534,17 +473,21 @@ const dboardCont = {
       const deptCount = await Dept.countDocuments();
       const participantCount = await Participant.countDocuments();
       const events = await Event.find().limit(15);
-      console.log(events);
+      // console.log(events);
 
       return res.render("layouts/dashboard/events", {
         error: req.flash("error"),
         success: req.flash("success"),
         title: "Dashboard | Events",
-        events, staffCount, eventCount, deptCount, participantCount,
+        events,
+        staffCount,
+        eventCount,
+        deptCount,
+        participantCount,
         moment,
-      })
+      });
     } catch (err) {
-      console.log(err)
+      console.log(err);
       next(ErrorHandler.serverError());
     }
   },
@@ -576,10 +519,7 @@ const dboardCont = {
         console.log(
           `Error occur while retriving departments list from database`
         );
-        req.flash(
-          "error",
-          "An error occured while retriving departments"
-        );
+        req.flash("error", "An error occured while retriving departments");
         res.redirect("/staff-dashboard");
       } else {
         return res.json({
@@ -596,10 +536,7 @@ const dboardCont = {
         console.log(
           `Error occur while retriving participants list from database`
         );
-        req.flash(
-          "error",
-          "An error occured while retriving participants"
-        );
+        req.flash("error", "An error occured while retriving participants");
         res.redirect("/staff-dashboard");
       } else {
         return res.json({
@@ -607,6 +544,35 @@ const dboardCont = {
         });
       }
     });
+  },
+
+  eventParticipantsList: async (req, res, next) => {
+    try {
+      const event = await Event.findOne({
+        name: req.params.name,
+      }).populate("participants");
+      // console.log(participantsList);
+      const staffCount = await Staff.countDocuments();
+      const eventCount = await Event.countDocuments();
+      const deptCount = await Dept.countDocuments();
+      const participantCount = await Participant.countDocuments();
+      console.log(event);
+      return res.render("layouts/dashboard/event-participants", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        title: `Dashboard | Events | ${event.name} | Participants`,
+        staffCount,
+        eventCount,
+        deptCount,
+        participantCount,
+        moment,
+        event,
+      });
+      return res.render("layouts/dashboard/event-participants");
+    } catch (err) {
+      console.log(err);
+      next(ErrorHandler.serverError());
+    }
   },
 
   registerKeyGenerator: (req, res, next) => {

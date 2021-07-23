@@ -9,12 +9,12 @@ router
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.staffDashboard);
 
 router
-    .route("/dashboard/events")
-    .get(authMid.authRequired, authMid.staffCheck, dboardCont.eventsIndex);
+  .route("/dashboard/events")
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.eventsIndex);
 
-// router
-//     .route("/dashboard/events/:name")
-//     .get(authMid.authRequired, authMid.staffCheck);
+router
+  .route("/dashboard/events/:name/participants")
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.eventParticipantsList);
 
 router
   .route("/dashboard/events/:name/edit")
@@ -70,7 +70,11 @@ router
 
 router
   .route("/dashboard/messages/internship/:id")
-  .get(authMid.authRequired, authMid.staffCheck, dboardCont.idInternshipMessage);
+  .get(
+    authMid.authRequired,
+    authMid.staffCheck,
+    dboardCont.idInternshipMessage
+  );
 
 // protected route to genetrate the register key
 router
