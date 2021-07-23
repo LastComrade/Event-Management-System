@@ -404,7 +404,10 @@ const eventCont = {
     try {
       const eventSuggest = new eventSuggestion(req.body);
       await eventSuggest.save();
-      return res.redirect("back");
+      // return res.redirect("back");
+      return res.status(200).json({
+        message: "Event Suggestion submitted successfully, Thanks for the submission :)"
+      })
     } catch (err) {
       console.log(err);
       next(Errorhandler.serverError());

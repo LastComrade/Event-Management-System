@@ -12,14 +12,15 @@ router
     .route("/dashboard/events")
     .get(authMid.authRequired, authMid.staffCheck, dboardCont.eventsIndex);
 
-// router
-//     .route("/dashboard/events/:name")
-//     .get(authMid.authRequired, authMid.staffCheck);
+router
+    .route("/dashboard/events/:name")
+    // .get(authMid.authRequired, authMid.staffCheck);
+    .delete(authMid.authRequired, authMid.staffCheck, dboardCont.eventDeleter)
 
 router
   .route("/dashboard/events/:name/edit")
-  .get(dboardCont.editEventInfo)
-  .put(validate.eventCreate, dboardCont.updateEvent);
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.editEventInfo)
+  .put(authMid.authRequired, authMid.staffCheck, validate.eventCreate, dboardCont.updateEvent);
 
 router
   .route("/dashboard/departments")
@@ -28,6 +29,10 @@ router
     authMid.staffCheck,
     dboardCont.departmentsRetriver
   );
+
+router
+    .route("/dashboard/departments/:name")
+    .delete(authMid.authRequired, authMid.staffCheck, dboardCont.departmentDeleter)
 
 router
   .route("/dashboard/magazine-subs")
