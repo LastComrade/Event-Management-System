@@ -98,7 +98,7 @@ const dboardCont = {
       next(ErrorHandler.serverError());
     }
   },
-  
+
   magazineSubsIndex: async (req, res, next) => {
     try {
       const token = req.cookies.jwt_token;
@@ -213,7 +213,7 @@ const dboardCont = {
       next(ErrorHandler.serverError());
     }
   },
-  
+
   internshipMessages: async (req, res, next) => {
     try {
       const token = req.cookies.jwt_token;
@@ -243,21 +243,40 @@ const dboardCont = {
     }
   },
 
-  eventsRetriver: async (req, res, next) => {
+  eventsIndex: async (req, res, next) => {
     // for retriving all the events list from database
-    await Event.find({}, async (err, eventsList) => {
-      if (err) {
-        console.log(
-          `Error occur while retriving events list from database`
-        );
-        req.flash("error", "An error occured while retriving events list");
-        res.redirect("/staff-dashboard");
-      } else {
-        return res.json({
-          eventsList,
-        });
-      }
-    });
+    // await Event.find({}, async (err, eventsList) => {
+    //   if (err) {
+    //     console.log(
+    //       `Error occur while retriving events list from database`
+    //     );
+    //     req.flash("error", "An error occured while retriving events list");
+    //     res.redirect("/staff-dashboard");
+    //   } else {
+    //     return res.json({
+    //       eventsList,
+    //     });
+    //   }
+    // });
+    try {
+      const staffCount = await Staff.countDocuments();
+      const eventCount = await Event.countDocuments();
+      const deptCount = await Dept.countDocuments();
+      const participantCount = await Participant.countDocuments();
+      const events = await Event.find().limit(15);
+      console.log(events);
+
+      return res.render("layouts/dashboard/events", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        title: "Dashboard | Events",
+        events, staffCount, eventCount, deptCount, participantCount,
+        moment,
+      })
+    } catch (err) {
+      console.log(err)
+      next(ErrorHandler.serverError());
+    }
   },
 
   magazineRecieversRetriver: async (req, res, next) => {
@@ -330,8 +349,6 @@ const dboardCont = {
     }
     return res.redirect("/dashboard");
   }
-
-
 }
 
 module.exports = dboardCont;

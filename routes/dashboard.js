@@ -9,7 +9,11 @@ router
 
 router
     .route("/dashboard/events")
-    .get(authMid.authRequired, authMid.staffCheck, dboardCont.eventsRetriver);
+    .get(authMid.authRequired, authMid.staffCheck, dboardCont.eventsIndex);
+
+// router
+//     .route("/dashboard/events/:name")
+//     .get(authMid.authRequired, authMid.staffCheck);
 
 router
     .route("/dashboard/departments")

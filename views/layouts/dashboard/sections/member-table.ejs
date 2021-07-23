@@ -1,58 +1,119 @@
 <div class="mt-4 mx-4">
-    <div class="w-full overflow-hidden rounded-lg shadow-xs">
-        <div class="w-full overflow-x-auto">
-            <table class="w-full">
-                <thead>
-                    <tr
-                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                        <th class="px-4 py-3">Members</th>
-                        <th class="px-4 py-3">Status</th>
-                        <th class="px-4 py-3">Role</th>
-                        <th class="px-4 py-3">Email</th>
-                        <th class="px-4 py-3">Department</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                    <% for(const member of staffData) { %>
-                        <tr
-                            class="bg-gray-50 dark:bg-gray-800 duration-200 hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
-                            <td class="px-4 py-3">
-                                <div class="flex items-center text-sm">
-                                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
-                                        <img class="object-cover w-full h-full rounded-full"
-                                            src="<%= member.profile_pic_url %>" alt="" loading="lazy" />
-                                        <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true">
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold">
-                                            <%= member.fullname %>
-                                        </p>
-                                        <p class="text-xs text-gray-600 dark:text-gray-400">
-                                            <%= member.designation %>
-                                        </p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-4 py-3 text-xs">
-                                <span
-                                    class="px-2 py-1 font-semibold leading-tight  bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                                    <%= member.accActive ? "Active" : "Not Active" %>
-                                </span>
-                            </td>
-                            <td class="px-4 py-3 text-sm capitalize">
-                                <%= member.role %>
-                            </td>
-                            <td class="px-4 py-3 text-sm">
-                                <%= member.email %>
-                            </td>
-                            <td class="px-4 py-3 text-sm">
-                                <%= member.department %>
-                            </td>
-                        </tr>
-                        <% } %>
-                </tbody>
-            </table>
-        </div>
-    </div>
+  <div class="w-full overflow-hidden rounded-lg shadow-xs">
+    <% if(title==="Dashboard | Board" ) { %>
+      <div class="w-full overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr
+              class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+              <th class="px-4 py-3">Members</th>
+              <th class="px-4 py-3">Status</th>
+              <th class="px-4 py-3">Role</th>
+              <th class="px-4 py-3">Email</th>
+              <th class="px-4 py-3">Department</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+            <% for(const member of staffData) { %>
+              <tr
+                class="bg-gray-50 dark:bg-gray-800 duration-200 hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                <td class="px-4 py-3">
+                  <div class="flex items-center text-sm">
+                    <div class="relative hidden w-8 h-8 mr-3 rounded-full md:block">
+                      <img class="object-cover w-full h-full rounded-full" src="<%= member.profile_pic_url %>" alt=""
+                        loading="lazy" />
+                      <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true">
+                      </div>
+                    </div>
+                    <div>
+                      <p class="font-semibold">
+                        <%= member.fullname %>
+                      </p>
+                      <p class="text-xs text-gray-600 dark:text-gray-400">
+                        <%= member.designation %>
+                      </p>
+                    </div>
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-xs">
+                  <span
+                    class="px-2 py-1 font-semibold leading-tight  bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                    <%= member.accActive ? "Active" : "Not Active" %>
+                  </span>
+                </td>
+                <td class="px-4 py-3 text-sm capitalize">
+                  <%= member.role %>
+                </td>
+                <td class="px-4 py-3 text-sm">
+                  <%= member.email %>
+                </td>
+                <td class="px-4 py-3 text-sm">
+                  <%= member.department %>
+                </td>
+              </tr>
+              <% } %>
+          </tbody>
+        </table>
+      </div>
+      <% } else if (title==="Dashboard | Events" ) { %>
+      <div class="w-full overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr
+              class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+              <th class="px-4 py-3">Event Name</th>
+              <th class="px-4 py-3 text-center">Category</th>
+              <th class="px-4 py-3">Event Start</th>
+              <th class="px-4 py-3">Event End</th>
+              <th class="px-4 py-3">Organizers</th>
+              <th class="px-4 py-3">Participants</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+            <% for(const event of events) { %>
+            <tr
+              class="bg-gray-50 dark:bg-gray-800 duration-200  hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+              <td class="px-4 py-3">
+                <div class="flex items-center text-sm">
+                  <a href="/events/<%= event.name %>" target="blank">
+                    <div>
+                      <p class="font-semibold">
+                        <%= event.name %>
+                      </p>
+                      <p class="text-xs text-gray-600 dark:text-gray-400">
+                        <span class="font-bold">Reg. Starts</span> - <%= moment(event.registration_starts).format("MMMM Do YYYY") %>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </td>
+              <td class="px-4 py-3 text-xs flex justify-center items-center">
+                <span
+                  class="px-2 py-1 capitalize font-semibold leading-tight <%= event.category === "archived" ? "bg-gray-600 text-gray-50 dark:bg-gray-700 dark:text-gray-100" : "" %> <%= event.category === "live" ? "bg-red-500 text-gray-50 dark:bg-red-700 dark:text-red-100" : "" %> <%= event.category === "ongoing" ? "bg-green-500 text-white dark:bg-green-700 dark:text-green-100" : "" %> <%= event.category === "upcoming" ? "bg-blue-500 text-white dark:bg-blue-700 dark:text-blue-100" : "" %>  rounded-full "> 
+                  <%= event.category %> 
+                </span>
+              </td>
+              <td class="px-4 py-3 text-sm capitalize">
+                <%= moment(event.event_starts).format("MMMM Do YYYY") %>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                <%= moment(event.event_ends).format("MMMM Do YYYY") %>
+              </td>
+              <td class="px-4 py-3 capitalize text-sm">
+                <% for (let i=0; i<event.organizers.length; i++) { %>
+                    <%= event.organizers[i].name %><% if(i < 2) { %>, 
+                    <% } %>
+                    <% if (i > 3) { break } %> 
+                <% } %> 
+              </td>
+              <td class="px-4 text-center font-bold dark:text-gray-200 py-3 text-sm">
+                <%= event.participants.length %>
+              </td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+      <% } %> 
+  </div>
 </div>
