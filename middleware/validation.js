@@ -47,7 +47,7 @@ const validate = {
     // This will validate department form data
     deptCreate: (req, res, next) => {
         // console.log("dept validator started");
-        const { error } = deptSchema.validate(req.body.department);
+        const { error } = deptSchema.validate(req.body);
         if (error) {
             next(ErrorHandler.validationError(error.message));
         }
