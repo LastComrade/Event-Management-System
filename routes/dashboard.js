@@ -9,18 +9,31 @@ router
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.staffDashboard);
 
 router
-    .route("/dashboard/events")
-    .get(authMid.authRequired, authMid.staffCheck, dboardCont.eventsIndex);
+  .route("/dashboard/events")
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.eventsIndex);
 
 router
-    .route("/dashboard/events/:name")
-    // .get(authMid.authRequired, authMid.staffCheck);
-    .delete(authMid.authRequired, authMid.staffCheck, dboardCont.eventDeleter)
+  .route("/dashboard/events/:name")
+  // .get(authMid.authRequired, authMid.staffCheck);
+  .delete(authMid.authRequired, authMid.staffCheck, dboardCont.eventDeleter);
+
+router
+  .route("/dashboard/events/:name/participants")
+  .get(
+    authMid.authRequired,
+    authMid.staffCheck,
+    dboardCont.eventParticipantsList
+  );
 
 router
   .route("/dashboard/events/:name/edit")
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.editEventInfo)
-  .put(authMid.authRequired, authMid.staffCheck, validate.eventCreate, dboardCont.updateEvent);
+  .put(
+    authMid.authRequired,
+    authMid.staffCheck,
+    validate.eventCreate,
+    dboardCont.updateEvent
+  );
 
 router
   .route("/dashboard/departments")
@@ -31,8 +44,12 @@ router
   );
 
 router
-    .route("/dashboard/departments/:name")
-    .delete(authMid.authRequired, authMid.staffCheck, dboardCont.departmentDeleter)
+  .route("/dashboard/departments/:name")
+  .delete(
+    authMid.authRequired,
+    authMid.staffCheck,
+    dboardCont.departmentDeleter
+  );
 
 router
   .route("/dashboard/magazine-subs")
@@ -75,7 +92,11 @@ router
 
 router
   .route("/dashboard/messages/internship/:id")
-  .get(authMid.authRequired, authMid.staffCheck, dboardCont.idInternshipMessage);
+  .get(
+    authMid.authRequired,
+    authMid.staffCheck,
+    dboardCont.idInternshipMessage
+  );
 
 // protected route to genetrate the register key
 router

@@ -13,130 +13,129 @@
     <!-- About Section - #1 -->
     <%- include("./sections/home-about-us.ejs") %>
 
-      <!-- Vision Section - #2 -->
-      <%- include("./sections/vision.ejs") %>
+  <!-- Vision Section - #2 -->
+  <%- include("./sections/vision.ejs") %>
 
-        <!-- Departments Section (Top 3) -->
-        <%- include("./sections/top3-department.ejs") %>
+  <!-- Departments Section (Top 3) -->
+  <%- include("./sections/top3-department.ejs") %> 
 
-          <!-- Brand section -->
-          <%- include("./sections/brands.ejs") %>
-            <!-- Brand Section -->
+   <!-- Brand section -->
+   <%- include("./sections/brands.ejs") %>
+   <!-- Brand Section -->
 
-            <div class="my-10"></div>
+  <div class="my-10"></div>
 
-            <!-- Features Section -->
-            <%- include("./sections/features.ejs") %>
+  <!-- Features Section -->
+  <%- include("./sections/features.ejs") %>
 
-              <!-- Video & Stats Section -->
-              <%- include("./sections/video-stats.ejs") %>
-                <!-- Video & Stats Section -->
+  <!-- Video & Stats Section -->
+  <%- include("./sections/video-stats.ejs") %> 
+  <!-- Video & Stats Section -->
 
-                <!-- Team Section -->
-                <%- include("./sections/home-team.ejs") %>
-                  <!-- Team Section -->
+  <!-- Team Section -->
+  <%- include("./sections/home-team.ejs") %> 
+  <!-- Team Section -->
 
-                  <!-- Testimonial Section -->
-                  <%- include("./sections/testimonials.ejs") %>
-                    <!-- Testimonial Section -->
+  <!-- Testimonial Section -->
+  <%- include("./sections/testimonials.ejs") %> 
+  <!-- Testimonial Section -->
 
-                    <!-- Footer Section -->
-                    <footer id="footer" class="relative z-10 footer-area pt-2">
-                      <div class="footer-bg" style="background-image: url(/img/footer-bg.svg);"></div>
-                      <div class="container">
-                        <!-- Newsletter Section -->
-                        <%- include("./sections/magazine-form.ejs") %>
-                          <!-- Newsletter Section -->
+  <!-- Footer Section -->
+  <footer id="footer" class="relative z-10 footer-area pt-2">
+    <div class="footer-bg" style="background-image: url(/img/footer-bg.svg);"></div>
+    <div class="container">
+      <!-- Newsletter Section -->
+      <%- include("./sections/magazine-form.ejs") %>
+      <!-- Newsletter Section -->
 
-                          <!-- Footer Links -->
-                          <%- include("./sections/footer-links.ejs") %>
-                            <!-- Footer Links -->
+      <!-- Footer Links -->
+      <%- include("./sections/footer-links.ejs") %>
+      <!-- Footer Links -->
 
-                            <!-- Credits -->
-                            <%- include("./sections/footer-credits.ejs") %>
-                              <!-- Credits -->
-                      </div>
-                      <div id="particles-2" class="particles"></div>
-                    </footer>
-                    <!-- Footer Section -->
+      <!-- Credits -->
+      <%- include("./sections/footer-credits.ejs") %>
+      <!-- Credits -->
+    </div>
+    <div id="particles-2" class="particles"></div>
+  </footer>
+  <!-- Footer Section -->
 
-                    <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+  <a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
 
-                    <!-- Scripts -->
-                    <%- include("./partials/scripts.ejs") %>
-                      <!-- ./Scripts -->
+  <!-- Scripts -->
+  <%- include("./partials/scripts.ejs") %>
+  <!-- ./Scripts -->
 
-                      <script>
-                        function convertFD2JSON(formData) {
-                          let obj = {};
-                          formData.forEach(function (value, key) {
-                            obj[key] = value;
-                          })
-                          return obj;
-                        }
-                        document.querySelector("form").addEventListener("submit", handleForm);
-                        function handleForm(ev) {
-                          ev.preventDefault();
-                          let myForm = ev.target;
-                          fetch("/newsletter-sub", {
-                            body: JSON.stringify(convertFD2JSON(new FormData(myForm))),
-                            method: "POST",
-                            headers: {
-                              "Content-Type": "application/json",
-                            }
-                          })
-                            .then((some) => { return some.json() })
-                            .then(async (res) => {
+  <script>
+    function convertFD2JSON(formData) {
+            let obj = {};
+            formData.forEach(function(value, key) {
+                obj[key] = value;
+            })
+            return obj;
+        }
+        document.querySelector("form").addEventListener("submit", handleForm);
+        function handleForm(ev) {
+            ev.preventDefault();
+            let myForm = ev.target;
+            fetch("/monthly-magazine", {
+                body: JSON.stringify(convertFD2JSON(new FormData(myForm))),
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
+            .then((some) => { return some.json() })
+            .then(async (res) => {
 
-                              console.log(res)
-                              // instanciate new modal
-                              var modal = new tingle.modal({
-                                footer: true,
-                                stickyFooter: false,
-                                closeMethods: ['button', 'escape'],
-                                closeLabel: "Close",
-                                cssClass: ['custom-class-1', 'custom-class-2'],
-                              });
+                  console.log(res)
+                  // instanciate new modal
+                  var modal = new tingle.modal({
+                      footer: true,
+                      stickyFooter: false,
+                      closeMethods: ['button', 'escape', 'overlay'],
+                      closeLabel: "Close",
+                      cssClass: ['custom-class-1', 'custom-class-2'],
+                  });
+  
+                  // set content
+                  modal.setContent( `<h1> ${res.message} </h1>` );
+      
+  
+                  // add button
+                  modal.addFooterBtn('close', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
+                      // here goes some logic
+                      modal.close();
+                  });
 
-                              // set content
-                              modal.setContent(`<h1> ${res.message} </h1>`);
+                  modal.open()
+                
+            })
+            .catch((err) => {
+                // instanciate new modal
+                var modal = new tingle.modal({
+                      footer: true,
+                      stickyFooter: false,
+                      closeMethods: ['button', 'escape'],
+                      closeLabel: "Close",
+                      cssClass: ['custom-class-1', 'custom-class-2'],
+                  });
+  
+                  // set content
+                  modal.setContent( `<h1> ${res.message} </h1>` );
+      
+  
+                  // add button
+                  modal.addFooterBtn('close', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function() {
+                      // here goes some logic
+                      modal.close();
+                  });
 
-
-                              // add button
-                              modal.addFooterBtn('close', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function () {
-                                // here goes some logic
-                                modal.close();
-                              });
-
-                              modal.open()
-
-                            })
-                            .catch((err) => {
-                              // instanciate new modal
-                              var modal = new tingle.modal({
-                                footer: true,
-                                stickyFooter: false,
-                                closeMethods: ['button', 'escape'],
-                                closeLabel: "Close",
-                                cssClass: ['custom-class-1', 'custom-class-2'],
-                              });
-
-                              // set content
-                              modal.setContent(`<h1> ${res.message} </h1>`);
-
-
-                              // add button
-                              modal.addFooterBtn('close', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function () {
-                                // here goes some logic
-                                modal.close();
-                              });
-
-                              modal.open()
-                            })
-                        }
-
-                      </script>
-
+                  modal.open()
+            })
+        }
+        
+  </script>
 </body>
 
 </html>

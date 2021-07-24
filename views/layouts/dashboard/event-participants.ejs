@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("./sections/head.ejs") %>
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+  <div x-data="setup()" :class="{ 'dark': isDark }">
+    <div
+      class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+
+      <!-- Header -->
+      <%- include("./sections/header.ejs") %> 
+      <!-- ./Header -->
+
+      <!-- Sidebar -->
+      <%- include("./sections/sidebar.ejs") %>
+      <!-- ./Sidebar -->
+
+      <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
+        <!-- Statistics Cards -->
+        <%- include("./sections/stat-card.ejs") %> 
+        <!-- ./Statistics Cards -->
+
+        <!-- Client Table -->
+        <%- include("./sections/member-table.ejs") %>
+        <!-- ./Client Table -->
+
+        <!-- External resources -->
+        <%- include("./sections/external-links.ejs") %> 
+        <!-- ./External resources -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <%- include("./sections/scripts.ejs") %>   
+  <!-- ./Scripts -->
+</body>
+
+</html>
