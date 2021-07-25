@@ -60,7 +60,7 @@
                   return some.json();
                 })
             .then(async (res) => {
-
+                  document.querySelector('form').reset();
                   console.log(res)
                   // instanciate new modal
                   var modal = new tingle.modal({

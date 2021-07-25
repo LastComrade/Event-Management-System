@@ -818,7 +818,7 @@ p {
   width: 2px;
   height: 100%;
   margin-left: -1px;
-  background: rgb(213, 213, 213);
+  background: rgb(213, 213, 213);z
   background: -moz-linear-gradient(
     top,
     rgba(213, 213, 213, 0) 0%,
@@ -861,7 +861,7 @@ p {
     rgb(213, 213, 213) 92%,
     rgba(213, 213, 213, 0) 100%
   );
-  z-index: 1;
+  z-index: 5;
 }
 
 .timeline li {
@@ -916,9 +916,6 @@ p {
   padding: 6px 10px;
   text-align: left;
   border-radius: 5px;
-}
-.description{
-  z-index: index 100;;
 }
 .direction-l .flag {
   -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15),
@@ -995,9 +992,6 @@ p {
     left: -28px;
     right: auto;
     top: 8px;
-  }
-  .description{
-    z-index: 30;
   }
   .timeline .direction-l .hexa {
     left: auto;
