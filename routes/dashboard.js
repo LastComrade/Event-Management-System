@@ -52,6 +52,15 @@ router
   );
 
 router
+  .route("/dashboard/departments/:name/edit")
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.editDeptInfo)
+  .put(authMid.authRequired,
+    authMid.staffCheck,
+    validate.deptCreate,
+    dboardCont.updateDept
+  );
+
+router
   .route("/dashboard/magazine-subs")
   .get(
     authMid.authRequired,
