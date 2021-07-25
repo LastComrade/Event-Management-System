@@ -54,7 +54,8 @@ router
 router
   .route("/dashboard/departments/:name/edit")
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.editDeptInfo)
-  .put(authMid.authRequired,
+  .put(
+    authMid.authRequired,
     authMid.staffCheck,
     validate.deptCreate,
     dboardCont.updateDept
@@ -74,6 +75,14 @@ router
     authMid.authRequired,
     authMid.staffCheck,
     dboardCont.participantsRetriver
+  );
+
+router
+  .route("/dashboard/participants/:id")
+  .get(
+    authMid.authRequired,
+    authMid.staffCheck,
+    dboardCont.pidEventRetriver 
   );
 
 router

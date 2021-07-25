@@ -696,7 +696,7 @@ const dboardCont = {
     //   }
     // });
     try {
-      const participants = await Participant.find().limit(15);
+      const participants = await Participant.find().sort({updatedAt: -1});
       const staffCount = await Staff.countDocuments();
       const eventCount = await Event.countDocuments();
       const deptCount = await Dept.countDocuments();
@@ -712,24 +712,55 @@ const dboardCont = {
         deptCount,
         participantCount,
         moment,
-      });
+      }); 
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
     }
   },
 
-  eventParticipantsList: async (req, res, next) => {
+  pidEventRetriver: async (req, res, next) => {
     try {
-      const event = await Event.findOne({
-        name: req.params.name,
-      }).populate("participants");
+      const participant = await Participant.findOne({
+        _id: req.params.id,
+      }).populate("registered_events");
       // console.log(participantsList);
       const staffCount = await Staff.countDocuments();
       const eventCount = await Event.countDocuments();
       const deptCount = await Dept.countDocuments();
       const participantCount = await Participant.countDocuments();
-      console.log(event);
+      console.log("***********************************")
+      console.log(participant);
+      console.log("***********************************")
+      // console.log(req.params.id)
+      return res.render("layouts/dashboard/participant-events", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        title: `Dashboard | Participants | ${participant.name} | Events`,
+        staffCount,
+        eventCount,
+        deptCount,
+        participantCount,
+        moment,
+        participant,
+      });
+    } catch (err) {
+      console.log(err);
+      next(ErrorHandler.serverError());
+    }
+  }, 
+
+  eventParticipantsList: async (req, res, next) => {
+    try {
+      const event = await Event.findOne({
+        name: req.params.name,
+      }).populate("participants");  
+      // console.log(participantsList);
+      const staffCount = await Staff.countDocuments();
+      const eventCount = await Event.countDocuments();
+      const deptCount = await Dept.countDocuments();
+      const participantCount = await Participant.countDocuments();
+      // console.log(event);
       return res.render("layouts/dashboard/event-participants", {
         error: req.flash("error"),
         success: req.flash("success"),
