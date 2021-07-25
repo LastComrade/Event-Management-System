@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 <head>
-  <%- include("./partials/head-links.ejs") %> 
+  <%- include("./partials/head-links.ejs") %>
 
 </head>
 
@@ -10,8 +10,8 @@
   <!-- header + navbar -->
   <%- include("./sections/header-nav.ejs") %>
 
-  <!-- About Section - #1 -->
-  <%- include("./sections/home-about-us.ejs") %> 
+    <!-- About Section - #1 -->
+    <%- include("./sections/home-about-us.ejs") %>
 
   <!-- Vision Section - #2 -->
   <%- include("./sections/vision.ejs") %>
@@ -87,7 +87,7 @@
             })
             .then((some) => { return some.json() })
             .then(async (res) => {
-
+                  document.querySelector('form').reset();
                   console.log(res)
                   // instanciate new modal
                   var modal = new tingle.modal({

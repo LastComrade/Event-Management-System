@@ -1,4 +1,4 @@
-<section id="timeline" class="my-10 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+<section id="timeline" class="my-10 mx-5 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="flex flex-col justify-center">
       <div class="mb-4 section-title">
         <div class="mx-auto line"></div>
@@ -10,10 +10,10 @@
           <div class="direction-r border-2 border-transparent hover:border-red-300">
             <div class="flag-wrapper mt-2 px-2 py-2">
               <span class="hexa"></span>
-              <span class="flag ml-2">Registration Starts.</span>
+              <span class="flag ml-2">Reg. Starts</span>
               <span class="time-wrapper"><span class="time"><%= moment(foundEvent.registration_starts).format("MMMM Do YYYY") %></span></span>
             </div>
-            <div class="px-4 pb-4">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt
+            <div class="px-4 pb-4 desc">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation deserunt
               proident.</div>
           </div>
         </li>
@@ -23,10 +23,10 @@
           <div class="border-2 border-transparent hover:border-blue-300 direction-l">
             <div class="flag-wrapper mt-2 px-2 py-2">
               <span class="hexa"></span>
-              <span class=" mr-2 flag">Registration Ends</span>
+              <span class=" mr-2 flag">Reg. Ends</span>
               <span class="time-wrapper"><span class="time"><%= moment(foundEvent.registration_ends).format("MMMM Do YYYY") %></span></span>
             </div>
-            <div class="px-4 pb-4">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation
+            <div class="px-4 pb-4 desc">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation
               deserunt proident.</div>
           </div>
         </li>
@@ -39,7 +39,7 @@
               <span class=" ml-2 flag">Event Starts</span>
               <span class="time-wrapper"><span class="time"><%= moment(foundEvent.event_starts).format("MMMM Do YYYY") %></span></span>
             </div>
-            <div class="px-4 pb-4">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation
+            <div class="px-4 pb-4 desc">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation
               deserunt proident.</div>
           </div>
         </li>
@@ -51,7 +51,7 @@
               <span class=" mr-2 flag">Event Ends</span>
               <span class="time-wrapper"><span class="time"><%= moment(foundEvent.event_ends).format("MMMM Do YYYY") %></span></span>
             </div>
-            <div class="px-4 pb-4">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation
+            <div class="px-4 pb-4 desc">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation
               deserunt proident.</div>
           </div>
         </li>
@@ -60,10 +60,10 @@
           <div class="border-2 border-transparent hover:border-pink-300 direction-r">
             <div class="flag-wrapper mt-2 px-2 py-2">
               <span class="hexa"></span>
-              <span class=" ml-2 flag">Result Declaration</span>
+              <span class=" ml-2 flag">Result Decl.</span>
               <span class="time-wrapper"><span class="time"><%= moment(foundEvent.event_ends).format("MMMM Do YYYY") %></span></span>
             </div>
-            <div class="px-4 pb-4">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation
+            <div class="px-4 pb-4 desc">Lorem ipsum Nisi labore aute do aute culpa magna nulla voluptate exercitation
               deserunt proident.</div>
           </div>
         </li>
