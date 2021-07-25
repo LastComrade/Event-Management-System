@@ -79,42 +79,54 @@ router
 
 router
   .route("/dashboard/participants/:id")
-  .get(
-    authMid.authRequired,
-    authMid.staffCheck,
-    dboardCont.pidEventRetriver 
-  );
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.pidEventRetriver);
 
 router
   .route("/dashboard/board")
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.boardIndex);
 router
-  .route("/dashboard/messages")
-  .get(authMid.authRequired, authMid.staffCheck, dboardCont.messageIndex);
+  .route("/dashboard/contact-messages")
+  .get(
+    authMid.authRequired,
+    authMid.staffCheck,
+    dboardCont.contactMessageIndex
+  );
 
 router
-  .route("/dashboard/messages/contact-messages")
-  .get(authMid.authRequired, authMid.staffCheck, dboardCont.contactMessages);
+  .route("/dashboard/contact-messages/all")
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.allContactMessages);
 
 router
-  .route("/dashboard/messages/internship-applications")
-  .get(authMid.authRequired, authMid.staffCheck, dboardCont.internshipMessages);
+  .route("/dashboard/internship-applications")
+  .get(
+    authMid.authRequired,
+    authMid.staffCheck,
+    dboardCont.internshipApplicationIndex
+  );
 
 router
-  .route("/dashboard/messages/magazine-subscribers")
-  .get(authMid.authRequired, authMid.staffCheck, dboardCont.magazineSubsIndex);
+  .route("/dashboard/internship-applications/all")
+  .get(
+    authMid.authRequired,
+    authMid.staffCheck,
+    dboardCont.allInternshipMessages
+  );
 
 router
-  .route("/dashboard/messages/contact/:id")
-  .get(authMid.authRequired, authMid.staffCheck, dboardCont.idContactMessage);
-
-router
-  .route("/dashboard/messages/internship/:id")
+  .route("/dashboard/internship-applications/:id")
   .get(
     authMid.authRequired,
     authMid.staffCheck,
     dboardCont.idInternshipMessage
   );
+
+router
+  .route("/dashboard/magazine-subscribers")
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.magazineSubsIndex);
+
+router
+  .route("/dashboard/messages/contact/:id")
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.idContactMessage);
 
 // protected route to genetrate the register key
 router

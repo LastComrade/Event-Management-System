@@ -79,7 +79,7 @@ const dboardCont = {
     }
   },
 
-  messageIndex: async (req, res, next) => {
+  contactMessageIndex: async (req, res, next) => {
     try {
       const token = req.cookies.jwt_token;
       jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
@@ -92,10 +92,80 @@ const dboardCont = {
           const deptCount = await Dept.countDocuments();
           const participantCount = await Participant.countDocuments();
           const contactMessages = await Contact.find().limit(10);
-          const internshipMessages = await Internship.find().limit(10);
-          const magazineSubs = await magazineReciever
-            .find({ subscribed: true })
-            .limit(10);
+          // const internshipMessages = await Internship.find().limit(10);
+          // const magazineSubs = await magazineReciever
+          //   .find({ subscribed: true })
+          //   .limit(10);
+          return res.render("layouts/dashboard/all-messages", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: "Dashboard | Contact Messages",
+            contactMessages,
+            // internshipMessages,
+            // magazineSubs,
+            moment,
+          });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      next(ErrorHandler.serverError());
+    }
+  },
+
+  allContactMessages: async (req, res, next) => {
+    try {
+      const token = req.cookies.jwt_token;
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const contactMessages = await Contact.find();
+          // console.log(contactMessages)
+          return res.render("layouts/dashboard/all-messages", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: `Dashboard | Contact Messages | All`,
+            contactMessages,
+            moment,
+          });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      next(ErrorHandler.serverError());
+    }
+  },
+
+  idContactMessage: async (req, res, next) => {
+    try {
+      const token = req.cookies.jwt_token;
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const contactMessage = await Contact.findOne({
+            _id: req.params.id,
+          });
+          // console.log(contactMessage);
           return res.render("layouts/dashboard/messages", {
             error: req.flash("error"),
             success: req.flash("success"),
@@ -103,10 +173,108 @@ const dboardCont = {
             eventCount,
             deptCount,
             participantCount,
-            title: "Dashboard | Messages",
-            contactMessages,
+            title: `Dashboard | Contact Message | ${contactMessage.name}`,
+            contactMessage,
+            moment,
+          });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      next(ErrorHandler.serverError());
+    }
+  },
+
+  internshipApplicationIndex: async (req, res, next) => {
+    try {
+      const token = req.cookies.jwt_token;
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const internshipMessages = await Internship.find().sort({createdAt: -1}).limit(10);
+          return res.render("layouts/dashboard/all-messages", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: "Dashboard | Internship Applications",
             internshipMessages,
-            magazineSubs,
+            moment,
+          });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      next(ErrorHandler.serverError());
+    }
+  },
+
+  allInternshipMessages: async (req, res, next) => {
+    try {
+      const token = req.cookies.jwt_token;
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const internshipMessages = await Internship.find();
+          // console.log(internshipall-messages);
+          return res.render("layouts/dashboard/all-messages", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: `Dashboard | Internship Applications | All`,
+            internshipMessages,
+            moment,
+          });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      next(ErrorHandler.serverError());
+    }
+  },
+
+  idInternshipMessage: async (req, res, next) => {
+    try {
+      const token = req.cookies.jwt_token;
+      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
+        if (err) {
+          console.log(err);
+          next(ErrorHandler.forbidden());
+        } else if (decodedToken) {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          const internshipMessage = await Internship.findOne({
+            _id: req.params.id,
+          });
+          // console.log(internshipMessage);
+          return res.render("layouts/dashboard/messages", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: `Dashboard | Internship Applications | ${internshipMessage.name}`,
+            internshipMessage,
             moment,
           });
         }
@@ -141,142 +309,6 @@ const dboardCont = {
             participantCount,
             title: "Dashboard | Magazine Subscribers",
             magazineSubs,
-            moment,
-          });
-        }
-      });
-    } catch (err) {
-      console.log(err);
-      next(ErrorHandler.serverError());
-    }
-  },
-
-  idContactMessage: async (req, res, next) => {
-    try {
-      const token = req.cookies.jwt_token;
-      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
-        if (err) {
-          console.log(err);
-          next(ErrorHandler.forbidden());
-        } else if (decodedToken) {
-          const staffCount = await Staff.countDocuments();
-          const eventCount = await Event.countDocuments();
-          const deptCount = await Dept.countDocuments();
-          const participantCount = await Participant.countDocuments();
-          const contactMessage = await Contact.findOne({
-            _id: req.params.id,
-          });
-          console.log(contactMessage);
-          return res.render("layouts/dashboard/all-messages", {
-            error: req.flash("error"),
-            success: req.flash("success"),
-            staffCount,
-            eventCount,
-            deptCount,
-            participantCount,
-            title: `Dashboard | Contact Messages | ${contactMessage.name}`,
-            contactMessage,
-            moment,
-          });
-        }
-      });
-    } catch (err) {
-      console.log(err);
-      next(ErrorHandler.serverError());
-    }
-  },
-
-  contactMessages: async (req, res, next) => {
-    try {
-      const token = req.cookies.jwt_token;
-      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
-        if (err) {
-          console.log(err);
-          next(ErrorHandler.forbidden());
-        } else if (decodedToken) {
-          const staffCount = await Staff.countDocuments();
-          const eventCount = await Event.countDocuments();
-          const deptCount = await Dept.countDocuments();
-          const participantCount = await Participant.countDocuments();
-          const contactMessages = await Contact.find();
-          // console.log(contactMessages)
-          return res.render("layouts/dashboard/all-messages", {
-            error: req.flash("error"),
-            success: req.flash("success"),
-            staffCount,
-            eventCount,
-            deptCount,
-            participantCount,
-            title: `Dashboard | Contact Messages`,
-            contactMessages,
-            moment,
-          });
-        }
-      });
-    } catch (err) {
-      console.log(err);
-      next(ErrorHandler.serverError());
-    }
-  },
-
-  idInternshipMessage: async (req, res, next) => {
-    try {
-      const token = req.cookies.jwt_token;
-      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
-        if (err) {
-          console.log(err);
-          next(ErrorHandler.forbidden());
-        } else if (decodedToken) {
-          const staffCount = await Staff.countDocuments();
-          const eventCount = await Event.countDocuments();
-          const deptCount = await Dept.countDocuments();
-          const participantCount = await Participant.countDocuments();
-          const internshipMessage = await Internship.findOne({
-            _id: req.params.id,
-          });
-          console.log(internshipMessage);
-          return res.render("layouts/dashboard/all-messages", {
-            error: req.flash("error"),
-            success: req.flash("success"),
-            staffCount,
-            eventCount,
-            deptCount,
-            participantCount,
-            title: `Dashboard | Internship Applications | ${internshipMessage.name}`,
-            internshipMessage,
-            moment,
-          });
-        }
-      });
-    } catch (err) {
-      console.log(err);
-      next(ErrorHandler.serverError());
-    }
-  },
-
-  internshipMessages: async (req, res, next) => {
-    try {
-      const token = req.cookies.jwt_token;
-      jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
-        if (err) {
-          console.log(err);
-          next(ErrorHandler.forbidden());
-        } else if (decodedToken) {
-          const staffCount = await Staff.countDocuments();
-          const eventCount = await Event.countDocuments();
-          const deptCount = await Dept.countDocuments();
-          const participantCount = await Participant.countDocuments();
-          const internshipMessages = await Internship.find();
-          console.log(internshipMessages);
-          return res.render("layouts/dashboard/all-messages", {
-            error: req.flash("error"),
-            success: req.flash("success"),
-            staffCount,
-            eventCount,
-            deptCount,
-            participantCount,
-            title: `Dashboard | Internship Applications`,
-            internshipMessages,
             moment,
           });
         }
@@ -729,9 +761,9 @@ const dboardCont = {
       const eventCount = await Event.countDocuments();
       const deptCount = await Dept.countDocuments();
       const participantCount = await Participant.countDocuments();
-      console.log("***********************************")
-      console.log(participant);
-      console.log("***********************************")
+      // console.log("***********************************")
+      // console.log(participant);
+      // console.log("***********************************")
       // console.log(req.params.id)
       return res.render("layouts/dashboard/participant-events", {
         error: req.flash("error"),

@@ -1,12 +1,12 @@
-<div>
-  <% if (title.length > "Dashboard | Contact Messages".length && title.substring(0, "Dashboard | Contact Messages".length) === "Dashboard | Contact Messages") { %> 
+<div class="mx-4">
+  <% if (title.length > "Dashboard | Contact Message".length && title.substring(0, "Dashboard | Contact Message".length) === "Dashboard | Contact Message") { %> 
   <!-- Contact Messages -->
   <div class="md:p-8 p-2 dark:bg-gray-700 bg-white">
     <!--Tag-->
     <p class="text-blue-300 font-semibold text-base mt-2">Contact Message</p>
     <!--Title-->
     <a href="mailto:<%= contactMessage.email %>"
-      class="font-semibold text-gray-900 leading-none dark:text-gray-300 text-xl mt-1"
+      class="font-semibold text-gray-900 leading-none truncate dark:text-gray-300 text-xl mt-1"
     >
       <%= contactMessage.email %>
     </a>
@@ -31,29 +31,29 @@
   </div>
   <% } else if (title.length > "Dashboard | Internship Applications".length && title.substring(0, "Dashboard | Internship Applications".length) === "Dashboard | Internship Applications") { %> 
   <!-- Internship Application -->
-  <div class="md:p-8 p-2 dark:bg-gray-700 bg-white">
+  <div class="md:p-8 p-2 dark:bg-gray-700 bg-white overflow-scroll">
     <!--Tag-->
     <p class="text-indigo-500 font-semibold text-base mt-2">Internship Application</p>
     <!--Title-->
     <a href="mailto:<%= internshipMessage.email %>"
-      class="font-semibold text-gray-900 leading-none text-xl mt-1"
+      class="font-semibold text-gray-900 leading-none text-xl mt-1 dark:text-white"
     >
       <%= internshipMessage.email %>
     </a>
     <!--Description-->
     <div class="max-w-full">
-      <p class="text-base font-medium tracking-wide text-gray-600 mt-1">
+      <p class="text-base font-medium tracking-wide text-gray-600 mt-1 dark:text-gray-200">
         <%= internshipMessage.description %> 
       </p>
     </div>
     <div class="flex items-center space-x-2 mt-20">
       <div>
         <!--Author name-->
-        <p class="text-gray-900 font-semibold"><%= internshipMessage.name %> </p>
-        <p class="text-gray-500 font-semibold text-sm">
+        <p class="text-gray-900 font-semibold dark:text-white"><%= internshipMessage.name %> </p>
+        <p class="text-gray-500 font-semibold text-sm dark:text-gray-300">
           <%= moment(internshipMessage.createdAt).format("MMMM Do YYYY") %> 
         </p>
-        <p class="text-gray-500 font-semibold text-sm">
+        <p class="text-gray-500 font-semibold text-sm dark:text-gray-300">
           <%= moment(internshipMessage.createdAt).fromNow() %> 
         </p>
       </div>
@@ -171,6 +171,5 @@
         <% } %>
       </div>
     </div>
-    <% } %> 
-</div>
+  <% } %> 
 </div>
