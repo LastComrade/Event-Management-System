@@ -38,8 +38,8 @@
               </a>
             </li>
             <li>
-              <a href="/dashboard/messages"
-                class="relative flex flex-row items-center h-11 focus:outline-none duration-200 hover:bg-blue-800 <%= title === "Dashboard | Messages" ? "bg-blue-700" : "" %> dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+              <a href="/dashboard/contact-messages"
+                class="relative flex flex-row items-center h-11 focus:outline-none duration-200 hover:bg-blue-800 <%= title.substring(0, "Dashboard | Contact Message".length) === "Dashboard | Contact Message" ? "bg-blue-700" : "" %> dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -48,7 +48,7 @@
                     </path>
                   </svg>
                 </span>
-                <span class="ml-2 text-sm tracking-wide truncate">Messages</span>
+                <span class="ml-2 text-sm tracking-wide truncate">Contact Messages</span>
               </a>
             </li>
             <!-- <li>
@@ -69,7 +69,7 @@
             </li> -->
             <li>
               <a href="/dashboard/events"
-                class="relative flex flex-row items-center h-11 focus:outline-none duration-200 hover:bg-blue-800 <%= title === "Dashboard | Events" ? "bg-blue-700" : "" %> dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                class="relative flex flex-row items-center h-11 focus:outline-none duration-200 hover:bg-blue-800 <%= title === "Dashboard | Events" || title.length > "Dashboard | Events".length && title.substring(0, "Dashboard | Events".length) === "Dashboard | Events" ? "bg-blue-700" : "" %> dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -82,8 +82,8 @@
               </a>
             </li>
             <li>
-              <a href="#"
-                class="relative flex flex-row items-center h-11 focus:outline-none duration-200 hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+              <a href="/dashboard/internship-applications"
+                class="relative flex flex-row items-center h-11 focus:outline-none duration-200 <%= title.substring(0, "Dashboard | Internship Application".length) === "Dashboard | Internship Application" ? "bg-blue-700" : "" %> hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -98,7 +98,7 @@
             <li>
             <li>
               <a href="/dashboard/participants"
-                class="relative flex flex-row items-center h-11 focus:outline-none duration-200 <%= title === "Dashboard | Participants" ? "bg-blue-700" : "" %> hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                class="relative flex flex-row items-center h-11 focus:outline-none duration-200 <%= title === "Dashboard | Participants" || title.length > "Dashboard | Participants".length && title.substring(0, "Dashboard | Participants".length) === "Dashboard | Participants" ? "bg-blue-700" : "" %> hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -111,7 +111,7 @@
               </a>
             </li>
             <li>
-              <a href="#"
+              <a href="/dashboard/magazine-subscribers"
                 class="relative flex flex-row items-center h-11 focus:outline-none duration-200 hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"

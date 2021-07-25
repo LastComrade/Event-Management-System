@@ -56,7 +56,189 @@
         </table>
       </div>
     <% } else if (title === "Dashboard | Events" ) { %>
-    <% if (events.length > 0) { %> 
+      <% if (events.length > 0) { %> 
+        <div class="w-full overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr
+                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                <th class="px-4 py-3">Event Name</th>
+                <th class="px-4 py-3 text-center">Category</th>
+                <th class="px-4 py-3">Event Start</th>
+                <th class="px-4 py-3">Event End</th>
+                <th class="px-4 py-3">Organizers</th>
+                <th class="px-4 py-3">Participants</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+              <% for(const event of events) { %>
+              <tr
+                class="bg-gray-50 dark:bg-gray-800 duration-200  hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                <td class="px-4 py-3">
+                  <div class="flex items-center text-sm">
+                    <a href="/events/<%= event.name %>" target="blank">
+                      <div>
+                        <p class="font-semibold">
+                          <%= event.name %>
+                        </p>
+                        <p class="text-xs text-gray-600 dark:text-gray-400">
+                          <span class="font-bold">Reg. Starts</span> - <%= moment(event.registration_starts).format("MMMM Do YYYY") %>
+                        </p>
+                      </div>
+                    </a>
+                  </div>
+                </td>
+                <td class="px-4 py-3 text-xs">
+                  <span
+                    class="px-2 py-1 capitalize font-semibold leading-tight <%= event.category === "archived" ? "bg-gray-600 text-gray-50 dark:bg-gray-700 dark:text-gray-100" : "" %> <%= event.category === "live" ? "bg-red-500 text-gray-50 dark:bg-red-700 dark:text-red-100" : "" %> <%= event.category === "ongoing" ? "bg-green-500 text-white dark:bg-green-700 dark:text-green-100" : "" %> <%= event.category === "upcoming" ? "bg-blue-500 text-white dark:bg-blue-700 dark:text-blue-100" : "" %>  rounded-full "> 
+                    <%= event.category %> 
+                  </span>
+                </td>
+                <td class="px-4 py-3 text-sm capitalize">
+                  <%= moment(event.event_starts).format("MMMM Do YYYY") %>
+                </td>
+                <td class="px-4 py-3 text-sm">
+                  <%= moment(event.event_ends).format("MMMM Do YYYY") %>
+                </td>
+                <td class="px-4 py-3 capitalize text-sm">
+                  <% for (let i=0; i<event.organizers.length; i++) { %>
+                      <%= event.organizers[i].name %><% if(i < 2) { %>, 
+                      <% } %>
+                      <% if (i > 3) { break } %> 
+                  <% } %> 
+                </td>
+                <td class="px-4 text-center font-bold dark:text-gray-200 py-3 text-sm">
+                  <a class="bg-indigo-600 text-center text-white p-2 rounded" href="/dashboard/events/<%= event.name %>/participants">
+                    View (<%= event.participants.length %>)
+                  </a>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      <% } else { %>
+        <div class="flex justify-center items-center">
+          <span class="text-2xl bg-indigo-600 p-3 rounded text-white">
+            No data available
+          </span>
+        </div>
+      <% } %>
+    <% } else if (title.length > "Dashboard | Events".length && title.substring(0, "Dashboard | Events".length) === "Dashboard | Events") { %>
+      <div class="w-full overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr
+              class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+              <th class="px-4 py-3">Participant Name</th>
+              <th class="px-4 py-3">Email Address</th>
+              <th class="px-4 py-3">College Name</th>
+              <th class="px-4 py-3">LinkedIn Profile</th>
+              <th class="px-10 py-3">Events</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+          <% for(const participant of event.participants) { %>
+          <tr
+            class="bg-gray-50 dark:bg-gray-800 duration-200  hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+            <td class="px-4 py-3">
+              <div class="flex items-center text-sm">                   
+                <div>
+                  <p class="font-semibold">
+                    <%= participant.name %>
+                  </p>
+                </div>
+              </div>
+            </td>
+            <td class="px-4 py-3 text-xs">
+              <a href="mailto:<%= participant.email %>"
+                class="px-2 py-1 font-semibold leading-tight bg-blue-500 text-white  rounded-full "> 
+                <%= participant.email %> 
+              </a>
+            </td>
+            <td class="px-4 py-3 text-sm capitalize max-w-xs">
+              <%= participant.college_name %>
+            </td>
+            <td class="px-4 py-3 text-sm">
+              <% function isValidHttpUrl(string) { let url; try { url = new URL(string); } catch (err) { return false; } return url.protocol === "http:" || url.protocol === "https:"; } %> 
+              <a href="<%= isValidHttpUrl(participant.linkedin_account) ? participant.linkedin_account : "javascript:void(0)" %>" target="blank">
+                <svg class="fill-current dark:text-white <%= isValidHttpUrl(participant.linkedin_account) ? "text-purple-500 dark:text-purple-300" : "text-red-500 dark:text-red-500" %>" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+            </td>
+            <td class="px-4 font-bold dark:text-gray-200 py-3 text-sm">
+              <a class="bg-indigo-600 text-center text-white p-2 rounded" href="/dashboard/participants/<%= participant.id %>">
+                View (<%= participant.registered_events.length %>)
+              </a>
+            </td>
+          </tr>
+          <% } %>
+          </tbody>
+        </table>
+      </div>
+    <% } else if (title === "Dashboard | Participants") { %>
+      <div class="w-full overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr
+              class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+              <th class="px-4 py-3">Participant Name</th>
+              <th class="px-4 py-3">Email Address</th>
+              <th class="px-4 py-3">College Name</th>
+              <th class="px-4 py-3">LinkedIn Profile</th>
+              <th class="px-10 py-3">Events</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+            <% if (participants.length > 0) { %> 
+            <% for(const participant of participants) { %>
+            <tr
+              class="bg-gray-50 dark:bg-gray-800 duration-200  hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+              <td class="px-4 py-3">
+                <div class="flex items-center text-sm">                   
+                  <div>
+                    <p class="font-semibold">
+                      <%= participant.name %>
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-3 text-xs">
+                <a href="mailto:<%= participant.email %>"
+                  class="px-2 py-1 font-semibold leading-tight bg-blue-500 text-white  rounded-full "> 
+                  <%= participant.email %> 
+                </a>
+              </td>
+              <td class="px-4 py-3 text-sm capitalize max-w-xs">
+                <%= participant.college_name %>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                <% function isValidHttpUrl(string) { let url; try { url = new URL(string); } catch (err) { return false; } return url.protocol === "http:" || url.protocol === "https:"; } %> 
+                <a href="<%= isValidHttpUrl(participant.linkedin_account) ? participant.linkedin_account : "javascript:void(0)" %>" target="blank">
+                  <svg class="fill-current dark:text-white <%= isValidHttpUrl(participant.linkedin_account) ? "text-purple-500 dark:text-purple-300" : "text-red-500 dark:text-red-500" %>" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+              </td>
+              <td class="px-4 font-bold dark:text-gray-200 py-3 text-sm w-full">
+                <a class="bg-indigo-600 text-center text-white w-full p-2 rounded" href="/dashboard/participants/<%= participant.id %>">
+                  View (<%= participant.registered_events.length %>)
+                </a>
+              </td>
+            </tr>
+            <% } %>
+            <% } else { %>
+              <div class="flex justify-center items-center">
+                <span class="text-2xl bg-indigo-600 p-3 rounded text-white">
+                  No data available
+                </span>
+              </div>
+            <% } %> 
+          </tbody>
+        </table>
+      </div>
+    <% } else if (title.length > "Dashboard | Participants".length && title.substring(0, "Dashboard | Participants".length) === "Dashboard | Participants") { %>
       <div class="w-full overflow-x-auto">
         <table class="w-full">
           <thead>
@@ -71,7 +253,7 @@
             </tr>
           </thead>
           <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-            <% for(const event of events) { %>
+            <% for(const event of participant.registered_events) { %>
             <tr
               class="bg-gray-50 dark:bg-gray-800 duration-200  hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
               <td class="px-4 py-3">
@@ -108,7 +290,7 @@
                 <% } %> 
               </td>
               <td class="px-4 text-center font-bold dark:text-gray-200 py-3 text-sm">
-                <a class="bg-indigo-600 text-center text-white p-2 rounded" href="/dashboard/events/<%= event.name %>/participants" target="blank">
+                <a class="bg-indigo-600 text-center text-white p-2 rounded" href="/dashboard/events/<%= event.name %>/participants">
                   View (<%= event.participants.length %>)
                 </a>
               </td>
@@ -117,68 +299,6 @@
           </tbody>
         </table>
       </div>
-    <% } else { %>
-      <div class="flex justify-center items-center">
-        <span class="text-2xl bg-indigo-600 p-3 rounded text-white">
-          No data available
-        </span>
-      </div>
-    <% } %> 
-    <% } else if (title === `Dashboard | Events | ${event.name} | Participants`) { %>
-        <div class="w-full overflow-x-auto">
-          <table class="w-full">
-            <thead>
-              <tr
-                class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                <th class="px-4 py-3">Participant Name</th>
-                <th class="px-4 py-3">Email Address</th>
-                <th class="px-4 py-3">College Name</th>
-                <th class="px-4 py-3">LinkedIn Profile</th>
-                <th class="px-4 py-3">Events</th>
-              </tr>
-            </thead>
-            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-              <% for(const participant of event.participants) { %>
-              <tr
-                class="bg-gray-50 dark:bg-gray-800 duration-200  hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
-                <td class="px-4 py-3">
-                  <div class="flex items-center text-sm">                   
-                    <div>
-                      <p class="font-semibold">
-                        <%= participant.name %>
-                      </p>
-                    </div>
-                  </div>
-                </td>
-                <td class="px-4 py-3 text-xs">
-                  <a href="mailto:<%= participant.email %>"
-                    class="px-2 py-1 font-semibold leading-tight bg-blue-500 text-white  rounded-full "> 
-                    <%= participant.email %> 
-                  </a>
-                </td>
-                <td class="px-4 py-3 text-sm capitalize max-w-xs">
-                  <%= participant.college_name %>
-                </td>
-                <td class="px-4 py-3 text-sm">
-                  <% function isValidHttpUrl(string) { let url; try { url = new URL(string); } catch (err) { return false; } return url.protocol === "http:" || url.protocol === "https:"; } %> 
-                  <a href="<%= isValidHttpUrl(participant.linkedin_account) ? participant.linkedin_account : "javascript:void(0)" %>" target="blank">
-                    <svg class="fill-current dark:text-white <%= isValidHttpUrl(participant.linkedin_account) ? "text-purple-500 dark:text-purple-300" : "text-red-500 dark:text-red-500" %>" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                  </a>
-                </td>
-                <td class="px-4 font-bold dark:text-gray-200 py-3 text-sm">
-                  <a class="bg-indigo-600 text-center text-white p-2 rounded" href="/dashboard/participants/<%= participant.id %>" target="blank">
-                    View (<%= participant.registered_events.length %>)
-                  </a>
-                </td>
-              </tr>
-              <% } %>
-            </tbody>
-          </table>
-        </div>
-    <% } else if (true) { %>
-        hello 
     <% } %>
   </div>
 </div>
