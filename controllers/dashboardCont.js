@@ -552,6 +552,108 @@ const dboardCont = {
     });
   },
 
+  editDeptInfo: async (req, res, next) => {
+    try {
+      await Dept.findOne(
+        { name: req.params.name },
+        async (err, foundDept) => {
+          if (err) {
+            next(ErrorHandler.serverError());
+          } else if (!foundDept) {
+            return res.status(404).json({
+              message: "Department to be edited does not exist, Please enter a valid department",
+            });
+          } else {
+            // To be changed
+            return res.status(200).json({
+              foundDept,
+            });
+            // return res.render("/layouts/deparment-edit-page", {
+            //     foundDept
+            // });
+          }
+        }
+      );
+    } catch (err) {
+      next(ErrorHandler.serverError());
+    }
+  },
+
+  updateDept: async (req, res, next) => {
+    try {
+      const {
+        name,
+        tagline,
+        description,
+        recruiting,
+        members,
+      } = req.body;
+
+      await Dept.findOne({ name: req.params.name }, async (err, existingDept) => {
+        if (err) {
+          console.log(`server error`);
+          next(ErrorHandler.serverError());
+        } else if (!existingDept) {
+          return res.status(404).json({
+            message: "Entered Event does not exist",
+          });
+        } else {
+          try {
+            if (req.body.name == req.params.name) {
+              // Written this way to solve an issue
+              existingDept.description = description;
+              existingDept.tagline = tagline;
+              existingDept.recruiting = recruiting;
+              existingDept.members = members;
+              existingDept.save();
+              return res.status(200).json({
+                message: "Department has been updated successfully",
+              });
+            } else {
+              await Dept.findOne({ name: req.body.name }, (err, foundDept) => {
+                if (err) {
+                  console.log(`server error`);
+                  next(ErrorHandler.serverError());
+                } else if (foundDept) {
+                  return res.status(404).json({
+                    message:
+                      "Department with the new name already exists, Please try another name",
+                  });
+                } else {
+                  try{
+                    existingDept.name = name;
+                    existingDept.description = description;
+                    existingDept.tagline = tagline;
+                    existingDept.recruiting = recruiting;
+                    existingDept.members = members;
+
+                    existingDept.save();
+                    return res.status(200).json({
+                      message: "Department has been updated successfully",
+                    });
+                  }catch(err){
+                    console.log("Error while saving the department")
+                    res.status(404).json({
+                      message: "An Error occured while updating the department"
+                    });
+                  }
+                }
+              });
+            }
+          } catch (err) {
+            console.log(err);
+            return res.status(404).json({
+              message:
+                "Something went wrong while saving the event, Please try again later",
+            });
+          }
+        }
+      });
+    } catch (err) {
+      next(ErrorHandler.serverError());
+    }
+  },
+
   departmentDeleter: async (req, res, next) => {
     try {
       Dept.findOneAndDelete(
