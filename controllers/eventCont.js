@@ -14,8 +14,9 @@ const eventCont = {
     const upcoming = await Event.find({ category: "upcoming" }).select("name event_starts").limit(4);
     const archived = await Event.find({ category: "archived" }).select("name event_starts description").limit(4);
     const ongoing = await Event.find({ category: "ongoing" }).select("name event_starts").limit(4);
-    console.log(archived);
-    return res.render("layouts/home/event-page", { live, upcoming, archived, ongoing, moment, title });
+    const featured = await Event.find({ featured: true }).select("name event_starts").limit(4);
+    // console.log(archived);
+    return res.render("layouts/home/event-page", { live, upcoming, archived, ongoing, moment, title, featured });
   },
 
   finder: async (req, res, next) => {
