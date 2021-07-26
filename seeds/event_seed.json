@@ -35,10 +35,10 @@
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "upcoming",
         "featured": true,
-        "registration_starts": "2021-01-12",
-        "registration_ends": "2021-01-13",
-        "event_starts": "2021-02-06",
-        "event_ends": "2021-02-07",
+        "registration_starts": "2021-01-12T22:00:30.100+05:30",
+        "registration_ends": "2021-01-13T22:00:30.100+05:30",
+        "event_starts": "2021-02-06T22:00:30.100+05:30",
+        "event_ends": "2021-02-07T22:00:30.100+05:30",
         "result_declaration": "2021-02-10"
     },
     {
@@ -77,10 +77,10 @@
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "upcoming",
         "featured": false,
-        "registration_starts": "2021-01-12",
-        "registration_ends": "2021-01-12",
-        "event_starts": "2021-02-07",
-        "event_ends": "2021-02-08",
+        "registration_starts": "2021-01-12T22:00:30.100+05:30",
+        "registration_ends": "2021-01-12T22:00:30.100+05:30",
+        "event_starts": "2021-02-07T22:00:30.100+05:30",
+        "event_ends": "2021-02-08T22:00:30.100+05:30",
         "result_declaration": "2021-02-10"
     },
     {
@@ -119,10 +119,10 @@
         "category": "upcoming",
         "featured": true,
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
-        "registration_starts": "2021-01-13",
-        "registration_ends": "2021-01-16",
-        "event_starts": "2021-02-08",
-        "event_ends": "2021-02-09",
+        "registration_starts": "2021-01-13T22:00:30.100+05:30",
+        "registration_ends": "2021-01-16T22:00:30.100+05:30",
+        "event_starts": "2021-02-08T22:00:30.100+05:30",
+        "event_ends": "2021-02-09T22:00:30.100+05:30",
         "result_declaration": "2021-02-11"
     },
     {
@@ -161,10 +161,10 @@
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "upcoming",
         "featured": false,
-        "registration_starts": "2021-01-13",
-        "registration_ends": "2021-01-17",
-        "event_starts": "2021-02-09",
-        "event_ends": "2021-02-10",
+        "registration_starts": "2021-01-13T22:00:30.100+05:30",
+        "registration_ends": "2021-01-17T22:00:30.100+05:30",
+        "event_starts": "2021-02-09T22:00:30.100+05:30",
+        "event_ends": "2021-02-10T22:00:30.100+05:30",
         "result_declaration": "2021-02-12"
     },
     {
@@ -203,10 +203,10 @@
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "live",
         "featured": false,
-        "registration_starts": "2021-01-17",
-        "registration_ends": "2021-01-21",
-        "event_starts": "2021-02-10",
-        "event_ends": "2021-02-11",
+        "registration_starts": "2021-01-17T22:00:30.100+05:30",
+        "registration_ends": "2021-01-21T22:00:30.100+05:30",
+        "event_starts": "2021-02-10T22:00:30.100+05:30",
+        "event_ends": "2021-02-11T22:00:30.100+05:30",
         "result_declaration": "2021-02-14"
     },
     {
@@ -245,10 +245,10 @@
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "live",
         "featured": true,
-        "registration_starts": "2021-01-19",
-        "registration_ends": "2021-01-22",
-        "event_starts": "2021-02-11",
-        "event_ends": "2021-02-12",
+        "registration_starts": "2021-01-19T22:00:30.100+05:30",
+        "registration_ends": "2021-01-22T22:00:30.100+05:30",
+        "event_starts": "2021-02-11T22:00:30.100+05:30",
+        "event_ends": "2021-02-12T22:00:30.100+05:30",
         "result_declaration": "2021-02-15"
     },
     {
@@ -284,10 +284,10 @@
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "live",
         "featured": false,
-        "registration_starts": "2021-01-18",
-        "registration_ends": "2021-01-23",
-        "event_starts": "2021-02-12",
-        "event_ends": "2021-02-13",
+        "registration_starts": "2021-01-18T22:00:30.100+05:30",
+        "registration_ends": "2021-01-23T22:00:30.100+05:30",
+        "event_starts": "2021-02-12T22:00:30.100+05:30",
+        "event_ends": "2021-02-13T22:00:30.100+05:30",
         "result_declaration": "2021-02-16"
     },
     {
@@ -326,10 +326,10 @@
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "live",
         "featured": true,
-        "registration_starts": "2021-01-22",
-        "registration_ends": "2021-01-24",
-        "event_starts": "2021-02-14",
-        "event_ends": "2021-02-15",
+        "registration_starts": "2021-01-22T22:00:30.100+05:30",
+        "registration_ends": "2021-01-24T22:00:30.100+05:30",
+        "event_starts": "2021-02-14T22:00:30.100+05:30",
+        "event_ends": "2021-02-15T22:00:30.100+05:30",
         "result_declaration": "2021-02-18"
     },
     {
@@ -368,10 +368,10 @@
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
         "category": "archived",
         "featured": true,
-        "registration_starts": "2021-02-01",
-        "registration_ends": "2021-02-03",
-        "event_starts": "2021-02-15",
-        "event_ends": "2021-02-16",
+        "registration_starts": "2021-02-01T22:00:30.100+05:30",
+        "registration_ends": "2021-02-03T22:00:30.100+05:30",
+        "event_starts": "2021-02-15T22:00:30.100+05:30",
+        "event_ends": "2021-02-16T22:00:30.100+05:30",
         "result_declaration": "2021-02-20"
     },
     {
@@ -407,10 +407,10 @@
         "category": "archived",
         "featured": true,
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
-        "registration_starts": "2021-02-04",
-        "registration_ends": "2021-02-05",
-        "event_starts": "2021-02-16",
-        "event_ends": "2021-02-17",
+        "registration_starts": "2021-02-04T22:00:30.100+05:30",
+        "registration_ends": "2021-02-05T22:00:30.100+05:30",
+        "event_starts": "2021-02-16T22:00:30.100+05:30",
+        "event_ends": "2021-02-17T22:00:30.100+05:30",
         "result_declaration": "2021-02-20"
     },
     {
@@ -446,10 +446,10 @@
         "category": "archived",
         "featured": false,
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
-        "registration_starts": "2021-02-06",
-        "registration_ends": "2021-02-07",
-        "event_starts": "2021-02-18",
-        "event_ends": "2021-02-19",
+        "registration_starts": "2021-02-06T22:00:30.100+05:30",
+        "registration_ends": "2021-02-07T22:00:30.100+05:30",
+        "event_starts": "2021-02-18T22:00:30.100+05:30",
+        "event_ends": "2021-02-19T22:00:30.100+05:30",
         "result_declaration": "2021-02-22"
     },
     {
@@ -485,10 +485,10 @@
         "category": "archived",
         "featured": false,
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
-        "registration_starts": "2021-02-06",
-        "registration_ends": "2021-02-07",
-        "event_starts": "2021-02-20",
-        "event_ends": "2021-02-21",
+        "registration_starts": "2021-02-06T22:00:30.100+05:30",
+        "registration_ends": "2021-02-07T22:00:30.100+05:30",
+        "event_starts": "2021-02-20T22:00:30.100+05:30",
+        "event_ends": "2021-02-21T22:00:30.100+05:30",
         "result_declaration": "2021-02-24"
     },
     {
@@ -527,10 +527,10 @@
         "category": "ongoing",
         "featured": true,
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
-        "registration_starts": "2021-02-08",
-        "registration_ends": "2021-02-09",
-        "event_starts": "2021-02-21",
-        "event_ends": "2021-02-22",
+        "registration_starts": "2021-02-08T22:00:30.100+05:30",
+        "registration_ends": "2021-02-09T22:00:30.100+05:30",
+        "event_starts": "2021-02-21T22:00:30.100+05:30",
+        "event_ends": "2021-02-22T22:00:30.100+05:30",
         "result_declaration": "2021-02-25"
     },
     {
@@ -566,10 +566,10 @@
         "category": "ongoing",
         "featured": false,
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
-        "registration_starts": "2021-02-09",
-        "registration_ends": "2021-02-10",
-        "event_starts": "2021-02-22",
-        "event_ends": "2021-02-23",
+        "registration_starts": "2021-02-09T22:00:30.100+05:30",
+        "registration_ends": "2021-02-10T22:00:30.100+05:30",
+        "event_starts": "2021-02-22T22:00:30.100+05:30",
+        "event_ends": "2021-02-23T22:00:30.100+05:30",
         "result_declaration": "2021-02-26"
     },
     {
@@ -605,10 +605,10 @@
         "category": "ongoing",
         "featured": true,
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
-        "registration_starts": "2021-02-09",
-        "registration_ends": "2021-02-10",
-        "event_starts": "2021-02-24",
-        "event_ends": "2021-02-25",
+        "registration_starts": "2021-02-09T22:00:30.100+05:30",
+        "registration_ends": "2021-02-10T22:00:30.100+05:30",
+        "event_starts": "2021-02-24T22:00:30.100+05:30",
+        "event_ends": "2021-02-25T22:00:30.100+05:30",
         "result_declaration": "2021-02-28"
     }
 ]
