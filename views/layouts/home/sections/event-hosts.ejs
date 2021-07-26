@@ -1,0 +1,49 @@
+<div id="organizers" class="flex justify-center items-center wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div id="team_members" class="mt-10">
+      <div class="flex flex-col">
+        <div class="mb-4 section-title">
+          <div class="mx-auto line"></div>
+          <h1 class="text-4xl font-bold text-center">Hosts</h1>
+        </div>
+          <div class="mt-4 justify-center items-center content-center mx-10 grid gap-8 lg:grid-cols-3 grid-cols-1">
+          <!-- green border color is for team members -->
+          <% for (const org of foundEvent.organizers) { %> 
+          <div data-aos="fade-up"
+            class="max-w-sm layered-card bg-white duration-200 border-2 border-transparent hover:border-green-600">
+            <div class="team-item">
+              <div class="team-img relative">
+                <img class="img-fluid"
+                  src="https://images.pexels.com/photos/356147/pexels-photo-356147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=900"
+                  alt="">
+                <div class="team-overlay">
+                  <ul class="flex justify-center space-x-2 text-2xl">
+                    <li>
+                      <a href="#">
+                        <i class="hover:text-blue-800 duration-200 fab fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="hover:text-red-500 duration-200 fab fa-instagram"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="hover:text-purple-800 duration-200 fab fa-linkedin"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="text-center px-5 py-3 capitalize">
+                <!-- <h3 class="team-name"><%= org.name %></h3> -->
+                <h3 class="team-name">host name</h3>
+                <!-- <p><%= org.designation %></p> -->
+              </div>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
