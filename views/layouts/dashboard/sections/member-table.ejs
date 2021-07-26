@@ -299,6 +299,60 @@
           </tbody>
         </table>
       </div>
-    <% } %>
+    <% } else if (title === "Dashboard | Key Generation") { %>
+      <div class="w-full overflow-x-auto">
+        <% if (keys.length > 0) { %> 
+        <table class="w-full">
+          <thead>
+            <tr
+              class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+              <th class="px-4 py-3">Key</th>
+              <th class="px-4 py-3">Used</th>
+              <th class="px-4 py-3">Created At</th>
+              <th class="px-4 py-3">Used At</th>
+              <th class="px-10 lg:px-4 py-3">Used By</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+            <% for(const key of keys) { %>
+            <tr
+              class="bg-gray-50 dark:bg-gray-800 duration-200  hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+              <td class="px-4 py-3">
+                <div class="flex items-center text-sm">                   
+                  <div>
+                    <p class="font-semibold select-all">
+                      <%= key.key %>
+                    </p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-3 text-xs">
+                <span
+                  class="px-2 py-1 font-semibold leading-tight <%= key.used ? "bg-red-500" : "bg-green-500" %>  text-white  rounded-full "> 
+                  <%= key.used %> 
+                </span>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                <%= moment(key.createdAt).format("MMMM Do YYYY") %>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                <%= moment(key.updatedAt).format("MMMM Do YYYY") %>
+              </td>
+              <td class="px-4 py-3 text-sm">
+                <%= key.usedBy ? key.usedBy : "----------" %>
+              </td>
+            </tr>
+            <% } %>
+            <% } else { %>
+              <div class="flex justify-center items-center">
+                <span class="text-2xl bg-indigo-600 my-10 p-3 rounded text-white">
+                  No data available
+                </span>
+              </div>
+            <% } %> 
+          </tbody>
+        </table>
+      </div>
+    <% } %> 
   </div>
 </div>

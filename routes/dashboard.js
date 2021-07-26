@@ -84,7 +84,7 @@ router
 router
   .route("/dashboard/board")
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.boardIndex);
-  
+
 router
   .route("/dashboard/contact-messages")
   .get(
@@ -131,7 +131,11 @@ router
 
 // protected route to genetrate the register key
 router
-  .route("/dashboard/reg-key-gen/refresh-101")
+  .route("/dashboard/generate-key")
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.registerKeyIndex);
+
+router
+  .route("/dashboard/generate-key/create")
   .get(
     authMid.authRequired,
     authMid.staffCheck,

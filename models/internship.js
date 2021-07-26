@@ -13,8 +13,8 @@ const InternshipSchema = Schema(
     },
     description: {
       type: String,
-      reuired: true
-    }
+      reuired: true,
+    },
   },
   {
     timestamps: true,

@@ -14,6 +14,7 @@ const Internship = require("../models/internship");
 const magazineReciever = require("../models/magazine-reciever");
 const moment = require("moment");
 const { google } = require("googleapis");
+const RegKey = require("../models/regKey");
 
 const dboardCont = {
   staffDashboard: async (req, res, next) => {
@@ -197,7 +198,9 @@ const dboardCont = {
           const eventCount = await Event.countDocuments();
           const deptCount = await Dept.countDocuments();
           const participantCount = await Participant.countDocuments();
-          const internshipMessages = await Internship.find().sort({createdAt: -1}).limit(10);
+          const internshipMessages = await Internship.find()
+            .sort({ createdAt: -1 })
+            .limit(10);
           return res.render("layouts/dashboard/all-messages", {
             error: req.flash("error"),
             success: req.flash("success"),
@@ -586,26 +589,24 @@ const dboardCont = {
 
   editDeptInfo: async (req, res, next) => {
     try {
-      await Dept.findOne(
-        { name: req.params.name },
-        async (err, foundDept) => {
-          if (err) {
-            next(ErrorHandler.serverError());
-          } else if (!foundDept) {
-            return res.status(404).json({
-              message: "Department to be edited does not exist, Please enter a valid department",
-            });
-          } else {
-            // To be changed
-            return res.status(200).json({
-              foundDept,
-            });
-            // return res.render("/layouts/deparment-edit-page", {
-            //     foundDept
-            // });
-          }
+      await Dept.findOne({ name: req.params.name }, async (err, foundDept) => {
+        if (err) {
+          next(ErrorHandler.serverError());
+        } else if (!foundDept) {
+          return res.status(404).json({
+            message:
+              "Department to be edited does not exist, Please enter a valid department",
+          });
+        } else {
+          // To be changed
+          return res.status(200).json({
+            foundDept,
+          });
+          // return res.render("/layouts/deparment-edit-page", {
+          //     foundDept
+          // });
         }
-      );
+      });
     } catch (err) {
       next(ErrorHandler.serverError());
     }
@@ -613,74 +614,75 @@ const dboardCont = {
 
   updateDept: async (req, res, next) => {
     try {
-      const {
-        name,
-        tagline,
-        description,
-        recruiting,
-        members,
-      } = req.body;
+      const { name, tagline, description, recruiting, members } = req.body;
 
-      await Dept.findOne({ name: req.params.name }, async (err, existingDept) => {
-        if (err) {
-          console.log(`server error`);
-          next(ErrorHandler.serverError());
-        } else if (!existingDept) {
-          return res.status(404).json({
-            message: "Entered Event does not exist",
-          });
-        } else {
-          try {
-            if (req.body.name == req.params.name) {
-              // Written this way to solve an issue
-              existingDept.description = description;
-              existingDept.tagline = tagline;
-              existingDept.recruiting = recruiting;
-              existingDept.members = members;
-              existingDept.save();
-              return res.status(200).json({
-                message: "Department has been updated successfully",
-              });
-            } else {
-              await Dept.findOne({ name: req.body.name }, (err, foundDept) => {
-                if (err) {
-                  console.log(`server error`);
-                  next(ErrorHandler.serverError());
-                } else if (foundDept) {
-                  return res.status(404).json({
-                    message:
-                      "Department with the new name already exists, Please try another name",
-                  });
-                } else {
-                  try{
-                    existingDept.name = name;
-                    existingDept.description = description;
-                    existingDept.tagline = tagline;
-                    existingDept.recruiting = recruiting;
-                    existingDept.members = members;
+      await Dept.findOne(
+        { name: req.params.name },
+        async (err, existingDept) => {
+          if (err) {
+            console.log(`server error`);
+            next(ErrorHandler.serverError());
+          } else if (!existingDept) {
+            return res.status(404).json({
+              message: "Entered Event does not exist",
+            });
+          } else {
+            try {
+              if (req.body.name == req.params.name) {
+                // Written this way to solve an issue
+                existingDept.description = description;
+                existingDept.tagline = tagline;
+                existingDept.recruiting = recruiting;
+                existingDept.members = members;
+                existingDept.save();
+                return res.status(200).json({
+                  message: "Department has been updated successfully",
+                });
+              } else {
+                await Dept.findOne(
+                  { name: req.body.name },
+                  (err, foundDept) => {
+                    if (err) {
+                      console.log(`server error`);
+                      next(ErrorHandler.serverError());
+                    } else if (foundDept) {
+                      return res.status(404).json({
+                        message:
+                          "Department with the new name already exists, Please try another name",
+                      });
+                    } else {
+                      try {
+                        existingDept.name = name;
+                        existingDept.description = description;
+                        existingDept.tagline = tagline;
+                        existingDept.recruiting = recruiting;
+                        existingDept.members = members;
 
-                    existingDept.save();
-                    return res.status(200).json({
-                      message: "Department has been updated successfully",
-                    });
-                  }catch(err){
-                    console.log("Error while saving the department")
-                    res.status(404).json({
-                      message: "An Error occured while updating the department"
-                    });
+                        existingDept.save();
+                        return res.status(200).json({
+                          message: "Department has been updated successfully",
+                        });
+                      } catch (err) {
+                        console.log("Error while saving the department");
+                        res.status(404).json({
+                          message:
+                            "An Error occured while updating the department",
+                        });
+                      }
+                    }
                   }
-                }
+                );
+              }
+            } catch (err) {
+              console.log(err);
+              return res.status(404).json({
+                message:
+                  "Something went wrong while saving the event, Please try again later",
               });
             }
-          } catch (err) {
-            console.log(err);
-            return res.status(404).json({
-              message:
-                "Something went wrong while saving the event, Please try again later",
-            });
           }
         }
-      });
+      );
     } catch (err) {
       next(ErrorHandler.serverError());
     }
@@ -728,7 +730,7 @@ const dboardCont = {
     //   }
     // });
     try {
-      const participants = await Participant.find().sort({updatedAt: -1});
+      const participants = await Participant.find().sort({ updatedAt: -1 });
       const staffCount = await Staff.countDocuments();
       const eventCount = await Event.countDocuments();
       const deptCount = await Dept.countDocuments();
@@ -744,7 +746,7 @@ const dboardCont = {
         deptCount,
         participantCount,
         moment,
-      }); 
+      });
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
@@ -780,13 +782,13 @@ const dboardCont = {
       console.log(err);
       next(ErrorHandler.serverError());
     }
-  }, 
+  },
 
   eventParticipantsList: async (req, res, next) => {
     try {
       const event = await Event.findOne({
         name: req.params.name,
-      }).populate("participants");  
+      }).populate("participants");
       // console.log(participantsList);
       const staffCount = await Staff.countDocuments();
       const eventCount = await Event.countDocuments();
@@ -810,18 +812,47 @@ const dboardCont = {
     }
   },
 
-  registerKeyGenerator: (req, res, next) => {
+  registerKeyIndex: async (req, res, next) => {
+    try {
+      const staffCount = await Staff.countDocuments();
+      const eventCount = await Event.countDocuments();
+      const deptCount = await Dept.countDocuments();
+      const participantCount = await Participant.countDocuments();
+      const keys = await RegKey.find();
+      return res.render("layouts/dashboard/key-gen", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        key: req.flash("key"),
+        title: "Dashboard | Key Generation",
+        staffCount,
+        eventCount,
+        deptCount,
+        participantCount,
+        keys,
+        moment,
+      });
+    } catch (err) {
+      console.log(err);
+      req.flash("error", "Something went wrong! Please try later");
+      return res.redirect("/dashboard/generate-key");
+    }
+  },
+
+  registerKeyGenerator: async (req, res, next) => {
     try {
       const newRegisterKey = new registerKey({
         key: uuid.v4(),
       });
-      // console.log(newRegisterKey);
       newRegisterKey.save();
       req.flash("success", "Registration key generated successfully");
+      req.flash("key", newRegisterKey.key)
+      return res.redirect("/dashboard/generate-key");
+      // console.log(newRegisterKey);
     } catch (err) {
+      console.log(err);
       req.flash("error", "Something went wrong! Please try later");
+      return res.redirect("/dashboard/generate-key");
     }
-    return res.redirect("/dashboard");
   },
 };
 
