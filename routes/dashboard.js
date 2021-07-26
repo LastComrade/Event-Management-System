@@ -84,6 +84,7 @@ router
 router
   .route("/dashboard/board")
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.boardIndex);
+  
 router
   .route("/dashboard/contact-messages")
   .get(
