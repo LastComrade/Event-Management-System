@@ -8,6 +8,8 @@ const DBaddress =
 /*
     run "node ./seeds/department_seed.js"
     to seed the departments collection
+
+    make sure to seed staff too, use "node ./seeds/staff_seed.js"
 */
 
 mongoose.connect(DBaddress, {
