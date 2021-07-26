@@ -281,5 +281,27 @@
         "registerPasswordToken": "",
         "key": "a0aa9a1a-a725-456a-972a-4b894a13a999",
         "password": "$2b$10$n8EKYeZBC.Ut/JiPZYUVGFwmzgesONMdaaaaaOXtwlD6WArI2K010"
+    },
+    {
+        "_id": "60fe56116c326178b0147817",
+        "department": [
+            {
+                "_id": "60ee42cc5a9b031d6015dd01"
+            }
+        ],
+        "designation": "Team Leader",
+        "sl_li": "https://www.linkedin.com/company/ecellgndec/",
+        "sl_ig": "https://www.instagram.com/ecell.gndec/",
+        "sl_fb": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "accActive": true,
+        "resetPasswordLink": "",
+        "registerPasswordToken": "",
+        "role": "admin",
+        "firstname": "Admin",
+        "lastname": "Account",
+        "email": "admin@gmail.com",
+        "profile_pic_url": "https://i.imgur.com/zc6npKD.jpg",
+        "key": "9df291b4-4002-49fe-a48d-3fce11714382",
+        "password": "$2b$10$d80HxfVws29LrUjdJvC/Ae2XgASwYn8qsVjyZv8U9eigDjRemX88C"
     }
 ]
