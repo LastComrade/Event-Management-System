@@ -349,7 +349,6 @@ const dboardCont = {
             message: "Entered event name already exists",
           });
         } else {
-
           // SheetAPI code
           try {
             let client_side = new google.auth.JWT(
@@ -393,11 +392,16 @@ const dboardCont = {
                   includeSpreadsheetInResponse: true,
                 },
               };
-              let temp1 = await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
+              let temp1 = await sheetAPI.spreadsheets.batchUpdate(
+                eventSheetInfo
+              );
               // await sheetAPI.spreadsheets.batchUpdate(
               //   eventSheetInfo
               // );
-              let temp2 = temp1.data.updatedSpreadsheet.sheets[temp1.data.updatedSpreadsheet.sheets.length - 1];
+              let temp2 =
+                temp1.data.updatedSpreadsheet.sheets[
+                  temp1.data.updatedSpreadsheet.sheets.length - 1
+                ];
               // console.log(temp2.properties.sheetId)
               let sheetID = temp2.properties.sheetId;
               // console.log(`sheet ID -> ${sheetID}`)
@@ -417,7 +421,7 @@ const dboardCont = {
                 hosts,
                 sponsors,
                 participants,
-                sheetID
+                sheetID,
               });
 
               const eventSheetInfo2 = {
@@ -426,24 +430,17 @@ const dboardCont = {
                 valueInputOption: "RAW",
                 resource: {
                   values: [
-                    [
-                      "Name",
-                      "Email",
-                      "College Name",
-                      "LinkedIn Account",
-                    ],
+                    ["Name", "Email", "College Name", "LinkedIn Account"],
                   ],
                 },
               };
-              await sheetAPI.spreadsheets.values.append(
-                eventSheetInfo2
-              );
+              await sheetAPI.spreadsheets.values.append(eventSheetInfo2);
               await newEvent.save();
               return res.status(200).json({
                 message: "Successfully Created the event",
               });
             } catch (err) {
-              console.log(err)
+              console.log(err);
               console.log(
                 "error occured while creating the event on spreadsheet"
               );
@@ -640,7 +637,7 @@ const dboardCont = {
         result_declaration,
         organizers,
         hosts,
-        sponsors
+        sponsors,
       } = req.body;
 
       Event.findOne({ name: req.params.name }, (err, existingEvent) => {
@@ -1171,7 +1168,12 @@ const dboardCont = {
   profileEdit: async (req, res, next) => {
     try {
       // console.log("This is t", req.body);
-      await Staff.findByIdAndUpdate({ _id: res.locals.staff.id }, req.body);
+      const { firstname, lastname, profile_pic_url, sl_li, sl_ig, sl_fb } =
+        req.body;
+      await Staff.findByIdAndUpdate(
+        { _id: res.locals.staff.id },
+        { firstname, lastname, profile_pic_url, sl_li, sl_ig, sl_fb }
+      );
       return res.redirect("/dashboard/profile");
     } catch (err) {
       console.log(err);
