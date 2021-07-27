@@ -6,17 +6,34 @@ const moment = require("moment");
 const eventSuggestion = require("../models/event-suggestion");
 
 const eventCont = {
-
   // Render the event page with all types
   eventIndex: async (req, res) => {
     const title = "E-Cell | Events";
-    const live = await Event.find({ category: "live" }).select("name event_starts").limit(4);
-    const upcoming = await Event.find({ category: "upcoming" }).select("name event_starts").limit(4);
-    const archived = await Event.find({ category: "archived" }).select("name event_starts description").limit(4);
-    const ongoing = await Event.find({ category: "ongoing" }).select("name event_starts").limit(4);
-    const featured = await Event.find({ featured: true }).select("name event_starts").limit(4);
+    const live = await Event.find({ category: "live" })
+      .select("name event_starts")
+      .limit(5);
+    const upcoming = await Event.find({ category: "upcoming" })
+      .select("name event_starts")
+      .limit(5);
+    const archived = await Event.find({ category: "archived" })
+      .select("name event_starts description")
+      .limit(5);
+    const ongoing = await Event.find({ category: "ongoing" })
+      .select("name event_starts")
+      .limit(5);
+    const featured = await Event.find({ featured: true })
+      .select("name event_starts")
+      .limit(5);
     // console.log(archived);
-    return res.render("layouts/home/event-page", { live, upcoming, archived, ongoing, moment, title, featured });
+    return res.render("layouts/home/event-page", {
+      live,
+      upcoming,
+      archived,
+      ongoing,
+      moment,
+      title,
+      featured,
+    });
   },
 
   finder: async (req, res, next) => {
@@ -60,12 +77,8 @@ const eventCont = {
                     next(Errorhandler.serverError());
                   } else if (!foundParticipant) {
                     try {
-                      let {
-                        name,
-                        email,
-                        college_name,
-                        linkedin_account,
-                      } = req.body;
+                      let { name, email, college_name, linkedin_account } =
+                        req.body;
                       registered_events = [
                         {
                           _id: foundEvent._id,
@@ -80,9 +93,7 @@ const eventCont = {
                       });
 
                       let savedParticipant = await participant.save();
-                      foundEvent.participants.push(
-                        savedParticipant._id
-                      );
+                      foundEvent.participants.push(savedParticipant._id);
                       await foundEvent.save();
 
                       // Sheet API code
@@ -91,9 +102,7 @@ const eventCont = {
                           process.env.client_email,
                           null,
                           process.env.private_key,
-                          [
-                            "https://www.googleapis.com/auth/spreadsheets",
-                          ]
+                          ["https://www.googleapis.com/auth/spreadsheets"]
                         );
 
                         client_side.authorize((err, token) => {
@@ -101,15 +110,11 @@ const eventCont = {
                             console.log(err);
                             return;
                           } else {
-                            participantSheetEditor(
-                              client_side
-                            );
+                            participantSheetEditor(client_side);
                           }
                         });
                       } catch (err) {
-                        console.log(
-                          `An error Occured in Google auth`
-                        );
+                        console.log(`An error Occured in Google auth`);
                       }
 
                       participantSheetEditor = async (client) => {
@@ -120,9 +125,7 @@ const eventCont = {
                           });
 
                           const options1 = {
-                            spreadsheetId:
-                              process.env
-                                .event_spreadsheet_id,
+                            spreadsheetId: process.env.event_spreadsheet_id,
                             range: `${foundEvent.name}!A2`,
                             valueInputOption: "RAW",
                             resource: {
@@ -136,9 +139,7 @@ const eventCont = {
                               ],
                             },
                           };
-                          await sheetAPI.spreadsheets.values.append(
-                            options1
-                          );
+                          await sheetAPI.spreadsheets.values.append(options1);
                         } catch (err) {
                           // console.log(err);
                           console.log(
@@ -148,8 +149,7 @@ const eventCont = {
                       };
 
                       return res.status(200).json({
-                        message:
-                          "Participant registered successfully",
+                        message: "Participant registered successfully",
                       });
                     } catch (err) {
                       // console.log(err);
@@ -159,9 +159,7 @@ const eventCont = {
                     if (
                       foundParticipant.registered_events.some(
                         (registered_event_id) => {
-                          return registered_event_id.equals(
-                            foundEvent._id
-                          );
+                          return registered_event_id.equals(foundEvent._id);
                         }
                       )
                     ) {
@@ -171,45 +169,31 @@ const eventCont = {
                       });
                     } else {
                       try {
-                        foundParticipant.registered_events.push(
-                          foundEvent._id
-                        );
-                        let savedParticipant =
-                          await foundParticipant.save();
+                        foundParticipant.registered_events.push(foundEvent._id);
+                        let savedParticipant = await foundParticipant.save();
 
                         // Sheet API code
                         try {
-                          let client_side =
-                            new google.auth.JWT(
-                              process.env.client_email,
-                              null,
-                              process.env.private_key,
-                              [
-                                "https://www.googleapis.com/auth/spreadsheets",
-                              ]
-                            );
+                          let client_side = new google.auth.JWT(
+                            process.env.client_email,
+                            null,
+                            process.env.private_key,
+                            ["https://www.googleapis.com/auth/spreadsheets"]
+                          );
 
-                          client_side.authorize(
-                            (err, token) => {
-                              if (err) {
-                                console.log(err);
-                                return;
-                              } else {
-                                participantSheetEditor(
-                                  client_side
-                                );
-                              }
+                          client_side.authorize((err, token) => {
+                            if (err) {
+                              console.log(err);
+                              return;
+                            } else {
+                              participantSheetEditor(client_side);
                             }
-                          );
+                          });
                         } catch (err) {
-                          console.log(
-                            `An error Occured in Google auth`
-                          );
+                          console.log(`An error Occured in Google auth`);
                         }
 
-                        participantSheetEditor = async (
-                          client
-                        ) => {
+                        participantSheetEditor = async (client) => {
                           try {
                             const sheetAPI = google.sheets({
                               version: "v4",
@@ -217,9 +201,7 @@ const eventCont = {
                             });
 
                             const info = {
-                              spreadsheetId:
-                                process.env
-                                  .event_spreadsheet_id,
+                              spreadsheetId: process.env.event_spreadsheet_id,
                               range: `${foundEvent.name}!A2`,
                               valueInputOption: "RAW",
                               resource: {
@@ -233,9 +215,7 @@ const eventCont = {
                                 ],
                               },
                             };
-                            await sheetAPI.spreadsheets.values.append(
-                              info
-                            );
+                            await sheetAPI.spreadsheets.values.append(info);
                           } catch (err) {
                             console.log(
                               `An Error occured while saving the participant in the spreadsheet`
@@ -243,13 +223,10 @@ const eventCont = {
                           }
                         };
 
-                        foundEvent.participants.push(
-                          savedParticipant._id
-                        );
+                        foundEvent.participants.push(savedParticipant._id);
                         await foundEvent.save();
                         return res.status(200).json({
-                          message:
-                            "Participant registered successfully",
+                          message: "Participant registered successfully",
                         });
                       } catch (err) {
                         console.log(err);
@@ -260,13 +237,13 @@ const eventCont = {
                 }
               );
             } catch (err) {
-              next(Errorhandler.serverError())
+              next(Errorhandler.serverError());
             }
           }
         }
       );
     } catch (err) {
-      next(Errorhandler.serverError())
+      next(Errorhandler.serverError());
     }
   },
 
@@ -276,13 +253,14 @@ const eventCont = {
       await eventSuggest.save();
       // return res.redirect("back");
       return res.status(200).json({
-        message: "Event Suggestion submitted successfully, Thanks for the submission :)"
-      })
+        message:
+          "Event Suggestion submitted successfully, Thanks for the submission :)",
+      });
     } catch (err) {
       console.log(err);
       next(Errorhandler.serverError());
     }
-  }
+  },
 };
 
 module.exports = eventCont;

@@ -1,0 +1,31 @@
+<div class="flex flex-col mt-10 bg-center mx-auto w-4/5 bg-no-repeat dark:bg-gray-700">
+  <% if (key.length > 0) { %>
+    <div class="my-5">
+      <div class="text-center">
+        <span class="text-red-600 dark:text-red-500 font-bold">ALERT: </span>Copy this key. It will be removed, when the page is refereshed.
+      </div>
+      <div class="mx-4 select-all text-xl mt-3 py-5 px-3 bg-gray-900 text-green-200 dark:text-green-300 border-4 rounded border-red-500 text-center">
+        <%= key %>
+      </div>
+    </div>
+  <% } %> 
+  <div
+    class="grid place-items-center mx-auto p-10 my-20 sm:my-auto bg-white-600 border-4 dark:border-gray-100 border-gray-700 bg-opacity-70 rounded-xl shadow-2xl space-y-5 text-center">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="key" class="svg-inline--fa fa-key fa-w-16 h-10 w-10"
+      role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path fill="currentColor"
+        d="M512 176.001C512 273.203 433.202 352 336 352c-11.22 0-22.19-1.062-32.827-3.069l-24.012 27.014A23.999 23.999 0 0 1 261.223 384H224v40c0 13.255-10.745 24-24 24h-40v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24v-78.059c0-6.365 2.529-12.47 7.029-16.971l161.802-161.802C163.108 213.814 160 195.271 160 176 160 78.798 238.797.001 335.999 0 433.488-.001 512 78.511 512 176.001zM336 128c0 26.51 21.49 48 48 48s48-21.49 48-48-21.49-48-48-48-48 21.49-48 48z">
+      </path>
+    </svg>
+
+    <h1 class="text-4xl font-bold uppercase text-gray-600 dark:text-gray-50 transition duration-500">Generate a new key</h1>
+    <h2 class="text-xl text-gray-700 transition duration-500 dark:text-gray-100">You can generate a new key, which is used when a member tries to register on this website. This key is highly confidential. Please, share it wisely.</h2>
+    <div class="flex justify-center items-center">
+
+      <a href="/dashboard/generate-key/create" title="Quicktoolz On Facebook"
+        class="tracking-wide font-bold rounded border-2 border-green-400 hover:text-white hover:border-green-800 hover:bg-green-600 shadow-md py-2 px-6 inline-flex items-center transition duration-200">
+        <span class="mx-auto">Generate a key</span>
+      </a>
+    </div>
+  </div>
+</div>
