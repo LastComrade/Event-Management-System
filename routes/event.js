@@ -6,15 +6,7 @@ const deptCont = require("../controllers/deptCont");
 const eventCont = require("../controllers/eventCont");
 const authMid = require("../middleware/auth");
 
-
-// For event create functionality
-// get -> To render the event create form/page
-// post -> For creating a new event in database and googlesheets
-router
-    .route("/event-create")
-    .post(validate.eventCreate, eventCont.createEvent);
-
-//  For event page containing all the events
+// For event page containing all the events
 // get -> To render the page
 router.route("/events")
     .get(eventCont.eventIndex);
