@@ -40,11 +40,12 @@ const authMid = {
                   console.log(err);
                   next(ErrorHandler.serverError());
                 } else if (staff) {
-                  const { fullname, designation, profile_pic_url } = staff;
-                  const staffData = { fullname, designation, profile_pic_url };
+                  const { id, fullname, designation, profile_pic_url } = staff;
+                  // console.log("OKat here", staff)
+                  const staffData = { id, fullname, designation, profile_pic_url };
                   // console.log("This is the staff", staffData);
                   res.locals.staff = staffData;
-                  // console.log(res.locals);
+                  // console.log("This is locals", res.locals);
                   const token = jwt.sign(
                     {
                       id: staff._id,

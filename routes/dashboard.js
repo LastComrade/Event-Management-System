@@ -98,6 +98,10 @@ router
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.allContactMessages);
 
 router
+  .route("/dashboard/messages/contact/:id")
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.idContactMessage);
+
+router
   .route("/dashboard/internship-applications")
   .get(
     authMid.authRequired,
@@ -125,10 +129,6 @@ router
   .route("/dashboard/magazine-subscribers")
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.magazineSubsIndex);
 
-router
-  .route("/dashboard/messages/contact/:id")
-  .get(authMid.authRequired, authMid.staffCheck, dboardCont.idContactMessage);
-
 // protected route to genetrate the register key
 router
   .route("/dashboard/generate-key")
@@ -141,6 +141,10 @@ router
     authMid.staffCheck,
     dboardCont.registerKeyGenerator
   );
+ 
+router.route("/dashboard/profile").get(authMid.authRequired, authMid.staffCheck, dboardCont.profileIndex)
+
+router.route("/dashboard/profile/edit").post(authMid.authRequired, authMid.staffCheck, dboardCont.profileEdit)
 
 // Exporting routes
 module.exports = router;

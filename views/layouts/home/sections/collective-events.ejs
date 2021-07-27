@@ -17,7 +17,7 @@
       </div>
       <div class="mt-5 mx-5">
         <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
-          <% for (const featuredEvent of featured ) { %> 
+          <% for (let i=0; i<featured.length && i<4; i++) { %> 
           <div
             class="p-4 layered-card border-2 border-transparent hover:border-purple-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
@@ -28,18 +28,18 @@
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
                 <p class="text-3xl leading-5 font-medium">
-                  <%= featuredEvent.name %>
+                  <%= featured[i].name %>
                 </p>
               </div>
               <div>
                 <div class="flex flex-row space-x-3">
                   <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium"><%= moment(featuredEvent.event_starts).format("MMMM Do YYYY") %></p>
+                  <p class="text-lg mt-2 text-black font-medium"><%= moment(featured[i].event_starts).format("MMMM Do YYYY") %></p>
                 </div>
               </div>
               <div class="text-center mt-2">
                 <div class="text-left">
-                  <a href="javascript:void(0)"
+                  <a href="/events/<%= featured[i].name %>"
                     class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
                 </div>
               </div>
@@ -48,13 +48,14 @@
           <% } %> 
         </div>
         <!-- button here -->
+        <% if (featured.length > 4) { %> 
         <div class="flex justify-center items-center">
           <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
         </div>
+        <% } %> 
       </div>
     </div>
   </div>
-
 
   <!--Live Events-->
   <div id="live_events">
@@ -72,7 +73,7 @@
       </div>
       <div class="mt-5 mx-5">
         <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1"> 
-          <% for (const liveEvent of live) { %> 
+          <% for (let i=0; i<live.length && i<4; i++) { %> 
           <div
             class="p-4 layered-card border-2 border-transparent hover:border-purple-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
@@ -83,13 +84,13 @@
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
                 <p class="text-3xl leading-5 font-medium">
-                  <%= liveEvent.name %> 
+                  <%= live[i].name %> 
                 </p>
               </div>
               <div>
                 <div class="flex flex-row space-x-3">
                   <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium"><%= moment(liveEvent.event_starts).format("MMMM Do YYYY") %> </p>
+                  <p class="text-lg mt-2 text-black font-medium"><%= moment(live[i].event_starts).format("MMMM Do YYYY") %> </p>
                 </div>
                 <div class="flex flex-row space-x-3 mt-1 ml-1">
                   <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
@@ -99,7 +100,7 @@
               </div>
               <div class="text-center mt-2">
                 <div class="text-left">
-                  <a href="/events/<%= liveEvent.name %>"
+                  <a href="/events/<%= live[i].name %>"
                     class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
                 </div>
               </div>
@@ -108,9 +109,11 @@
           <% } %> 
         </div>
         <!-- button here -->
-        <div class="flex justify-center items-center">
-          <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
-        </div>
+        <% if (live.length > 4) { %> 
+          <div class="flex justify-center items-center">
+            <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
+          </div>
+          <% } %> 
       </div>
     </div>
   </div>
@@ -130,7 +133,7 @@
       </div>
       <div class="mt-5 mx-5">
         <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
-          <% for(const onEvent of ongoing) { %>  
+          <% for(let i=0; i<ongoing.length && i<4; i++) { %>  
           <div
             class="p-4 layered-card border-2 border-transparent hover:border-indigo-400 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
@@ -141,18 +144,18 @@
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
                 <p class="text-3xl leading-5 font-medium">
-                  <%= onEvent.name %> 
+                  <%= ongoing[i].name %> 
                 </p>
               </div>
               <div>
                 <div class="flex flex-row space-x-3">
                   <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium"><%= moment(onEvent.event_starts).format("MMMM Do YYYY") %></p>
+                  <p class="text-lg mt-2 text-black font-medium"><%= moment(ongoing[i].event_starts).format("MMMM Do YYYY") %></p>
                 </div>
               </div>
               <div class="text-center mt-2">
                 <div class="text-left">
-                  <a href="/events/<%= onEvent.name %>"
+                  <a href="/events/<%= ongoing[i].name %>"
                     class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
                 </div>
               </div>
@@ -161,9 +164,11 @@
           <% } %>
         </div>
         <!-- button here -->
-        <div class="flex justify-center items-center">
-          <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
-        </div>
+        <% if (ongoing.length > 4) { %> 
+          <div class="flex justify-center items-center">
+            <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
+          </div>
+          <% } %> 
       </div>
     </div>
   </div>
@@ -184,7 +189,7 @@
       </div>
       <div class="mt-5 mx-5">
         <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
-          <% for (const upEvent of upcoming) { %> 
+          <% for (let i=0; i<upcoming.length && i<4; i++) { %> 
           <div
             class="p-4 layered-card border-2 border-transparent hover:border-blue-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
@@ -195,18 +200,18 @@
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
                 <p class="text-3xl leading-5 font-medium">
-                  <%= upEvent.name %>
+                  <%= upcoming[i].name %>
                 </p>
               </div>
               <div>
                 <div class="flex flex-row space-x-3">
                   <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium"><%= moment(upEvent.event_starts).format("MMMM Do YYYY") %></p>
+                  <p class="text-lg mt-2 text-black font-medium"><%= moment(upcoming[i].event_starts).format("MMMM Do YYYY") %></p>
                 </div>
               </div>
               <div class="text-center mt-2">
                 <div class="text-left">
-                  <a href="/events/<%= upEvent.name %>"
+                  <a href="/events/<%= upcoming[i].name %>"
                     class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Know
                     More</a>
                 </div>
@@ -216,9 +221,11 @@
           <% } %> 
         </div>
         <!-- button here -->
-        <div class="flex justify-center items-center">
-          <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
-        </div>
+        <% if (upcoming.length > 4) { %> 
+          <div class="flex justify-center items-center">
+            <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
+          </div>
+          <% } %> 
       </div>
     </div>
   </div>
@@ -236,26 +243,26 @@
         </div>
       </div>
       <div class="row testimonial-active wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
-        <% for (const archEvent of archived) { %> 
+        <% for (let i=0; i<archived.length && i<4; i++) { %> 
         <div
           class="relative hover:shadow-2xl mb-10 item transition-shadow duration-300 ease-in-out bg-white py-6 px-6 rounded my-4 ">
           <div class="mt-2">
-            <p class="text-xl font-semibold"><%= archEvent.name %></p>
+            <p class="text-xl font-semibold"><%= archived[i].name %></p>
             <img class="rounded shadow-xl my-4" src="/img/team.jpg" alt="">
           </div>
           <div class="flex space-x-2 text-black  text-sm my-3">
-            <p><%= archEvent.description.substring(0, 200) %> ...<a href="/events/<%= archEvent.name%>" class="text-red-300">Read More</a></p>
+            <p><%= archived[i].description.substring(0, 200) %> ...<a href="/events/<%= archived[i].name%>" class="text-red-300">Read More</a></p>
           </div>
           <div class="border-t-2"></div>
           <div class="flex justify-between">
             <div class="my-2">
               <span>
-                <p class="font-bold text-black text-base mb-2 text-left"><%= moment(archEvent.event_starts).format("MMMM Do YYYY") %></p>
+                <p class="font-bold text-black text-base mb-2 text-left"><%= moment(archived[i].event_starts).format("MMMM Do YYYY") %></p>
               </span>
             </div>
             <div class="text-center mt-2">
               <div class="text-left">
-                <a href="/events/<%= archEvent.name%>"
+                <a href="/events/<%= archived[i].name%>"
                   class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Learn
                   More</a>
               </div>
@@ -264,6 +271,11 @@
         </div>
         <% } %> 
       </div>
+      <% if (archived.length > 4) { %> 
+        <div class="flex justify-center items-center">
+          <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
+        </div>
+        <% } %> 
     </div>
   </section>
 </div>

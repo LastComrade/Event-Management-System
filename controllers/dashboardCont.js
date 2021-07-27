@@ -845,13 +845,54 @@ const dboardCont = {
       });
       newRegisterKey.save();
       req.flash("success", "Registration key generated successfully");
-      req.flash("key", newRegisterKey.key)
+      req.flash("key", newRegisterKey.key);
       return res.redirect("/dashboard/generate-key");
       // console.log(newRegisterKey);
     } catch (err) {
       console.log(err);
       req.flash("error", "Something went wrong! Please try later");
       return res.redirect("/dashboard/generate-key");
+    }
+  },
+
+  profileIndex: async (req, res, next) => {
+    try {
+      // console.log(res.locals.staff.id)
+      const staffData = await Staff.findOne({ _id: res.locals.staff.id }).select(
+        "firstname lastname sl_li sl_ig sl_fb profile_pic_url"
+      );
+      // console.log(staff);
+      const staffCount = await Staff.countDocuments();
+      const eventCount = await Event.countDocuments();
+      const deptCount = await Dept.countDocuments();
+      const participantCount = await Participant.countDocuments();
+      return res.render("layouts/dashboard/profile", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        key: req.flash("key"),
+        title: "Dashboard | Profile",
+        staffCount,
+        eventCount,
+        deptCount,
+        participantCount,
+        staffData,
+      });
+    } catch (err) {
+      console.log(err);
+      req.flash("error", "Something went wrong! Please try later");
+      return res.redirect("/dashboard/profile");
+    }
+  },
+
+  profileEdit: async (req, res, next) => {
+    try {
+      // console.log("This is t", req.body);
+      await Staff.findByIdAndUpdate({ _id: res.locals.staff.id }, req.body);
+      return res.redirect("back")
+    } catch (err) {
+      console.log(err);
+      req.flash("error", "Something went wrong! Please try later");
+      return res.redirect("back");
     }
   },
 };
