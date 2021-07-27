@@ -236,6 +236,15 @@ const homeCont = {
             }
         );
     },
+
+    creditIndex: async (req, res, next) => {
+        try {
+            return res.render("layouts/home/credits.ejs")
+        } catch (err) {
+            req.flash("error", "Something went wrong. Please try again later");
+            return red.redirect("/credits");
+        }
+    }
 };
 
 // Exporting homeCont object. To make it accessible to other files by requiring or importing it.

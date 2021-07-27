@@ -25,6 +25,11 @@ router
     dboardCont.eventParticipantsList
   );
 
+// For event create functionality
+// get -> To render the event create form/page
+// post -> For creating a new event in database and googlesheets
+router.route("/event-create").post(validate.eventCreate, dboardCont.createEvent);
+
 router
   .route("/dashboard/events/:name/edit")
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.editEventInfo)
@@ -141,10 +146,14 @@ router
     authMid.staffCheck,
     dboardCont.registerKeyGenerator
   );
- 
-router.route("/dashboard/profile").get(authMid.authRequired, authMid.staffCheck, dboardCont.profileIndex)
 
-router.route("/dashboard/profile/edit").post(authMid.authRequired, authMid.staffCheck, dboardCont.profileEdit)
+router
+  .route("/dashboard/profile")
+  .get(authMid.authRequired, authMid.staffCheck, dboardCont.profileIndex);
+
+router
+  .route("/dashboard/profile/edit")
+  .post(authMid.authRequired, authMid.staffCheck, dboardCont.profileEdit);
 
 // Exporting routes
 module.exports = router;

@@ -67,7 +67,7 @@
                 <th class="px-4 py-3">Event Start</th>
                 <th class="px-4 py-3">Event End</th>
                 <th class="px-4 py-3">Organizers</th>
-                <th class="px-4 py-3">Participants</th>
+                <th class="px-10 py-3">Participants</th>
               </tr>
             </thead>
             <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
@@ -86,6 +86,7 @@
                         </p>
                       </div>
                     </a>
+                    <a class="bg-red-500 rounded hover:bg-red-900 duration-200 px-2 py-1" href="/dashboard/events/<%= event.name %>/edit"><i class="text-white fas fa-wrench"></i></a>
                   </div>
                 </td>
                 <td class="px-4 py-3 text-xs">
@@ -108,7 +109,7 @@
                   <% } %> 
                 </td>
                 <td class="px-4 text-center font-bold dark:text-gray-200 py-3 text-sm">
-                  <a class="bg-indigo-600 text-center text-white p-2 rounded" href="/dashboard/events/<%= event.name %>/participants">
+                  <a class="bg-indigo-600 hover:bg-indigo-900 text-center text-white p-2 rounded" href="/dashboard/events/<%= event.name %>/participants">
                     View (<%= event.participants.length %>)
                   </a>
                 </td>
