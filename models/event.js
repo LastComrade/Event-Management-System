@@ -7,6 +7,14 @@ const EventSchema = Schema(
       type: String,
       required: true,
     },
+    event_poster: {
+      type: String,
+      required: true
+    },
+    event_pic: {
+      type: String,
+      required: true
+    },
     sheetID: {
       type: Number,
       default: 0,
@@ -44,6 +52,8 @@ const EventSchema = Schema(
       default: 0000 - 00 - 00,
     },
     organizers: [Object],
+    hosts: [Object],
+    sponsors: [Object],
     participants: [
       {
         type: mongoose.Schema.Types.ObjectId,

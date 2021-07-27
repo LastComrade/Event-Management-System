@@ -322,6 +322,145 @@ const dboardCont = {
     }
   },
 
+  createEvent: async (req, res, next) => {
+    try {
+      const {
+        name,
+        description,
+        event_poster,
+        event_pic,
+        category,
+        featured,
+        registration_starts,
+        registration_ends,
+        event_starts,
+        event_ends,
+        result_declaration,
+        organizers,
+        hosts,
+        sponsors,
+        participants,
+      } = req.body;
+      await Event.findOne({ name }, async (err, existingEvent) => {
+        if (err) {
+          next(Errorhandler.serverError());
+        } else if (existingEvent) {
+          return res.status(200).json({
+            message: "Entered event name already exists",
+          });
+        } else {
+
+          // SheetAPI code
+          try {
+            let client_side = new google.auth.JWT(
+              process.env.client_email,
+              null,
+              process.env.private_key,
+              ["https://www.googleapis.com/auth/spreadsheets"]
+            );
+
+            client_side.authorize((err, token) => {
+              if (err) {
+                console.log(err);
+                return;
+              } else {
+                eventSheetAdder(client_side);
+              }
+            });
+          } catch (err) {
+            console.log("Error occured in Google Sheets");
+          }
+
+          eventSheetAdder = async (client) => {
+            try {
+              const sheetAPI = google.sheets({
+                version: "v4",
+                auth: client,
+              });
+
+              const eventSheetInfo = {
+                spreadsheetId: process.env.event_spreadsheet_id,
+                resource: {
+                  requests: [
+                    {
+                      addSheet: {
+                        properties: {
+                          title: name,
+                        },
+                      },
+                    },
+                  ],
+                  includeSpreadsheetInResponse: true,
+                },
+              };
+              let temp1 = await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
+              // await sheetAPI.spreadsheets.batchUpdate(
+              //   eventSheetInfo
+              // );
+              let temp2 = temp1.data.updatedSpreadsheet.sheets[temp1.data.updatedSpreadsheet.sheets.length - 1];
+              // console.log(temp2.properties.sheetId)
+              let sheetID = temp2.properties.sheetId;
+              // console.log(`sheet ID -> ${sheetID}`)
+              const newEvent = new Event({
+                name,
+                description,
+                event_poster,
+                event_pic,
+                category,
+                featured,
+                registration_starts,
+                registration_ends,
+                event_starts,
+                event_ends,
+                result_declaration,
+                organizers,
+                hosts,
+                sponsors,
+                participants,
+                sheetID
+              });
+
+              const eventSheetInfo2 = {
+                spreadsheetId: process.env.event_spreadsheet_id,
+                range: `${name}!A1`,
+                valueInputOption: "RAW",
+                resource: {
+                  values: [
+                    [
+                      "Name",
+                      "Email",
+                      "College Name",
+                      "LinkedIn Account",
+                    ],
+                  ],
+                },
+              };
+              await sheetAPI.spreadsheets.values.append(
+                eventSheetInfo2
+              );
+              await newEvent.save();
+              return res.status(200).json({
+                message: "Successfully Created the event",
+              });
+            } catch (err) {
+              console.log(err)
+              console.log(
+                "error occured while creating the event on spreadsheet"
+              );
+            }
+          };
+          // await newEvent.save();
+          // return res.status(200).json({
+          //   message: "Successfully Created the event",
+          // });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      next(Errorhandler.serverError());
+    }
+  },
+
   editEventInfo: async (req, res, next) => {
     try {
       await Event.findOne({ name: req.params.name }, async (err, event) => {
@@ -490,6 +629,8 @@ const dboardCont = {
       const {
         name,
         description,
+        event_poster,
+        event_pic,
         category,
         featured,
         registration_starts,
@@ -498,6 +639,8 @@ const dboardCont = {
         event_ends,
         result_declaration,
         organizers,
+        hosts,
+        sponsors
       } = req.body;
 
       Event.findOne({ name: req.params.name }, (err, existingEvent) => {
@@ -514,6 +657,8 @@ const dboardCont = {
               // Written this way to solve an issue
               existingEvent.description = description;
               existingEvent.category = category;
+              existingEvent.event_pic = event_pic;
+              existingEvent.event_poster = event_poster;
               existingEvent.featured = featured;
               existingEvent.registration_starts = registration_starts;
               existingEvent.registration_ends = registration_ends;
@@ -521,6 +666,8 @@ const dboardCont = {
               existingEvent.event_ends = event_ends;
               existingEvent.result_declaration = result_declaration;
               existingEvent.organizers = organizers;
+              existingEvent.hosts = hosts;
+              existingEvent.sponsors = sponsors;
               existingEvent.save();
               return res.status(200).json({
                 message: "Event has been updated successfully",
@@ -539,6 +686,8 @@ const dboardCont = {
                   existingEvent.name = name;
                   existingEvent.description = description;
                   existingEvent.category = category;
+                  existingEvent.event_pic = event_pic;
+                  existingEvent.event_poster = event_poster;
                   existingEvent.featured = featured;
                   existingEvent.registration_starts = registration_starts;
                   existingEvent.registration_ends = registration_ends;
@@ -546,7 +695,8 @@ const dboardCont = {
                   existingEvent.event_ends = event_ends;
                   existingEvent.result_declaration = result_declaration;
                   existingEvent.organizers = organizers;
-
+                  existingEvent.hosts = hosts;
+                  existingEvent.sponsors = sponsors;
                   // SheetAPI code
                   try {
                     let client_side = new google.auth.JWT(

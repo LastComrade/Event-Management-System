@@ -12,6 +12,18 @@ router
   .route("/dashboard/events")
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.eventsIndex);
 
+// For event create functionality
+// get -> To render the event create form/page
+// post -> For creating a new event in database and googlesheets
+router
+  .route("/dashboard/event-create")
+  .post(
+    authMid.authRequired,
+    authMid.staffCheck,
+    validate.eventCreate,
+    dboardCont.createEvent
+  );
+
 router
   .route("/dashboard/events/:name")
   // .get(authMid.authRequired, authMid.staffCheck);

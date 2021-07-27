@@ -6,7 +6,7 @@ const deptCont = require("../controllers/deptCont");
 const eventCont = require("../controllers/eventCont");
 const authMid = require("../middleware/auth");
 
-//  For event page containing all the events
+// For event page containing all the events
 // get -> To render the page
 router.route("/events")
     .get(eventCont.eventIndex);
