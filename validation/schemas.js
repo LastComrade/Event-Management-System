@@ -142,6 +142,16 @@ module.exports.staffPaswordRegisterSchema = Joi.object({
         .messages({ "any.only": "{{#label}} does not match" }),
 });
 
+module.exports.profileSchema = Joi.object({
+    firstname: Joi.string().trim().min(1).required().label("First Name"),
+    lastname: Joi.string().trim().min(1).required().label("Last Name"),
+    profile_pic_url: Joi.string().required().trim().min(1).label("Profile URL"),
+    description: Joi.string().required().trim().min(1).label("Description"),
+    sl_fb: Joi.string().required().trim().min(1).label("Facebook Social Link"),
+    sl_ig: Joi.string().required().trim().min(1).label("Instagram Social Link"),
+    sl_li: Joi.string().required().trim().min(1).label("LinkedIn Social Link"),
+});
+
 module.exports.emailSchema = Joi.object({
     email: Joi.string()
         .email({ tlds: { allow: ["org", "com", "net", "in"] } })
