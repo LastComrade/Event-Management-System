@@ -1,1 +1,93 @@
-<h1>All Archived Events</h1>
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <%- include("./partials/head-links.ejs") %>
+
+</head>
+
+<body>
+
+    <!-- header + navbar -->
+  <%- include("./sections/header-nav.ejs") %>
+
+    <!--LIVE EVENTS-->
+    <div id="live" class="mt-10" style="margin-top: 120px;">
+    <div class="mt-16 flex flex-col justify-center items-center wow fadeIn" data-wow-duration="1s"
+        data-wow-delay="0.5s">
+
+        <!-- Heading -->
+        <div class="pt-3 mx-4 mt-12 h-auto">
+            <div class="section-title text-center">
+                <div class="m-auto line"></div>
+                <div>
+                <h3 class="text-4xl font-bold">Archived Events</h3>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 mx-5">
+            <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
+                <% for (let i=0; i<archivedEvents.length; i++) { %> 
+                <div
+                class="p-4 layered-card border-2 border-transparent hover:border-purple-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
+                <img
+                    src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+                <div class="relative">
+                </div>
+                <div class="flex flex-col space-y-8">
+                    <div class="text-black mt-1 top-1 md:m-0">
+                    <p class="text-2xl leading-5 font-medium">
+                        <%= archivedEvents[i].name %>
+                    </p>
+                    </div>
+                    <div>
+                    <div class="flex flex-row space-x-3">
+                        <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
+                        <p class="text-lg mt-2 text-black font-medium"><%= moment(archivedEvents[i].event_starts).format("MMMM Do YYYY") %></p>
+                    </div>
+                    </div>
+                    <div class="text-center mt-2">
+                    <div class="text-left">
+                        <a href="/events/<%= archivedEvents[i].name %>"
+                        class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register</a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <% } %> 
+            </div>
+        </div>
+    </div>
+    </div>
+
+  
+  <!-- Footer Section -->
+  <footer id="footer" class="relative z-10 footer-area pt-2">
+    <div class="footer-bg" style="background-image: url(/img/footer-bg.svg);"></div>
+    <div class="container">
+
+        <!-- contact Section -->
+        <%- include("./sections/suggest-event.ejs") %>
+        <!-- contact Section -->
+  
+      <!-- Footer Links -->
+      <%- include("./sections/footer-links.ejs") %>
+      <!-- Footer Links -->
+
+      <!-- Credits -->
+      <%- include("./sections/footer-credits.ejs") %>
+      <!-- Credits -->
+    </div>
+    <div id="particles-2" class="particles"></div>
+  </footer>
+  <!-- Footer Section -->
+
+
+  <!-- Scripts -->
+  <%- include("./partials/scripts.ejs") %>
+  <!-- ./Scripts -->
+
+</body>
+
+</html>
