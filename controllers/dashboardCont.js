@@ -642,6 +642,26 @@ const dboardCont = {
                 },
               };
               await sheetAPI.spreadsheets.values.append(eventSheetInfo2);
+
+              const eventSheetInfo3 = {
+                spreadsheetId: process.env.event_spreadsheet_id,
+                resource: {
+                  requests: [
+                    {
+                      updateSheetProperties: {
+                        properties: {
+                          sheetId: sheetID,
+                          title: `${req.body.name}_${sheetID}`,
+                        },
+                        fields: "title",
+                      },
+                    },
+                  ],
+                  includeSpreadsheetInResponse: true,
+                },
+              };
+              await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo3);
+
             } catch (err) {
               console.log(err);
               console.log(
@@ -740,58 +760,60 @@ const dboardCont = {
               message: "Event has been updated successfully",
             });
             // SheetAPI code
-            try {
-              let client_side = new google.auth.JWT(
-                process.env.client_email,
-                null,
-                process.env.private_key,
-                ["https://www.googleapis.com/auth/spreadsheets"]
-              );
-
-              client_side.authorize((err, token) => {
-                if (err) {
-                  console.log(err);
-                  return;
-                } else {
-                  eventSheetEditor(client_side);
-                }
-              });
-            } catch (err) {
-              console.log(err);
-              console.log("Error occured in Google Sheets");
-            }
-            eventSheetEditor = async (client) => {
+            // if(existingEvent.name != name){
               try {
-                const sheetAPI = google.sheets({
-                  version: "v4",
-                  auth: client,
-                });
-
-                const eventSheetInfo = {
-                  spreadsheetId: process.env.event_spreadsheet_id,
-                  resource: {
-                    requests: [
-                      {
-                        updateSheetProperties: {
-                          properties: {
-                            sheetId: existingEvent.sheetID,
-                            title: name,
-                          },
-                          fields: "title",
-                        },
-                      },
-                    ],
-                    includeSpreadsheetInResponse: true,
-                  },
-                };
-                await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
-              } catch (err) {
-                // console.log(err);
-                console.log(
-                  "error occured while updating the event on spreadsheet"
+                let client_side = new google.auth.JWT(
+                  process.env.client_email,
+                  null,
+                  process.env.private_key,
+                  ["https://www.googleapis.com/auth/spreadsheets"]
                 );
+  
+                client_side.authorize((err, token) => {
+                  if (err) {
+                    console.log(err);
+                    return;
+                  } else {
+                    eventSheetEditor(client_side);
+                  }
+                });
+              } catch (err) {
+                console.log(err);
+                console.log("Error occured in Google Sheets");
               }
-            };
+              eventSheetEditor = async (client) => {
+                try {
+                  const sheetAPI = google.sheets({
+                    version: "v4",
+                    auth: client,
+                  });
+  
+                  const eventSheetInfo = {
+                    spreadsheetId: process.env.event_spreadsheet_id,
+                    resource: {
+                      requests: [
+                        {
+                          updateSheetProperties: {
+                            properties: {
+                              sheetId: existingEvent.sheetID,
+                              title: `${name}_${existingEvent.sheetID}`,
+                            },
+                            fields: "title",
+                          },
+                        },
+                      ],
+                      includeSpreadsheetInResponse: true,
+                    },
+                  };
+                  await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
+                } catch (err) {
+                  // console.log(err);
+                  console.log(
+                    "error occured while updating the event on spreadsheet"
+                  );
+                }
+              // };
+            }
             return;
           } catch (err) {
             // console.log(err);
