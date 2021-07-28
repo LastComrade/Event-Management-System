@@ -11,6 +11,22 @@ const authMid = require("../middleware/auth");
 router.route("/events")
     .get(eventCont.eventIndex);
 
+router
+    .route("/events/live/all")
+    .get(eventCont.liveEventsRetriver)
+
+router
+    .route("/events/ongoing/all")
+    .get(eventCont.ongoingEventsRetriver)
+
+router
+    .route("/events/upcoming/all")
+    .get(eventCont.upcomingEventsRetriver)
+
+router
+    .route("/events/archived/all")
+    .get(eventCont.archivedEventsRetriver)
+
 // To render indivizual events via event page
 // get -> To render the page
 // post -> For registering participants in an event
