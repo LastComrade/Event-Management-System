@@ -231,7 +231,7 @@ const eventCont = {
 
                           const options1 = {
                             spreadsheetId: process.env.event_spreadsheet_id,
-                            range: `${foundEvent.name}!A2`,
+                            range: `${foundEvent.name}_${foundEvent.sheetID}!A2`,
                             valueInputOption: "RAW",
                             resource: {
                               values: [
@@ -307,7 +307,7 @@ const eventCont = {
 
                             const info = {
                               spreadsheetId: process.env.event_spreadsheet_id,
-                              range: `${foundEvent.name}!A2`,
+                              range: `${foundEvent.name}_${foundEvent.sheetID}!A2`,
                               valueInputOption: "RAW",
                               resource: {
                                 values: [

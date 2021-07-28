@@ -161,7 +161,7 @@ router
 
 router
   .route("/dashboard/profile/edit")
-  .post(authMid.authRequired, authMid.staffCheck, dboardCont.profileEdit);
+  .post(authMid.authRequired, authMid.staffCheck, validate.profileUpdate, dboardCont.profileEdit);
 
 // Exporting routes
 module.exports = router;
