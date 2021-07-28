@@ -9,7 +9,9 @@
               <th class="px-4 py-3">Members</th>
               <th class="px-4 py-3">Status</th>
               <th class="px-4 py-3">Role</th>
+              <% if (staff.role !== "member") { %>
               <th class="px-4 py-3">Email</th>
+              <% } %>
               <th class="px-4 py-3">Department</th>
             </tr>
           </thead>
@@ -44,9 +46,11 @@
                 <td class="px-4 py-3 text-sm capitalize">
                   <%= member.role %>
                 </td>
+                <% if (staff.role !== "member") { %>
                 <td class="px-4 py-3 text-sm">
                   <%= member.email %>
                 </td>
+                <% } %>
                 <td class="px-4 py-3 text-sm">
                   <%= member.department[0].name %>
                 </td>

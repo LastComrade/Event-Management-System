@@ -38,39 +38,49 @@ const authMid = {
                   console.log(err);
                   next(ErrorHandler.serverError());
                 } else if (staff) {
-                  let {
-                    id,
-                    fullname,
-                    designation,
-                    role,
-                    profile_pic_url,
-                    department,
-                  } = staff;
-                  department = department[0];
-                  const staffData = {
-                    id,
-                    fullname,
-                    designation,
-                    role,
-                    profile_pic_url,
-                    department,
-                  };
-                  res.locals.staff = staffData;
-                  // console.log(res.locals.staff)
-                  const token = jwt.sign(
-                    {
-                      id: staff._id,
-                    },
-                    process.env.JWT_SECRET,
-                    {
-                      expiresIn: "30m",
-                    }
-                  );
-                  res.cookie("jwt_token", token, {
-                    httpOnly: true,
-                    secure: true,
-                    maxAge: 30 * 60 * 1000,
-                  });
+                  if (staff.accActive) {
+                    let {
+                      id,
+                      fullname,
+                      designation,
+                      role,
+                      profile_pic_url,
+                      department,
+                    } = staff;
+                    department = department[0];
+                    const staffData = {
+                      id,
+                      fullname,
+                      designation,
+                      role,
+                      profile_pic_url,
+                      department,
+                    };
+                    res.locals.staff = staffData;
+                    // console.log(res.locals.staff)
+                    const token = jwt.sign(
+                      {
+                        id: staff._id,
+                      },
+                      process.env.JWT_SECRET,
+                      {
+                        expiresIn: "30m",
+                      }
+                    );
+                    res.cookie("jwt_token", token, {
+                      httpOnly: true,
+                      secure: true,
+                      maxAge: 30 * 60 * 1000,
+                    });
+                  } else {
+                    req.flash("error", "Your account is deactivated");
+                    res.cookie("jwt_token", "", {
+                      httpOnly: true,
+                      secure: true,
+                      maxAge: 1,
+                    });
+                    return res.redirect("/staff-login");
+                  }
                 } else {
                   res.cookie("jwt_token", "", { maxAge: 1 });
                   return res.redirect("/staff-login");
