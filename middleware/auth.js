@@ -94,7 +94,7 @@ const authMid = {
                 if (err) {
                   console.log(err);
                   req.flash("error", "An error occured, Please try again later");
-                  return res.redirect("back");
+                  return res.redirect("/staff-login");
                 } else if (!foundStaff) {
                   res.cookie("jwt_token", "", { maxAge: 1 });
                   req.flash("error", "Invalid token");
@@ -107,7 +107,7 @@ const authMid = {
                     next();
                   } else {
                     req.flash("error", "You are Not Authorized to access this functionality");
-                    return res.redirect("back");
+                    return res.redirect("/dashboard");
                   }
                 }
               })
@@ -142,14 +142,13 @@ const authMid = {
                 if (err) {
                   console.log(err);
                   req.flash("error", "An error occured, Please try again later");
-                  return res.redirect("back");
+                  return res.redirect("/staff-login");
                 } else if (!foundStaff) {
                   res.cookie("jwt_token", "", { maxAge: 1 });
                   req.flash("error", "Invalid token");
                   return res.redirect("/staff-login");
                 } else {
-                  // res.locals.staff_role = foundStaff.role;
-                  console.log(foundStaff);
+                  // console.log(foundStaff);
                   const role = foundStaff.role;
                   if (role == "admin" || role == "president") {
                     next();
@@ -190,20 +189,20 @@ const authMid = {
                 if (err) {
                   console.log(err);
                   req.flash("error", "An error occured, Please try again later");
-                  return res.redirect("back");
+                  return res.redirect("/staff-login");
                 } else if (!foundStaff) {
                   res.cookie("jwt_token", "", { maxAge: 1 });
                   req.flash("error", "Invalid token");
                   return res.redirect("/staff-login");
                 } else {
                   // res.locals.staff_role = foundStaff.role;
-                  console.log(foundStaff);
+                  // console.log(foundStaff);
                   const role = foundStaff.role;
                   if (role == "admin" || role == "president" || role == "tl") {
                     next();
                   } else {
                     req.flash("error", "You are Not Authorized to access this functionality");
-                    return res.redirect("back");
+                    return res.redirect("dashboard");
                   }
                 }
               })
@@ -238,20 +237,20 @@ const authMid = {
                 if (err) {
                   console.log(err);
                   req.flash("error", "An error occured, Please try again later");
-                  return res.redirect("back");
+                  return res.redirect("/staff-login");
                 } else if (!foundStaff) {
                   res.cookie("jwt_token", "", { maxAge: 1 });
                   req.flash("error", "Invalid token");
                   return res.redirect("/staff-login");
                 } else {
                   // res.locals.staff_role = foundStaff.role;
-                  console.log(foundStaff);
+                  // console.log(foundStaff);
                   const role = foundStaff.role;
-                  if (role == "admin" || role == "president" || role == "TL" || role == "member") {
+                  if (role == "admin" || role == "president" || role == "tl" || role == "member") {
                     next();
                   } else {
                     req.flash("error", "You are Not Authorized to access this functionality");
-                    return res.redirect("back");
+                    return res.redirect("dashboard");
                   }
                 }
               })
