@@ -44,9 +44,9 @@
   <footer id="footer" class="relative z-10 footer-area pt-2">
     <div class="footer-bg" style="background-image: url(/img/footer-bg.svg);"></div>
     <div class="container">
-      <!-- Newsletter Section -->
-      <%- include("./sections/magazine-form.ejs") %>
-      <!-- Newsletter Section -->
+      <!-- contact Section -->
+      <%- include("./sections/contact-form.ejs") %>
+      <!-- contact Section -->
 
       <!-- Footer Links -->
       <%- include("./sections/footer-links.ejs") %>
@@ -78,7 +78,8 @@
         function handleForm(ev) {
             ev.preventDefault();
             let myForm = ev.target;
-            fetch("/monthly-magazine", {
+            // after banckend chnage update this
+            fetch("/", {
                 body: JSON.stringify(convertFD2JSON(new FormData(myForm))),
                 method: "POST",
                 headers: {

@@ -16,13 +16,15 @@ router.route("/newsletter-sub").post(validate.newsletter, homeCont.newsletter);
 
 // Monthly Magazine subscription route
 router
-    .route("/monthly-magazine")
-    .post(validate.magazineEmail, homeCont.registerMagazineEmail);
+  .route("/monthly-magazine")
+  .post(validate.magazineEmail, homeCont.registerMagazineEmail);
 
 // Monthly Magazine unsubscribe route
 router
-    .route("/monthly-magazine/unsubscribe/:id")
-    .post(validate.magazine, homeCont.unSubMagazineEmail);
+  .route("/monthly-magazine/unsubscribe/:id")
+  .post(validate.magazine, homeCont.unSubMagazineEmail);
+
+router.route("/credits").get(homeCont.creditIndex);
 
 // Exporting routes
 module.exports = router;

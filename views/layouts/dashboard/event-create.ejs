@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("./sections/head.ejs") %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/themes/airbnb.min.css">
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+  <div x-data="setup()" :class="{ 'dark': isDark }">
+    <div
+      class="min-h-screen flex flex-col flex-auto flex-shrink-0 antialiased bg-white dark:bg-gray-700 text-black dark:text-white">
+
+      <!-- Header -->
+      <%- include("./sections/header.ejs") %> 
+      <!-- ./Header -->
+
+      <!-- Sidebar -->
+      <%- include("./sections/sidebar.ejs") %>
+      <!-- ./Sidebar -->
+
+      <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
+        <!-- Statistics Cards -->
+        <%- include("./sections/stat-card.ejs") %> 
+        <!-- ./Statistics Cards -->
+
+        <!-- Event Edit Form -->
+        <%- include("./sections/event-create-form.ejs") %> 
+        <!-- ./Event Edit Form -->
+
+        <!-- External resources -->
+        <%- include("./sections/external-links.ejs") %> 
+        <!-- ./External resources -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js"></script>
+  <!-- Scripts -->
+  <%- include("./sections/scripts.ejs") %>   
+  <!-- ./Scripts -->
+  <script>
+    function convertFD2JSON(formData) {
+      let obj = {};
+      formData.forEach(function(value, key) {
+          obj[key] = value;
+      })
+      return obj;
+    }
+    document.querySelector("form").addEventListener("submit", handleForm);
+    function handleForm(ev) {
+      ev.preventDefault();
+      let myForm = ev.target;
+      const data = convertFD2JSON(new FormData(myForm));
+      console.log(data);
+      const newFormData = {
+        organizers: [
+          {
+            name: data.organizer_name_1,
+            fb_link: data.organizer_fb_link_1,
+            ig_link: data.organizer_ig_link_1,
+            in_link: data.organizer_in_link_1,
+            pic: data.organizer_photograph_1,
+          },
+          {
+            name: data.organizer_name_2,
+            fb_link: data.organizer_fb_link_2,
+            ig_link: data.organizer_ig_link_2,
+            in_link: data.organizer_in_link_2,
+            pic: data.organizer_photograph_2,
+          },
+          {
+            name: data.organizer_name_3,
+            fb_link: data.organizer_fb_link_3,
+            ig_link: data.organizer_ig_link_3,
+            in_link: data.organizer_in_link_3,
+            pic: data.organizer_photograph_3,
+          },
+          {
+            name: data.organizer_name_4,
+            fb_link: data.organizer_fb_link_4,
+            ig_link: data.organizer_ig_link_4,
+            in_link: data.organizer_in_link_4,
+            pic: data.organizer_photograph_4,
+          }
+        ],
+        sponsors: [
+          {
+            name: data.sponsor_name_1,
+            fb_link: data.sponsor_fb_link_1,
+            ig_link: data.sponsor_ig_link_1,
+            in_link: data.sponsor_in_link_1,
+            pic: data.sponsor_photograph_1,
+          },
+          {
+            name: data.sponsor_name_2,
+            fb_link: data.sponsor_fb_link_2,
+            ig_link: data.sponsor_ig_link_2,
+            in_link: data.sponsor_in_link_2,
+            pic: data.sponsor_photograph_2,
+          },
+          {
+            name: data.sponsor_name_3,
+            fb_link: data.sponsor_fb_link_3,
+            ig_link: data.sponsor_ig_link_3,
+            in_link: data.sponsor_in_link_3,
+            pic: data.sponsor_photograph_3,
+          },
+          {
+            name: data.sponsor_name_4,
+            fb_link: data.sponsor_fb_link_4,
+            ig_link: data.sponsor_ig_link_4,
+            in_link: data.sponsor_in_link_4,
+            pic: data.sponsor_photograph_4,
+          }
+        ],
+        hosts: [
+          {
+            name: data.host_name_1,
+            fb_link: data.host_fb_link_1,
+            ig_link: data.host_ig_link_1,
+            in_link: data.host_in_link_1,
+            pic: data.host_photograph_1,
+          },
+          {
+            name: data.host_name_2,
+            fb_link: data.host_fb_link_2,
+            ig_link: data.host_ig_link_2,
+            in_link: data.host_in_link_2,
+            pic: data.host_photograph_2,
+          },
+          {
+            name: data.host_name_3,
+            fb_link: data.host_fb_link_3,
+            ig_link: data.host_ig_link_3,
+            in_link: data.host_in_link_3,
+            pic: data.host_photograph_3,
+          },
+          {
+            name: data.host_name_4,
+            fb_link: data.host_fb_link_4,
+            ig_link: data.host_ig_link_4,
+            in_link: data.host_in_link_4,
+            pic: data.host_photograph_4,
+          }
+        ],
+        name: data.name,
+        tagline: data.tagline,
+        description: data.description,
+        event_poster: data.event_poster,
+        event_pic: data.event_pic,
+        category: data.category,
+        featured: data.featured === "on" ? true : false,
+        registration_starts: data.registration_starts,
+        registration_ends: data.registration_ends,
+        event_starts: data.event_starts,
+        event_ends: data.event_ends,
+        result_declaration: data.result_declaration,
+      }
+      
+      fetch("/dashboard/event-create", {
+        body: JSON.stringify(newFormData),
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        }
+      })
+      .then((some) => { return some.json() })
+      .then(async (res) => {
+        // document.querySelector('form').reset();
+        console.log(res)
+        // instanciate new modal
+        var modal = new tingle.modal({
+            footer: true,
+            stickyFooter: false,
+            closeMethods: ['button', 'escape', 'overlay'],
+            closeLabel: "Close",
+            cssClass: ['custom-class-1', 'custom-class-2'],
+        });
+        // set content
+        modal.setContent( `<h1> ${res.message} </h1>` );
+        // add button
+        modal.addFooterBtn('close', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
+          // here goes some logic
+          modal.close();
+        });
+        modal.open();
+      })
+      .catch((err) => {
+      // instanciate new modal
+      var modal = new tingle.modal({
+        footer: true,
+        stickyFooter: false,
+        closeMethods: ['button', 'escape'],
+        closeLabel: "Close",
+        cssClass: ['custom-class-1', 'custom-class-2'],
+      });
+        // set content
+        modal.setContent( `<h1> ${res.message} </h1>` );
+        // add button
+        modal.addFooterBtn('close', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function() {
+          // here goes some logic
+          modal.close();
+        });
+        modal.open();
+      })
+    }
+        
+  </script>
+ 
+
+</body>
+
+</html>

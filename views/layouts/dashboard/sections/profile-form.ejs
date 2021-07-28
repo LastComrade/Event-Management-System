@@ -1,0 +1,46 @@
+<div class="mt-8">
+  <form action="/dashboard/profile/edit" method="POST" class="p-6 flex flex-col justify-center">
+    <span class="text-xl mb-5 md:w-1/5 text-center text-white mx-auto font-bold bg-blue-600 p-2 rounded">
+      Edit Profile
+    </span>
+    <div class="flex flex-col">
+      <label for="name" class="hidden">First Name</label>
+      <input type="name" value="<%= staffData.firstname %>" name="firstname" id="name" placeholder="First Name"
+        class="w-full mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none" />
+      <label for="name" class="hidden">Last Name</label>
+      <input type="name" value="<%= staffData.lastname %>" name="lastname" id="name" placeholder="Last Name"
+        class="w-full mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none" />
+      <label for="name" class="hidden">Profile Pic URL</label>
+      <input type="url" value="<%= staffData.profile_pic_url %>" name="profile_pic_url" id="profile_pic_url" placeholder="Profile Pic URL"
+        class="w-full mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none" />
+    </div>
+
+    <div class="flex flex-col">
+      <label for="name" class="hidden">Description</label>
+      <textarea type="text" value="<%= staffData.description %>" name="description" id="description" placeholder="Description/Bio"
+        class="w-full mt-2 h-48 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none"></textarea>
+    </div>
+
+    <div class="flex flex-col mt-2">
+      <label for="facebook" class="hidden">Facebook Profile Link</label>
+      <input type="url" name="sl_fb" value="<%= staffData.sl_fb %>" id="facebook" placeholder="Facebook Profile Link"
+        class="w-full mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none" />
+    </div>
+
+    <div class="flex flex-col mt-2">
+      <label for="instagram" class="hidden">Instagram Profile Link</label>
+      <input type="url" name="sl_ig" value="<%= staffData.sl_ig %>" id="instagram" placeholder="Instagram Profile Link"
+        class="w-full mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none" />
+    </div>
+
+    <div class="flex flex-col mt-2">
+      <label for="linkedin" class="hidden">Linkedin Profile Link</label>
+      <input type="url" value="<%= staffData.sl_li %>" name="sl_li" id="linkedin" placeholder="LinkedIn Profile Link"
+        class="w-full mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-700 text-gray-800 dark:text-gray-50 font-semibold focus:border-blue-500 focus:outline-none" />
+    </div>
+
+
+    <button type="submit"
+      class="md:w-32 bg-blue-600 dark:bg-gray-100 text-white dark:text-gray-800 font-bold py-3 px-6 rounded-lg mt-4 hover:bg-blue-500 dark:hover:bg-gray-200 transition ease-in-out duration-300">Submit</button>
+  </form>
+</div>

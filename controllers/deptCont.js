@@ -10,7 +10,7 @@ const deptCont = {
 
   allIndex: async (req, res, next) => {
     const deptData = await Department.find().select("name description");
-    console.log(deptData);
+    // console.log(deptData);
     return res.render("layouts/home/departments_page", {
       title: "E-Cell | Departments",
       deptData,

@@ -14,6 +14,7 @@ const Internship = require("../models/internship");
 const magazineReciever = require("../models/magazine-reciever");
 const moment = require("moment");
 const { google } = require("googleapis");
+const RegKey = require("../models/regKey");
 
 const dboardCont = {
   staffDashboard: async (req, res, next) => {
@@ -53,9 +54,11 @@ const dboardCont = {
           console.log(err);
           next(ErrorHandler.forbidden());
         } else if (decodedToken) {
-          const staff = await Staff.find().select(
-            "-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt"
-          );
+          const staff = await Staff.find()
+            .select(
+              "-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt"
+            )
+            .populate("department", "name");
           // console.log("This should be the array of the staff", staff);
           const eventCount = await Event.countDocuments();
           const deptCount = await Dept.countDocuments();
@@ -197,7 +200,9 @@ const dboardCont = {
           const eventCount = await Event.countDocuments();
           const deptCount = await Dept.countDocuments();
           const participantCount = await Participant.countDocuments();
-          const internshipMessages = await Internship.find().sort({createdAt: -1}).limit(10);
+          const internshipMessages = await Internship.find()
+            .sort({ createdAt: -1 })
+            .limit(10);
           return res.render("layouts/dashboard/all-messages", {
             error: req.flash("error"),
             success: req.flash("success"),
@@ -319,38 +324,35 @@ const dboardCont = {
     }
   },
 
-  editEventInfo: async (req, res, next) => {
+  createEventIndex: async (req, res, next) => {
     try {
-      await Event.findOne(
-        { name: req.params.name },
-        async (err, foundEvent) => {
-          if (err) {
-            next(ErrorHandler.serverError());
-          } else if (!foundEvent) {
-            return res.status(404).json({
-              message: "Entered Event does not found",
-            });
-          } else {
-            // To be changed
-            return res.status(200).json({
-              foundEvent,
-            });
-            // return res.render("/layouts/event-edit-page", {
-            //     foundEvent
-            // });
-          }
-        }
-      );
+      const staffCount = await Staff.countDocuments();
+      const eventCount = await Event.countDocuments();
+      const deptCount = await Dept.countDocuments();
+      const participantCount = await Participant.countDocuments();
+      return res.render("layouts/dashboard/event-create", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        staffCount,
+        eventCount,
+        deptCount,
+        participantCount,
+        title: "Dashboard | Create Event",
+      });
     } catch (err) {
+      console.log(err);
       next(ErrorHandler.serverError());
     }
   },
 
-  updateEvent: async (req, res, next) => {
+  createEvent: async (req, res, next) => {
     try {
       const {
         name,
         description,
+        tagline,
+        event_poster,
+        event_pic,
         category,
         featured,
         registration_starts,
@@ -359,117 +361,438 @@ const dboardCont = {
         event_ends,
         result_declaration,
         organizers,
+        hosts,
+        sponsors,
+        participants,
+      } = req.body;
+      await Event.findOne({ name }, async (err, existingEvent) => {
+        if (err) {
+          next(Errorhandler.serverError());
+        } else if (existingEvent) {
+          return res.status(200).json({
+            message: "Entered event name already exists",
+          });
+        } else {
+          // SheetAPI code
+          try {
+            let client_side = new google.auth.JWT(
+              process.env.client_email,
+              null,
+              process.env.private_key,
+              ["https://www.googleapis.com/auth/spreadsheets"]
+            );
+
+            client_side.authorize((err, token) => {
+              if (err) {
+                console.log(err);
+                return;
+              } else {
+                eventSheetAdder(client_side);
+              }
+            });
+          } catch (err) {
+            console.log("Error occured in Google Sheets");
+          }
+
+          eventSheetAdder = async (client) => {
+            try {
+              const sheetAPI = google.sheets({
+                version: "v4",
+                auth: client,
+              });
+
+              const eventSheetInfo = {
+                spreadsheetId: process.env.event_spreadsheet_id,
+                resource: {
+                  requests: [
+                    {
+                      addSheet: {
+                        properties: {
+                          title: name,
+                        },
+                      },
+                    },
+                  ],
+                  includeSpreadsheetInResponse: true,
+                },
+              };
+              let temp1 = await sheetAPI.spreadsheets.batchUpdate(
+                eventSheetInfo
+              );
+              // await sheetAPI.spreadsheets.batchUpdate(
+              //   eventSheetInfo
+              // );
+              let temp2 =
+                temp1.data.updatedSpreadsheet.sheets[
+                  temp1.data.updatedSpreadsheet.sheets.length - 1
+                ];
+              // console.log(temp2.properties.sheetId)
+              let sheetID = temp2.properties.sheetId;
+              // console.log(`sheet ID -> ${sheetID}`)
+              const newEvent = new Event({
+                name,
+                description,
+                tagline,
+                event_poster,
+                event_pic,
+                category,
+                featured,
+                registration_starts,
+                registration_ends,
+                event_starts,
+                event_ends,
+                result_declaration,
+                organizers,
+                hosts,
+                sponsors,
+                participants,
+                sheetID,
+              });
+
+              const eventSheetInfo2 = {
+                spreadsheetId: process.env.event_spreadsheet_id,
+                range: `${name}!A1`,
+                valueInputOption: "RAW",
+                resource: {
+                  values: [
+                    ["Name", "Email", "College Name", "LinkedIn Account"],
+                  ],
+                },
+              };
+              await sheetAPI.spreadsheets.values.append(eventSheetInfo2);
+              await newEvent.save();
+              return res.status(200).json({
+                message: "Successfully Created the event",
+              });
+            } catch (err) {
+              console.log(err);
+              console.log(
+                "error occured while creating the event on spreadsheet"
+              );
+            }
+          };
+          // await newEvent.save();
+          // return res.status(200).json({
+          //   message: "Successfully Created the event",
+          // });
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      next(Errorhandler.serverError());
+    }
+  },
+
+  editEventInfo: async (req, res, next) => {
+    try {
+      await Event.findOne({ _id: req.params.id }, async (err, event) => {
+        if (err) {
+          req.flash("error", "Something went wrong. Please try again later");
+          return res.redirect("back");
+        } else if (!event) {
+          req.flash("error", "Event with this name does not exist");
+          return res.redirect("back");
+        } else {
+          // To be changed
+          // return res.status(200).json({
+          //   foundEvent,
+          // });
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          return res.render("layouts/dashboard/event-edit", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: `Dashboard | Events | ${event.name} | Edit `,
+            event,
+          });
+        }
+      });
+    } catch (err) {
+      next(ErrorHandler.serverError());
+    }
+  },
+
+  createEvent: async (req, res, next) => {
+    try {
+      let {
+        name,
+        description,
+        tagline,
+        event_pic,
+        event_poster,
+        category,
+        featured,
+        registration_starts,
+        registration_ends,
+        event_starts,
+        event_ends,
+        result_declaration,
+        organizers,
+        sponsors,
+        hosts,
+      } = req.body;
+      await Event.findOne({ name }, async (err, existingEvent) => {
+        if (err) {
+          next(Errorhandler.serverError());
+        } else if (existingEvent) {
+          return res.status(200).json({
+            message: "Entered event name already exists",
+          });
+        } else {
+          let sheetID = "";
+          const newEvent = new Event({
+            name,
+            description,
+            tagline,
+            category,
+            event_pic,
+            event_poster,
+            featured,
+            registration_starts,
+            registration_ends,
+            event_starts,
+            event_ends,
+            result_declaration,
+            organizers,
+            hosts,
+            sponsors,
+            sheetID,
+          });
+
+          await newEvent.save();
+          res.status(200).json({
+            message: "Successfully Created the event",
+          });
+          // SheetAPI code
+          try {
+            let client_side = new google.auth.JWT(
+              process.env.client_email,
+              null,
+              process.env.private_key,
+              ["https://www.googleapis.com/auth/spreadsheets"]
+            );
+
+            client_side.authorize((err, token) => {
+              if (err) {
+                console.log(err);
+                return;
+              } else {
+                eventSheetAdder(client_side);
+              }
+            });
+          } catch (err) {
+            console.log("Error occured in Google Sheets");
+          }
+
+          eventSheetAdder = async (client) => {
+            try {
+              const sheetAPI = google.sheets({
+                version: "v4",
+                auth: client,
+              });
+
+              const eventSheetInfo = {
+                spreadsheetId: process.env.event_spreadsheet_id,
+                resource: {
+                  requests: [
+                    {
+                      addSheet: {
+                        properties: {
+                          title: name,
+                        },
+                      },
+                    },
+                  ],
+                  includeSpreadsheetInResponse: true,
+                },
+              };
+              let temp1 = await sheetAPI.spreadsheets.batchUpdate(
+                eventSheetInfo
+              );
+              // await sheetAPI.spreadsheets.batchUpdate(
+              //   eventSheetInfo
+              // );
+              let temp2 =
+                temp1.data.updatedSpreadsheet.sheets[
+                  temp1.data.updatedSpreadsheet.sheets.length - 1
+                ];
+              // console.log(temp2.properties.sheetId)
+              sheetID = temp2.properties.sheetId;
+              // console.log(`sheet ID -> ${sheetID}`)
+              console.log(req.params.id);
+              await Event.findOneAndUpdate(
+                { name: req.body.name },
+                { sheetID }
+              );
+
+              const eventSheetInfo2 = {
+                spreadsheetId: process.env.event_spreadsheet_id,
+                range: `${name}!A1`,
+                valueInputOption: "RAW",
+                resource: {
+                  values: [
+                    ["Name", "Email", "College Name", "LinkedIn Account"],
+                  ],
+                },
+              };
+              await sheetAPI.spreadsheets.values.append(eventSheetInfo2);
+            } catch (err) {
+              console.log(err);
+              console.log(
+                "error occured while creating the event on spreadsheet"
+              );
+            }
+          };
+          return;
+        }
+      });
+    } catch (err) {
+      console.log(err);
+      next(Errorhandler.serverError());
+    }
+  },
+
+  updateEvent: async (req, res, next) => {
+    try {
+      const {
+        name,
+        description,
+        tagline,
+        event_poster,
+        event_pic,
+        category,
+        featured,
+        registration_starts,
+        registration_ends,
+        event_starts,
+        event_ends,
+        result_declaration,
+        organizers,
+        hosts,
+        sponsors,
       } = req.body;
 
-      Event.findOne({ name: req.params.name }, (err, existingEvent) => {
+      Event.findOne({ _id: req.params.id }, async (err, existingEvent) => {
         if (err) {
           console.log(`server error`);
           next(ErrorHandler.serverError());
         } else if (!existingEvent) {
+          console.log(existingEvent);
+          console.log("thi is ", req.params.id);
           return res.status(404).json({
             message: "Entered Event does not exist",
           });
         } else {
           try {
-            if (req.body.name == req.params.name) {
-              // Written this way to solve an issue
-              existingEvent.description = description;
-              existingEvent.category = category;
-              existingEvent.featured = featured;
-              existingEvent.registration_starts = registration_starts;
-              existingEvent.registration_ends = registration_ends;
-              existingEvent.event_starts = event_starts;
-              existingEvent.event_ends = event_ends;
-              existingEvent.result_declaration = result_declaration;
-              existingEvent.organizers = organizers;
-              existingEvent.save();
-              return res.status(200).json({
-                message: "Event has been updated successfully",
-              });
-            } else {
-              Event.findOne({ name: req.body.name }, (err, foundEvent2) => {
+            // if (req.body.id == req.params.id) {
+            //   // Written this way to solve an issue
+            //   existingEvent.description = description;
+            //   existingEvent.category = category;
+            //   existingEvent.event_pic = event_pic;
+            //   existingEvent.event_poster = event_poster;
+            //   existingEvent.featured = featured;
+            //   existingEvent.registration_starts = registration_starts;
+            //   existingEvent.registration_ends = registration_ends;
+            //   existingEvent.event_starts = event_starts;
+            //   existingEvent.event_ends = event_ends;
+            //   existingEvent.result_declaration = result_declaration;
+            //   existingEvent.organizers = organizers;
+            //   existingEvent.hosts = hosts;
+            //   existingEvent.sponsors = sponsors;
+            //   existingEvent.save();
+            //   return res.status(200).json({
+            //     message: "Event has been updated successfully",
+            //   });
+            // } else {
+            // Event.findOne({ _id: req.params.id }, (err, foundEvent2) => {
+            //   if (err) {
+            //     console.log(`server error`);
+            //     next(ErrorHandler.serverError());
+            //   } else if (foundEvent2) {
+            //     return res.status(404).json({
+            //       message:
+            //         "Event with the new name already exists, Please try another name",
+            //     });
+            //   } else {
+            existingEvent.name = name;
+            existingEvent.description = description;
+            existingEvent.tagline = tagline;
+            existingEvent.category = category;
+            existingEvent.event_pic = event_pic;
+            existingEvent.event_poster = event_poster;
+            existingEvent.featured = featured;
+            existingEvent.registration_starts = registration_starts;
+            existingEvent.registration_ends = registration_ends;
+            existingEvent.event_starts = event_starts;
+            existingEvent.event_ends = event_ends;
+            existingEvent.result_declaration = result_declaration;
+            existingEvent.organizers = organizers;
+            existingEvent.hosts = hosts;
+            existingEvent.sponsors = sponsors;
+            await existingEvent.save();
+            res.status(200).json({
+              message: "Event has been updated successfully",
+            });
+            // SheetAPI code
+            try {
+              let client_side = new google.auth.JWT(
+                process.env.client_email,
+                null,
+                process.env.private_key,
+                ["https://www.googleapis.com/auth/spreadsheets"]
+              );
+
+              client_side.authorize((err, token) => {
                 if (err) {
-                  console.log(`server error`);
-                  next(ErrorHandler.serverError());
-                } else if (foundEvent2) {
-                  return res.status(404).json({
-                    message:
-                      "Event with the new name already exists, Please try another name",
-                  });
+                  console.log(err);
+                  return;
                 } else {
-                  existingEvent.name = name;
-                  existingEvent.description = description;
-                  existingEvent.category = category;
-                  existingEvent.featured = featured;
-                  existingEvent.registration_starts = registration_starts;
-                  existingEvent.registration_ends = registration_ends;
-                  existingEvent.event_starts = event_starts;
-                  existingEvent.event_ends = event_ends;
-                  existingEvent.result_declaration = result_declaration;
-                  existingEvent.organizers = organizers;
-
-                  // SheetAPI code
-                  try {
-                    let client_side = new google.auth.JWT(
-                      process.env.client_email,
-                      null,
-                      process.env.private_key,
-                      ["https://www.googleapis.com/auth/spreadsheets"]
-                    );
-
-                    client_side.authorize((err, token) => {
-                      if (err) {
-                        console.log(err);
-                        return;
-                      } else {
-                        eventSheetEditor(client_side);
-                      }
-                    });
-                  } catch (err) {
-                    console.log(err);
-                    console.log("Error occured in Google Sheets");
-                  }
-
-                  eventSheetEditor = async (client) => {
-                    try {
-                      const sheetAPI = google.sheets({
-                        version: "v4",
-                        auth: client,
-                      });
-
-                      const eventSheetInfo = {
-                        spreadsheetId: process.env.event_spreadsheet_id,
-                        resource: {
-                          requests: [
-                            {
-                              updateSheetProperties: {
-                                properties: {
-                                  sheetId: existingEvent.sheetID,
-                                  title: name,
-                                },
-                                fields: "title",
-                              },
-                            },
-                          ],
-                          includeSpreadsheetInResponse: true,
-                        },
-                      };
-                      await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
-                    } catch (err) {
-                      // console.log(err);
-                      console.log(
-                        "error occured while updating the event on spreadsheet"
-                      );
-                    }
-                  };
-
-                  existingEvent.save();
-                  return res.status(200).json({
-                    message: "Event has been updated successfully",
-                  });
+                  eventSheetEditor(client_side);
                 }
               });
+            } catch (err) {
+              console.log(err);
+              console.log("Error occured in Google Sheets");
             }
+            eventSheetEditor = async (client) => {
+              try {
+                const sheetAPI = google.sheets({
+                  version: "v4",
+                  auth: client,
+                });
+
+                const eventSheetInfo = {
+                  spreadsheetId: process.env.event_spreadsheet_id,
+                  resource: {
+                    requests: [
+                      {
+                        updateSheetProperties: {
+                          properties: {
+                            sheetId: existingEvent.sheetID,
+                            title: name,
+                          },
+                          fields: "title",
+                        },
+                      },
+                    ],
+                    includeSpreadsheetInResponse: true,
+                  },
+                };
+                await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
+              } catch (err) {
+                // console.log(err);
+                console.log(
+                  "error occured while updating the event on spreadsheet"
+                );
+              }
+            };
+            return;
           } catch (err) {
             // console.log(err);
             return res.status(404).json({
@@ -527,7 +850,7 @@ const dboardCont = {
       const eventCount = await Event.countDocuments();
       const deptCount = await Dept.countDocuments();
       const participantCount = await Participant.countDocuments();
-      const events = await Event.find().limit(15);
+      const events = await Event.find();
       // console.log(events);
 
       return res.render("layouts/dashboard/events", {
@@ -569,43 +892,58 @@ const dboardCont = {
 
   departmentsRetriver: async (req, res, next) => {
     // for retriving all the departments from the database
-    await Dept.find({}, async (err, departmentsList) => {
-      if (err) {
-        console.log(
-          `Error occur while retriving departments list from database`
-        );
-        req.flash("error", "An error occured while retriving departments");
-        res.redirect("/staff-dashboard");
-      } else {
-        return res.json({
-          departmentsList,
-        });
+    console.log(res.locals.staff.department[0]);
+    await Dept.findOne(
+      { _id: res.locals.staff.department },
+      async (err, dept) => {
+        if (err) {
+          console.log(
+            `Error occur while retriving departments list from database`
+          );
+          req.flash("error", "An error occured while retriving departments");
+          return res.redirect("/dashboard");
+        } else if (!dept) {
+          req.flash("error", "Department with this name, does not exist");
+          return res.redirect("/dashboard");
+        } else {
+          const staffCount = await Staff.countDocuments();
+          const eventCount = await Event.countDocuments();
+          const deptCount = await Dept.countDocuments();
+          const participantCount = await Participant.countDocuments();
+          console.log(dept);
+          return res.render("layouts/dashboard/department", {
+            error: req.flash("error"),
+            success: req.flash("success"),
+            staffCount,
+            eventCount,
+            deptCount,
+            participantCount,
+            title: `Dashboard | Departments | ${dept.name}`,
+            dept,
+          });
+        }
       }
-    });
+    );
   },
 
   editDeptInfo: async (req, res, next) => {
     try {
-      await Dept.findOne(
-        { name: req.params.name },
-        async (err, foundDept) => {
-          if (err) {
-            next(ErrorHandler.serverError());
-          } else if (!foundDept) {
-            return res.status(404).json({
-              message: "Department to be edited does not exist, Please enter a valid department",
-            });
-          } else {
-            // To be changed
-            return res.status(200).json({
-              foundDept,
-            });
-            // return res.render("/layouts/deparment-edit-page", {
-            //     foundDept
-            // });
-          }
+      await Dept.findOne({ name: req.params.name }, async (err, foundDept) => {
+        if (err) {
+          req.flash("error", "Something went wrong. Please try again later");
+        } else if (!foundDept) {
+          req.flash("error", "Department with this name does not exist");
+          return res.redirect("back");
+        } else {
+          // To be changed
+          return res.status(200).json({
+            foundDept,
+          });
+          // return res.render("/layouts/deparment-edit-page", {
+          //     foundDept
+          // });
         }
-      );
+      });
     } catch (err) {
       next(ErrorHandler.serverError());
     }
@@ -613,74 +951,75 @@ const dboardCont = {
 
   updateDept: async (req, res, next) => {
     try {
-      const {
-        name,
-        tagline,
-        description,
-        recruiting,
-        members,
-      } = req.body;
+      const { name, tagline, description, recruiting, members } = req.body;
 
-      await Dept.findOne({ name: req.params.name }, async (err, existingDept) => {
-        if (err) {
-          console.log(`server error`);
-          next(ErrorHandler.serverError());
-        } else if (!existingDept) {
-          return res.status(404).json({
-            message: "Entered Event does not exist",
-          });
-        } else {
-          try {
-            if (req.body.name == req.params.name) {
-              // Written this way to solve an issue
-              existingDept.description = description;
-              existingDept.tagline = tagline;
-              existingDept.recruiting = recruiting;
-              existingDept.members = members;
-              existingDept.save();
-              return res.status(200).json({
-                message: "Department has been updated successfully",
-              });
-            } else {
-              await Dept.findOne({ name: req.body.name }, (err, foundDept) => {
-                if (err) {
-                  console.log(`server error`);
-                  next(ErrorHandler.serverError());
-                } else if (foundDept) {
-                  return res.status(404).json({
-                    message:
-                      "Department with the new name already exists, Please try another name",
-                  });
-                } else {
-                  try{
-                    existingDept.name = name;
-                    existingDept.description = description;
-                    existingDept.tagline = tagline;
-                    existingDept.recruiting = recruiting;
-                    existingDept.members = members;
+      await Dept.findOne(
+        { name: req.params.name },
+        async (err, existingDept) => {
+          if (err) {
+            console.log(`server error`);
+            next(ErrorHandler.serverError());
+          } else if (!existingDept) {
+            return res.status(404).json({
+              message: "Entered Event does not exist",
+            });
+          } else {
+            try {
+              if (req.body.name == req.params.name) {
+                // Written this way to solve an issue
+                existingDept.description = description;
+                existingDept.tagline = tagline;
+                existingDept.recruiting = recruiting;
+                existingDept.members = members;
+                existingDept.save();
+                return res.status(200).json({
+                  message: "Department has been updated successfully",
+                });
+              } else {
+                await Dept.findOne(
+                  { name: req.body.name },
+                  (err, foundDept) => {
+                    if (err) {
+                      console.log(`server error`);
+                      next(ErrorHandler.serverError());
+                    } else if (foundDept) {
+                      return res.status(404).json({
+                        message:
+                          "Department with the new name already exists, Please try another name",
+                      });
+                    } else {
+                      try {
+                        existingDept.name = name;
+                        existingDept.description = description;
+                        existingDept.tagline = tagline;
+                        existingDept.recruiting = recruiting;
+                        existingDept.members = members;
 
-                    existingDept.save();
-                    return res.status(200).json({
-                      message: "Department has been updated successfully",
-                    });
-                  }catch(err){
-                    console.log("Error while saving the department")
-                    res.status(404).json({
-                      message: "An Error occured while updating the department"
-                    });
+                        existingDept.save();
+                        return res.status(200).json({
+                          message: "Department has been updated successfully",
+                        });
+                      } catch (err) {
+                        console.log("Error while saving the department");
+                        res.status(404).json({
+                          message:
+                            "An Error occured while updating the department",
+                        });
+                      }
+                    }
                   }
-                }
+                );
+              }
+            } catch (err) {
+              console.log(err);
+              return res.status(404).json({
+                message:
+                  "Something went wrong while saving the event, Please try again later",
               });
             }
-          } catch (err) {
-            console.log(err);
-            return res.status(404).json({
-              message:
-                "Something went wrong while saving the event, Please try again later",
-            });
           }
         }
-      });
+      );
     } catch (err) {
       next(ErrorHandler.serverError());
     }
@@ -728,7 +1067,7 @@ const dboardCont = {
     //   }
     // });
     try {
-      const participants = await Participant.find().sort({updatedAt: -1});
+      const participants = await Participant.find().sort({ updatedAt: -1 });
       const staffCount = await Staff.countDocuments();
       const eventCount = await Event.countDocuments();
       const deptCount = await Dept.countDocuments();
@@ -744,7 +1083,7 @@ const dboardCont = {
         deptCount,
         participantCount,
         moment,
-      }); 
+      });
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
@@ -780,13 +1119,13 @@ const dboardCont = {
       console.log(err);
       next(ErrorHandler.serverError());
     }
-  }, 
+  },
 
   eventParticipantsList: async (req, res, next) => {
     try {
       const event = await Event.findOne({
         name: req.params.name,
-      }).populate("participants");  
+      }).populate("participants");
       // console.log(participantsList);
       const staffCount = await Staff.countDocuments();
       const eventCount = await Event.countDocuments();
@@ -810,18 +1149,93 @@ const dboardCont = {
     }
   },
 
-  registerKeyGenerator: (req, res, next) => {
+  registerKeyIndex: async (req, res, next) => {
+    try {
+      const staffCount = await Staff.countDocuments();
+      const eventCount = await Event.countDocuments();
+      const deptCount = await Dept.countDocuments();
+      const participantCount = await Participant.countDocuments();
+      const keys = await RegKey.find();
+      return res.render("layouts/dashboard/key-gen", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        key: req.flash("key"),
+        title: "Dashboard | Key Generation",
+        staffCount,
+        eventCount,
+        deptCount,
+        participantCount,
+        keys,
+        moment,
+      });
+    } catch (err) {
+      console.log(err);
+      req.flash("error", "Something went wrong! Please try later");
+      return res.redirect("/dashboard/generate-key");
+    }
+  },
+
+  registerKeyGenerator: async (req, res, next) => {
     try {
       const newRegisterKey = new registerKey({
         key: uuid.v4(),
       });
-      // console.log(newRegisterKey);
       newRegisterKey.save();
       req.flash("success", "Registration key generated successfully");
+      req.flash("key", newRegisterKey.key);
+      return res.redirect("/dashboard/generate-key");
+      // console.log(newRegisterKey);
     } catch (err) {
+      console.log(err);
       req.flash("error", "Something went wrong! Please try later");
+      return res.redirect("/dashboard/generate-key");
     }
-    return res.redirect("/dashboard");
+  },
+
+  profileIndex: async (req, res, next) => {
+    try {
+      // console.log(res.locals.staff.id)
+      const staffData = await Staff.findOne({
+        _id: res.locals.staff.id,
+      }).select("firstname lastname sl_li sl_ig sl_fb profile_pic_url");
+      // console.log(staff);
+      const staffCount = await Staff.countDocuments();
+      const eventCount = await Event.countDocuments();
+      const deptCount = await Dept.countDocuments();
+      const participantCount = await Participant.countDocuments();
+      return res.render("layouts/dashboard/profile", {
+        error: req.flash("error"),
+        success: req.flash("success"),
+        key: req.flash("key"),
+        title: "Dashboard | Profile",
+        staffCount,
+        eventCount,
+        deptCount,
+        participantCount,
+        staffData,
+      });
+    } catch (err) {
+      console.log(err);
+      req.flash("error", "Something went wrong! Please try later");
+      return res.redirect("/dashboard/profile");
+    }
+  },
+
+  profileEdit: async (req, res, next) => {
+    try {
+      // console.log("This is t", req.body);
+      const { firstname, lastname, profile_pic_url, sl_li, sl_ig, sl_fb } =
+        req.body;
+      await Staff.findByIdAndUpdate(
+        { _id: res.locals.staff.id },
+        { firstname, lastname, profile_pic_url, sl_li, sl_ig, sl_fb }
+      );
+      return res.redirect("/dashboard/profile");
+    } catch (err) {
+      console.log(err);
+      req.flash("error", "Something went wrong! Please try later");
+      return res.redirect("/dashboard/profile");
+    }
   },
 };
 

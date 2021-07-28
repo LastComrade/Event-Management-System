@@ -55,6 +55,16 @@ module.exports.internshipRegisterSchema = Joi.object({
         .required()
         .email({ tlds: { allow: ["org", "com", "net", "in"] } })
         .label("E-Mail"),
+    preferred_dept_1: Joi.string()
+        .trim()
+        .min(1)
+        .required()
+        .label("1st Preferred Department"),
+    preferred_dept_2: Joi.string()
+        .trim()
+        .min(1)
+        .required()
+        .label("2nd Preferred Department"),
     description: Joi.string().trim().min(1).required().label("Description"),
 });
 
@@ -77,6 +87,9 @@ module.exports.deptSchema = Joi.object({
 module.exports.eventSchema = Joi.object({
     name: Joi.string().trim().min(1).required().label("Event Name"),
     description: Joi.string().required().label("Event Description"),
+    tagline: Joi.string().required().label("Event Tagline"),
+    event_poster: Joi.string().required().label("Event Poster"),
+    event_pic: Joi.string().required().label("Event Picture"),
     category: Joi.string().required().label("Event Category"),
     featured: Joi.boolean().label("Featured"),
     registration_starts: Joi.date()
@@ -102,6 +115,8 @@ module.exports.eventSchema = Joi.object({
         .min(Joi.ref("event_ends"))
         .label("Event Result Declaration Date"),
     organizers: Joi.array().items(Joi.object()),
+    hosts: Joi.array().max(4).items(Joi.object()),
+    sponsors: Joi.array().max(4).items(Joi.object()),
 });
 
 module.exports.staffRegisterSchema = Joi.object({
@@ -113,6 +128,7 @@ module.exports.staffRegisterSchema = Joi.object({
         .label("Email"),
     department: Joi.string().required().trim().min(1).label("Department"),
     designation: Joi.string().required().trim().min(1).label("Designation"),
+    description: Joi.string().required().trim().min(1).label("Description"),
     profile_pic_url: Joi.string().required().trim().min(1).label("Profile URL"),
     key: Joi.string().required().trim().min(1).label("Registration Key"),
 });

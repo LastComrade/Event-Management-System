@@ -4,28 +4,26 @@
     <img class="w-7 h-7 md:w-10 md:h-10 mr-2 rounded-full overflow-hidden" src="<%= staff.profile_pic_url %>" />
     <div class="hidden md:flex flex-col">
       <span class="hidden md:block">
-        <%= staff.fullname %> 
+        <%= staff.fullname %>
       </span>
       <span class="text-xs">
-        <%= staff.designation %> 
+        <%= staff.designation %>
       </span>
     </div>
   </div>
   <div class="flex justify-end items-center h-14 bg-blue-800 dark:bg-gray-800 header-right">
-    <div class="flex justify-center">
-      <span id="login-notify"
-          class="text-md bg-gray-900 <%= error.length === 1 ? "py-1 px-2 mb-2" : " " %>
-          rounded
-          font-semibold text-red-500">
-          <%= error %>
+    <div class="flex justify-center mx-auto">
+      <span id="login-notify" class="text-md bg-gray-900 <%= error.length === 1 ? " py-1 px-2 mb-2" : " " %>
+        rounded
+        font-semibold text-red-500">
+        <%= error %>
       </span>
-      <span id="login-notify"
-          class="text-md bg-gray-900 <%= success.length === 1 ? "py-1 px-2 mb-2" : " " %>
-          rounded
-          font-semibold text-green-500">
-          <%= success %>
+      <span id="login-notify" class="text-md bg-gray-900 <%= success.length === 1 ? " py-1 px-2 mb-2" : " " %>
+        rounded
+        font-semibold text-green-500">
+        <%= success %>
       </span>
-  </div>
+    </div>
     <ul class="flex items-center">
       <li>
         <button aria-hidden="true" @click="toggleTheme"

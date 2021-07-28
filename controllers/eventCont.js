@@ -6,17 +6,135 @@ const moment = require("moment");
 const eventSuggestion = require("../models/event-suggestion");
 
 const eventCont = {
-
   // Render the event page with all types
   eventIndex: async (req, res) => {
     const title = "E-Cell | Events";
-    const live = await Event.find({ category: "live" }).select("name event_starts").limit(4);
-    const upcoming = await Event.find({ category: "upcoming" }).select("name event_starts").limit(4);
-    const archived = await Event.find({ category: "archived" }).select("name event_starts description").limit(4);
-    const ongoing = await Event.find({ category: "ongoing" }).select("name event_starts").limit(4);
-    const featured = await Event.find({ featured: true }).select("name event_starts").limit(4);
-    // console.log(archived);
-    return res.render("layouts/home/event-page", { live, upcoming, archived, ongoing, moment, title, featured });
+    const live = await Event.find({ category: "live" })
+      .select("name event_starts")
+      .limit(5);
+    const upcoming = await Event.find({ category: "upcoming" })
+      .select("name event_starts")
+      .limit(5);
+    const archived = await Event.find({ category: "archived" })
+      .select("name event_starts description")
+      .limit(5);
+    const ongoing = await Event.find({ category: "ongoing" })
+      .select("name event_starts")
+      .limit(5);
+    const featured = await Event.find({ featured: true })
+      .select("name event_starts")
+      .limit(5);
+    console.log(archived);
+    return res.render("layouts/home/event-page", {
+      live,
+      upcoming,
+      archived,
+      ongoing,
+      moment,
+      title,
+      featured,
+    });
+  },
+
+  liveEventsRetriver: async (req, res, next) => {
+    try{
+      await Event.find({ category: "live" },
+        (err, liveEvents) => {
+          if (err) {
+            console.log(err);
+            return res.redirect("/events");
+          } else if (liveEvents.length == 0) {
+            return res.redirect("/events");
+          } else {
+            // return res.status(200).json({
+            //   liveEvents
+            // })
+            return res.render("layouts/home/live-events", {
+              title: `E-Cell | Live Events`,
+              liveEvents
+            })
+          }
+        }
+      )
+    }catch(err){
+      next(Errorhandler.serverError());
+    }
+  },
+
+  ongoingEventsRetriver: async (req, res, next) => {
+    try{
+      await Event.find({ category: "ongoing" },
+        (err, ongoingEvents) => {
+          if (err) {
+            console.log(err);
+            return res.redirect("/events");
+          } else if (ongoingEvents.length == 0) {
+            return res.redirect("/events");
+          } else {
+            // return res.status(200).json({
+            //   ongoingEvents
+            // })
+            return res.render("layouts/home/ongoing-events", {
+              title: `E-Cell | Ongoing Events`,
+              ongoingEvents
+            })
+          }
+        }
+      )
+    }catch(err){
+      next(Errorhandler.serverError());
+    }
+  },
+
+  upcomingEventsRetriver: async (req, res, next) => {
+    try{
+      await Event.find({ category: "upcoming" },
+        (err, upcomingEvents) => {
+          if (err) {
+            console.log(err);
+            return res.redirect("/events");
+          } else if (upcomingEvents.length == 0) {
+            return res.redirect("/events");
+          } else {
+            // return res.status(200).json({
+            //   upcomingEvents
+            // })
+            return res.render("layouts/home/upcoming-events", {
+              title: `E-Cell | Upcoming Events`,
+              upcomingEvents
+            })
+          }
+        }
+      )
+    }catch(err){
+      next(Errorhandler.serverError());
+    }
+  },
+
+  archivedEventsRetriver: async (req, res, next) => {
+    try{
+      await Event.find({ category: "archived" },
+        (err, archivedEvents) => {
+          if (err) {
+            console.log(err);
+            return res.redirect("/events");
+          } else if (archivedEvents.length == 0) {
+            return res.redirect("/events");
+          } else {
+            // return res.status(200).json({
+            //   archivedEvents
+            // })
+            return res.render("layouts/home/archived-events", {
+              title: `E-Cell | Archived Events`,
+              archivedEvents
+            })
+          }
+        }
+      )
+    }catch(err){
+      next(Errorhandler.serverError());
+    }
+    
   },
 
   finder: async (req, res, next) => {
@@ -28,7 +146,7 @@ const eventCont = {
       } else {
         return res.render("layouts/home/event-landing", {
           foundEvent,
-          title: `E-Cell | Events | ${req.params.name}`,
+          title: `E-Cell | Events | ${foundEvent.name}`,
           moment,
         });
       }
@@ -60,12 +178,8 @@ const eventCont = {
                     next(Errorhandler.serverError());
                   } else if (!foundParticipant) {
                     try {
-                      let {
-                        name,
-                        email,
-                        college_name,
-                        linkedin_account,
-                      } = req.body;
+                      let { name, email, college_name, linkedin_account } =
+                        req.body;
                       registered_events = [
                         {
                           _id: foundEvent._id,
@@ -80,9 +194,7 @@ const eventCont = {
                       });
 
                       let savedParticipant = await participant.save();
-                      foundEvent.participants.push(
-                        savedParticipant._id
-                      );
+                      foundEvent.participants.push(savedParticipant._id);
                       await foundEvent.save();
 
                       // Sheet API code
@@ -91,9 +203,7 @@ const eventCont = {
                           process.env.client_email,
                           null,
                           process.env.private_key,
-                          [
-                            "https://www.googleapis.com/auth/spreadsheets",
-                          ]
+                          ["https://www.googleapis.com/auth/spreadsheets"]
                         );
 
                         client_side.authorize((err, token) => {
@@ -101,15 +211,11 @@ const eventCont = {
                             console.log(err);
                             return;
                           } else {
-                            participantSheetEditor(
-                              client_side
-                            );
+                            participantSheetEditor(client_side);
                           }
                         });
                       } catch (err) {
-                        console.log(
-                          `An error Occured in Google auth`
-                        );
+                        console.log(`An error Occured in Google auth`);
                       }
 
                       participantSheetEditor = async (client) => {
@@ -120,9 +226,7 @@ const eventCont = {
                           });
 
                           const options1 = {
-                            spreadsheetId:
-                              process.env
-                                .event_spreadsheet_id,
+                            spreadsheetId: process.env.event_spreadsheet_id,
                             range: `${foundEvent.name}!A2`,
                             valueInputOption: "RAW",
                             resource: {
@@ -136,9 +240,7 @@ const eventCont = {
                               ],
                             },
                           };
-                          await sheetAPI.spreadsheets.values.append(
-                            options1
-                          );
+                          await sheetAPI.spreadsheets.values.append(options1);
                         } catch (err) {
                           // console.log(err);
                           console.log(
@@ -148,8 +250,7 @@ const eventCont = {
                       };
 
                       return res.status(200).json({
-                        message:
-                          "Participant registered successfully",
+                        message: "Participant registered successfully",
                       });
                     } catch (err) {
                       // console.log(err);
@@ -159,9 +260,7 @@ const eventCont = {
                     if (
                       foundParticipant.registered_events.some(
                         (registered_event_id) => {
-                          return registered_event_id.equals(
-                            foundEvent._id
-                          );
+                          return registered_event_id.equals(foundEvent._id);
                         }
                       )
                     ) {
@@ -171,45 +270,31 @@ const eventCont = {
                       });
                     } else {
                       try {
-                        foundParticipant.registered_events.push(
-                          foundEvent._id
-                        );
-                        let savedParticipant =
-                          await foundParticipant.save();
+                        foundParticipant.registered_events.push(foundEvent._id);
+                        let savedParticipant = await foundParticipant.save();
 
                         // Sheet API code
                         try {
-                          let client_side =
-                            new google.auth.JWT(
-                              process.env.client_email,
-                              null,
-                              process.env.private_key,
-                              [
-                                "https://www.googleapis.com/auth/spreadsheets",
-                              ]
-                            );
+                          let client_side = new google.auth.JWT(
+                            process.env.client_email,
+                            null,
+                            process.env.private_key,
+                            ["https://www.googleapis.com/auth/spreadsheets"]
+                          );
 
-                          client_side.authorize(
-                            (err, token) => {
-                              if (err) {
-                                console.log(err);
-                                return;
-                              } else {
-                                participantSheetEditor(
-                                  client_side
-                                );
-                              }
+                          client_side.authorize((err, token) => {
+                            if (err) {
+                              console.log(err);
+                              return;
+                            } else {
+                              participantSheetEditor(client_side);
                             }
-                          );
+                          });
                         } catch (err) {
-                          console.log(
-                            `An error Occured in Google auth`
-                          );
+                          console.log(`An error Occured in Google auth`);
                         }
 
-                        participantSheetEditor = async (
-                          client
-                        ) => {
+                        participantSheetEditor = async (client) => {
                           try {
                             const sheetAPI = google.sheets({
                               version: "v4",
@@ -217,9 +302,7 @@ const eventCont = {
                             });
 
                             const info = {
-                              spreadsheetId:
-                                process.env
-                                  .event_spreadsheet_id,
+                              spreadsheetId: process.env.event_spreadsheet_id,
                               range: `${foundEvent.name}!A2`,
                               valueInputOption: "RAW",
                               resource: {
@@ -233,9 +316,7 @@ const eventCont = {
                                 ],
                               },
                             };
-                            await sheetAPI.spreadsheets.values.append(
-                              info
-                            );
+                            await sheetAPI.spreadsheets.values.append(info);
                           } catch (err) {
                             console.log(
                               `An Error occured while saving the participant in the spreadsheet`
@@ -243,13 +324,10 @@ const eventCont = {
                           }
                         };
 
-                        foundEvent.participants.push(
-                          savedParticipant._id
-                        );
+                        foundEvent.participants.push(savedParticipant._id);
                         await foundEvent.save();
                         return res.status(200).json({
-                          message:
-                            "Participant registered successfully",
+                          message: "Participant registered successfully",
                         });
                       } catch (err) {
                         console.log(err);
@@ -260,143 +338,12 @@ const eventCont = {
                 }
               );
             } catch (err) {
-              next(Errorhandler.serverError())
+              next(Errorhandler.serverError());
             }
           }
         }
       );
     } catch (err) {
-      next(Errorhandler.serverError())
-    }
-  },
-
-  createEvent: async (req, res, next) => {
-    try {
-      const {
-        name,
-        description,
-        category,
-        featured,
-        registration_starts,
-        registration_ends,
-        event_starts,
-        event_ends,
-        result_declaration,
-        organizers,
-        participants,
-      } = req.body;
-      await Event.findOne({ name }, async (err, existingEvent) => {
-        if (err) {
-          next(Errorhandler.serverError());
-        } else if (existingEvent) {
-          return res.status(200).json({
-            message: "Entered event name already exists",
-          });
-        } else {
-
-          // SheetAPI code
-          try {
-            let client_side = new google.auth.JWT(
-              process.env.client_email,
-              null,
-              process.env.private_key,
-              ["https://www.googleapis.com/auth/spreadsheets"]
-            );
-
-            client_side.authorize((err, token) => {
-              if (err) {
-                console.log(err);
-                return;
-              } else {
-                eventSheetAdder(client_side);
-              }
-            });
-          } catch (err) {
-            console.log("Error occured in Google Sheets");
-          }
-
-          eventSheetAdder = async (client) => {
-            try {
-              const sheetAPI = google.sheets({
-                version: "v4",
-                auth: client,
-              });
-
-              const eventSheetInfo = {
-                spreadsheetId: process.env.event_spreadsheet_id,
-                resource: {
-                  requests: [
-                    {
-                      addSheet: {
-                        properties: {
-                          title: name,
-                        },
-                      },
-                    },
-                  ],
-                  includeSpreadsheetInResponse: true,
-                },
-              };
-              let temp1 = await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
-              // await sheetAPI.spreadsheets.batchUpdate(
-              //   eventSheetInfo
-              // );
-              let temp2 = temp1.data.updatedSpreadsheet.sheets[temp1.data.updatedSpreadsheet.sheets.length - 1];
-              // console.log(temp2.properties.sheetId)
-              let sheetID = temp2.properties.sheetId;
-              // console.log(`sheet ID -> ${sheetID}`)
-              const newEvent = new Event({
-                name,
-                description,
-                category,
-                featured,
-                registration_starts,
-                registration_ends,
-                event_starts,
-                event_ends,
-                result_declaration,
-                organizers,
-                participants,
-                sheetID
-              });
-
-              const eventSheetInfo2 = {
-                spreadsheetId: process.env.event_spreadsheet_id,
-                range: `${name}!A1`,
-                valueInputOption: "RAW",
-                resource: {
-                  values: [
-                    [
-                      "Name",
-                      "Email",
-                      "College Name",
-                      "LinkedIn Account",
-                    ],
-                  ],
-                },
-              };
-              await sheetAPI.spreadsheets.values.append(
-                eventSheetInfo2
-              );
-              await newEvent.save();
-              return res.status(200).json({
-                message: "Successfully Created the event",
-              });
-            } catch (err) {
-              console.log(err)
-              console.log(
-                "error occured while creating the event on spreadsheet"
-              );
-            }
-          };
-          // await newEvent.save();
-          // return res.status(200).json({
-          //   message: "Successfully Created the event",
-          // });
-        }
-      });
-    } catch (err) {
-      console.log(err);
       next(Errorhandler.serverError());
     }
   },
@@ -407,13 +354,14 @@ const eventCont = {
       await eventSuggest.save();
       // return res.redirect("back");
       return res.status(200).json({
-        message: "Event Suggestion submitted successfully, Thanks for the submission :)"
-      })
+        message:
+          "Event Suggestion submitted successfully, Thanks for the submission :)",
+      });
     } catch (err) {
       console.log(err);
       next(Errorhandler.serverError());
     }
-  }
+  },
 };
 
 module.exports = eventCont;

@@ -1,0 +1,364 @@
+<!-- Code for event-edit form -->
+<form class="flex h-full items-center justify-center pt-10 pb-10">
+  <div class="grid bg-gray-200 dark:bg-gray-900 rounded-lg shadow-xl w-full mx-5">
+    <!-- <div class="flex justify-center py-4">
+        <div class="flex bg-purple-200 rounded-full md:p-4 p-2 border-2 border-purple-300">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+        </div>
+      </div> -->
+
+    <div class="flex justify-center pt-2">
+      <div class="flex">
+        <h1 class="text-gray-600 font-bold dark:text-white md:text-2xl text-xl">Edit Event</h1>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Name</label>
+      <input
+        value="<%= event.name %>" class="py-2 px-3 text-gray-600 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+        type="text" placeholder="Event Name" name="name" />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Tagline</label>
+      <input value="<%= event.tagline %>"
+        class="py-2 px-3 text-gray-600 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+        type="text" placeholder="Event Tagline" name="tagline" />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Poster</label>
+      <input value="<%= event.event_poster %>" name="event_poster"
+        class="py-2 px-3 text-gray-600 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+        type="text" placeholder="Event Poster URL" />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Photograph</label>
+      <input value="<%= event.event_pic %>" name="event_pic"
+        class="py-2 px-3 text-gray-600 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+        type="text" placeholder="Event Photograph URL" />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Description</label>
+      <textarea name="description" placeholder="Event Description" id="" cols="30" rows="10"
+        class="w-full text-gray-600 h-32 resize-none mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"><%= event.description %></textarea>
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Category</label>
+      <select
+        class="py-2 text-gray-600 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+        name="category">
+        <option <%= event.category === "ongoing" ? "selected" : "" %> value="ongoing">Ongoing</option>
+        <option <%= event.category === "live" ? "selected" : "" %> value="live">Live</option>
+        <option <%= event.category === "upcoming" ? "selected" : "" %>  value="upcoming">Upcoming</option>
+        <option <%= event.category === "archived" ? "selected" : "" %> value="archived">Archived</option>
+      </select> 
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'Z'});"
+        x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
+        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Registration
+          Start
+          Date</label>
+        <div class="flex align-middle align-content-center">
+          <input value="<%= event.registration_starts %>" x-ref="datetime" type="text" data-input placeholder="Select Date and Time"
+            name="registration_starts"
+            class="w-full py-3 px-3 rounded-lg mt-2 text-gray-600 border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'Z'});"
+        x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
+        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Registration
+          End
+          Date</label>
+        <div class="flex align-middle align-content-center">
+          <input value="<%= event.registration_ends %>" x-ref="datetime" type="text" data-input placeholder="Select Date and Time"
+            name="registration_ends"
+            class="w-full py-3 px-3 rounded-lg mt-2 text-gray-600 border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'Z'});"
+        x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
+        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event
+          Start Date</label>
+        <div class="flex align-middle align-content-center">
+          <input value="<%= event.event_starts %>" x-ref="datetime" type="text" data-input placeholder="Select Date and Time"
+            name="event_starts"
+            class="w-full py-3 px-3 rounded-lg mt-2 text-gray-600 border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'Z'});"
+        x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
+        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event
+          End Date</label>
+        <div class="flex align-middle align-content-center">
+          <input value="<%= event.event_ends %>" x-ref="datetime" type="text" data-input placeholder="Select Date and Time"
+            name="event_ends"
+            class="w-full py-3 px-3 rounded-lg mt-2 text-gray-600 border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7">
+      <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'Z'});"
+        x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
+        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Result
+          Declaration Date</label>
+        <div class="flex align-middle align-content-center">
+          <input value="<%= event.result_declaration %>" x-ref="datetime" type="text" data-input placeholder="Select Date and Time"
+            name="result_declaration"
+            class="w-full py-3 px-3 rounded-lg mt-2 text-gray-600 border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Organizer 1
+      <label for="name" class="hidden">Name</label>
+      <input value="<%= event.organizers[0].name %>" type="name" value="<%= event.organizers[0].organizer_name_1 %>" name="organizer_name_1" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.organizers[0].pic %>" type="url" name="organizer_photograph_1" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input value="<%= event.organizers[0].fb_link %>" type="url" name="organizer_fb_link_1" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.organizers[0].ig_link %>" type="tel" name="organizer_ig_link_1" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.organizers[0].in_link %>" type="tel" name="organizer_in_link_1" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Organizer 2
+      <label for="name" class="hidden">Name</label>
+      <input type="name" value="<%= event.organizers[1].organizer_name_2 %>" name="organizer_name_2" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.organizers[1].pic %>" type="url" name="organizer_photograph_2" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input value="<%= event.organizers[1].fb_link %>" type="url" name="organizer_fb_link_2" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.organizers[1].ig_link %>" type="tel" name="organizer_ig_link_2" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.organizers[1].in_link %>" type="tel" name="organizer_in_link_2" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Organizer 3
+      <label for="name" class="hidden">Name</label>
+      <input type="name" value="<%= event.organizers[2].organizer_name_3 %>" name="organizer_name_3" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.organizers[2].pic %>" type="url" name="organizer_photograph_3" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input value="<%= event.organizers[2].fb_link %>" type="url" name="organizer_fb_link_3" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.organizers[2].ig_link %>" type="tel" name="organizer_ig_link_3" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.organizers[2].in_link %>" type="tel" name="organizer_in_link_3" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Organizer 4
+      <label for="name" class="hidden">Name</label>
+      <input type="name" value="<%= event.organizers[3].name %>" name="organizer_name_4" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.organizers[3].pic %>" type="url" name="organizer_photograph_4" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input value="<%= event.organizers[3].fb_link %>" type="url" name="organizer_fb_link_4" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.organizers[3].ig_link %>" type="tel" name="organizer_ig_link_4" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.organizers[3].in_link %>" type="tel" name="organizer_in_link_4" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Sponsor 1
+      <label for="name" class="hidden">Name</label>
+      <input value="<%= event.sponsors[0].name %>" type="name" name="sponsor_name_1" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.sponsors[0].pic %>" type="url" name="sponsor_photograph_1" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input value="<%= event.sponsors[0].fb_link %>" type="url" name="sponsor_fb_link_1" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.sponsors[0].ig_link %>" type="tel" name="sponsor_ig_link_1" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.sponsors[0].in_link %>" type="tel" name="sponsor_in_link_1" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Sponsor 2
+      <label for="name" class="hidden">Name</label>
+      <input type="name" value="<%= event.sponsors[1].name %>" name="sponsor_name_2" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.sponsors[1].pic %>" type="url" name="sponsor_photograph_2" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input value="<%= event.sponsors[1].fb_link %>" type="url" name="sponsor_fb_link_2" value="<%= event.sponsors[1].fb_link %>" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.sponsors[1].ig_link %>" type="tel" name="sponsor_ig_link_2" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.sponsors[1].in_link %>" type="tel" name="sponsor_in_link_2" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Sponsor 3
+      <label for="name" class="hidden">Name</label>
+      <input type="name" value="<%= event.sponsors[2].name %>" name="sponsor_name_3" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.sponsors[2].pic %>" type="url" name="sponsor_photograph_3" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input value="<%= event.sponsors[2].fb_link %>" type="url" name="sponsor_fb_link_3" value="<%= event.sponsors[2].fb_link %>" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.sponsors[2].ig_link %>" type="tel" name="sponsor_ig_link_3" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.sponsors[2].in_link %>" type="tel" name="sponsor_in_link_3" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Sponsor 4
+      <label for="name" class="hidden">Name</label>
+      <input type="name" value="<%= event.sponsors[3].name %>" name="sponsor_name_4" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.sponsors[3].pic %>" type="url" name="sponsor_photograph_4" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input type="url" name="sponsor_fb_link_4" value="<%= event.sponsors[3].fb_link %>" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.sponsors[3].ig_link %>" type="tel" name="sponsor_ig_link_4" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.sponsors[3].in_link %>" type="tel" name="sponsor_in_link_4" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Host 1
+      <label for="name" class="hidden">Name</label>
+      <input value="<%= event.hosts[0].name %>" type="name" name="host_name_1" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.hosts[0].pic %>" type="url" name="host_photograph_1" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input value="<%= event.hosts[0].fb_link %>" type="url" name="host_fb_link_1" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.hosts[0].ig_link %>" type="tel" name="host_ig_link_1" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.hosts[0].in_link %>" type="tel" name="host_in_link_1" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Host 2
+      <label for="name" class="hidden">Name</label>
+      <input value="<%= event.hosts[1].name %>" type="name" name="host_name_2" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.hosts[1].pic %>" type="url" name="host_photograph_2" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input value="<%= event.hosts[1].fb_link %>" type="url" name="host_fb_link_2" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.hosts[1].ig_link %>" type="tel" name="host_ig_link_2" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.hosts[1].in_link %>" type="tel" name="host_in_link_2" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Host 3
+      <label for="name" class="hidden">Name</label>
+      <input value="<%= event.hosts[2].name %>" type="name" name="host_name_3" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.hosts[2].pic %>" type="url" name="host_photograph_3" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input value="<%= event.hosts[2].fb_link %>" type="url" name="host_fb_link_3" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.hosts[2].ig_link %>" type="tel" name="host_ig_link_3" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.hosts[2].in_link %>" type="tel" name="host_in_link_3" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Host 4
+      <label for="name" class="hidden">Name</label>
+      <input value="<%= event.hosts[3].name %>" type="name" name="host_name_4" placeholder="Name"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="photograph" class="hidden">Photograph</label>
+      <input value="<%= event.hosts[3].pic %>" type="url" name="host_photograph_4" placeholder="Photo Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="fb_link" class="hidden">Facebook Link</label>
+      <input value="<%= event.hosts[3].fb_link %>" type="url" name="host_fb_link_4" placeholder="Facebook Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="ig_link" class="hidden">Instagram Link</label>
+      <input value="<%= event.hosts[3].ig_link %>" type="tel" name="host_ig_link_4" placeholder="Instagram Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+      <label for="in_link" class="hidden">Linkedin Link</label>
+      <input value="<%= event.hosts[3].in_link %>" type="tel" name="host_in_link_4" placeholder="Linkedin Profile Link"
+        class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
+    </div>
+
+    <div class="grid capitalize font-bold grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600 justify-center" x-data="{toggle: '0'}"> Featured - <%= event.featured %> 
+      <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear"
+        :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
+        <label for="toggle"
+          class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer"
+          :class="[toggle === '1' ? 'translate-x-full border-green-400' : 'translate-x-0 border-gray-400']"></label>
+        <input type="checkbox" id="featured_toggle" name="featured"
+          class="appearance-none w-full h-full active:outline-none focus:outline-none"
+          @click="toggle === '0' ? toggle = '1' : toggle = '0'" />
+      </div>
+    </div>
+
+    <div class='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
+
+      <button type="submit"
+        class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Submit</button>
+    </div>
+  </div>
+</form>

@@ -84,6 +84,7 @@ const staffCont = {
                 email,
                 department,
                 designation,
+                description,
                 profile_pic_url,
                 key,
               } = req.body;
@@ -122,6 +123,7 @@ const staffCont = {
                               email,
                               department,
                               designation,
+                              description,
                               profile_pic_url,
                               key,
                             },
@@ -258,6 +260,7 @@ const staffCont = {
         email,
         department,
         designation,
+        description,
         profile_pic_url,
         key,
       } = req.cookies.token;
@@ -313,6 +316,7 @@ const staffCont = {
                           email,
                           department,
                           designation,
+                          description,
                           profile_pic_url,
                           key,
                           password,
