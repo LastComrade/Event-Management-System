@@ -40,8 +40,8 @@ const authMid = {
                     console.log(err);
                     next(ErrorHandler.serverError());
                   } else if (staff) {
-                    const { id, fullname, designation, role, profile_pic_url } = staff;
-                    const staffData = { id, fullname, designation, role, profile_pic_url };
+                    const { id, fullname, designation, role, profile_pic_url, department } = staff;
+                    const staffData = { id, fullname, designation, role, profile_pic_url, department };
                     res.locals.staff = staffData;
                     const token = jwt.sign(
                       {

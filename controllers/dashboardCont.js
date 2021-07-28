@@ -914,7 +914,7 @@ const dboardCont = {
 
   departmentsRetriver: async (req, res, next) => {
     // for retriving all the departments from the database
-    console.log(res.locals.staff.department);
+    console.log(res.locals.staff.department[0]);
     await Dept.findOne(
       { _id: res.locals.staff.department },
       async (err, dept) => {

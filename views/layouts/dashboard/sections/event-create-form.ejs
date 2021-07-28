@@ -1,6 +1,6 @@
 <!-- Code for event-edit form -->
 <form class="flex h-full items-center justify-center pt-10 pb-10">
-  <div class="grid bg-gray-200 dark:bg-gray-900 rounded-lg shadow-xl w-full mx-5">
+  <div class="grid bg-gray-200 rounded-lg shadow-xl w-full mx-5">
     <!-- <div class="flex justify-center py-4">
         <div class="flex bg-purple-200 rounded-full md:p-4 p-2 border-2 border-purple-300">
           <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
@@ -9,46 +9,46 @@
 
     <div class="flex justify-center pt-2">
       <div class="flex">
-        <h1 class="text-gray-600 font-bold dark:text-white md:text-2xl text-xl">Event Creation Form</h1>
+        <h1 class="text-gray-600 font-bold md:text-2xl text-xl">Event Creation Form</h1>
       </div>
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Name</label>
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Event Name</label>
       <input
         class="py-2 px-3 text-gray-600 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
         type="text" placeholder="Event Name" name="name" />
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Tagline</label>
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Event Tagline</label>
       <input
         class="py-2 px-3 text-gray-600 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
         type="text" placeholder="Event Tagline" name="tagline" />
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Poster</label>
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Event Poster</label>
       <input name="event_poster"
         class="py-2 px-3 text-gray-600 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
         type="text" placeholder="Event Poster URL" />
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Photograph</label>
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Event Photograph</label>
       <input name="event_pic"
         class="py-2 px-3 text-gray-600 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
         type="text" placeholder="Event Photograph URL" />
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Description</label>
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Event Description</label>
       <textarea name="description" placeholder="Event Description" id="" cols="30" rows="10"
         class="w-full text-gray-600 h-32 resize-none mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"></textarea>
     </div>
 
     <div class="grid grid-cols-1 mt-5 mx-7">
-      <label class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event Category</label>
+      <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Event Category</label>
       <select
         class="py-2 text-gray-600 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
         name="category">
@@ -62,7 +62,7 @@
     <div class="grid grid-cols-1 mt-5 mx-7">
       <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'Z'});"
         x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
-        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Registration
+        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Registration
           Start
           Date</label>
         <div class="flex align-middle align-content-center">
@@ -76,7 +76,7 @@
     <div class="grid grid-cols-1 mt-5 mx-7">
       <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'Z'});"
         x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
-        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Registration
+        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Registration
           End
           Date</label>
         <div class="flex align-middle align-content-center">
@@ -90,7 +90,7 @@
     <div class="grid grid-cols-1 mt-5 mx-7">
       <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'Z'});"
         x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
-        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event
+        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Event
           Start Date</label>
         <div class="flex align-middle align-content-center">
           <input x-ref="datetime" type="text" data-input placeholder="Select Date and Time"
@@ -103,7 +103,7 @@
     <div class="grid grid-cols-1 mt-5 mx-7">
       <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'Z'});"
         x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
-        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Event
+        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Event
           End Date</label>
         <div class="flex align-middle align-content-center">
           <input x-ref="datetime" type="text" data-input placeholder="Select Date and Time"
@@ -116,7 +116,7 @@
     <div class="grid grid-cols-1 mt-5 mx-7">
       <div x-data x-init="flatpickr($refs.datetimewidget, {wrap: true, enableTime: true, dateFormat: 'Z'});"
         x-ref="datetimewidget" class="flatpickr container mx-auto col-span-6 sm:col-span-6 mt-5">
-        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light dark:text-white font-semibold">Result
+        <label for="datetime" class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Result
           Declaration Date</label>
         <div class="flex align-middle align-content-center">
           <input x-ref="datetime" type="text" data-input placeholder="Select Date and Time"
@@ -126,7 +126,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Organizer 1
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Organizer 1
       <label for="name" class="hidden">Name</label>
       <input type="name" name="organizer_name_1" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -144,7 +144,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Organizer 2
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Organizer 2
       <label for="name" class="hidden">Name</label>
       <input type="name" name="organizer_name_2" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -162,7 +162,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Organizer 3
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Organizer 3
       <label for="name" class="hidden">Name</label>
       <input type="name" name="organizer_name_3" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -180,7 +180,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Organizer 4
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Organizer 4
       <label for="name" class="hidden">Name</label>
       <input type="name" name="organizer_name_4" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -198,7 +198,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Sponsor 1
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Sponsor 1
       <label for="name" class="hidden">Name</label>
       <input type="name" name="sponsor_name_1" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -216,7 +216,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Sponsor 2
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Sponsor 2
       <label for="name" class="hidden">Name</label>
       <input type="name" name="sponsor_name_2" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -234,7 +234,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Sponsor 3
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Sponsor 3
       <label for="name" class="hidden">Name</label>
       <input type="name" name="sponsor_name_3" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -252,7 +252,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Sponsor 4
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Sponsor 4
       <label for="name" class="hidden">Name</label>
       <input type="name" name="sponsor_name_4" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -270,7 +270,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Host 1
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Host 1
       <label for="name" class="hidden">Name</label>
       <input type="name" name="host_name_1" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -289,7 +289,7 @@
     </div>
 
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Host 2
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Host 2
       <label for="name" class="hidden">Name</label>
       <input type="name" name="host_name_2" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -307,7 +307,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Host 3
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Host 3
       <label for="name" class="hidden">Name</label>
       <input type="name" name="host_name_3" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -325,7 +325,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600"> Host 4
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600"> Host 4
       <label for="name" class="hidden">Name</label>
       <input type="name" name="host_name_4" placeholder="Name"
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
@@ -343,7 +343,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid grid-cols-1 mt-5 mx-7 dark:text-white text-gray-600 justify-center" x-data="{toggle: '0'}"> Featured
+    <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600 justify-center" x-data="{toggle: '0'}"> Featured
       <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear"
         :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
         <label for="toggle"
