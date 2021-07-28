@@ -278,7 +278,9 @@ const authMid = {
                   // res.locals.staff_role = foundStaff.role;
                   // console.log(foundStaff);
                   const role = foundStaff.role;
-                  if (role == "admin" || role == "president" || role == "tl") {
+                  if (role == "admin" || role == "president") {
+                    next();
+                  } else if (role == "tl") {
                     const deptId = foundStaff.department[0];
                     await Department.findOne(
                       { _id: deptId },
