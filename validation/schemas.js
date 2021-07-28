@@ -128,7 +128,7 @@ module.exports.staffRegisterSchema = Joi.object({
         .label("Email"),
     department: Joi.string().required().trim().min(1).label("Department"),
     designation: Joi.string().required().trim().min(1).label("Designation"),
-    description: Joi.string().required().trim().min(1).label("Description"),
+    description: Joi.string().trim().min(1).label("Description"),
     profile_pic_url: Joi.string().required().trim().min(1).label("Profile URL"),
     key: Joi.string().required().trim().min(1).label("Registration Key"),
 });

@@ -18,7 +18,6 @@ const staffSchema = new Schema(
     },
     description: {
       type: String,
-      required: true,
     },
     email: {
       type: String,
