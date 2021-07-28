@@ -24,7 +24,7 @@ const eventCont = {
     const featured = await Event.find({ featured: true })
       .select("name event_starts")
       .limit(5);
-    // console.log(archived);
+    console.log(archived);
     return res.render("layouts/home/event-page", {
       live,
       upcoming,
@@ -150,7 +150,7 @@ const eventCont = {
       } else {
         return res.render("layouts/home/event-landing", {
           foundEvent,
-          title: `E-Cell | Events | ${req.params.name}`,
+          title: `E-Cell | Events | ${foundEvent.name}`,
           moment,
         });
       }

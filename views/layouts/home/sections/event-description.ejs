@@ -1,35 +1,37 @@
 <!-- Event Description Section -->
 <section id="aboutEvent" class="pt-44 video-counter mb-24">
-    <div class="container">
-      <div class="row">
-        <div class="w-full lg:w-1/2">
-          <div class="relative pb-8 mt-12 video-content wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-            <img class="absolute bottom-0 left-0 -ml-8 dots" src="/img/dots.svg" alt="dots">
-            <div class="relative mr-6 rounded-lg shadow-md video-wrapper">
-              <div class="video-image">
-                <img class="rounded" src="/img/hero-steve.jpg" alt="video">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="w-full lg:w-1/2 wow fadeIn flex items-center" data-wow-duration="1s" data-wow-delay="0.5s">
-          <div class="flex flex-col justify-center px-4">
-            <div class="mb-4 section-title">
-              <div class="line"></div>
-              <h1 class="text-4xl font-bold"><%= foundEvent.name %></h1>
-            </div>
-                  <p class="mt-3 text-justify text-lg text-black">
-              <%= foundEvent.description %> 
-            </p>
-            <div class="flex flex-row items-center space-x-2 text-lg text-black pt-2">
-              <img class="h-10 w-10" src="https://img.icons8.com/dusk/64/000000/calendar--v2.png" /><span class="font-bold">27th Nov.
-                2021</span>
+  <div class="container">
+    <div class="row">
+      <div class="w-full lg:w-1/2">
+        <div class="relative pb-8 mt-12 video-content wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+          <img class="absolute bottom-0 left-0 -ml-8 dots" src="/img/dots.svg" alt="dots">
+          <div class="relative h-96 mr-6 rounded-lg shadow-md video-wrapper">
+            <div class="video-image">
+              <img class="mx-auto rounded h-96 w-full" src="<%= foundEvent.event_pic %>" alt="video">
             </div>
           </div>
         </div>
       </div>
-
+      <div class="w-full lg:w-1/2 wow fadeIn flex items-center" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="flex flex-col justify-center px-4">
+          <div class="mb-4 section-title">
+            <div class="line"></div>
+            <h1 class="text-4xl font-bold">
+              <%= foundEvent.name %>
+            </h1>
+          </div>
+          <p class="mt-3 text-justify text-lg text-black">
+            <%= foundEvent.description %>
+          </p>
+          <div class="flex flex-row items-center space-x-2 text-lg text-black pt-2">
+            <img class="h-10 w-10" src="https://img.icons8.com/dusk/64/000000/calendar--v2.png" /><span
+              class="font-bold">27th Nov.
+              2021</span>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-    </div>
-  </section>
+  </div>
+  </div>
+  </div>
+</section>
