@@ -4,6 +4,7 @@ const ErrorHandler = require("../utils/errorHandler"); // Error handler class
 const Magazine = require("../models/magazine-reciever"); // For getting magazine schema
 const nodeMailer = require("nodemailer");
 const { google } = require("googleapis");
+const Feedback = require("../models/feedback");
 
 const homeCont = {
   // Index controller render the home page from layout section in views folder
@@ -234,11 +235,24 @@ const homeCont = {
   creditIndex: async (req, res, next) => {
     try {
       return res.render("layouts/home/credits.ejs", {
-        title: "E-Cell | Credits"
+        title: "E-Cell | Credits",
       });
     } catch (err) {
       req.flash("error", "Something went wrong. Please try again later");
       return red.redirect("/credits");
+    }
+  },
+
+  feedback: async (req, res, next) => {
+    try {
+      console.log(req.body);
+      const feedback = new Feedback(req.body);
+      await feedback.save();
+      return res.json({
+        message: "Thanks for your feedback!",
+      });
+    } catch (err) {
+      req.flash("error", "Something went wrong. Please try again later");
     }
   },
 };

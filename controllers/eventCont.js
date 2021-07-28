@@ -144,9 +144,9 @@ const eventCont = {
   finder: async (req, res, next) => {
     await Event.findOne({ name: req.params.name }, (err, foundEvent) => {
       if (err) {
-        next(Errorhandler.serverError());
+        return res.render("layouts/error-404");
       } else if (!foundEvent) {
-        next(Errorhandler.notFoundError());
+        return res.render("layouts/error-404");
       } else {
         return res.render("layouts/home/event-landing", {
           foundEvent,
