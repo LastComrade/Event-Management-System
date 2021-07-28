@@ -26,5 +26,7 @@ router
 
 router.route("/credits").get(homeCont.creditIndex);
 
+router.route("/feedback").post(validate.contact, homeCont.feedback);
+
 // Exporting routes
 module.exports = router;
