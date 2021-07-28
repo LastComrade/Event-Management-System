@@ -188,10 +188,10 @@
       <% } %> 
     <% } else if (title === "Dashboard | Participants") { %>
       <% if (participants.length > 0) { %> 
-      <div class="w-full overflow-x-auto">
-        <table class="w-full">
-          <thead>
-            <tr
+        <div class="w-full overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr
               class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
               <th class="px-4 py-3">Participant Name</th>
               <th class="px-4 py-3">Email Address</th>
@@ -200,8 +200,8 @@
               <th class="px-10 lg:px-4 py-3">Events</th>
             </tr>
           </thead>
+          <% for(const participant of participants) { %>
           <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-            <% for(const participant of participants) { %>
             <tr
               class="bg-gray-50 dark:bg-gray-800 duration-200  hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
               <td class="px-4 py-3">
@@ -237,9 +237,9 @@
               </td>
             </tr>
           </tbody>
+          <% } %>
         </table>
       </div>
-      <% } %>
       <% } else { %>
         <div class="flex justify-center items-center">
           <span class="text-2xl bg-indigo-600 p-3 rounded text-white">
