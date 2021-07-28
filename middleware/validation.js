@@ -8,6 +8,7 @@ const {
     magazineSchema,
     staffRegisterSchema,
     staffPaswordRegisterSchema,
+    profileSchema,
     emailSchema,
     updatePasswordSchema,
     eventSuggestionSchema,
@@ -123,6 +124,16 @@ const validate = {
             req.flash("error", error.message);
             return res.redirect("back");
             // next(ErrorHandler.validationError(error.message));
+        } else {
+            next();
+        }
+    },
+
+    profileUpdate: (req, res, next) => {
+        const { error } = profileSchema.validate(req.body);
+        if (error) {
+            req.flash("error", error.message);
+            return res.redirect("/staff-register");
         } else {
             next();
         }
