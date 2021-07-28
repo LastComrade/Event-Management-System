@@ -928,6 +928,7 @@ const dboardCont = {
 
   editDeptInfo: async (req, res, next) => {
     try {
+      console.log(req.body)
       await Dept.findOne({ name: req.params.name }, async (err, foundDept) => {
         if (err) {
           req.flash("error", "Something went wrong. Please try again later");
@@ -936,12 +937,13 @@ const dboardCont = {
           return res.redirect("back");
         } else {
           // To be changed
-          return res.status(200).json({
-            foundDept,
-          });
-          // return res.render("/layouts/deparment-edit-page", {
-          //     foundDept
+          // return res.status(200).json({
+          //   foundDept,
           // });
+          return res.render("/layouts/dashboard/sections/department-edit-page", {
+            title: `Dashboard | Departments | ${foundDept.name} | Edit`,
+            foundDept
+          });
         }
       });
     } catch (err) {
