@@ -661,7 +661,6 @@ const dboardCont = {
                 },
               };
               await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo3);
-
             } catch (err) {
               console.log(err);
               console.log(
@@ -761,59 +760,59 @@ const dboardCont = {
             });
             // SheetAPI code
             // if(existingEvent.name != name){
-              try {
-                let client_side = new google.auth.JWT(
-                  process.env.client_email,
-                  null,
-                  process.env.private_key,
-                  ["https://www.googleapis.com/auth/spreadsheets"]
-                );
-  
-                client_side.authorize((err, token) => {
-                  if (err) {
-                    console.log(err);
-                    return;
-                  } else {
-                    eventSheetEditor(client_side);
-                  }
-                });
-              } catch (err) {
-                console.log(err);
-                console.log("Error occured in Google Sheets");
-              }
-              eventSheetEditor = async (client) => {
-                try {
-                  const sheetAPI = google.sheets({
-                    version: "v4",
-                    auth: client,
-                  });
-  
-                  const eventSheetInfo = {
-                    spreadsheetId: process.env.event_spreadsheet_id,
-                    resource: {
-                      requests: [
-                        {
-                          updateSheetProperties: {
-                            properties: {
-                              sheetId: existingEvent.sheetID,
-                              title: `${name}_${existingEvent.sheetID}`,
-                            },
-                            fields: "title",
-                          },
-                        },
-                      ],
-                      includeSpreadsheetInResponse: true,
-                    },
-                  };
-                  await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
-                } catch (err) {
-                  // console.log(err);
-                  console.log(
-                    "error occured while updating the event on spreadsheet"
-                  );
+            try {
+              let client_side = new google.auth.JWT(
+                process.env.client_email,
+                null,
+                process.env.private_key,
+                ["https://www.googleapis.com/auth/spreadsheets"]
+              );
+
+              client_side.authorize((err, token) => {
+                if (err) {
+                  console.log(err);
+                  return;
+                } else {
+                  eventSheetEditor(client_side);
                 }
-              // };
+              });
+            } catch (err) {
+              console.log(err);
+              console.log("Error occured in Google Sheets");
             }
+            eventSheetEditor = async (client) => {
+              try {
+                const sheetAPI = google.sheets({
+                  version: "v4",
+                  auth: client,
+                });
+
+                const eventSheetInfo = {
+                  spreadsheetId: process.env.event_spreadsheet_id,
+                  resource: {
+                    requests: [
+                      {
+                        updateSheetProperties: {
+                          properties: {
+                            sheetId: existingEvent.sheetID,
+                            title: `${name}_${existingEvent.sheetID}`,
+                          },
+                          fields: "title",
+                        },
+                      },
+                    ],
+                    includeSpreadsheetInResponse: true,
+                  },
+                };
+                await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo);
+              } catch (err) {
+                // console.log(err);
+                console.log(
+                  "error occured while updating the event on spreadsheet"
+                );
+              }
+              // };
+            };
             return;
           } catch (err) {
             // console.log(err);
@@ -950,7 +949,7 @@ const dboardCont = {
 
   editDeptInfo: async (req, res, next) => {
     try {
-      console.log(req.body)
+      console.log(req.body);
       await Dept.findOne({ name: req.params.name }, async (err, foundDept) => {
         if (err) {
           req.flash("error", "Something went wrong. Please try again later");
@@ -962,10 +961,13 @@ const dboardCont = {
           // return res.status(200).json({
           //   foundDept,
           // });
-          return res.render("/layouts/dashboard/sections/department-edit-page", {
-            title: `Dashboard | Departments | ${foundDept.name} | Edit`,
-            foundDept
-          });
+          return res.render(
+            "/layouts/dashboard/sections/department-edit-page",
+            {
+              title: `Dashboard | Departments | ${foundDept.name} | Edit`,
+              foundDept,
+            }
+          );
         }
       });
     } catch (err) {
@@ -1221,7 +1223,9 @@ const dboardCont = {
       // console.log(res.locals.staff.id)
       const staffData = await Staff.findOne({
         _id: res.locals.staff.id,
-      }).select("firstname lastname sl_li sl_ig sl_fb profile_pic_url");
+      }).select(
+        "firstname lastname description sl_li sl_ig sl_fb profile_pic_url"
+      );
       // console.log(staff);
       const staffCount = await Staff.countDocuments();
       const eventCount = await Event.countDocuments();
@@ -1248,11 +1252,26 @@ const dboardCont = {
   profileEdit: async (req, res, next) => {
     try {
       // console.log("This is t", req.body);
-      const { firstname, lastname, profile_pic_url, sl_li, sl_ig, sl_fb } =
-        req.body;
+      const {
+        firstname,
+        lastname,
+        description,
+        profile_pic_url,
+        sl_li,
+        sl_ig,
+        sl_fb,
+      } = req.body;
       await Staff.findByIdAndUpdate(
         { _id: res.locals.staff.id },
-        { firstname, lastname, profile_pic_url, sl_li, sl_ig, sl_fb }
+        {
+          firstname,
+          lastname,
+          description,
+          profile_pic_url,
+          sl_li,
+          sl_ig,
+          sl_fb,
+        }
       );
       return res.redirect("/dashboard/profile");
     } catch (err) {
