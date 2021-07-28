@@ -36,6 +36,107 @@ const eventCont = {
     });
   },
 
+  liveEventsRetriver: async (req, res, next) => {
+    try{
+      await Event.find({ category: "live" },
+        (err, liveEvents) => {
+          if (err) {
+            console.log(err);
+            return res.redirect("/events");
+          } else if (liveEvents.length == 0) {
+            return res.redirect("/events");
+          } else {
+            // return res.status(200).json({
+            //   liveEvents
+            // })
+            return res.render("layouts/home/live-events", {
+              title: `E-Cell | Live Events`,
+              liveEvents
+            })
+          }
+        }
+      )
+    }catch(err){
+      next(Errorhandler.serverError());
+    }
+  },
+
+  ongoingEventsRetriver: async (req, res, next) => {
+    try{
+      await Event.find({ category: "ongoing" },
+        (err, ongoingEvents) => {
+          if (err) {
+            console.log(err);
+            return res.redirect("/events");
+          } else if (ongoingEvents.length == 0) {
+            return res.redirect("/events");
+          } else {
+            // return res.status(200).json({
+            //   ongoingEvents
+            // })
+            return res.render("layouts/home/ongoing-events", {
+              title: `E-Cell | Ongoing Events`,
+              ongoingEvents
+            })
+          }
+        }
+      )
+    }catch(err){
+      next(Errorhandler.serverError());
+    }
+  },
+
+  upcomingEventsRetriver: async (req, res, next) => {
+    try{
+      await Event.find({ category: "upcoming" },
+        (err, upcomingEvents) => {
+          if (err) {
+            console.log(err);
+            return res.redirect("/events");
+          } else if (upcomingEvents.length == 0) {
+            return res.redirect("/events");
+          } else {
+            // return res.status(200).json({
+            //   upcomingEvents
+            // })
+            return res.render("layouts/home/upcoming-events", {
+              title: `E-Cell | Upcoming Events`,
+              upcomingEvents
+            })
+          }
+        }
+      )
+    }catch(err){
+      next(Errorhandler.serverError());
+    }
+  },
+
+  archivedEventsRetriver: async (req, res, next) => {
+    try{
+      await Event.find({ category: "archived" },
+        (err, archivedEvents) => {
+          if (err) {
+            console.log(err);
+            return res.redirect("/events");
+          } else if (archivedEvents.length == 0) {
+            return res.redirect("/events");
+          } else {
+            // return res.status(200).json({
+            //   archivedEvents
+            // })
+            return res.render("layouts/home/archived-events", {
+              title: `E-Cell | Archived Events`,
+              archivedEvents
+            })
+          }
+        }
+      )
+    }catch(err){
+      next(Errorhandler.serverError());
+    }
+    
+  },
+
   finder: async (req, res, next) => {
     await Event.findOne({ name: req.params.name }, (err, foundEvent) => {
       if (err) {
