@@ -1,13 +1,8 @@
 <!-- Department Edit form goes here -->
-<div class="flex h-screen bg-gray-200 items-center justify-center  mt-32 mb-32">
-    <div class="grid bg-white rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
-      <div class="flex justify-center py-4">
-        <div class="flex bg-purple-200 rounded-full md:p-4 p-2 border-2 border-purple-300">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-        </div>
-      </div>
+<div class="flex h-full items-center justify-center  mt-6 mb-6">
+    <div class="grid bg-gray-200 rounded-lg shadow-xl w-11/12 md:w-9/12 lg:w-1/2">
   
-      <div class="flex justify-center">
+      <div class="flex justify-center mt-12">
         <div class="flex">
           <h1 class="text-gray-600 font-bold md:text-2xl text-xl">Department Edit Form</h1>
         </div>
@@ -17,35 +12,35 @@
         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Department Name</label>
         <input
             name="name" 
-            class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Department Name" />
+            class="py-2 px-3 rounded-lg border-2 text-gray-700 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Department Name" />
       </div>
   
       <div class="grid grid-cols-1 mt-5 mx-7">
         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Department Tagline</label>
-        <textarea name="tagline" rows="2" class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Department Tagline" >
+        <textarea name="tagline" rows="2" class="resize-none py-2 px-3 text-gray-700 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Department Tagline" >
         </textarea>
       </div>
 
       <div class="grid grid-cols-1 mt-5 mx-7">
         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Department Description</label>
-        <textarea name="description" rows="4" class="py-2 px-3 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Department Tagline" >
+        <textarea name="description" rows="4" class="resize-none py-2 px-3 text-gray-700 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Department Tagline" >
         </textarea>
       </div>
   
-      <div class="grid grid-cols-1 mt-5 mx-7" x-data="{toggle: '0'}">
+      <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600 justify-center" x-data="{toggle: '0'}"> Recruiting
         <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear"
-                :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
-            <label for="toggle"
-                    class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer"
-                    :class="[toggle === '1' ? 'translate-x-full border-green-400' : 'translate-x-0 border-gray-400']"></label>
-            <input type="checkbox" id="toggle" name="toggle"
-                    class="appearance-none w-full h-full active:outline-none focus:outline-none"
-                    @click="toggle === '0' ? toggle = '1' : toggle = '0'"/>
+          :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
+          <label for="toggle"
+            class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer"
+            :class="[toggle === '1' ? 'translate-x-full border-green-400' : 'translate-x-0 border-gray-400']"></label>
+          <input type="checkbox" id="toggle" name="featured"
+            class="appearance-none w-full h-full active:outline-none focus:outline-none"
+            @click="toggle === '0' ? toggle = '1' : toggle = '0'" />
         </div>
-     </div>
+      </div>
   
       <div class='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
-        <button class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Create</button>
+        <button class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Submit</button>
       </div>
   
     </div>

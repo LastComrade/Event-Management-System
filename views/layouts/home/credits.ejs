@@ -41,6 +41,78 @@
   <%- include("./partials/scripts.ejs") %>
   <!-- ./Scripts -->
 
+
+  <script>
+    function convertFD2JSON(formData) {
+            let obj = {};
+            formData.forEach(function(value, key) {
+                obj[key] = value;
+            })
+            return obj;
+        }
+        document.querySelector("form").addEventListener("submit", handleForm);
+        function handleForm(ev) {
+            ev.preventDefault();
+            let myForm = ev.target;
+            // after banckend chnage update this
+            fetch("/", {
+                body: JSON.stringify(convertFD2JSON(new FormData(myForm))),
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
+            .then((some) => { return some.json() })
+            .then(async (res) => {
+                  document.querySelector('form').reset();
+                  console.log(res)
+                  // instanciate new modal
+                  var modal = new tingle.modal({
+                      footer: true,
+                      stickyFooter: false,
+                      closeMethods: ['button', 'escape', 'overlay'],
+                      closeLabel: "Close",
+                      cssClass: ['custom-class-1', 'custom-class-2'],
+                  });
+  
+                  // set content
+                  modal.setContent( `<h1> ${res.message} </h1>` );
+      
+  
+                  // add button
+                  modal.addFooterBtn('close', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
+                      // here goes some logic
+                      modal.close();
+                  });
+
+                  modal.open()
+                
+            })
+            .catch((err) => {
+                // instanciate new modal
+                var modal = new tingle.modal({
+                      footer: true,
+                      stickyFooter: false,
+                      closeMethods: ['button', 'escape'],
+                      closeLabel: "Close",
+                      cssClass: ['custom-class-1', 'custom-class-2'],
+                  });
+  
+                  // set content
+                  modal.setContent( `<h1> ${res.message} </h1>` );
+      
+  
+                  // add button
+                  modal.addFooterBtn('close', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function() {
+                      // here goes some logic
+                      modal.close();
+                  });
+
+                  modal.open()
+            })
+        }
+        
+  </script>
 </body>
 
 </html>
