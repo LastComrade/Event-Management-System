@@ -9,17 +9,21 @@ const EventSchema = Schema(
     },
     event_poster: {
       type: String,
-      required: true
+      required: true,
     },
     event_pic: {
       type: String,
-      required: true
+      required: true,
     },
     sheetID: {
       type: Number,
       default: 0,
     },
     description: {
+      type: String,
+      required: true,
+    },
+    tagline: {
       type: String,
       required: true,
     },

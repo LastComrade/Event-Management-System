@@ -48,7 +48,7 @@
                   <%= member.email %>
                 </td>
                 <td class="px-4 py-3 text-sm">
-                  <%= member.department %>
+                  <%= member.department[0].name %>
                 </td>
               </tr>
               <% } %>
@@ -78,7 +78,7 @@
                   <div class="flex items-center text-sm">
                     <a href="/events/<%= event.name %>" target="blank">
                       <div>
-                        <p class="font-semibold">
+                        <p class="font-semibold w-36">
                           <%= event.name %>
                         </p>
                         <p class="text-xs text-gray-600 dark:text-gray-400">
@@ -86,7 +86,7 @@
                         </p>
                       </div>
                     </a>
-                    <a class="bg-red-500 rounded hover:bg-red-900 duration-200 px-2 py-1" href="/dashboard/events/<%= event.name %>/edit"><i class="text-white fas fa-wrench"></i></a>
+                    <a class="bg-red-500 rounded ml-5 hover:bg-red-900 duration-200 px-2 py-1" href="/dashboard/events/<%= event.id %>/edit"><i class="text-white fas fa-wrench"></i></a>
                   </div>
                 </td>
                 <td class="px-4 py-3 text-xs">
@@ -126,6 +126,7 @@
         </div>
       <% } %>
     <% } else if (title.length > "Dashboard | Events".length && title.substring(0, "Dashboard | Events".length) === "Dashboard | Events") { %>
+      <% if (event.participants.length > 0) { %> 
       <div class="w-full overflow-x-auto">
         <table class="w-full">
           <thead>
@@ -144,7 +145,7 @@
             class="bg-gray-50 dark:bg-gray-800 duration-200  hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
             <td class="px-4 py-3">
               <div class="flex items-center text-sm">                   
-                <div>
+                <div class="w-1/2">
                   <p class="font-semibold">
                     <%= participant.name %>
                   </p>
@@ -178,7 +179,15 @@
           </tbody>
         </table>
       </div>
+      <% } else { %>
+        <div class="flex justify-center items-center">
+          <span class="text-2xl bg-indigo-600 p-3 rounded text-white">
+            No data available
+          </span>
+        </div>
+      <% } %> 
     <% } else if (title === "Dashboard | Participants") { %>
+      <% if (participants.length > 0) { %> 
       <div class="w-full overflow-x-auto">
         <table class="w-full">
           <thead>
@@ -192,7 +201,6 @@
             </tr>
           </thead>
           <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-            <% if (participants.length > 0) { %> 
             <% for(const participant of participants) { %>
             <tr
               class="bg-gray-50 dark:bg-gray-800 duration-200  hover:bg-gray-200 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
@@ -228,17 +236,17 @@
                 </a>
               </td>
             </tr>
-            <% } %>
-            <% } else { %>
-              <div class="flex justify-center items-center">
-                <span class="text-2xl bg-indigo-600 p-3 rounded text-white">
-                  No data available
-                </span>
-              </div>
-            <% } %> 
           </tbody>
         </table>
       </div>
+      <% } %>
+      <% } else { %>
+        <div class="flex justify-center items-center">
+          <span class="text-2xl bg-indigo-600 p-3 rounded text-white">
+            No data available
+          </span>
+        </div>
+      <% } %> 
     <% } else if (title.length > "Dashboard | Participants".length && title.substring(0, "Dashboard | Participants".length) === "Dashboard | Participants") { %>
       <div class="w-full overflow-x-auto">
         <table class="w-full">

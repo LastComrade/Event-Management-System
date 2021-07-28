@@ -79,7 +79,7 @@
             ev.preventDefault();
             let myForm = ev.target;
             // after banckend chnage update this
-            fetch("/monthly-magazine", {
+            fetch("/", {
                 body: JSON.stringify(convertFD2JSON(new FormData(myForm))),
                 method: "POST",
                 headers: {

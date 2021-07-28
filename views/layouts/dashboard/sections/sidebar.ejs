@@ -38,6 +38,22 @@
               </a>
             </li>
             <li>
+              <a href="/dashboard/department"
+                class="relative flex flex-row items-center h-11 focus:outline-none duration-200 hover:bg-blue-800 <%= title.length > "Dashboard | Departments".length && title.substring(0, "Dashboard | Department".length) === "Dashboard | Department" ? "bg-blue-700" : "" %> dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                    </path>
+                  </svg>
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate">Edit Department</span>
+                <span
+                  class="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-500 bg-indigo-50 rounded-full">New</span>
+              </a>
+            </li>
+            <li>
               <a href="/dashboard/contact-messages"
                 class="relative flex flex-row items-center h-11 focus:outline-none duration-200 hover:bg-blue-800 <%= title.substring(0, "Dashboard | Contact Message".length) === "Dashboard | Contact Message" ? "bg-blue-700" : "" %> dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
                 <span class="inline-flex justify-center items-center ml-4">
@@ -74,6 +90,16 @@
                   <i class="fas fa-medal"></i>
                 </span>
                 <span class="ml-2 text-sm tracking-wide truncate">Events</span>
+              </a>
+            </li>
+            <li>
+            <li>
+              <a href="/dashboard/event-create"
+                class="relative flex flex-row items-center h-11 focus:outline-none duration-200 hover:bg-blue-800 <%= title === "Dashboard | Create Event" ? "bg-blue-700" : "" %> dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+                <span class="w-5 h-5 inline-flex justify-center items-center ml-4">
+                  <i class="fas fa-medal"></i>
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate">Create Event</span>
               </a>
             </li>
             <li>
