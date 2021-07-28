@@ -1,7 +1,8 @@
 <!--Event page starts  -->
-<div class="mt-7">
-
+<div class="my-7">
+  <% if (featured.length > 0 || live.length > 0 || ongoing.length > 0 || upcoming.length > 0 || archived.length > 0) { %> 
   <!--FEATURED EVENTS-->
+  <% if (featured.length > 0) { %>
   <div id="feature" class="mt-10" style="margin-top: 120px;">
     <div class="mt-16 flex flex-col justify-center items-center wow fadeIn" data-wow-duration="1s"
       data-wow-delay="0.5s">
@@ -28,7 +29,7 @@
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
                 <p class="text-3xl leading-5 font-medium">
-                  <%= featured[i].name %>
+                  <%= featured[i].name.length > 20 ? featured[i].name.substring(0, 18) + "..." : featured[i].name %> 
                 </p>
               </div>
               <div>
@@ -56,8 +57,10 @@
       </div>
     </div>
   </div>
+  <% } %> 
 
   <!--Live Events-->
+  <% if (live.length > 0) { %> 
   <div id="live_events">
     <div class="mt-16 flex flex-col justify-center items-center wow fadeIn" data-wow-duration="1s"
       data-wow-delay="0.8s">
@@ -84,7 +87,7 @@
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
                 <p class="text-3xl leading-5 font-medium">
-                  <%= live[i].name %> 
+                  <%= live[i].name.length > 20 ? live[i].name.substring(0, 18) + "..." : live[i].name %> 
                 </p>
               </div>
               <div>
@@ -117,9 +120,11 @@
       </div>
     </div>
   </div>
+  <% } %> 
 
-  <!-- Ongoing WEBINARS -->
-  <div id="webinar">
+  <!-- Ongoing Events -->
+  <% if (ongoing.length > 0) { %>
+  <div id="ongoing">
     <div class="mt-16 flex flex-col justify-center items-center wow fadeIn" data-wow-duration="1.5s"
       data-wow-delay="0.5s">
       <!-- Heading -->
@@ -144,7 +149,7 @@
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
                 <p class="text-3xl leading-5 font-medium">
-                  <%= ongoing[i].name %> 
+                  <%= ongoing[i].name.length > 20 ? ongoing[i].name.substring(0, 18) + "..." : ongoing[i].name %>
                 </p>
               </div>
               <div>
@@ -172,8 +177,10 @@
       </div>
     </div>
   </div>
+  <% } %> 
 
-  <!-- UPCOMING EVENTS -->
+  <!-- Upcoming Events -->
+  <% if (upcoming.length > 0) { %>
   <div id="upcoming">
     <div class="mt-16 flex flex-col justify-center items-center wow fadeIn" data-wow-duration="1.5s"
       data-wow-delay="0.5s">
@@ -200,7 +207,7 @@
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
                 <p class="text-3xl leading-5 font-medium">
-                  <%= upcoming[i].name %>
+                  <%= upcoming[i].name.length > 20 ? upcoming[i].name.substring(0, 18) + "..." : upcoming[i].name %>
                 </p>
               </div>
               <div>
@@ -212,8 +219,8 @@
               <div class="text-center mt-2">
                 <div class="text-left">
                   <a href="/events/<%= upcoming[i].name %>"
-                    class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Know
-                    More</a>
+                    class="inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-3  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500">Register
+                  </a>
                 </div>
               </div>
             </div>
@@ -229,9 +236,11 @@
       </div>
     </div>
   </div>
+  <% } %> 
 
   <!-- Past Events Carousel -->
-  <section id="archived" class="testimonial-area my-24 pt-22">
+  <% if (archived.length >= 3) { %> 
+  <div id="archived" class="testimonial-area my-24 pt-22">
     <div class="container">
       <div class="justify-center row">
         <div class="w-full lg:w-2/3">
@@ -247,11 +256,11 @@
         <div
           class="relative hover:shadow-2xl mb-10 item transition-shadow duration-300 ease-in-out bg-white py-6 px-6 rounded my-4 ">
           <div class="mt-2">
-            <p class="text-xl font-semibold"><%= archived[i].name %></p>
+            <p class="text-xl font-semibold"><%= archived[i].name.length > 20 ? archived[i].name.substring(0, 18) + "..." : archived[i].name %></p>
             <img class="rounded shadow-xl my-4" src="/img/team.jpg" alt="">
           </div>
           <div class="flex space-x-2 text-black  text-sm my-3">
-            <p><%= archived[i].description.substring(0, 200) %> ...<a href="/events/<%= archived[i].name%>" class="text-red-300">Read More</a></p>
+            <p class="truncate"><%= archived[i].description %><a href="/events/<%= archived[i].name%>" class="text-red-300">Read More</a></p>
           </div>
           <div class="border-t-2"></div>
           <div class="flex justify-between">
@@ -269,13 +278,21 @@
             </div>
           </div>
         </div>
-        <% } %> 
+        <% } %>
       </div>
       <% if (archived.length > 4) { %> 
         <div class="flex justify-center items-center">
           <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
         </div>
-        <% } %> 
+        <% } %>
     </div>
   </section>
+  <% } %>
+  <% } else { %>
+    <div class="text-center my-10">
+      <span class="text-gray-500 text-3xl">
+        Coming Soon!
+      </span>
+    </div>
+    <% } %> 
 </div>

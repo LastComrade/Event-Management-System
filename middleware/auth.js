@@ -11,7 +11,6 @@ const authMid = {
           console.log(err);
           return res.redirect("/staff-login");
         } else {
-          // console.log("This is the decoded token", decoded);
           next();
         }
       });

@@ -52,21 +52,31 @@
                   <li class="nav-item md:pb-2 active text-lg md:text-base">
                     <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/">Home</a>
                   </li>
+                  <% if (featured.length > 0) { %> 
                   <li class="nav-item md:pb-2 text-lg md:text-base">
                     <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#feature">Featured</a>
                   </li>
+                  <% } %>
+                  <% if (live.length > 0) { %> 
                   <li class="nav-item md:pb-2 text-lg md:text-base">
                     <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#live_events">Live</a>
                   </li>
+                  <% } %>
+                  <% if (ongoing.length > 0) { %>
                   <li class="nav-item md:pb-2 text-lg md:text-base">
-                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#webinar">Ongoing<a>
+                    <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#ongoing">Ongoing<a>
                   </li>
+                  <% } %>
+                  <% if (upcoming.length > 0) { %>
                   <li class="nav-item md:pb-2 text-lg md:text-base">
                     <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#upcoming">Upcoming</a>
                   </li>
+                  <% } %>
+                  <% if (archived.length > 2) { %>
                   <li class="nav-item md:pb-2 text-lg md:text-base">
                     <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#archived">Archived</a>
                   </li>
+                  <% } %>
                 </ul>
               </div>
               <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
@@ -90,6 +100,12 @@
                 </li>
                 <li class="nav-item md:pb-2 text-lg md:text-base">
                   <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#organizers">Organizers</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#sponsors">Sponsors</a>
+                </li>
+                <li class="nav-item md:pb-2 text-lg md:text-base">
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#hosts">Hosts</a>
                 </li>
               </ul>
             </div>
@@ -207,9 +223,7 @@
               <h2 class="text-5xl my-4 font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s"
                 data-wow-delay="0.5s"><%= foundEvent.name %> </h2>
               <p class="mb-8 text-white text text-lg wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                "Don't let the
-                noise of other's opinions drown out your own inner voice.(Department Tagline)"
-                <br>- Steve Jobs
+                <%= foundEvent.tagline %>
               </p>
               <a href="#feature"
                 class="scroll-page bg-gray-200 text-black hover:bg-white hover:shadow-xl duration-200 p-3 rounded font-semibold wow fadeInUp"
@@ -250,14 +264,24 @@
             <% } %>  
           </div>
         </div>
+        <% if (title.length > "E-Cell | Events".length && title.substring(0, 15) === "E-Cell | Events") { %> 
         <div class="justify-center row z-50">
           <div class="w-full lg:w-2/3">
             <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <img class="rounded-lg" src="/img/hero-steve.jpg" alt="hero">
+              <img class="rounded-lg object-fit mx-auto" src="<%= foundEvent.event_poster %>" alt="hero">
             </div>
           </div>
         </div>
+        <% } else { %>
+        <div class="justify-center row z-50">
+          <div class="w-full lg:w-2/3">
+            <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
+              <img class="rounded-lg object-fit mx-auto" src="/img/hero-steve.jpg" alt="hero">
+            </div>
+          </div>
+        </div>
+        <% } %> 
       </div>
       <div id="particles-1" class="particles"></div>
     </div>
-</header>
+</header> 

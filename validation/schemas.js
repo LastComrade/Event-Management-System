@@ -87,6 +87,7 @@ module.exports.deptSchema = Joi.object({
 module.exports.eventSchema = Joi.object({
     name: Joi.string().trim().min(1).required().label("Event Name"),
     description: Joi.string().required().label("Event Description"),
+    tagline: Joi.string().required().label("Event Tagline"),
     event_poster: Joi.string().required().label("Event Poster"),
     event_pic: Joi.string().required().label("Event Picture"),
     category: Joi.string().required().label("Event Category"),
@@ -114,8 +115,8 @@ module.exports.eventSchema = Joi.object({
         .min(Joi.ref("event_ends"))
         .label("Event Result Declaration Date"),
     organizers: Joi.array().items(Joi.object()),
-    hosts: Joi.array().items(Joi.object()),
-    sponsors: Joi.array().items(Joi.object()),
+    hosts: Joi.array().max(4).items(Joi.object()),
+    sponsors: Joi.array().max(4).items(Joi.object()),
 });
 
 module.exports.staffRegisterSchema = Joi.object({
