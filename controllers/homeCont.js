@@ -233,7 +233,9 @@ const homeCont = {
 
   creditIndex: async (req, res, next) => {
     try {
-      return res.render("layouts/home/credits.ejs");
+      return res.render("layouts/home/credits.ejs", {
+        title: "E-Cell | Credits"
+      });
     } catch (err) {
       req.flash("error", "Something went wrong. Please try again later");
       return red.redirect("/credits");
