@@ -51,6 +51,7 @@ const eventCont = {
             // })
             return res.render("layouts/home/live-events", {
               title: `E-Cell | Live Events`,
+              moment,
               liveEvents
             })
           }
@@ -76,6 +77,7 @@ const eventCont = {
             // })
             return res.render("layouts/home/ongoing-events", {
               title: `E-Cell | Ongoing Events`,
+              moment,
               ongoingEvents
             })
           }
@@ -101,6 +103,7 @@ const eventCont = {
             // })
             return res.render("layouts/home/upcoming-events", {
               title: `E-Cell | Upcoming Events`,
+              moment,
               upcomingEvents
             })
           }
@@ -126,6 +129,7 @@ const eventCont = {
             // })
             return res.render("layouts/home/archived-events", {
               title: `E-Cell | Archived Events`,
+              moment,
               archivedEvents
             })
           }
