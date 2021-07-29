@@ -3,19 +3,91 @@
     "organizers": [
       {
         "name": "trina",
-        "designation": "Head"
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
         "name": "tracob",
-        "designation": "manager"
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
         "name": "Max winn",
-        "designation": "member"
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
         "name": "Jacob",
-        "designation": "member"
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -30,6 +102,9 @@
       }
     ],
     "name": "Stock Market",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e001",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
@@ -44,20 +119,92 @@
   {
     "organizers": [
       {
-        "name": "jacob",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "pronoo",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "Maxii",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "rioo",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -71,7 +218,10 @@
         "_id": "60cc4f39f4b8fa3ddc00b006"
       }
     ],
-    "name": "Group singing",
+    "name": "Value of Investments",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e002",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
@@ -86,20 +236,92 @@
   {
     "organizers": [
       {
-        "name": "ciranaa",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "janiooo",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "flongoo",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "florishaa",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -114,6 +336,9 @@
       }
     ],
     "name": "Cyber Security",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e003",
     "category": "upcoming",
@@ -128,20 +353,92 @@
   {
     "organizers": [
       {
-        "name": "kristinna",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "kiranaa",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "fendroo",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "vasco",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -155,7 +452,10 @@
         "_id": "60cc4f39f4b8fa3ddc00b005"
       }
     ],
-    "name": "Stunts",
+    "name": "Risk Management in Startups",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e004",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
@@ -170,20 +470,92 @@
   {
     "organizers": [
       {
-        "name": "Promini",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "Ram",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "shammm",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "kunnal",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -197,7 +569,10 @@
         "_id": "60cc4f39f4b8fa3ddc00b002"
       }
     ],
-    "name": "Marshalats",
+    "name": "Leadership Development",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e005",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
@@ -212,20 +587,92 @@
   {
     "organizers": [
       {
-        "name": "ristaa",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "kinaaraa",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "visvoola",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "Mohamaad",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -239,7 +686,10 @@
         "_id": "60cc4f39f4b8fa3ddc00b006"
       }
     ],
-    "name": "Photography",
+    "name": "Smart Planning",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e006",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
@@ -255,19 +705,91 @@
     "organizers": [
       {
         "name": "trina",
-        "designation": "Head"
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
         "name": "tracob",
-        "designation": "manager"
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
         "name": "Max winn",
-        "designation": "member"
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
         "name": "Jacob",
-        "designation": "member"
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -279,6 +801,9 @@
       }
     ],
     "name": "Coding Champ",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e007",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
@@ -293,20 +818,92 @@
   {
     "organizers": [
       {
-        "name": "pironna",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "fidoshaa",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "ruchikaa",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "piccio",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -320,7 +917,10 @@
         "_id": "60cc4f39f4b8fa3ddc00b007"
       }
     ],
-    "name": "General Knowledge",
+    "name": "Importance of Team work",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e008",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
@@ -335,20 +935,92 @@
   {
     "organizers": [
       {
-        "name": "pironna",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "fidoshaa",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "ruchikaa",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "piccio",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -362,7 +1034,10 @@
         "_id": "60cc4f39f4b8fa3ddc00b004"
       }
     ],
-    "name": "Auto Cad",
+    "name": "Create the next big thing",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e009",
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
@@ -377,20 +1052,92 @@
   {
     "organizers": [
       {
-        "name": "piya",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "antonio",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "kristinna",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "ciranaa",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -402,6 +1149,9 @@
       }
     ],
     "name": "Importance of Soft Skill",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e010",
     "category": "archived",
@@ -416,20 +1166,92 @@
   {
     "organizers": [
       {
-        "name": "rioo",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "kinaraa",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "Bristaana",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "fernandice",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -441,6 +1263,9 @@
       }
     ],
     "name": "Think outside the box",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e011",
     "category": "archived",
@@ -455,20 +1280,92 @@
   {
     "organizers": [
       {
-        "name": "perry",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "antrio",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "Finadda",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "corcia",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -479,7 +1376,10 @@
         "_id": "60cc4f39f4b8fa3ddc00b006"
       }
     ],
-    "name": "Sword fight",
+    "name": "Decision Making",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e012",
     "category": "archived",
@@ -494,20 +1394,92 @@
   {
     "organizers": [
       {
-        "name": "piya",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "antonio",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "kristinna",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "ciranaa",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -521,7 +1493,10 @@
         "_id": "60cc4f39f4b8fa3ddc00b004"
       }
     ],
-    "name": "Best use of recycle",
+    "name": "Trading and Cryptocurrency",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e013",
     "category": "ongoing",
@@ -536,20 +1511,92 @@
   {
     "organizers": [
       {
-        "name": "Trishaa",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "Armature",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "kristinna",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "fercidaaa",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -561,6 +1608,9 @@
       }
     ],
     "name": "Buzz Quiz",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e014",
     "category": "ongoing",
@@ -575,20 +1625,92 @@
   {
     "organizers": [
       {
-        "name": "Rammuu",
-        "designation": "Head"
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
       },
       {
-        "name": "Istrooma",
-        "designation": "manager"
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "kristonio",
-        "designation": "member"
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
       },
       {
-        "name": "Frollo",
-        "designation": "member"
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
       }
     ],
     "participants": [
@@ -600,9 +1722,597 @@
       }
     ],
     "name": "Focus and locus",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     "sheetID": 0,
     "_id": "aabb66289b2d5c444078e015",
     "category": "ongoing",
+    "featured": true,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+    "registration_starts": "2021-02-09T22:00:30.100+05:30",
+    "registration_ends": "2021-02-10T22:00:30.100+05:30",
+    "event_starts": "2021-02-24T22:00:30.100+05:30",
+    "event_ends": "2021-02-25T22:00:30.100+05:30",
+    "result_declaration": "2021-02-28"
+  },
+  {
+    "organizers": [
+      {
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      },
+      {
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+      },
+      {
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
+      },
+      {
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "participants": [
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b008"
+      },
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b011"
+      },
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b010"
+      }
+    ],
+    "name": "Reading and Creativity",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "sheetID": 0,
+    "_id": "aabb66289b2d5c444078e016",
+    "category": "ongoing",
+    "featured": true,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+    "registration_starts": "2021-02-09T22:00:30.100+05:30",
+    "registration_ends": "2021-02-10T22:00:30.100+05:30",
+    "event_starts": "2021-02-24T22:00:30.100+05:30",
+    "event_ends": "2021-02-25T22:00:30.100+05:30",
+    "result_declaration": "2021-02-28"
+  },
+  {
+    "organizers": [
+      {
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      },
+      {
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+      },
+      {
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
+      },
+      {
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "participants": [
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b008"
+      },
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b009"
+      },
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b011"
+      }
+    ],
+    "name": "'Focus' a key to success",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "sheetID": 0,
+    "_id": "aabb66289b2d5c444078e017",
+    "category": "ongoing",
+    "featured": true,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+    "registration_starts": "2021-02-09T22:00:30.100+05:30",
+    "registration_ends": "2021-02-10T22:00:30.100+05:30",
+    "event_starts": "2021-02-24T22:00:30.100+05:30",
+    "event_ends": "2021-02-25T22:00:30.100+05:30",
+    "result_declaration": "2021-02-28"
+  },
+  {
+    "organizers": [
+      {
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      },
+      {
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+      },
+      {
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
+      },
+      {
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "participants": [
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b008"
+      },
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b009"
+      },
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b010"
+      }
+    ],
+    "name": "Success anf Failure, Two sides of same coin",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "sheetID": 0,
+    "_id": "aabb66289b2d5c444078e018",
+    "category": "upcoming",
+    "featured": true,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+    "registration_starts": "2021-02-09T22:00:30.100+05:30",
+    "registration_ends": "2021-02-10T22:00:30.100+05:30",
+    "event_starts": "2021-02-24T22:00:30.100+05:30",
+    "event_ends": "2021-02-25T22:00:30.100+05:30",
+    "result_declaration": "2021-02-28"
+  },
+  {
+    "organizers": [
+      {
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      },
+      {
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+      },
+      {
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
+      },
+      {
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "participants": [
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b011"
+      },
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b010"
+      },
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b009"
+      }
+    ],
+    "name": "What are Mutual Funds",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "sheetID": 0,
+    "_id": "aabb66289b2d5c444078e019",
+    "category": "archived",
+    "featured": true,
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
+    "registration_starts": "2021-02-09T22:00:30.100+05:30",
+    "registration_ends": "2021-02-10T22:00:30.100+05:30",
+    "event_starts": "2021-02-24T22:00:30.100+05:30",
+    "event_ends": "2021-02-25T22:00:30.100+05:30",
+    "result_declaration": "2021-02-28"
+  },
+  {
+    "organizers": [
+      {
+        "name": "trina",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1531218614045-e596f12f0393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      },
+      {
+        "name": "tracob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1484863137850-59afcfe05386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80"
+      },
+      {
+        "name": "Max winn",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1495603889488-42d1d66e5523?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80"
+      },
+      {
+        "name": "Jacob",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/",
+        "pic": "https://images.unsplash.com/photo-1589386417686-0d34b5903d23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+      }
+    ],
+    "hosts": [
+      {
+        "name": "Luis tracob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Lize Monrow",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "sponsors": [
+      {
+        "name": "trina",
+        "pic": "https://images.unsplash.com/photo-1590649880765-91b1956b8276?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "tracob",
+        "pic": "https://images.unsplash.com/photo-1558203728-00f45181dd84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1053&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Max winn",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      },
+      {
+        "name": "Jacob",
+        "pic": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+        "fb_link": "https://www.facebook.com/E-Cell-GNDEC-100549411816777/",
+        "ig_link": "https://www.instagram.com/ecell.gndec/",
+        "in_link": "https://www.linkedin.com/company/ecellgndec/"
+      }
+    ],
+    "participants": [
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b008"
+      },
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b011"
+      },
+      {
+        "_id": "60cc4f39f4b8fa3ddc00b009"
+      }
+    ],
+    "name": "Time and it's importance",
+    "event_pic": "https://images.unsplash.com/photo-1560523160-754a9e25c68f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1020&q=80",
+    "event_poster": "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "tagline": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+    "sheetID": 0,
+    "_id": "aabb66289b2d5c444078e020",
+    "category": "live",
     "featured": true,
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
     "registration_starts": "2021-02-09T22:00:30.100+05:30",

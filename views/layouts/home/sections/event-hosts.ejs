@@ -5,16 +5,16 @@
         <div class="mx-auto line"></div>
         <h1 class="text-4xl font-bold text-center">Hosts</h1>
       </div>
-      <div class="mt-4 content-center mx-10 grid gap-8 lg:grid-cols-3 grid-cols-1">
+      <div class="mt-4 mx-10 grid gap-8 lg:grid-cols-3 grid-cols-1 justify-center items-center">
         <!-- green border color is for team members -->
         <% let count = 0 %>
         <% for (const host of foundEvent.hosts) { %>
           <% if (host.name !== "" && host.name) { %>
           <div data-aos="fade-up"
-            class="max-w-sm w-80 h-96 layered-card bg-white duration-200 border-2 rounded border-transparent hover:border-green-600">
-            <div class="team-item p-3">
+            class="max-w-sm w-80 h-96 layered-card bg-white duration-200 border-2 rounded border-transparent hover:border-green-600 mx-auto">
+            <div class="team-item p-3 mx-auto">
               <div class="team-img relative">
-                <img class="object-contain rounded"
+                <img class="object-fit rounded h-72 w-full"
                   src="<%= host.pic %>"
                   alt="">
                 <div class="team-overlay">
