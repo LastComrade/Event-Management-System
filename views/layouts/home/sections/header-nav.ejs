@@ -501,10 +501,12 @@
         <div class="justify-center row z-50">
           <div class="w-full lg:w-2/3">
             <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <% if (title != "E-Cell | Credits") { %>
-              <img class="rounded-lg" src="/img/hero-steve.jpg" alt="hero">
+              <% if (title === "E-Cell | Credits") { %>
+              <img class="rounded-lg" src="/img/credits_page_4.svg" alt="hero">
+              <% } else if (title.length > "E-Cell | Departments".length && title.substring(0, 20) === "E-Cell | Departments") { %>
+              <img class="rounded-lg" src="<%= foundDept.pic %>" alt="hero">
               <% } else { %>
-                <img class="rounded-lg mx-auto h-2/3 w-2/3" src="/img/credits_page_4.svg" alt="hero"> 
+                <img class="rounded-lg mx-auto h-2/3 w-2/3" src="/img/hero-steve.jpg" alt="hero"> 
               <% } %>
             </div>
           </div>
