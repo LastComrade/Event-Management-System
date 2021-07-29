@@ -6,340 +6,181 @@
         <h1 class="text-4xl font-bold text-black mb-7 text-center">Our Team</h1>
       </div>
     </div>
+    <% if (foundDept.members.length > 0) { %> 
     <div class="flex justify-center space-x-6 space-y-8 px-4 flex-wrap">
+      <% let tlCount = 0 %> 
+      <% for (const member of foundDept.members) { %>
+        <% if (member.designation === "Team Leader" && member.accActive) { %>
+          <% tlCount++ %> 
+          <% } %> 
+      <% } %> 
       <!-- Team Leader -->
-      <class class="grid-cols-1">
-        <div class="flex justify-center items-center">
-          <div id="team_leader" class="mt-10">
-            <h1 class="text-3xl text-center text-black">Team Leader</h1>
+      <% if (tlCount) { %>
+      <div class="flex  justify-center items-center">
+        <div id="team_leader" class="mt-10">
+          <h1 class="text-3xl text-center text-black">Team Leader</h1>
+          <div class="border-gray-700 border-b-4 w-1/2 m-auto md:w-1/6 border-opacity-50 mb-12">
+          </div>
+          <% for (const member of foundDept.members) { %>
+            <% if(member.designation === "Team Leader" && member.accActive) { %> 
+          <div data-aos="fade-up"
+            class="max-w-md bg-white duration-200 layered-card border-2 border-transparent hover:border-red-500">
+            <div class="team-item">
+              <div class="team-img relative">
+                <img class="img-fluid"
+                  src="<%= member.profile_pic_url %>"
+                  alt="">
+                <div class="team-overlay">
+                  <ul class="flex justify-center space-x-2 text-2xl">
+                    <li>
+                      <a href="<%= member.sl_fb %>">
+                        <i class="fab fa-facebook hover:text-blue-800 duration-200"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<%= member.sl_ig %>">
+                        <i class="fab fa-instagram hover:text-red-500 duration-200"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="<%= member.sl_li %>">
+                        <i class="fab fa-linkedin hover:text-purple-800 duration-200"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="text-center px-5 py-3">
+                <h3 class="team-name"><%= member.fullname %></h3>
+                <p><%= member.designation %></p>
+              </div>
+            </div>
+          </div>
+            <% } %> 
+          <% } %> 
+        </div>
+      </div>
+      <% } %>
+      <% let thCount = 0 %> 
+      <% for (const member of foundDept.members) { %>
+        <% if (member.designation === "Team Head" && member.accActive) { %>
+          <% thCount++ %> 
+          <% } %> 
+      <% } %>
+      <% if (thCount) { %> 
+      <!-- Team Heads -->
+      <div class="flex justify-center items-center">
+        <div id="team_heads" class="mt-10">
+          <div class="flex flex-col">
+            <h1 class="text-3xl text-center text-black my-2">Team Heads</h1>
             <div class="border-gray-700 border-b-4 w-1/2 m-auto md:w-1/6 border-opacity-50 mb-12">
             </div>
-            <div data-aos="fade-up"
-              class="max-w-sm bg-white duration-200 layered-card border-2 border-transparent hover:border-red-500">
-              <div class="team-item">
-                <div class="team-img relative">
-                  <img class="img-fluid"
-                    src="https://images.pexels.com/photos/356147/pexels-photo-356147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=900"
-                    alt="">
-                  <div class="team-overlay">
-                    <ul class="flex justify-center space-x-2 text-2xl">
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-facebook hover:text-blue-800 duration-200"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-instagram hover:text-red-500 duration-200"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <i class="fab fa-linkedin hover:text-purple-800 duration-200"></i>
-                        </a>
-                      </li>
-                    </ul>
+            <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
+              <% for (const member of foundDept.members) { %>
+                <% if(member.designation === "Team Head" && member.accActive) { %> 
+              <div data-aos="fade-up"
+                class="max-w-sm bg-white duration-200 layered-card border-2 border-transparent hover:border-blue-600">
+                <div class="team-item">
+                  <div class="team-img relative">
+                    <img class="img-fluid"
+                      src="<%= member.profile_pic_url %>"
+                      alt="">
+                    <div class="team-overlay">
+                      <ul class="flex justify-center space-x-2 text-2xl">
+                        <li>
+                          <a href="<%= member.sl_fb %>">
+                            <i class="hover:text-blue-800 duration-200 fab fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="<%= member.sl_ig %>">
+                            <i class="hover:text-red-500 duration-200 fab fa-instagram"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="<%= member.sl_li %>">
+                            <i class="hover:text-purple-800 duration-200 fab fa-linkedin"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="text-center px-5 py-3">
+                    <h3 class="team-name"><%= member.fullname %></h3>
+                    <p><%= member.designation %></p>
                   </div>
                 </div>
-                <div class="text-center px-5 py-3">
-                  <h3 class="team-name">John Doe</h3>
-                  <p>Team Leader</p>
-                </div>
               </div>
+                <% } %>
+              <% } %>  
             </div>
           </div>
         </div>
-        <!-- Team Heads -->
-        <div class="flex justify-center items-center">
-          <div id="team_heads" class="mt-10">
-            <div class="flex flex-col">
-              <h1 class="text-3xl text-center text-black my-2">Team Heads</h1>
-              <div class="border-gray-700 border-b-4 w-1/2 m-auto md:w-1/6 border-opacity-50 mb-12">
-              </div>
-              <div class="grid gap-8 lg:grid-cols-2 sm:grid-cols-1 md:grid-cols-1">
-                <div data-aos="fade-up"
-                  class="max-w-sm bg-white duration-200 layered-card border-2 border-transparent hover:border-blue-600">
-                  <div class="team-item">
-                    <div class="team-img relative">
-                      <img class="img-fluid"
-                        src="https://images.pexels.com/photos/356147/pexels-photo-356147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=900"
-                        alt="">
-                      <div class="team-overlay">
-                        <ul class="flex justify-center space-x-2 text-2xl">
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-blue-800 duration-200 fab fa-facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-red-500 duration-200 fab fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-purple-800 duration-200 fab fa-linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="text-center px-5 py-3">
-                      <h3 class="team-name">John Doe</h3>
-                      <p>Team Leader</p>
+      </div>
+      <% } %>
+      <% let amCount = 0 %> 
+      <% for (const member of foundDept.members) { %>
+        <% if (member.designation === "Active Member" && member.accActive) { %>
+          <% amCount++ %> 
+          <% } %> 
+      <% } %>
+      <% if(amCount) { %> 
+      <!-- Team Members -->
+      <div class="flex justify-center items-center">
+        <div id="team_members" class="mt-10">
+          <div class="flex flex-col">
+            <h1 class="text-3xl text-center text-black my-2">Team Members</h1>
+            <div class="border-gray-700 border-b-4 m-auto w-2/3 md:w-1/6 border-opacity-50 mb-12">
+            </div>
+            <div class="grid gap-8 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-1">
+              <!-- green border color is for team members -->
+              <% for (const member of foundDept.members) { %>
+                <% if(member.designation === "Active Member" && member.accActive) { %> 
+              <div data-aos="fade-up"
+                class="max-w-sm layered-card bg-white duration-200 border-2 border-transparent hover:border-green-600">
+                <div class="team-item">
+                  <div class="team-img relative">
+                    <img class="img-fluid"
+                      src="<%= member.profile_pic_url %>"
+                      alt="">
+                    <div class="team-overlay">
+                      <ul class="flex justify-center space-x-2 text-2xl">
+                        <li>
+                          <a href="<%= member.sl_fb %>">
+                            <i class="hover:text-blue-800 duration-200 fab fa-facebook"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="<%= member.sl_ig %>">
+                            <i class="hover:text-red-500 duration-200 fab fa-instagram"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="<%= member.sl_li %>">
+                            <i class="hover:text-purple-800 duration-200 fab fa-linkedin"></i>
+                          </a>
+                        </li>
+                      </ul>
                     </div>
                   </div>
-                </div>
-                <div data-aos="fade-up"
-                  class="max-w-sm layered-card bg-white duration-200 border-2 border-transparent hover:border-blue-600">
-                  <div class="team-item">
-                    <div class="team-img relative">
-                      <img class="img-fluid"
-                        src="https://images.pexels.com/photos/356147/pexels-photo-356147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=900"
-                        alt="">
-                      <div class="team-overlay">
-                        <ul class="flex justify-center space-x-2 text-2xl">
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-blue-800 duration-200 fab fa-facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-red-500 duration-200 fab fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-purple-800 duration-200 fab fa-linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="text-center px-5 py-3">
-                      <h3 class="team-name">John Doe</h3>
-                      <p>Team Leader</p>
-                    </div>
+                  <div class="text-center px-5 py-3">
+                    <h3 class="team-name"><%= member.fullname %></h3>
+                    <p><%= member.designation %></p>
                   </div>
                 </div>
               </div>
+                <% } %>
+              <% } %> 
             </div>
           </div>
         </div>
-        <!-- Team Members -->
-        <div class="flex justify-center items-center">
-          <div id="team_members" class="mt-10">
-            <div class="flex flex-col">
-              <h1 class="text-3xl text-center text-black my-2">Team Members</h1>
-              <div class="border-gray-700 border-b-4 m-auto w-2/3 md:w-1/6 border-opacity-50 mb-12">
-              </div>
-              <div class="grid gap-8 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-1">
-                <!-- green border color is for team members -->
-                <div data-aos="fade-up"
-                  class="max-w-sm layered-card bg-white duration-200 border-2 border-transparent hover:border-green-600">
-                  <div class="team-item">
-                    <div class="team-img relative">
-                      <img class="img-fluid"
-                        src="https://images.pexels.com/photos/356147/pexels-photo-356147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=900"
-                        alt="">
-                      <div class="team-overlay">
-                        <ul class="flex justify-center space-x-2 text-2xl">
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-blue-800 duration-200 fab fa-facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-red-500 duration-200 fab fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-purple-800 duration-200 fab fa-linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="text-center px-5 py-3">
-                      <h3 class="team-name">John Doe</h3>
-                      <p>Team Leader</p>
-                    </div>
-                  </div>
-                </div>
-                <div data-aos="fade-up"
-                  class="max-w-sm layered-card bg-white duration-200 border-2 border-transparent hover:border-green-600">
-                  <div class="team-item">
-                    <div class="team-img relative">
-                      <img class="img-fluid"
-                        src="https://images.pexels.com/photos/356147/pexels-photo-356147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=900"
-                        alt="">
-                      <div class="team-overlay">
-                        <ul class="flex justify-center space-x-2 text-2xl">
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-blue-800 duration-200 fab fa-facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-red-500 duration-200 fab fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-purple-800 duration-200 fab fa-linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="text-center px-5 py-3">
-                      <h3 class="team-name">John Doe</h3>
-                      <p>Team Leader</p>
-                    </div>
-                  </div>
-                </div>
-                <div data-aos="fade-up"
-                  class="max-w-sm layered-card bg-white duration-200 border-2 border-transparent hover:border-green-600">
-                  <div class="team-item">
-                    <div class="team-img relative">
-                      <img class="img-fluid"
-                        src="https://images.pexels.com/photos/356147/pexels-photo-356147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=900"
-                        alt="">
-                      <div class="team-overlay">
-                        <ul class="flex justify-center space-x-2 text-2xl">
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-blue-800 duration-200 fab fa-facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-red-500 duration-200 fab fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-purple-800 duration-200 fab fa-linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="text-center px-5 py-3">
-                      <h3 class="team-name">John Doe</h3>
-                      <p>Team Leader</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="grid gap-8 mt-4 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-1">
-                <div data-aos="fade-up"
-                  class="max-w-sm layered-card bg-white duration-200 border-2 border-transparent hover:border-green-600">
-                  <div class="team-item">
-                    <div class="team-img relative">
-                      <img class="img-fluid"
-                        src="https://images.pexels.com/photos/356147/pexels-photo-356147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=900"
-                        alt="">
-                      <div class="team-overlay">
-                        <ul class="flex justify-center space-x-2 text-2xl">
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-blue-800 duration-200 fab fa-facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-red-500 duration-200 fab fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-purple-800 duration-200 fab fa-linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="text-center px-5 py-3">
-                      <h3 class="team-name">John Doe</h3>
-                      <p>Team Leader</p>
-                    </div>
-                  </div>
-                </div>
-                <div data-aos="fade-up"
-                  class="max-w-sm layered-card bg-white duration-200 border-2 border-transparent hover:border-green-600">
-                  <div class="team-item">
-                    <div class="team-img relative">
-                      <img class="img-fluid"
-                        src="https://images.pexels.com/photos/356147/pexels-photo-356147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=900"
-                        alt="">
-                      <div class="team-overlay">
-                        <ul class="flex justify-center space-x-2 text-2xl">
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-blue-800 duration-200 fab fa-facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-red-500 duration-200 fab fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-purple-800 duration-200 fab fa-linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="text-center px-5 py-3">
-                      <h3 class="team-name">John Doe</h3>
-                      <p>Team Leader</p>
-                    </div>
-                  </div>
-                </div>
-                <div data-aos="fade-up"
-                  class="max-w-sm layered-card bg-white duration-200 border-2 border-transparent hover:border-green-600">
-                  <div class="team-item">
-                    <div class="team-img relative">
-                      <img class="img-fluid"
-                        src="https://images.pexels.com/photos/356147/pexels-photo-356147.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=900"
-                        alt="">
-                      <div class="team-overlay">
-                        <ul class="flex justify-center space-x-2 text-2xl">
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-blue-800 duration-200 fab fa-facebook"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-red-500 duration-200 fab fa-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i class="hover:text-purple-800 duration-200 fab fa-linkedin"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="text-center px-5 py-3">
-                      <h3 class="team-name">John Doe</h3>
-                      <p>Team Leader</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
+      <% } %> 
     </div>
+    <% } else { %>
+    <div class="text-center text-gray-700 text-3xl">
+      No data available
+    </div>  
+    <% } %> 
   </div>
 </section>
