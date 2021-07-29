@@ -12,7 +12,7 @@
         <div class="section-title text-center">
           <div class="m-auto line"></div>
           <div>
-            <h3 class="text-4xl font-bold">Featured</h3>
+            <h3 class="text-4xl font-bold">Featured <span class="font-normal"> Events</span></h3>
           </div>
         </div>
       </div>
@@ -22,20 +22,20 @@
           <div
             class="p-4 layered-card border-2 border-transparent hover:border-purple-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="<%= featured[i].event_pic %>"
               class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
             <div class="relative">
             </div>
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  <%= featured[i].name.length > 20 ? featured[i].name.substring(0, 18) + "..." : featured[i].name %> 
+                <p class="text-2xl text-black leading-5 font-medium">
+                  <%= featured[i].name.length > 20 ? featured[i].name.substring(0, 25) + "..." : featured[i].name %> 
                 </p>
               </div>
               <div>
                 <div class="flex flex-row space-x-3">
                   <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium"><%= moment(featured[i].event_starts).format("MMMM Do YYYY") %></p>
+                  <p class="text-lg mt-2 font-medium"><%= moment(featured[i].event_starts).format("MMMM Do YYYY") %></p>
                 </div>
               </div>
               <div class="text-center mt-2">
@@ -51,7 +51,8 @@
         <!-- button here -->
         <% if (featured.length > 4) { %> 
         <div class="flex justify-center items-center">
-          <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
+          <a 
+          class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
         </div>
         <% } %> 
       </div>
@@ -70,7 +71,7 @@
         <div class="section-title text-center">
           <div class="m-auto line"></div>
           <div>
-            <h3 class="text-4xl font-bold">Live</h3>
+            <h3 class="text-4xl font-bold">Live <span class="font-normal"> Events</span></h3>
           </div>
         </div>
       </div>
@@ -80,20 +81,20 @@
           <div
             class="p-4 layered-card border-2 border-transparent hover:border-purple-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="<%= live[i].event_pic %>"
               class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
             <div class="relative">
             </div>
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  <%= live[i].name.length > 20 ? live[i].name.substring(0, 18) + "..." : live[i].name %> 
+                <p class="text-2xl text-black leading-5 font-medium">
+                  <%= live[i].name.length > 20 ? live[i].name.substring(0, 25) + "..." : live[i].name %> 
                 </p>
               </div>
               <div>
                 <div class="flex flex-row space-x-3">
                   <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium"><%= moment(live[i].event_starts).format("MMMM Do YYYY") %> </p>
+                  <p class="text-lg mt-2 font-medium"><%= moment(live[i].event_starts).format("MMMM Do YYYY") %> </p>
                 </div>
                 <div class="flex flex-row space-x-3 mt-1 ml-1">
                   <img src="https://img.icons8.com/ultraviolet/40/000000/clock--v1.png" />
@@ -114,7 +115,9 @@
         <!-- button here -->
         <% if (live.length > 4) { %> 
           <div class="flex justify-center items-center">
-            <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
+            <a 
+            href="/events/live/all"
+            class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
           </div>
           <% } %> 
       </div>
@@ -132,7 +135,7 @@
         <div class="section-title text-center">
           <div class="m-auto line"></div>
           <div>
-            <h3 class="text-4xl font-bold">Ongoing</h3>
+            <h3 class="text-4xl font-bold">Ongoing <span class="font-normal"> Events</span></h3>
           </div>
         </div>
       </div>
@@ -142,20 +145,20 @@
           <div
             class="p-4 layered-card border-2 border-transparent hover:border-indigo-400 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="<%= ongoing[i].event_pic %>"
               class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
             <div class="relative">
             </div>
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  <%= ongoing[i].name.length > 20 ? ongoing[i].name.substring(0, 18) + "..." : ongoing[i].name %>
+                <p class="text-2xl text-black leading-5 font-medium">
+                  <%= ongoing[i].name.length > 20 ? ongoing[i].name.substring(0, 25) + "..." : ongoing[i].name %>
                 </p>
               </div>
               <div>
                 <div class="flex flex-row space-x-3">
                   <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium"><%= moment(ongoing[i].event_starts).format("MMMM Do YYYY") %></p>
+                  <p class="text-lg mt-2 font-medium"><%= moment(ongoing[i].event_starts).format("MMMM Do YYYY") %></p>
                 </div>
               </div>
               <div class="text-center mt-2">
@@ -171,7 +174,9 @@
         <!-- button here -->
         <% if (ongoing.length > 4) { %> 
           <div class="flex justify-center items-center">
-            <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
+            <a 
+            href="/events/ongoing/all"
+            class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
           </div>
           <% } %> 
       </div>
@@ -190,7 +195,7 @@
         <div class="section-title text-center">
           <div class="m-auto line"></div>
           <div>
-            <h3 class="text-4xl font-bold">Upcoming</h3>
+            <h3 class="text-4xl font-bold">Upcoming <span class="font-normal"> Events</span></h3>
           </div>
         </div>
       </div>
@@ -200,20 +205,20 @@
           <div
             class="p-4 layered-card border-2 border-transparent hover:border-blue-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              src="<%= upcoming[i].event_pic %>"
               class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
             <div class="relative">
             </div>
             <div class="flex flex-col space-y-8">
               <div class="text-black mt-1 top-1 md:m-0">
-                <p class="text-3xl leading-5 font-medium">
-                  <%= upcoming[i].name.length > 20 ? upcoming[i].name.substring(0, 18) + "..." : upcoming[i].name %>
+                <p class="text-2xl text-black leading-5 font-medium">
+                  <%= upcoming[i].name.length > 20 ? upcoming[i].name.substring(0, 30) + "..." : upcoming[i].name %>
                 </p>
               </div>
               <div>
                 <div class="flex flex-row space-x-3">
                   <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                  <p class="text-lg mt-2 text-black font-medium"><%= moment(upcoming[i].event_starts).format("MMMM Do YYYY") %></p>
+                  <p class="text-lg mt-2 font-medium"><%= moment(upcoming[i].event_starts).format("MMMM Do YYYY") %></p>
                 </div>
               </div>
               <div class="text-center mt-2">
@@ -230,7 +235,9 @@
         <!-- button here -->
         <% if (upcoming.length > 4) { %> 
           <div class="flex justify-center items-center">
-            <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
+            <a 
+            href="/events/upcoming/all"
+            class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
           </div>
           <% } %> 
       </div>
@@ -256,17 +263,17 @@
         <div
           class="relative hover:shadow-2xl mb-10 item transition-shadow duration-300 ease-in-out bg-white py-6 px-6 rounded my-4 ">
           <div class="mt-2">
-            <p class="text-xl font-semibold"><%= archived[i].name.length > 20 ? archived[i].name.substring(0, 18) + "..." : archived[i].name %></p>
-            <img class="rounded shadow-xl my-4" src="/img/team.jpg" alt="">
+            <p class="text-2xl text-black font-semibold"><%= archived[i].name.length > 20 ? archived[i].name.substring(0, 25) + "..." : archived[i].name %></p>
+            <img class="rounded shadow-xl my-4" src="<%= ongoing[i].event_pic %>" alt="">
           </div>
-          <div class="flex space-x-2 text-black  text-sm my-3">
+          <div class="flex space-x-2 text-sm my-3">
             <p class="truncate"><%= archived[i].description %><a href="/events/<%= archived[i].name%>" class="text-red-300">Read More</a></p>
           </div>
           <div class="border-t-2"></div>
           <div class="flex justify-between">
             <div class="my-2">
               <span>
-                <p class="font-bold text-black text-base mb-2 text-left"><%= moment(archived[i].event_starts).format("MMMM Do YYYY") %></p>
+                <p class="font-bold text-base mb-2 text-left"><%= moment(archived[i].event_starts).format("MMMM Do YYYY") %></p>
               </span>
             </div>
             <div class="text-center mt-2">
@@ -281,8 +288,10 @@
         <% } %>
       </div>
       <% if (archived.length > 4) { %> 
-        <div class="flex justify-center items-center">
-          <a class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
+        <div class="flex justify-center items-center mt-8">
+          <a 
+          href="/events/archived/all"
+          class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
         </div>
         <% } %>
     </div>
