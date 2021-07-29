@@ -8,6 +8,7 @@ router
   .get(
     authMid.authRequired,
     authMid.staffCheck,
+    authMid.teamLeaderLevelAuth,
     dboardCont.departmentRetriver
   );
 
@@ -16,6 +17,7 @@ router
   .delete(
     authMid.authRequired,
     authMid.staffCheck,
+    authMid.presidentLevelAuth,
     dboardCont.departmentDeleter
   );
 
@@ -25,6 +27,7 @@ router
   .post(
     authMid.authRequired, 
     authMid.staffCheck,
+    authMid.teamLeaderLevelAuth,
     validate.deptCreate,
     dboardCont.updateDept
   );
