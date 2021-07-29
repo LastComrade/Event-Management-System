@@ -10,19 +10,19 @@ const eventCont = {
   eventIndex: async (req, res) => {
     const title = "E-Cell | Events";
     const live = await Event.find({ category: "live" })
-      .select("name event_starts")
+      .select("name event_starts event_pic")
       .limit(5);
     const upcoming = await Event.find({ category: "upcoming" })
-      .select("name event_starts")
+      .select("name event_starts event_pic")
       .limit(5);
     const archived = await Event.find({ category: "archived" })
-      .select("name event_starts description")
+      .select("name event_starts description event_pic")
       .limit(5);
     const ongoing = await Event.find({ category: "ongoing" })
-      .select("name event_starts")
+      .select("name event_starts event_pic")
       .limit(5);
     const featured = await Event.find({ featured: true })
-      .select("name event_starts")
+      .select("name event_starts event_pic")
       .limit(5);
     console.log(archived);
     return res.render("layouts/home/event-page", {

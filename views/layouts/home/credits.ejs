@@ -54,7 +54,6 @@
         function handleForm(ev) {
             ev.preventDefault();
             let myForm = ev.target;
-            // after banckend chnage update this
             fetch("/feedback", {
                 body: JSON.stringify(convertFD2JSON(new FormData(myForm))),
                 method: "POST",
