@@ -8,7 +8,7 @@ router
   .get(
     authMid.authRequired,
     authMid.staffCheck,
-    dboardCont.departmentsRetriver
+    dboardCont.departmentRetriver
   );
 
 router
@@ -20,10 +20,10 @@ router
   );
 
 router
-  .route("/dashboard/departments/:name/edit")
+  .route("/dashboard/department/:id/edit")
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.editDeptInfo)
-  .put(
-    authMid.authRequired,
+  .post(
+    authMid.authRequired, 
     authMid.staffCheck,
     validate.deptCreate,
     dboardCont.updateDept

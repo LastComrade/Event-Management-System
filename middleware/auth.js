@@ -125,7 +125,7 @@ const authMid = {
                   return res.redirect("/staff-login");
                 } else {
                   // res.locals.staff_role = foundStaff.role;
-                  console.log(foundStaff);
+                  // console.log(foundStaff);
                   const role = foundStaff.role;
                   if (foundStaff.role == "admin") {
                     next();

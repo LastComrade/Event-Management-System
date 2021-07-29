@@ -634,7 +634,7 @@ const dboardCont = {
               // console.log(temp2.properties.sheetId)
               sheetID = temp2.properties.sheetId;
               // console.log(`sheet ID -> ${sheetID}`)
-              console.log(req.params.id);
+              // console.log(req.params.id);
               await Event.findOneAndUpdate(
                 { name: req.body.name },
                 { sheetID }
@@ -711,8 +711,8 @@ const dboardCont = {
           console.log(`server error`);
           next(ErrorHandler.serverError());
         } else if (!existingEvent) {
-          console.log(existingEvent);
-          console.log("thi is ", req.params.id);
+          console.log("This???", existingEvent);
+          // console.log("thi is ", req.params.id);
           return res.status(404).json({
             message: "Entered Event does not exist",
           });
@@ -920,9 +920,9 @@ const dboardCont = {
     });
   },
 
-  departmentsRetriver: async (req, res, next) => {
+  departmentRetriver: async (req, res, next) => {
     // for retriving all the departments from the database
-    console.log(res.locals.staff.department[0]);
+    // console.log(res.locals.staff);
     await Dept.findOne(
       { _id: res.locals.staff.department },
       async (err, dept) => {
@@ -940,7 +940,7 @@ const dboardCont = {
           const eventCount = await Event.countDocuments();
           const deptCount = await Dept.countDocuments();
           const participantCount = await Participant.countDocuments();
-          console.log(dept);
+          // console.log(dept);
           return res.render("layouts/dashboard/department", {
             error: req.flash("error"),
             success: req.flash("success"),
@@ -986,75 +986,55 @@ const dboardCont = {
 
   updateDept: async (req, res, next) => {
     try {
-      const { name, tagline, description, recruiting, members } = req.body;
+      const { name, tagline, description, recruiting } = req.body;
 
-      await Dept.findOne(
-        { name: req.params.name },
-        async (err, existingDept) => {
-          if (err) {
-            console.log(`server error`);
-            next(ErrorHandler.serverError());
-          } else if (!existingDept) {
-            return res.status(404).json({
-              message: "Entered Event does not exist",
-            });
-          } else {
-            try {
-              if (req.body.name == req.params.name) {
-                // Written this way to solve an issue
-                existingDept.description = description;
-                existingDept.tagline = tagline;
-                existingDept.recruiting = recruiting;
-                existingDept.members = members;
-                existingDept.save();
-                return res.status(200).json({
-                  message: "Department has been updated successfully",
+      await Dept.findOne({ _id: req.params.id }, async (err, existingDept) => {
+        if (err) {
+          console.log(`server error`);
+          next(ErrorHandler.serverError());
+        } else if (!existingDept) {
+          return res.status(404).json({
+            message: "Entered Event does not exist",
+          });
+        } else {
+          try {
+            await Dept.findOne({ name: req.body.name }, async (err, foundDept) => {
+              if (err) {
+                console.log(`server error`);
+                next(ErrorHandler.serverError());
+              } else if (foundDept) {
+                return res.status(404).json({
+                  message:
+                    "Department with the new name already exists, Please try another name",
                 });
               } else {
-                await Dept.findOne(
-                  { name: req.body.name },
-                  (err, foundDept) => {
-                    if (err) {
-                      console.log(`server error`);
-                      next(ErrorHandler.serverError());
-                    } else if (foundDept) {
-                      return res.status(404).json({
-                        message:
-                          "Department with the new name already exists, Please try another name",
-                      });
-                    } else {
-                      try {
-                        existingDept.name = name;
-                        existingDept.description = description;
-                        existingDept.tagline = tagline;
-                        existingDept.recruiting = recruiting;
-                        existingDept.members = members;
+                try {
+                  existingDept.name = name;
+                  existingDept.description = description;
+                  existingDept.tagline = tagline;
+                  existingDept.recruiting = recruiting;
 
-                        existingDept.save();
-                        return res.status(200).json({
-                          message: "Department has been updated successfully",
-                        });
-                      } catch (err) {
-                        console.log("Error while saving the department");
-                        res.status(404).json({
-                          message:
-                            "An Error occured while updating the department",
-                        });
-                      }
-                    }
-                  }
-                );
+                  await existingDept.save();
+                  return res.status(200).json({
+                    message: "Department has been updated successfully",
+                  });
+                } catch (err) {
+                  console.log("Error while saving the department");
+                  res.status(404).json({
+                    message: "An Error occured while updating the department",
+                  });
+                }
               }
-            } catch (err) {
-              console.log(err);
-              return res.status(404).json({
-                message:
-                  "Something went wrong while saving the event, Please try again later",
-              });
-            }
+            });
+          } catch (err) {
+            console.log(err);
+            return res.status(404).json({
+              message:
+                "Something went wrong while saving the event, Please try again later",
+            });
           }
         }
-      );
+      });
     } catch (err) {
       next(ErrorHandler.serverError());
     }

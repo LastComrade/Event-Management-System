@@ -1,47 +1,52 @@
 <!-- Department Edit form goes here -->
 <div class="flex h-full items-center justify-center  mt-6 mb-6">
-    <div class="grid bg-gray-200 rounded-lg shadow-xl w-full mx-5">
-  
-      <div class="flex justify-center mt-12">
-        <div class="flex">
-          <h1 class="text-gray-600 font-bold md:text-2xl text-xl">Department Edit Form</h1>
-        </div>
+  <div class="grid bg-gray-200 rounded-lg shadow-xl w-full mx-5">
+
+    <div class="flex justify-center mt-12">
+      <div class="flex">
+        <h1 class="text-gray-600 font-bold md:text-2xl text-xl">Department Edit Form</h1>
       </div>
-  
+    </div>
+    <form>
       <div class="grid grid-cols-1 mt-5 mx-7">
         <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Department Name</label>
-        <input
-            name="name" 
-            class="py-2 px-3 rounded-lg border-2 text-gray-700 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Department Name" />
-      </div>
-  
-      <div class="grid grid-cols-1 mt-5 mx-7">
-        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Department Tagline</label>
-        <textarea name="tagline" rows="2" class="resize-none py-2 px-3 text-gray-700 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Department Tagline" >
-        </textarea>
+        <input name="name" value="<%= dept.name %>"
+          class="py-2 px-3 rounded-lg border-2 text-gray-700 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+          type="text" placeholder="Department Name" />
       </div>
 
       <div class="grid grid-cols-1 mt-5 mx-7">
-        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Department Description</label>
-        <textarea name="description" rows="4" class="resize-none py-2 px-3 text-gray-700 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" type="text" placeholder="Department Tagline" >
-        </textarea>
+        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Department Tagline</label>
+        <textarea name="tagline" rows="2"
+          class="resize-none py-2 px-3 text-gray-700 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+          type="text" placeholder="Department Tagline"><%= dept.tagline %></textarea>
       </div>
-  
-      <div class="grid grid-cols-1 mt-5 mx-7 text-gray-600 justify-center" x-data="{toggle: '0'}"> Recruiting
-        <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear"
-          :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
-          <label for="toggle"
-            class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer"
-            :class="[toggle === '1' ? 'translate-x-full border-green-400' : 'translate-x-0 border-gray-400']"></label>
-          <input type="checkbox" id="toggle" name="featured"
-            class="appearance-none w-full h-full active:outline-none focus:outline-none"
-            @click="toggle === '0' ? toggle = '1' : toggle = '0'" />
-        </div>
+
+      <div class="grid grid-cols-1 mt-5 mx-7">
+        <label class="uppercase md:text-sm text-xs text-gray-500 text-light font-semibold">Department
+          Description</label>
+        <textarea name="description" rows="4"
+          class="resize-none py-2 px-3 text-gray-700 rounded-lg border-2 border-purple-300 mt-1 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+          type="text" placeholder="Department Tagline"><%= dept.description %></textarea>
       </div>
-  
+
+      <div class="grid grid-cols-1 font-bold uppercase mt-5 mx-7 text-gray-600 justify-center" x-data="{toggle: '0'}">
+        Recruiting - <%= dept.recruiting %>
+          <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear"
+            :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
+            <label for="toggle"
+              class="absolute left-0 bg-white border-2 mb-2 w-6 h-6 rounded-full transition transform duration-100 ease-linear cursor-pointer"
+              :class="[toggle === '1' ? 'translate-x-full border-green-400' : 'translate-x-0 border-gray-400']"></label>
+            <input type="checkbox" id="toggle" name="featured"
+              class="appearance-none w-full h-full active:outline-none focus:outline-none"
+              @click="toggle === '0' ? toggle = '1' : toggle = '0'" />
+          </div>
+      </div>
+
       <div class='flex items-center justify-center  md:gap-8 gap-4 pt-5 pb-5'>
-        <button class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Submit</button>
+        <button type="submit"
+          class='w-auto bg-purple-500 hover:bg-purple-700 rounded-lg shadow-xl font-medium text-white px-4 py-2'>Submit</button>
       </div>
-  
-    </div>
+    </form>
   </div>
+</div>
