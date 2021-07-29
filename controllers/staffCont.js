@@ -389,21 +389,26 @@ const staffCont = {
               req.flash("error", "Invalid email or password");
               return res.redirect("back");
             } else {
-              const token = jwt.sign(
-                {
-                  id: staff._id,
-                },
-                process.env.JWT_SECRET,
-                {
-                  expiresIn: "30m",
-                }
-              );
-              res.cookie("jwt_token", token, {
-                httpOnly: true,
-                secure: true,
-                maxAge: 30 * 60 * 1000,
-              });
-              return res.redirect("/dashboard");
+              if (staff.accActive) {
+                const token = jwt.sign(
+                  {
+                    id: staff._id,
+                  },
+                  process.env.JWT_SECRET,
+                  {
+                    expiresIn: "30m",
+                  }
+                );
+                res.cookie("jwt_token", token, {
+                  httpOnly: true,
+                  secure: true,
+                  maxAge: 30 * 60 * 1000,
+                });
+                return res.redirect("/dashboard");
+              } else {
+                req.flash("error", "Your account is deactivated");
+                return res.redirect("/staff-login");
+              }
             }
           });
         }

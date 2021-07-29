@@ -7,9 +7,11 @@
             <tr
               class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
               <th class="px-4 py-3">Members</th>
-              <th class="px-4 py-3">Status</th>
+              <th class="px-8 py-3">Status</th>
               <th class="px-4 py-3">Role</th>
+              <% if (staff.role !== "member") { %>
               <th class="px-4 py-3">Email</th>
+              <% } %>
               <th class="px-4 py-3">Department</th>
             </tr>
           </thead>
@@ -37,16 +39,18 @@
                 </td>
                 <td class="px-4 py-3 text-xs">
                   <span
-                    class="px-2 py-1 font-semibold leading-tight  bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
+                    class="px-2 py-1 font-semibold leading-tight <%= member.accActive ? "bg-green-700" : "bg-red-700" %>  rounded-full text-white">
                     <%= member.accActive ? "Active" : "Not Active" %>
                   </span>
                 </td>
                 <td class="px-4 py-3 text-sm capitalize">
                   <%= member.role %>
                 </td>
+                <% if (staff.role !== "member") { %>
                 <td class="px-4 py-3 text-sm">
                   <%= member.email %>
                 </td>
+                <% } %>
                 <td class="px-4 py-3 text-sm">
                   <%= member.department[0].name %>
                 </td>
