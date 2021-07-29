@@ -13,9 +13,9 @@
       <div
         class="w-auto mb-2 bg-white border-2 border-transparent max-w-md mt-5 hover:border-red-600 duration-200 layered-card rounded wow fadeIn"
         data-wow-duration="1s" data-wow-delay="0.2s">
-        <img class="rounded-sm h-52 w-full" src="/img/hero-steve.jpg">
+        <img class="rounded-sm h-52 w-full" src="<%= dept.pic %>">
         <div class="flex flex-col px-4 pt-3">
-          <h1 class="font-semibold text-center text-3xl text-black"><%= dept.name %> </h1>
+          <h1 class="font-semibold h-28 md:h-20 text-center text-3xl text-black"><%= dept.name %></h1>
           <p class="text-black text-center"><i class="fa fa-quote-left pt-4" aria-hidden="true"></i>
           <%= dept.description.substring(0, 150) %>... 
           </p>

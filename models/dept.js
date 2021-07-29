@@ -15,6 +15,10 @@ const DeptSchema = Schema(
       type: String,
       required: true,
     },
+    pic: {
+      type: String, 
+      required: true,
+    },
     members: [
       {
         type: mongoose.Schema.Types.ObjectId,
