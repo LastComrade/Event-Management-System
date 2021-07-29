@@ -8,7 +8,8 @@ router
   .get(
     authMid.authRequired,
     authMid.staffCheck,
-    dboardCont.departmentsRetriver
+    authMid.teamLeaderLevelAuth,
+    dboardCont.departmentRetriver
   );
 
 router
@@ -16,15 +17,17 @@ router
   .delete(
     authMid.authRequired,
     authMid.staffCheck,
+    authMid.presidentLevelAuth,
     dboardCont.departmentDeleter
   );
 
 router
-  .route("/dashboard/departments/:name/edit")
+  .route("/dashboard/department/:id/edit")
   .get(authMid.authRequired, authMid.staffCheck, dboardCont.editDeptInfo)
-  .put(
-    authMid.authRequired,
+  .post(
+    authMid.authRequired, 
     authMid.staffCheck,
+    authMid.teamLeaderLevelAuth,
     validate.deptCreate,
     dboardCont.updateDept
   );

@@ -23,6 +23,7 @@ router
   .get(
     authMid.authRequired,
     authMid.staffCheck,
+    authMid.teamLeaderLevelAuth,
     dboardCont.idInternshipMessage
   );
 

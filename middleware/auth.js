@@ -125,7 +125,7 @@ const authMid = {
                   return res.redirect("/staff-login");
                 } else {
                   // res.locals.staff_role = foundStaff.role;
-                  console.log(foundStaff);
+                  // console.log(foundStaff);
                   const role = foundStaff.role;
                   if (foundStaff.role == "admin") {
                     next();
@@ -158,7 +158,7 @@ const authMid = {
         jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
           if (err) {
             res.locals.staff = null;
-            req.flash("error", "An error occured");
+            req.flash("error", "An error occured"); 
             res.redirect("/staff-login");
           } else {
             await Staff.findOne(
@@ -241,7 +241,7 @@ const authMid = {
                       "error",
                       "You are Not Authorized to access this functionality"
                     );
-                    return res.redirect("dashboard");
+                    return res.redirect("/dashboard");
                   }
                 }
               }
