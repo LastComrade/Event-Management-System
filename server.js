@@ -8,11 +8,7 @@ const path = require("path");
 const ejsMate = require("ejs-mate");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const homeRoutes = require("./routes/index");
-const deptRoutes = require("./routes/department");
-const eventRoutes = require("./routes/event");
-const dashboardRoutes = require("./routes/dashboard");
-const authRoutes = require("./routes/auth");
+const routes = require("./routes/index");
 const ErrorHandler = require("./utils/errorHandler");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
@@ -68,11 +64,7 @@ app.use(
 app.use(flash());
 
 // Routes Middleware
-app.use("/", homeRoutes); // For home routes
-app.use("/", deptRoutes); // For department routes
-app.use("/", eventRoutes); // For event routes
-app.use("/", authRoutes); // For auth routes
-app.use("/", dashboardRoutes); // For dashboard routes
+app.use("/", routes); // For all routes
 
 // Error handling middleware to handle all the errors from the controllers or middlewares
 app.use((err, req, res, next) => {
