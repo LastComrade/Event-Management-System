@@ -54,11 +54,20 @@ const dboardCont = {
           console.log(err);
           next(ErrorHandler.forbidden());
         } else if (decodedToken) {
-          const staff = await Staff.find()
-            .select(
-              "-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt"
-            )
-            .populate("department", "name");
+          let staff;
+          if (res.locals.staff.role === "member") {
+            staff = await Staff.find()
+              .select(
+                "-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt -email"
+              )
+              .populate("department", "name");
+          } else {
+            staff = await Staff.find()
+              .select(
+                "-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt"
+              )
+              .populate("department", "name");
+          }
           // console.log("This should be the array of the staff", staff);
           const eventCount = await Event.countDocuments();
           const deptCount = await Dept.countDocuments();
@@ -642,6 +651,25 @@ const dboardCont = {
                 },
               };
               await sheetAPI.spreadsheets.values.append(eventSheetInfo2);
+
+              const eventSheetInfo3 = {
+                spreadsheetId: process.env.event_spreadsheet_id,
+                resource: {
+                  requests: [
+                    {
+                      updateSheetProperties: {
+                        properties: {
+                          sheetId: sheetID,
+                          title: `${req.body.name}_${sheetID}`,
+                        },
+                        fields: "title",
+                      },
+                    },
+                  ],
+                  includeSpreadsheetInResponse: true,
+                },
+              };
+              await sheetAPI.spreadsheets.batchUpdate(eventSheetInfo3);
             } catch (err) {
               console.log(err);
               console.log(
@@ -740,6 +768,7 @@ const dboardCont = {
               message: "Event has been updated successfully",
             });
             // SheetAPI code
+            // if(existingEvent.name != name){
             try {
               let client_side = new google.auth.JWT(
                 process.env.client_email,
@@ -775,7 +804,7 @@ const dboardCont = {
                         updateSheetProperties: {
                           properties: {
                             sheetId: existingEvent.sheetID,
-                            title: name,
+                            title: `${name}_${existingEvent.sheetID}`,
                           },
                           fields: "title",
                         },
@@ -791,6 +820,7 @@ const dboardCont = {
                   "error occured while updating the event on spreadsheet"
                 );
               }
+              // };
             };
             return;
           } catch (err) {
@@ -928,6 +958,7 @@ const dboardCont = {
 
   editDeptInfo: async (req, res, next) => {
     try {
+      console.log(req.body);
       await Dept.findOne({ name: req.params.name }, async (err, foundDept) => {
         if (err) {
           req.flash("error", "Something went wrong. Please try again later");
@@ -936,12 +967,16 @@ const dboardCont = {
           return res.redirect("back");
         } else {
           // To be changed
-          return res.status(200).json({
-            foundDept,
-          });
-          // return res.render("/layouts/deparment-edit-page", {
-          //     foundDept
+          // return res.status(200).json({
+          //   foundDept,
           // });
+          return res.render(
+            "/layouts/dashboard/sections/department-edit-page",
+            {
+              title: `Dashboard | Departments | ${foundDept.name} | Edit`,
+              foundDept,
+            }
+          );
         }
       });
     } catch (err) {
@@ -1197,7 +1232,9 @@ const dboardCont = {
       // console.log(res.locals.staff.id)
       const staffData = await Staff.findOne({
         _id: res.locals.staff.id,
-      }).select("firstname lastname sl_li sl_ig sl_fb profile_pic_url");
+      }).select(
+        "firstname lastname description sl_li sl_ig sl_fb profile_pic_url"
+      );
       // console.log(staff);
       const staffCount = await Staff.countDocuments();
       const eventCount = await Event.countDocuments();
@@ -1224,11 +1261,26 @@ const dboardCont = {
   profileEdit: async (req, res, next) => {
     try {
       // console.log("This is t", req.body);
-      const { firstname, lastname, profile_pic_url, sl_li, sl_ig, sl_fb } =
-        req.body;
+      const {
+        firstname,
+        lastname,
+        description,
+        profile_pic_url,
+        sl_li,
+        sl_ig,
+        sl_fb,
+      } = req.body;
       await Staff.findByIdAndUpdate(
         { _id: res.locals.staff.id },
-        { firstname, lastname, profile_pic_url, sl_li, sl_ig, sl_fb }
+        {
+          firstname,
+          lastname,
+          description,
+          profile_pic_url,
+          sl_li,
+          sl_ig,
+          sl_fb,
+        }
       );
       return res.redirect("/dashboard/profile");
     } catch (err) {

@@ -51,6 +51,7 @@ const eventCont = {
             // })
             return res.render("layouts/home/live-events", {
               title: `E-Cell | Live Events`,
+              moment,
               liveEvents
             })
           }
@@ -76,6 +77,7 @@ const eventCont = {
             // })
             return res.render("layouts/home/ongoing-events", {
               title: `E-Cell | Ongoing Events`,
+              moment,
               ongoingEvents
             })
           }
@@ -101,6 +103,7 @@ const eventCont = {
             // })
             return res.render("layouts/home/upcoming-events", {
               title: `E-Cell | Upcoming Events`,
+              moment,
               upcomingEvents
             })
           }
@@ -126,6 +129,7 @@ const eventCont = {
             // })
             return res.render("layouts/home/archived-events", {
               title: `E-Cell | Archived Events`,
+              moment,
               archivedEvents
             })
           }
@@ -140,9 +144,9 @@ const eventCont = {
   finder: async (req, res, next) => {
     await Event.findOne({ name: req.params.name }, (err, foundEvent) => {
       if (err) {
-        next(Errorhandler.serverError());
+        return res.render("layouts/error-404");
       } else if (!foundEvent) {
-        next(Errorhandler.notFoundError());
+        return res.render("layouts/error-404");
       } else {
         return res.render("layouts/home/event-landing", {
           foundEvent,
@@ -227,7 +231,7 @@ const eventCont = {
 
                           const options1 = {
                             spreadsheetId: process.env.event_spreadsheet_id,
-                            range: `${foundEvent.name}!A2`,
+                            range: `${foundEvent.name}_${foundEvent.sheetID}!A2`,
                             valueInputOption: "RAW",
                             resource: {
                               values: [
@@ -303,7 +307,7 @@ const eventCont = {
 
                             const info = {
                               spreadsheetId: process.env.event_spreadsheet_id,
-                              range: `${foundEvent.name}!A2`,
+                              range: `${foundEvent.name}_${foundEvent.sheetID}!A2`,
                               valueInputOption: "RAW",
                               resource: {
                                 values: [
