@@ -16,7 +16,7 @@ router
 
 router
   .route("/dashboard/contact-messages/:id")
-  .get(authMid.authRequired, authMid.staffCheck, dboardCont.idContactMessage);
+  .get(authMid.authRequired, authMid.staffCheck, authMid.teamLeaderLevelAuth, dboardCont.idContactMessage);
 
 // Exporting routes
 module.exports = router;

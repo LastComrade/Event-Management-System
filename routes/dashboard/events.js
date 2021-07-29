@@ -16,6 +16,7 @@ router
   .post(
     authMid.authRequired,
     authMid.staffCheck,
+    authMid.onlyEventManagement,
     validate.eventCreate,
     dboardCont.createEvent
   );
@@ -23,7 +24,7 @@ router
 router
   .route("/dashboard/events/:name")
   // .get(authMid.authRequired, authMid.staffCheck);
-  .delete(authMid.authRequired, authMid.staffCheck, dboardCont.eventDeleter);
+  .delete(authMid.authRequired, authMid.staffCheck, authMid.onlyEventManagement, dboardCont.eventDeleter);
 
 router
   .route("/dashboard/events/:name/participants")
@@ -35,10 +36,11 @@ router
 
 router
   .route("/dashboard/events/:id/edit")
-  .get(authMid.authRequired, authMid.staffCheck, dboardCont.editEventInfo)
+  .get(authMid.authRequired, authMid.staffCheck, authMid.onlyEventManagement, dboardCont.editEventInfo)
   .post(
     authMid.authRequired,
     authMid.staffCheck,
+    authMid.onlyEventManagement,
     validate.eventCreate,
     dboardCont.updateEvent
   );
