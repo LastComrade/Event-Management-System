@@ -1,9 +1,9 @@
 <div id="organizers" class="flex justify-center items-center wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-  <div id="team_members" class="mt-10">
-    <div class="flex flex-col">
+  <div id="team_members" class="mt-10 w-full">
+    <div class="flex flex-col justify-center items-center w-full">
       <div class="mb-4 section-title">
         <div class="mx-auto line"></div>
-        <h1 class="text-4xl font-bold text-center">Organizers</h1>
+        <h1 class="text-3xl font-bold text-center">Organizers</h1>
       </div>
       <div class="mt-4 content-center mx-10 grid gap-8 lg:grid-cols-3 grid-cols-1">
         <!-- green border color is for team members -->
@@ -11,10 +11,10 @@
         <% for (const org of foundEvent.organizers) { %>
           <% if (org.name !== "" && org.name) { %>
           <div data-aos="fade-up"
-            class="max-w-sm w-80 h-96 layered-card bg-white duration-200 border-2 rounded border-transparent hover:border-green-600">
-            <div class="team-item p-3">
+            class="layered-card bg-white duration-200 border-2 rounded border-transparent hover:border-green-600">
+            <div class="p-3">
               <div class="team-img relative">
-                <img class="object-fit rounded h-72 w-full"
+                <img class="object-fit rounded h-72 w-96 image-fluid"
                   src="<%= org.pic %>"
                   alt="">
                 <div class="team-overlay">

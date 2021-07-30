@@ -1,3 +1,4 @@
+
 <div id="event-registration" class="px-6 pt-3 pb-5 mb-10 bg-white rounded-lg shadow-2xl md:px-12 subscribe-area wow fadeIn"
   data-wow-duration="1s" data-wow-delay="0.5s">
   <div class="flex flex-col justify-center items-center">
@@ -22,8 +23,9 @@
           <input type="text" name="linkedin_account" placeholder="Your Linkedin Account Id"
             class="w-full relative py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-red-400 focus:outline-none">
           <button
-            type="submit"
-            class="m-auto w-full h-10 text-lg relative right-0 px-5 font-semibold text-white duration-200 rounded-md hover:shadow-xl bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 overflow-hidden">Submit</button>
+            type="submit" 
+                class="<%= foundEvent.category === "archived" ? "cursor-not-allowed opacity-50" : "" %> m-auto w-full h-10 text-lg relative right-0 px-5 font-semibold text-white duration-200 rounded-md hover:shadow-xl bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 overflow-hidden" <%= foundEvent.category === "archived" ? "disabled" : "" %>><%= foundEvent.category === "archived" ? "Registration Closed" : "Submit" %>
+              </button>
         </form>
       </div>
     </div>
