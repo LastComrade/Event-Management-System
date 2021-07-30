@@ -75,10 +75,11 @@ module.exports.loginSchema = Joi.object({
 });
 
 module.exports.deptSchema = Joi.object({
-  name: Joi.string().required().label("department name"),
-  tagline: Joi.string().required().label("department tagline"),
-  description: Joi.string().required().label("department description"),
-  recruiting: Joi.boolean().label("it should be a true or false"),
+  name: Joi.string().required().label("Department Name"),
+  tagline: Joi.string().required().label("Department Tagline"),
+  description: Joi.string().required().label("Department Description"),
+  recruiting: Joi.boolean().label("Recruiting"),
+  featured: Joi.boolean().label("Featured"),
   members: Joi.array().items(Joi.string()),
   pic: Joi.string().required().trim().min(1),
 });

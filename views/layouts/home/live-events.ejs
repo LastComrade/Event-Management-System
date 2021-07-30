@@ -31,20 +31,20 @@
                 <div
                 class="p-4 layered-card border-2 border-transparent hover:border-purple-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
                 <img
-                    src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                    src="<%= liveEvents[i].event_pic %>"
                     class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
                 <div class="relative">
                 </div>
                 <div class="flex flex-col space-y-8">
                     <div class="text-black mt-1 top-1 md:m-0">
-                    <p class="text-3xl leading-5 font-medium">
+                    <p class="text-2xl text-black leading-5 font-medium">
                         <%= liveEvents[i].name %>
                     </p>
                     </div>
                     <div>
                     <div class="flex flex-row space-x-3">
                         <img src="https://img.icons8.com/plasticine/50/000000/calendar--v3.png" />
-                        <p class="text-lg mt-2 text-black font-medium"><%= moment(liveEvents[i].event_starts).format("MMMM Do YYYY") %></p>
+                        <p class="text-lg mt-2 font-medium"><%= moment(liveEvents[i].event_starts).format("MMMM Do YYYY") %></p>
                     </div>
                     </div>
                     <div class="text-center mt-2">
@@ -87,7 +87,78 @@
   <!-- Scripts -->
   <%- include("./partials/scripts.ejs") %>
   <!-- ./Scripts -->
+  <script>
+    function convertFD2JSON(formData) {
+            let obj = {};
+            formData.forEach(function(value, key) {
+                obj[key] = value;
+            })
+            return obj;
+        }
+        document.querySelector("form").addEventListener("submit", handleForm);
+        function handleForm(ev) {
+            ev.preventDefault();
+            let myForm = ev.target;
+            fetch("/events-suggestion", {
+                body: JSON.stringify(convertFD2JSON(new FormData(myForm))),
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            })
+            .then((some) => { 
+                  return some.json();
+                })
+            .then(async (res) => {
+                  document.querySelector('form').reset();
+                  console.log(res)
+                  // instanciate new modal
+                  var modal = new tingle.modal({
+                      footer: true,
+                      stickyFooter: false,
+                      closeMethods: ['button', 'escape', 'overlay'],
+                      closeLabel: "Close",
+                      cssClass: ['custom-class-1', 'custom-class-2'],
+                  });
+  
+                  // set content
+                  modal.setContent( `<h1> ${res.message} </h1>` );
+      
+  
+                  // add button
+                  modal.addFooterBtn('close', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
+                      // here goes some logic
+                      modal.close();
+                  });
 
+                  modal.open()
+                
+            })
+            .catch((err) => {
+                // instanciate new modal
+                var modal = new tingle.modal({
+                      footer: true,
+                      stickyFooter: false,
+                      closeMethods: ['button', 'escape'],
+                      closeLabel: "Close",
+                      cssClass: ['custom-class-1', 'custom-class-2'],
+                  });
+  
+                  // set content
+                  modal.setContent( `<h1> ${res.message} </h1>` );
+      
+  
+                  // add button
+                  modal.addFooterBtn('close', 'tingle-btn tingle-btn--dange tingle-btn--pull-right', function() {
+                      // here goes some logic
+                      modal.close();
+                  });
+
+                  modal.open()
+            })
+        }
+        
+  </script>
 </body>
 
 </html>
