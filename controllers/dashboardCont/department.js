@@ -18,37 +18,51 @@ const department = {
   departmentRetriver: async (req, res, next) => {
     // for retriving all the departments from the database
     // console.log(res.locals.staff);
-    await Dept.findOne(
-      { _id: res.locals.staff.department },
-      async (err, dept) => {
-        if (err) {
-          console.log(
-            `Error occur while retriving departments list from database`
-          );
-          req.flash("error", "An error occured while retriving departments");
-          return res.redirect("/dashboard");
-        } else if (!dept) {
-          req.flash("error", "Department with this name, does not exist");
-          return res.redirect("/dashboard");
-        } else {
-          const staffCount = await Staff.countDocuments();
-          const eventCount = await Event.countDocuments();
-          const deptCount = await Dept.countDocuments();
-          const participantCount = await Participant.countDocuments();
-          // console.log(dept);
-          return res.render("layouts/dashboard/department", {
-            error: req.flash("error"),
-            success: req.flash("success"),
-            staffCount,
-            eventCount,
-            deptCount,
-            participantCount,
-            title: `Dashboard | Departments | ${dept.name}`,
-            dept,
-          });
-        }
+    try {
+      if (res.locals.staff) {
+        await Dept.findOne(
+          { _id: res.locals.staff.department },
+          async (err, dept) => {
+            if (err) {
+              console.log(
+                `Error occur while retriving departments list from database`
+              );
+              req.flash(
+                "error",
+                "An error occured while retriving departments"
+              );
+              return res.redirect("/dashboard");
+            } else if (!dept) {
+              req.flash("error", "Department with this name, does not exist");
+              return res.redirect("/dashboard");
+            } else {
+              const staffCount = await Staff.countDocuments();
+              const eventCount = await Event.countDocuments();
+              const deptCount = await Dept.countDocuments();
+              const participantCount = await Participant.countDocuments();
+              // console.log(dept);
+              return res.render("layouts/dashboard/department", {
+                error: req.flash("error"),
+                success: req.flash("success"),
+                staffCount,
+                eventCount,
+                deptCount,
+                participantCount,
+                title: `Dashboard | Departments | ${dept.name}`,
+                dept,
+              });
+            }
+          }
+        );
+      } else {
+        req.flash("error", "Something went wrong. Please try again later");
+        return res.redirect("/dashboard");
       }
-    );
+    } catch (err) {
+      console.log(err);
+      req.flash("error", "Something went wrong. Please try again later");
+      return res.redirect("/dashboard");
+    }
   },
 
   editDeptInfo: async (req, res, next) => {

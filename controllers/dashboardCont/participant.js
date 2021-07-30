@@ -32,7 +32,7 @@ const participant = {
     // });
     try {
       let participants;
-      if (res.locals.staff.role !== "member") {
+      if (res.locals.staff && res.locals.staff.role !== "member") {
         participants = await Participant.find().sort({ updatedAt: -1 });
       } else {
         participants = await Participant.find()
@@ -102,7 +102,7 @@ const participant = {
   eventParticipantsList: async (req, res, next) => {
     try {
       let event;
-      if (res.locals.staff.role !== "member") {
+      if (res.locals.staff && res.locals.staff.role !== "member") {
         event = await Event.findOne({
           name: req.params.name,
         }).populate({

@@ -28,7 +28,7 @@ const contact = {
           const deptCount = await Dept.countDocuments();
           const participantCount = await Participant.countDocuments();
           let contactMessages;
-          if (res.locals.staff.role !== "member") {
+          if (res.locals.staff && res.locals.staff.role !== "member") {
             contactMessages = await Contact.find().limit(10);
           } else {
             contactMessages = await Contact.find().limit(10).select("-email");
@@ -71,7 +71,7 @@ const contact = {
           const deptCount = await Dept.countDocuments();
           const participantCount = await Participant.countDocuments();
           let contactMessages;
-          if (res.locals.staff.role !== "member") {
+          if (res.locals.staff && res.locals.staff.role !== "member") {
             contactMessages = await Contact.find().limit(10);
           } else {
             contactMessages = await Contact.find().limit(10).select("-email");

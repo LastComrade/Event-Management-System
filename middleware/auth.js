@@ -87,8 +87,8 @@ const authMid = {
                 }
               }
             );
-            next();
           }
+          next();
         });
       }
     } catch (err) {
@@ -174,8 +174,12 @@ const authMid = {
                   );
                   return res.redirect("/staff-login");
                 } else if (!foundStaff) {
-                  res.cookie("jwt_token", "", { maxAge: 1 });
                   req.flash("error", "Invalid token");
+                  res.cookie("jwt_token", "", {
+                    httpOnly: true,
+                    secure: true,
+                    maxAge: 1,
+                  });
                   return res.redirect("/staff-login");
                 } else {
                   // console.log(foundStaff);

@@ -265,6 +265,10 @@ const staffCont = {
         key,
       } = req.cookies.token;
       // console.log("Token from cookie", req.cookies.token);
+      if (profile_pic_url === "") {
+        profile_pic_url =
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU";
+      }
 
       // register key validation
       await registerKey.findOne(
@@ -650,16 +654,15 @@ const staffCont = {
     try {
       if (res.locals.staff) {
         res.locals.staff = null;
-      } else {
-        if (req.cookies.jwt_token) {
-          res.cookie("jwt_token", "", {
-            httpOnly: true,
-            secure: true,
-            maxAge: 1,
-          });
-        }
-        return res.redirect("/staff-login");
       }
+      if (req.cookies.jwt_token) {
+        res.cookie("jwt_token", "", {
+          httpOnly: true,
+          secure: true,
+          maxAge: 1,
+        });
+      }
+      return res.redirect("/staff-login");
     } catch (err) {
       console.log(err);
       next(ErrorHandler.serverError());
