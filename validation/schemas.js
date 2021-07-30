@@ -58,12 +58,10 @@ module.exports.internshipRegisterSchema = Joi.object({
   preferred_dept_1: Joi.string()
     .trim()
     .min(1)
-    .required()
     .label("1st Preferred Department"),
   preferred_dept_2: Joi.string()
     .trim()
     .min(1)
-    .required()
     .label("2nd Preferred Department"),
   description: Joi.string().trim().min(1).required().label("Description"),
 });

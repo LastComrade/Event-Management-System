@@ -90,7 +90,9 @@
                         </p>
                       </div>
                     </a>
-                    <a class="bg-red-500 rounded ml-5 hover:bg-red-900 duration-200 px-2 py-1" href="/dashboard/events/<%= event.id %>/edit"><i class="text-white fas fa-wrench"></i></a>
+                    <% if (staff.role !== "member") { %> 
+                    <a class="bg-yellow-500 rounded ml-5 hover:bg-yellow-300 duration-200 px-2 py-1" href="/dashboard/events/<%= event.id %>/edit"><i class="text-black fas fa-wrench"></i></a>
+                    <% } %> 
                   </div>
                 </td>
                 <td class="px-4 py-3 text-xs">
@@ -116,6 +118,9 @@
                   <a class="bg-indigo-600 hover:bg-indigo-900 text-center text-white p-2 rounded" href="/dashboard/events/<%= event.name %>/participants">
                     View (<%= event.participants.length %>)
                   </a>
+                  <% if (staff.role !== "member") { %> 
+                    <a class="bg-red-500 rounded ml-5 hover:bg-red-900 duration-200 px-2 py-1" href="/dashboard/events/<%= event.name %>"><i class="text-white far fa-trash-alt"></i></a>
+                  <% } %> 
                 </td>
               </tr>
               <% } %>
@@ -137,7 +142,9 @@
             <tr
               class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
               <th class="px-4 py-3">Participant Name</th>
+              <% if (staff.role !== "member") { %>
               <th class="px-4 py-3">Email Address</th>
+              <% } %>
               <th class="px-4 py-3">College Name</th>
               <th class="px-4 py-3">LinkedIn Profile</th>
               <th class="px-10 py-3">Events</th>
@@ -156,12 +163,14 @@
                 </div>
               </div>
             </td>
+            <% if (staff.role !== "member") { %>
             <td class="px-4 py-3 text-xs">
               <a href="mailto:<%= participant.email %>"
                 class="px-2 py-1 font-semibold leading-tight bg-blue-500 text-white  rounded-full "> 
                 <%= participant.email %> 
               </a>
             </td>
+            <% } %> 
             <td class="px-4 py-3 text-sm capitalize max-w-xs">
               <%= participant.college_name %>
             </td>
@@ -198,7 +207,9 @@
               <tr
               class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
               <th class="px-4 py-3">Participant Name</th>
+              <% if (staff.role !== "member") { %>
               <th class="px-4 py-3">Email Address</th>
+              <% } %> 
               <th class="px-4 py-3">College Name</th>
               <th class="px-4 py-3">LinkedIn Profile</th>
               <th class="px-10 lg:px-4 py-3">Events</th>
@@ -217,12 +228,14 @@
                   </div>
                 </div>
               </td>
+              <% if (staff.role !== "member") { %>
               <td class="px-4 py-3 text-xs">
                 <a href="mailto:<%= participant.email %>"
                   class="px-2 py-1 font-semibold leading-tight bg-blue-500 text-white  rounded-full "> 
                   <%= participant.email %> 
                 </a>
               </td>
+              <% } %> 
               <td class="px-4 py-3 text-sm capitalize max-w-xs">
                 <%= participant.college_name %>
               </td>
@@ -262,7 +275,7 @@
               <th class="px-4 py-3">Event Start</th>
               <th class="px-4 py-3">Event End</th>
               <th class="px-4 py-3">Organizers</th>
-              <th class="px-4 py-3">Participants</th>
+              <th class="px-10 py-3">Participants</th>
             </tr>
           </thead>
           <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
@@ -273,7 +286,7 @@
                 <div class="flex items-center text-sm">
                   <a href="/events/<%= event.name %>" target="blank">
                     <div>
-                      <p class="font-semibold">
+                      <p class="font-semibold w-36">
                         <%= event.name %>
                       </p>
                       <p class="text-xs text-gray-600 dark:text-gray-400">
@@ -281,6 +294,9 @@
                       </p>
                     </div>
                   </a>
+                  <% if (staff.role !== "member") { %> 
+                    <a class="bg-yellow-500 rounded ml-5 hover:bg-yellow-300 duration-200 px-2 py-1" href="/dashboard/events/<%= event.id %>/edit"><i class="text-black fas fa-wrench"></i></a>
+                  <% } %>
                 </div>
               </td>
               <td class="px-4 py-3 text-xs">
@@ -306,11 +322,17 @@
                 <a class="bg-indigo-600 text-center text-white p-2 rounded" href="/dashboard/events/<%= event.name %>/participants">
                   View (<%= event.participants.length %>)
                 </a>
+                <% if (staff.role !== "member") { %> 
+                  <a class="bg-red-500 rounded ml-5 hover:bg-red-900 duration-200 px-2 py-1" href="/dashboard/events/<%= event.name %>"><i class="text-white far fa-trash-alt"></i></a>
+                <% } %>
               </td>
             </tr>
             <% } %>
           </tbody>
         </table>
+      </div>
+      <div class="mx-3 my-3 text-white bg-gray-900 rounded p-3 border-2 border-red-700">
+        <span class="text-red-500 font-bold">Note: </span> If you are seeing less events than expected, then those remaining events must have been deleted by the Event Management Team Leader(s).
       </div>
     <% } else if (title === "Dashboard | Key Generation") { %>
       <div class="w-full overflow-x-auto">

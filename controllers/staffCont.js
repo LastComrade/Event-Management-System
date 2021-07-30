@@ -373,7 +373,7 @@ const staffCont = {
           //     message: "Member with this email does not exists",
           // });
           req.flash("error", "Invalid email or password");
-          return res.redirect("back");
+          return res.redirect("/staff-login");
         } else {
           bcrypt.compare(password, staff.password, async (err, result) => {
             if (err) {
@@ -387,7 +387,7 @@ const staffCont = {
               //         "Invalid email address or password",
               // });
               req.flash("error", "Invalid email or password");
-              return res.redirect("back");
+              return res.redirect("/staff-login");
             } else {
               if (staff.accActive) {
                 const token = jwt.sign(

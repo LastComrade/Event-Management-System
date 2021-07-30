@@ -69,6 +69,7 @@ const deptCont = {
     try {
       // console.log(req.body);
       const internshipForm = new Internship(req.body);
+      console.log(req.body);
       await internshipForm.save();
       // return res.send("Done!");
       return res.status(200).json({

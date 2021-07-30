@@ -44,7 +44,7 @@
   <!-- Scripts -->
   <%- include("./partials/scripts.ejs") %> 
   <!-- ./Scripts -->
-
+  <% const deptName = foundDept.name %>
   <script>
     // let foundEventName = document.querySelector("#testg1").innerHTML;
     // console.log(foundEventName)
@@ -58,9 +58,10 @@
         }
         document.querySelector("form").addEventListener("submit", handleForm);
         function handleForm(ev) {
-            ev.preventDefault();
-            let myForm = ev.target;
-            fetch("/departments/<%= foundDept.name %>/internship-register", {
+          ev.preventDefault();
+          let myForm = ev.target;
+          console.log(convertFD2JSON(new FormData(myForm)))
+            fetch("/departments/<%= deptName %>/internship-register", {
                 body: JSON.stringify(convertFD2JSON(new FormData(myForm))),
                 method: "POST",
                 headers: {
@@ -102,13 +103,13 @@
                       closeLabel: "Close",
                       cssClass: ['custom-class-1', 'custom-class-2'],
                   });
-  
+                  console.log(err);
                   // set content
-                  modal.setContent( `<h1> ${res.message} </h1>` );
+                  modal.setContent( `<h1> ${err.message} </h1>` );
       
   
                   // add button
-                  modal.addFooterBtn('close', 'tingle-btn tingle-btn--dange tingle-btn--pull-right', function() {
+                  modal.addFooterBtn('close', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function() {
                       // here goes some logic
                       modal.close();
                   });

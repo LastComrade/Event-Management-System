@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const dboardCont = require("../../controllers/dashboardCont");
+const dboardCont = require("../../controllers/dashboardCont/index");
 const authMid = require("../../middleware/auth");
 const contact = require("./contact");
 const events = require("./events");
