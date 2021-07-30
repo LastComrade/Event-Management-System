@@ -86,8 +86,8 @@ const authMid = {
                 }
               }
             );
+            next();
           }
-          next();
         });
       }
     } catch (err) {
