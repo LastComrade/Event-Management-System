@@ -29,11 +29,12 @@ const internship = {
           const participantCount = await Participant.countDocuments();
           let internshipMessages;
           if (res.locals.staff && res.locals.staff.role !== "member") {
-            internshipMessages = await Internship.find().limit(10);
+            internshipMessages = await Internship.find().limit(10).sort({updatedAt: -1});
           } else {
             internshipMessages = await Internship.find()
               .limit(10)
-              .select("-email");
+              .select("-email")
+              .sort({updatedAt: -1});
           }
           // const internshipMessages = await Internship.find()
           //   .sort({ createdAt: -1 })
@@ -72,9 +73,9 @@ const internship = {
           const participantCount = await Participant.countDocuments();
           let internshipMessages;
           if (res.locals.staff && res.locals.staff.role !== "member") {
-            internshipMessages = await Internship.find();
+            internshipMessages = await Internship.find().sort({updatedAt: -1});
           } else {
-            internshipMessages = await Internship.find().select("-email");
+            internshipMessages = await Internship.find().select("-email").sort({updatedAt: -1});
           }
           // console.log(internshipall-messages);
           return res.render("layouts/dashboard/all-messages", {
