@@ -818,7 +818,7 @@ p {
   width: 2px;
   height: 100%;
   margin-left: -1px;
-  background: rgb(213, 213, 213);
+  background: rgb(213, 213, 213);z
   background: -moz-linear-gradient(
     top,
     rgba(213, 213, 213, 0) 0%,
@@ -1082,3 +1082,4 @@ p {
     text-align: left;
   }
 }
+
