@@ -1,4 +1,4 @@
-<section id="team" class="py-16 text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.9s">
+<section id="team" class="py-16 w-full text-center wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.9s">
   <div class="container">
     <div class="text-center flex flex-col justify-center items-center">
       <div class="mb-4 section-title">
@@ -7,7 +7,7 @@
       </div>
     </div>
     <% if (foundDept.members.length > 0) { %> 
-    <div class="flex justify-center space-x-6 space-y-8 px-4 flex-wrap">
+    <div class="flex justify-center px-4 items-center flex-col flex-wrap">
       <% let tlCount = 0 %> 
       <% for (const member of foundDept.members) { %>
         <% if (member.designation === "Team Leader" && member.accActive) { %>
@@ -16,8 +16,8 @@
       <% } %> 
       <!-- Team Leader -->
       <% if (tlCount) { %>
-      <div class="flex  justify-center items-center">
-        <div id="team_leader" class="mt-10">
+      <div class="flex justify-center items-center">
+        <div id="team_leader" class="mt-10 w-full">
           <h1 class="text-3xl text-center text-black">Team Leader</h1>
           <div class="border-gray-700 border-b-4 w-1/2 m-auto md:w-1/6 border-opacity-50 mb-12">
           </div>
@@ -27,7 +27,7 @@
             class="max-w-md bg-white duration-200 layered-card border-2 border-transparent hover:border-red-500">
             <div class="team-item">
               <div class="team-img relative">
-                <img class="img-fluid"
+                <img class="image-fluid h-72 w-96 object-fit bg-center"
                   src="<%= member.profile_pic_url %>"
                   alt="">
                 <div class="team-overlay">
@@ -70,7 +70,7 @@
       <% if (thCount) { %> 
       <!-- Team Heads -->
       <div class="flex justify-center items-center">
-        <div id="team_heads" class="mt-10">
+        <div id="team_heads" class="mt-10 w-full">
           <div class="flex flex-col">
             <h1 class="text-3xl text-center text-black my-2">Team Heads</h1>
             <div class="border-gray-700 border-b-4 w-1/2 m-auto md:w-1/6 border-opacity-50 mb-12">
@@ -81,8 +81,8 @@
               <div data-aos="fade-up"
                 class="max-w-sm bg-white duration-200 layered-card border-2 border-transparent hover:border-blue-600">
                 <div class="team-item">
-                  <div class="team-img relative">
-                    <img class="img-fluid"
+                  <div class="team-img">
+                    <img class="img-fluid h-72 w-96 object-fit bg-center"
                       src="<%= member.profile_pic_url %>"
                       alt="">
                     <div class="team-overlay">
@@ -127,7 +127,7 @@
       <% if(amCount) { %> 
       <!-- Team Members -->
       <div class="flex justify-center items-center">
-        <div id="team_members" class="mt-10">
+        <div id="team_members" class="mt-10 w-full">
           <div class="flex flex-col">
             <h1 class="text-3xl text-center text-black my-2">Team Members</h1>
             <div class="border-gray-700 border-b-4 m-auto w-2/3 md:w-1/6 border-opacity-50 mb-12">
@@ -140,7 +140,7 @@
                 class="max-w-sm layered-card bg-white duration-200 border-2 border-transparent hover:border-green-600">
                 <div class="team-item">
                   <div class="team-img relative">
-                    <img class="img-fluid"
+                    <img class="img-fluid h-72 w-96 bg-center object-fit"
                       src="<%= member.profile_pic_url %>"
                       alt="">
                     <div class="team-overlay">
