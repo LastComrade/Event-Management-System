@@ -1,9 +1,9 @@
 <!--Event page starts  -->
-<div class="my-7">
+<div class="my-5">
   <% if (featured.length > 0 || live.length > 0 || ongoing.length > 0 || upcoming.length > 0 || archived.length > 0) { %> 
   <!--FEATURED EVENTS-->
   <% if (featured.length > 0) { %>
-  <div id="feature" class="mt-10" style="margin-top: 120px;">
+  <div id="feature" class="mt-4">
     <div class="mt-16 flex flex-col justify-center items-center wow fadeIn" data-wow-duration="1s"
       data-wow-delay="0.5s">
 
@@ -23,7 +23,7 @@
             class="p-4 layered-card border-2 border-transparent hover:border-purple-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
               src="<%= featured[i].event_pic %>"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+              class="rounded bg-contain justify-center items-center my-auto w-56 h-48" />
             <div class="relative">
             </div>
             <div class="flex flex-col space-y-8">
@@ -47,14 +47,7 @@
             </div>
           </div>
           <% } %> 
-        </div>
-        <!-- button here -->
-        <% if (featured.length > 4) { %> 
-        <div class="flex justify-center items-center">
-          <a 
-          class="cursor-pointer inline-block font-semibold text-white duration-200 rounded-md mt-4 p-3 hover:shadow-xl bg-red-600 overflow-hidden">View All</a>
-        </div>
-        <% } %> 
+        </div>     
       </div>
     </div>
   </div>
@@ -82,7 +75,7 @@
             class="p-4 layered-card border-2 border-transparent hover:border-purple-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
               src="<%= live[i].event_pic %>"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+              class="rounded bg-contain justify-center items-center my-auto w-56 h-48" />
             <div class="relative">
             </div>
             <div class="flex flex-col space-y-8">
@@ -146,7 +139,7 @@
             class="p-4 layered-card border-2 border-transparent hover:border-indigo-400 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
               src="<%= ongoing[i].event_pic %>"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+              class="rounded bg-contain justify-center items-center my-auto w-56 h-48" />
             <div class="relative">
             </div>
             <div class="flex flex-col space-y-8">
@@ -206,7 +199,7 @@
             class="p-4 layered-card border-2 border-transparent hover:border-blue-300 bg-white transition ease-in max-w-xl rounded flex justify-start md:flex-row flex-col gap-4">
             <img
               src="<%= upcoming[i].event_pic %>"
-              class="rounded bg-contain justify-center items-center my-auto md:w-auto md:max-h-40" />
+              class="rounded bg-contain justify-center items-center my-auto w-56 h-48" />
             <div class="relative">
             </div>
             <div class="flex flex-col space-y-8">
@@ -264,7 +257,7 @@
           class="relative hover:shadow-2xl mb-10 item transition-shadow duration-300 ease-in-out bg-white py-6 px-6 rounded my-4 ">
           <div class="mt-2">
             <p class="text-2xl text-black font-semibold"><%= archived[i].name.length > 20 ? archived[i].name.substring(0, 25) + "..." : archived[i].name %></p>
-            <img class="rounded shadow-xl my-4" src="<%= ongoing[i].event_pic %>" alt="">
+            <img class="rounded shadow-xl my-4 w-96 h-72" src="<%= archived[i].event_pic %>" alt="">
           </div>
           <div class="flex space-x-2 text-sm my-3">
             <p class="truncate"><%= archived[i].description %><a href="/events/<%= archived[i].name%>" class="text-red-300">Read More</a></p>

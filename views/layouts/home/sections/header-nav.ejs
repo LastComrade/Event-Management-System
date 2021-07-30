@@ -93,7 +93,7 @@
                   <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/events/ongoing/all">Ongoing</a>
                 </li>
                 <li class="nav-item md:pb-2 text-lg md:text-base">
-                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/events/archived/allr">Archived</a>
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/events/archived/all">Archived</a>
                 </li>
               </ul>
             </div>
@@ -125,7 +125,7 @@
                   <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/events/ongoing/all">Ongoing</a>
                 </li>
                 <li class="nav-item md:pb-2 text-lg md:text-base">
-                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/events/archived/allr">Archived</a>
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/events/archived/all">Archived</a>
                 </li>
               </ul>
             </div>
@@ -509,9 +509,9 @@
               <% if (title === "E-Cell | Credits") { %>
               <img class="rounded-lg mx-auto h-2/3 w-2/3" src="/img/credits_page_4.svg" alt="hero">
               <% } else if (title.length > "E-Cell | Departments".length && title.substring(0, 20) === "E-Cell | Departments") { %>
-              <img class="rounded-lg" src="<%= foundDept.pic %>" alt="hero">
+              <img class="rounded-lg mx-auto mt-20 h-2/3 w-2/3" src="<%= foundDept.pic %>" alt="hero">
               <% } else { %>
-                <img class="rounded-lg" src="/img/hero-steve.jpg" alt="hero"> 
+                <img class="rounded-lg mx-auto mt-20 h-2/3 w-2/3" src="/img/hero-steve.jpg" alt="hero"> 
               <% } %>
             </div>
           </div>
