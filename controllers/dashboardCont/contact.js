@@ -72,9 +72,9 @@ const contact = {
           const participantCount = await Participant.countDocuments();
           let contactMessages;
           if (res.locals.staff && res.locals.staff.role !== "member") {
-            contactMessages = await Contact.find().limit(10);
+            contactMessages = await Contact.find().sort({createAt: -1})
           } else {
-            contactMessages = await Contact.find().limit(10).select("-email");
+            contactMessages = await Contact.find().select("-email").sort({createAt: -1})
           }
           // console.log(contactMessages)
           return res.render("layouts/dashboard/all-messages", {

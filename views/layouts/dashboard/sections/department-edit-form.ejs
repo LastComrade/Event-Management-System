@@ -37,7 +37,7 @@
           type="text" placeholder="Department Tagline"><%= dept.description %></textarea>
       </div>
 
-      <div class="grid uppercase font-bold grid-cols-1 mt-5 mx-7 text-gray-600 justify-center" x-data="{toggle: '<%= dept.recruiting ? "1" : "0" %>'}"> Featured 
+      <div class="grid uppercase font-bold grid-cols-1 mt-5 mx-7 text-gray-600 justify-center" x-data="{toggle: '<%= dept.recruiting ? "1" : "0" %>'}"> Recruiting 
         <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear"
           :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
           <label for="toggle"

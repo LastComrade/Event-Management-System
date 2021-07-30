@@ -76,6 +76,7 @@ const authMid = {
                       secure: true,
                       maxAge: 30 * 60 * 1000,
                     });
+                    next();
                   } else {
                     req.flash("error", "Your account is deactivated");
                     return res.cookie("jwt_token", "", {
@@ -90,7 +91,6 @@ const authMid = {
                 }
               }
             );
-            next();
           }
         });
       }
