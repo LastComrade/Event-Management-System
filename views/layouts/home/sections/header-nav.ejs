@@ -250,13 +250,13 @@
                   <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#timeline">Workflow</a>
                 </li>
                 <li class="nav-item md:pb-2 text-lg md:text-base">
-                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#organizers">Organizers</a>
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#hosts">Hosts</a>
                 </li>
                 <li class="nav-item md:pb-2 text-lg md:text-base">
                   <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#sponsors">Sponsors</a>
                 </li>
                 <li class="nav-item md:pb-2 text-lg md:text-base">
-                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#hosts">Hosts</a>
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#organizers">Organizers</a>
                 </li>
               </ul>
             </div>
@@ -283,7 +283,7 @@
             </div>
             <div class="absolute right-0 hidden mt-2 mr-24 navbar-btn sm:inline-block lg:mt-0 lg:static lg:mr-0">
               <a class="scroll-page inline-block px-5 font-semibold text-white duration-200 rounded-lg hover:shadow-xl transform hover:-translate-y-px py-2  bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500"
-                data-scroll-nav="0" href="#subscribe">Subscibe</a>
+                data-scroll-nav="0" href="#subscribe">Subscribe</a>
             </div>
             <% } else if (title.length > "E-Cell | Departments".length && title.substring(0, 20) === "E-Cell | Departments") { %>
             <div
@@ -292,7 +292,7 @@
               <ul id="nav"
                 class="items-center mr-auto lg:justify-end relative inline-block text-white capitalize duration-300 lg:flex">
                 <li class="nav-item md:pb-2 active text-lg md:text-base">
-                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/departments/<%= foundDept.name %>">Department</a>
+                  <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="/departments">Departments</a>
                 </li>
                 <li class="nav-item md:pb-2 text-lg md:text-base">
                   <a class="scroll-page hover:text-red-300 duration-200 mr-5" href="#about">About</a>
@@ -500,11 +500,11 @@
           <div class="w-full lg:w-2/3">
             <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
               <% if (title === "E-Cell | Credits") { %>
-              <img class="rounded-lg" src="/img/credits_page_4.svg" alt="hero">
+              <img class="rounded-lg mx-auto h-2/3 w-2/3" src="/img/credits_page_4.svg" alt="hero">
               <% } else if (title.length > "E-Cell | Departments".length && title.substring(0, 20) === "E-Cell | Departments") { %>
               <img class="rounded-lg" src="<%= foundDept.pic %>" alt="hero">
               <% } else { %>
-                <img class="rounded-lg mx-auto h-2/3 w-2/3" src="/img/hero-steve.jpg" alt="hero"> 
+                <img class="rounded-lg" src="/img/hero-steve.jpg" alt="hero"> 
               <% } %>
             </div>
           </div>
