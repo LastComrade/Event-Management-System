@@ -3,10 +3,10 @@
     class="flex items-center justify-start md:justify-center pl-3 w-14 md:w-64 h-14 bg-blue-800 dark:bg-gray-800 border-none">
     <img class="w-7 h-7 md:w-10 md:h-10 mr-2 rounded-full overflow-hidden" src="<%= staff.profile_pic_url %>" />
     <div class="hidden md:flex flex-col">
-      <span class="hidden md:block">
+      <span class="hidden w-20 truncate md:block">
         <%= staff.fullname %>
       </span>
-      <span class="text-xs">
+      <span class="text-xs w-20 truncate">
         <%= staff.designation %>
       </span>
     </div>
