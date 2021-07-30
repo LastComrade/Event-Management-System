@@ -8,31 +8,43 @@ const deptCont = {
   },
 
   allIndex: async (req, res, next) => {
-    const deptData = await Department.find().select("name description pic");
-    // console.log(deptData);
-    return res.render("layouts/home/departments_page", {
-      title: "E-Cell | Departments",
-      deptData,
-    });
+    try {
+      const deptData = await Department.find().select("name description pic");
+      // console.log(deptData);
+      return res.render("layouts/home/departments_page", {
+        title: "E-Cell | Departments",
+        deptData,
+      });
+    } catch (err) {
+      console.log(err);
+      return res.redirect("/");
+    }
   },
 
   finder: async (req, res, next) => {
-    await Department.findOne({ name: req.params.name })
-      .populate("members")
-      .exec((err, foundDept) => {
-        if (err) {
-          console.log(err);
-          next(ErrorHandler.serverError());
-        } else if (!foundDept) {
-          next(ErrorHandler.notFoundError());
-        } else {
-          console.log(foundDept);
-          return res.render("layouts/home/department_page", {
-            foundDept,
-            title: `E-Cell | Departments | ${foundDept.name}`,
-          });
-        }
-      });
+    try {
+      Department.findOne({ name: req.params.name })
+        .populate("members")
+        .exec((err, foundDept) => {
+          if (err) {
+            console.log(err);
+            // next(ErrorHandler.serverError());
+            return res.redirect("/");
+          } else if (!foundDept) {
+            // next(ErrorHandler.notFoundError());
+            return res.render("layouts/error-404");
+          } else {
+            // console.log(foundDept);
+            return res.render("layouts/home/department_page", {
+              foundDept,
+              title: `E-Cell | Departments | ${foundDept.name}`,
+            });
+          }
+        });
+    } catch (err) {
+      console.log(err);
+      return res.redirect("/departments");
+    }
   },
 
   createDept: async (req, res, next) => {
@@ -40,7 +52,8 @@ const deptCont = {
       const { name, tagline, description, recruiting, members } = req.body;
       await Department.findOne({ name }, async (err, existingDept) => {
         if (err) {
-          next(ErrorHandler.serverError());
+          // next(ErrorHandler.serverError());
+          return res.redirect("/");
         } else if (existingDept) {
           return res.status(200).json({
             message: "Entered department already exists",
@@ -61,7 +74,9 @@ const deptCont = {
       });
     } catch (err) {
       console.log(err);
-      next(ErrorHandler.serverError());
+      // next(ErrorHandler.serverError());
+      // req.flash("err", "Something went wrong. Please try again");
+      return res.redirect("/");
     }
   },
 
@@ -77,7 +92,9 @@ const deptCont = {
       });
     } catch (err) {
       console.log(err);
-      next(ErrorHandler.serverError());
+      // next(ErrorHandler.serverError());
+      // req.flash("err", "Something went wrong. Please try again");
+      return res.redirect("/");
     }
   },
 };
