@@ -96,57 +96,75 @@ const department = {
   updateDept: async (req, res, next) => {
     try {
       const { name, tagline, description, recruiting } = req.body;
-
-      await Dept.findOne({ _id: req.params.id }, async (err, existingDept) => {
-        if (err) {
-          console.log(`server error`);
-          next(ErrorHandler.serverError());
-        } else if (!existingDept) {
-          return res.status(404).json({
-            message: "Entered Event does not exist",
-          });
-        } else {
-          try {
-            await Dept.findOne(
-              { name: req.body.name },
-              async (err, foundDept) => {
-                if (err) {
-                  console.log(`server error`);
-                  next(ErrorHandler.serverError());
-                } else if (foundDept) {
-                  return res.status(404).json({
-                    message:
-                      "Department with the new name already exists, Please try another name",
-                  });
-                } else {
-                  try {
-                    existingDept.name = name;
-                    existingDept.description = description;
-                    existingDept.tagline = tagline;
-                    existingDept.recruiting = recruiting;
-
-                    await existingDept.save();
-                    return res.status(200).json({
-                      message: "Department has been updated successfully",
-                    });
-                  } catch (err) {
-                    console.log("Error while saving the department");
-                    res.status(404).json({
-                      message: "An Error occured while updating the department",
-                    });
-                  }
-                }
-              }
-            );
-          } catch (err) {
-            console.log(err);
+      const user_dept = res.locals.staff.department;
+      const user_role = res.locals.staff.role;
+      if(user_role == "admin" || user_role == "president" || (user_role == "tl" && user_dept.equals(req.params.id))){
+        await Dept.findOne({ _id: req.params.id }, async (err, existingDept) => {
+          if (err) {
+            console.log(`server error`);
+            next(ErrorHandler.serverError());
+          } else if (!existingDept) {
             return res.status(404).json({
-              message:
-                "Something went wrong while saving the event, Please try again later",
+              message: "Entered Department does not exist",
             });
+          } else {
+            try {
+              if(req.body.name == existingDept.name){
+                existingDept.description = description;
+                existingDept.tagline = tagline;
+                existingDept.recruiting = recruiting;
+  
+                await existingDept.save();
+                return res.status(200).json({
+                  message: "Department has been updated successfully",
+                });
+              }else{
+                await Dept.findOne(
+                  { name: req.body.name },
+                  async (err, foundDept) => {
+                    if (err) {
+                      console.log(`server error`);
+                      next(ErrorHandler.serverError());
+                    } else if (foundDept) {
+                      return res.status(404).json({
+                        message:
+                          "Department with the new name already exists, Please try another name",
+                      });
+                    } else {
+                      try {
+                        existingDept.name = name;
+                        existingDept.description = description;
+                        existingDept.tagline = tagline;
+                        existingDept.recruiting = recruiting;
+    
+                        await existingDept.save();
+                        return res.status(200).json({
+                          message: "Department has been updated successfully",
+                        });
+                      } catch (err) {
+                        console.log("Error while saving the department");
+                        res.status(404).json({
+                          message: "An Error occured while updating the department",
+                        });
+                      }
+                    }
+                  }
+                );
+              }
+            } catch (err) {
+              console.log(err);
+              return res.status(404).json({
+                message:
+                  "Something went wrong while saving the event, Please try again later",
+              });
+            }
           }
-        }
-      });
+        });
+      }else{
+        return res.status(404).json({
+          message: "You are not authorized to change name of this department",
+        })
+      }
     } catch (err) {
       next(ErrorHandler.serverError());
     }

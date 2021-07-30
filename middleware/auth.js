@@ -36,7 +36,11 @@ const authMid = {
               (err, staff) => {
                 if (err) {
                   console.log(err);
-                  next(ErrorHandler.serverError());
+                  req.flash(
+                    "error",
+                    "Something went wrong. Please try again later"
+                  );
+                  return res.redirect("/staff-login");
                 } else if (staff) {
                   if (staff.accActive) {
                     let {
@@ -67,7 +71,7 @@ const authMid = {
                         expiresIn: "30m",
                       }
                     );
-                    return res.cookie("jwt_token", token, {
+                    res.cookie("jwt_token", token, {
                       httpOnly: true,
                       secure: true,
                       maxAge: 30 * 60 * 1000,
