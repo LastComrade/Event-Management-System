@@ -54,7 +54,7 @@ const staffSchema = new Schema(
     },
     profile_pic_url: {
       type: String,
-      default: process.env.PROFILE_PIC_URL,
+      default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU",
     },
     key: {
       type: String,

@@ -332,7 +332,6 @@ const staffCont = {
 
                         foundDept.members.push(savedStaffData._id);
                         await foundDept.save();
-
                         req.flash("success", "Account Registered Successfully");
                         return res.redirect("/staff-login");
                       } else {

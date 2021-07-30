@@ -37,7 +37,7 @@ const dboardCont = {
   // Dashboard Index
   staffDashboard: async (req, res, next) => {
     try {
-      if (res.locals.staff.role && res.locals.staff.role === "admin") {
+      if (res.locals.staff && res.locals.staff.role === "admin") {
         const eventCount = await Event.countDocuments();
         const deptCount = await Dept.countDocuments();
         const participantCount = await Participant.countDocuments();
