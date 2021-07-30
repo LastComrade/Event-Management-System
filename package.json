@@ -7,27 +7,23 @@
     "build-css": "postcss ./src/styles.css -o ./public/css/styles.css",
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "prod": "postcss ./public/css/styles.css -o ./public/css/styles1.css",
-    "vite-build": "vite build ./src/styles.css"
+    "prod": "postcss ./public/css/styles.css -o ./public/css/styles1.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aos": "^2.3.4",
     "autoprefixer": "^10.2.5",
     "bcrypt": "^5.0.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
-    "cssnano": "^5.0.7",
-    "dotenv": "^9.0.2",
     "ejs": "^3.1.6",
     "ejs-mate": "^3.0.0",
     "express": "^4.17.1",
     "express-jwt": "^6.0.0",
     "express-session": "^1.17.2",
-    "googleapis": "^39.2.0",
+    "googleapis": "^82.0.0",
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
@@ -35,15 +31,15 @@
     "nodemailer": "^6.6.1",
     "nodemon": "^2.0.7",
     "path": "^0.12.7",
-    "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.2",
-    "purgecss": "^4.0.3",
     "sanitize-html": "^2.4.0",
-    "tailwindcss": "^2.1.2",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^4.0.3",
-    "postcss": "^8.3.6"
+    "cssnano": "^5.0.7",
+    "dotenv": "^10.0.0",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.7"
   }
 }
