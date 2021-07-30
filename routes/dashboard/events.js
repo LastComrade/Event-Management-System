@@ -24,7 +24,7 @@ router
 router
   .route("/dashboard/events/:name")
   // .get(authMid.authRequired, authMid.staffCheck);
-  .delete(authMid.authRequired, authMid.staffCheck, authMid.onlyEventManagement, dboardCont.eventDeleter);
+  .get(authMid.authRequired, authMid.staffCheck, authMid.onlyEventManagement, dboardCont.eventDeleter);
 
 router
   .route("/dashboard/events/:name/participants")

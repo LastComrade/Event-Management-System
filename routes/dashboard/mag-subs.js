@@ -4,7 +4,7 @@ const authMid = require("../../middleware/auth");
 
 router
   .route("/dashboard/magazine-subscribers")
-  .get(authMid.authRequired, authMid.staffCheck, dboardCont.magazineSubsIndex);
+  .get(authMid.authRequired, authMid.staffCheck, authMid.teamLeaderLevelAuth, dboardCont.magazineSubsIndex);
 
 // Exporting routes
 module.exports = router;

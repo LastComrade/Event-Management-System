@@ -7,6 +7,7 @@
                 <div class="text-sm font-light tracking-wide text-gray-400 uppercase">Main</div>
               </div>
             </li>
+            <% if(staff.role === "admin") { %> 
             <li>
               <a href="/dashboard"
                 class="relative flex flex-row items-center h-11 focus:outline-none duration-200 hover:bg-blue-800 <%= title === "Dashboard | Home" ? "bg-blue-700" : "" %>  duration-200 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
@@ -21,6 +22,7 @@
                 <span class="ml-2 text-sm tracking-wide truncate">Dashboard</span>
               </a>
             </li>
+            <% } %> 
             <li>
               <a href="/dashboard/board"
                 class="relative flex flex-row items-center h-11 focus:outline-none duration-200 hover:bg-blue-800 <%= title === "Dashboard | Board" ? "bg-blue-700" : "" %> dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">

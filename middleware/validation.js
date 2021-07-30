@@ -161,9 +161,7 @@ const validate = {
     internshipRegister: (req, res, next) => {
         const { error } = internshipRegisterSchema.validate(req.body);
         if (error) {
-            req.flash("error", error.message);
-            return res.redirect("back");
-            // next(ErrorHandler.validationError(error.message));
+            next(ErrorHandler.validationError(error.message));
         } else {
             next();
         }

@@ -334,7 +334,7 @@
                 data-wow-duration="1.3s" data-wow-delay="0.2s">
                 Guru Nanak Dev Engineering College
               </h3>
-              <h2 class="text-4xl my-4 font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s"
+              <h2 class="text-3xl my-4 font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s"
                 data-wow-delay="0.5s">Entrepreneurship Cell</h2>
               <p class="mb-8 text-white text text-lg wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
                 "Don't let the
@@ -409,16 +409,14 @@
               <div class="pt-32 mb-12 text-center lg:pt-48 header-hero-content">
                 <h3 class="text-3xl font-light leading-tight text-white header-sub-title wow fadeInUp"
                   data-wow-duration="1.3s" data-wow-delay="0.2s">
-                  Our Team
+                  Welcome to our Team Section
                 </h3>
                 <h2 class="text-4xl my-4 font-bold text-white header-title wow fadeInUp" data-wow-duration="1.3s"
-                  data-wow-delay="0.5s">Welcome to our Team Section</h2>
+                  data-wow-delay="0.5s">Techie Whiz</h2>
                 <p class="mb-8 text-white text text-lg wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                  "Don't let the
-                  noise of other's opinions drown out your own inner voice.(Department Tagline)"
-                  <br>- Steve Jobs
+                  "If you can dream it, We can design it"
                 </p>
-                <a href="#about"
+                <a href="#team"
                   class="scroll-page bg-gray-200 text-black hover:bg-white hover:shadow-xl duration-200 p-3 rounded font-semibold wow fadeInUp"
                   data-wow-duration="1.3s" data-wow-delay="1.1s">Explore</a>
               </div>
@@ -450,7 +448,7 @@
               <p class="mb-8 text-white text text-lg wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
                 <%= foundEvent.tagline %>
               </p>
-              <a href="#feature"
+              <a href="#aboutEvent"
                 class="scroll-page bg-gray-200 text-black hover:bg-white hover:shadow-xl duration-200 p-3 rounded font-semibold wow fadeInUp"
                 data-wow-duration="1.3s" data-wow-delay="1.1s">Explore</a>
             </div>
@@ -467,7 +465,7 @@
                 noise of other's opinions drown out your own inner voice.(Department Tagline)"
                 <br>- Steve Jobs
               </p>
-              <a href="#feature"
+              <a href="#allDepartments"
                 class="scroll-page bg-gray-200 text-black hover:bg-white hover:shadow-xl duration-200 p-3 rounded font-semibold wow fadeInUp"
                 data-wow-duration="1.3s" data-wow-delay="1.1s">Explore</a>
             </div>
@@ -482,7 +480,7 @@
               <p class="mb-8 text-white text text-lg wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
                 <%= foundDept.tagline %>
               </p>
-              <a href="#feature"
+              <a href="#about"
                 class="scroll-page bg-gray-200 text-black hover:bg-white hover:shadow-xl duration-200 p-3 rounded font-semibold wow fadeInUp"
                 data-wow-duration="1.3s" data-wow-delay="1.1s">Explore</a>
             </div>
@@ -501,10 +499,12 @@
         <div class="justify-center row z-50">
           <div class="w-full lg:w-2/3">
             <div class="text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
-              <% if (title != "E-Cell | Credits") { %>
-              <img class="rounded-lg" src="/img/hero-steve.jpg" alt="hero">
+              <% if (title === "E-Cell | Credits") { %>
+              <img class="rounded-lg" src="/img/credits_page_4.svg" alt="hero">
+              <% } else if (title.length > "E-Cell | Departments".length && title.substring(0, 20) === "E-Cell | Departments") { %>
+              <img class="rounded-lg" src="<%= foundDept.pic %>" alt="hero">
               <% } else { %>
-                <img class="rounded-lg mx-auto h-2/3 w-2/3" src="/img/credits_page_4.svg" alt="hero"> 
+                <img class="rounded-lg mx-auto h-2/3 w-2/3" src="/img/hero-steve.jpg" alt="hero"> 
               <% } %>
             </div>
           </div>
