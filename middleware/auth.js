@@ -27,7 +27,7 @@ const authMid = {
         jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
           if (err) {
             res.locals.staff = null;
-            next();
+            return res.redirect("/staff-login");
           } else {
             const staff = await Staff.findOne(
               {
@@ -67,19 +67,18 @@ const authMid = {
                         expiresIn: "30m",
                       }
                     );
-                    res.cookie("jwt_token", token, {
+                    return res.cookie("jwt_token", token, {
                       httpOnly: true,
                       secure: true,
                       maxAge: 30 * 60 * 1000,
                     });
                   } else {
                     req.flash("error", "Your account is deactivated");
-                    res.cookie("jwt_token", "", {
+                    return res.cookie("jwt_token", "", {
                       httpOnly: true,
                       secure: true,
                       maxAge: 1,
                     });
-                    return res.redirect("/staff-login");
                   }
                 } else {
                   res.cookie("jwt_token", "", { maxAge: 1 });
@@ -158,7 +157,7 @@ const authMid = {
         jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
           if (err) {
             res.locals.staff = null;
-            req.flash("error", "An error occured"); 
+            req.flash("error", "An error occured");
             res.redirect("/staff-login");
           } else {
             await Staff.findOne(
