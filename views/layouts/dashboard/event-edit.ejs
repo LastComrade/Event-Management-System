@@ -151,13 +151,14 @@
         event_poster: data.event_poster,
         event_pic: data.event_pic,
         category: data.category,
-        featured: data.featured === "on" ? true : false,
+        featured: data.featured === "on" ? false : true,
         registration_starts: data.registration_starts,
         registration_ends: data.registration_ends,
         event_starts: data.event_starts,
         event_ends: data.event_ends,
         result_declaration: data.result_declaration,
       }
+      console.log(newFormData);
       fetch("/dashboard/events/<%= event_name %>/edit", {
         body: JSON.stringify(newFormData),
         method: "POST",

@@ -53,8 +53,9 @@
             ev.preventDefault();
             let myForm = ev.target;
             const newFormData = convertFD2JSON(new FormData(myForm));
-            newFormData.featured === "on" ? newFormData.featured = true : newFormData.featured = false;
-            console.log(newFormData);
+            console.log("Before", newFormData);
+            newFormData.recruiting === "on" ? newFormData.recruiting = true : newFormData.recruiting = false;
+            console.log(newFormData.recruiting);
             // after banckend chnage update this
             fetch("/dashboard/department/<%= deptId %>/edit", {
                 body: JSON.stringify(newFormData),
@@ -84,11 +85,8 @@
                       // here goes some logic
                       modal.close();
                       location.reload();
-
                   });
-
                   modal.open()
-                
             })
             .catch((err) => {
                 // instanciate new modal
