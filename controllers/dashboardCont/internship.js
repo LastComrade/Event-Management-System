@@ -28,7 +28,7 @@ const internship = {
           const deptCount = await Dept.countDocuments();
           const participantCount = await Participant.countDocuments();
           let internshipMessages;
-          if (res.locals.staff.role !== "member") {
+          if (res.locals.staff && res.locals.staff.role !== "member") {
             internshipMessages = await Internship.find().limit(10);
           } else {
             internshipMessages = await Internship.find()
@@ -53,7 +53,8 @@ const internship = {
       });
     } catch (err) {
       console.log(err);
-      next(ErrorHandler.serverError());
+      req.flash("error", "Something went wrong. Please try again later");
+      return res.redirect("/dashboard");
     }
   },
 
@@ -70,7 +71,7 @@ const internship = {
           const deptCount = await Dept.countDocuments();
           const participantCount = await Participant.countDocuments();
           let internshipMessages;
-          if (res.locals.staff.role !== "member") {
+          if (res.locals.staff && res.locals.staff.role !== "member") {
             internshipMessages = await Internship.find();
           } else {
             internshipMessages = await Internship.find().select("-email");
@@ -91,7 +92,8 @@ const internship = {
       });
     } catch (err) {
       console.log(err);
-      next(ErrorHandler.serverError());
+      req.flash("error", "Something went wrong. Please try again later");
+      return res.redirect("/dashboard");
     }
   },
 
@@ -126,9 +128,10 @@ const internship = {
       });
     } catch (err) {
       console.log(err);
-      next(ErrorHandler.serverError());
+      req.flash("error", "Something went wrong. Please try again later");
+      return res.redirect("/dashboard");
     }
   },
-}
+};
 
 module.exports = internship;

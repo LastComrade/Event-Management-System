@@ -15,7 +15,7 @@ const board = {
           next(ErrorHandler.forbidden());
         } else if (decodedToken) {
           let staff;
-          if (res.locals.staff.role === "member") {
+          if (res.locals.staff && res.locals.staff.role === "member") {
             staff = await Staff.find()
               .select(
                 "-password -_id -resetPasswordLink -registerPasswordToken -key -password -createdAt -updatedAt -email"

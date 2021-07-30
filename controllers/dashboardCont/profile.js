@@ -18,27 +18,32 @@ const profile = {
   profileIndex: async (req, res, next) => {
     try {
       // console.log(res.locals.staff.id)
-      const staffData = await Staff.findOne({
-        _id: res.locals.staff.id,
-      }).select(
-        "firstname lastname description sl_li sl_ig sl_fb profile_pic_url"
-      );
-      // console.log(staff);
-      const staffCount = await Staff.countDocuments();
-      const eventCount = await Event.countDocuments();
-      const deptCount = await Dept.countDocuments();
-      const participantCount = await Participant.countDocuments();
-      return res.render("layouts/dashboard/profile", {
-        error: req.flash("error"),
-        success: req.flash("success"),
-        key: req.flash("key"),
-        title: "Dashboard | Profile",
-        staffCount,
-        eventCount,
-        deptCount,
-        participantCount,
-        staffData,
-      });
+      if (res.locals.staff) {
+        const staffData = await Staff.findOne({
+          _id: res.locals.staff.id,
+        }).select(
+          "firstname lastname description sl_li sl_ig sl_fb profile_pic_url"
+        );
+        // console.log(staff);
+        const staffCount = await Staff.countDocuments();
+        const eventCount = await Event.countDocuments();
+        const deptCount = await Dept.countDocuments();
+        const participantCount = await Participant.countDocuments();
+        return res.render("layouts/dashboard/profile", {
+          error: req.flash("error"),
+          success: req.flash("success"),
+          key: req.flash("key"),
+          title: "Dashboard | Profile",
+          staffCount,
+          eventCount,
+          deptCount,
+          participantCount,
+          staffData,
+        });
+      } else {
+        req.flash("error", "Something went wrong! Please try later");
+        return res.redirect("/staff-login");
+      }
     } catch (err) {
       console.log(err);
       req.flash("error", "Something went wrong! Please try later");
@@ -58,19 +63,24 @@ const profile = {
         sl_ig,
         sl_fb,
       } = req.body;
-      await Staff.findByIdAndUpdate(
-        { _id: res.locals.staff.id },
-        {
-          firstname,
-          lastname,
-          description,
-          profile_pic_url,
-          sl_li,
-          sl_ig,
-          sl_fb,
-        }
-      );
-      return res.redirect("/dashboard/profile");
+      if (res.locals.staff) {
+        await Staff.findByIdAndUpdate(
+          { _id: res.locals.staff.id },
+          {
+            firstname,
+            lastname,
+            description,
+            profile_pic_url,
+            sl_li,
+            sl_ig,
+            sl_fb,
+          }
+        );
+        return res.redirect("/dashboard/profile");
+      } else {
+        req.flash("error", "Something went wrong! Please try later");
+        return res.redirect("/dashboard");
+      }
     } catch (err) {
       console.log(err);
       req.flash("error", "Something went wrong! Please try later");

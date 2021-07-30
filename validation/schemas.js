@@ -129,7 +129,7 @@ module.exports.staffRegisterSchema = Joi.object({
   department: Joi.string().required().trim().min(1).label("Department"),
   designation: Joi.string().required().trim().min(1).label("Designation"),
   description: Joi.string().trim().min(1).label("Description"),
-  profile_pic_url: Joi.string().trim().allow("").label("Profile URL"),
+  profile_pic_url: Joi.string().trim().allow("", null).empty(['', null]).default("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE9tG_NFfmLde3aA3q3p2yib1KJslRRNlJQg&usqp=CAU").label("Profile URL"),
   key: Joi.string().required().trim().min(1).label("Registration Key"),
 });
 

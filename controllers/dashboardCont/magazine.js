@@ -31,7 +31,7 @@ const magazine = {
           //   subscribed: true,
           // });
           let magazineSubs;
-          if (res.locals.staff.role !== "member") {
+          if (res.locals.staff && res.locals.staff.role !== "member") {
             magazineSubs = await magazineReciever.find({
               subscribed: true,
             });
