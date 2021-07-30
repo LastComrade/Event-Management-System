@@ -343,7 +343,7 @@
         class="w-100 mt-2 py-3 px-3 rounded-lg border-2 border-purple-300 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent " />
     </div>
 
-    <div class="grid capitalize font-bold grid-cols-1 mt-5 mx-7 text-gray-600 justify-center" x-data="{toggle: '<%= event.featured ? "1" : "0" %>'}"> Featured 
+    <div class="grid uppercase font-bold grid-cols-1 mt-5 mx-7 text-gray-600 justify-center" x-data="{toggle: '<%= event.featured ? "1" : "0" %>'}"> Featured 
       <div class="relative rounded-full w-12 h-6 transition duration-200 ease-linear"
         :class="[toggle === '1' ? 'bg-green-400' : 'bg-gray-400']">
         <label for="toggle"

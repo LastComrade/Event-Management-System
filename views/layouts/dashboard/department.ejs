@@ -52,41 +52,46 @@
         function handleForm(ev) {
             ev.preventDefault();
             let myForm = ev.target;
-            const newFormData = convertFD2JSON(new FormData(myForm));
-            console.log("Before", newFormData);
-            newFormData.recruiting === "on" ? newFormData.recruiting = true : newFormData.recruiting = false;
-            console.log(newFormData.recruiting);
+            const data = convertFD2JSON(new FormData(myForm));
+            const newFormData = {
+              recruiting: data.recruiting === "on" ? false : true,
+              pic: data.pic,
+              name: data.name,
+              tagline: data.tagline,
+              description: data.description,
+            }
+            console.log(newFormData);
             // after banckend chnage update this
             fetch("/dashboard/department/<%= deptId %>/edit", {
-                body: JSON.stringify(newFormData),
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                }
+              body: JSON.stringify(newFormData),
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              }
             })
             .then((some) => { return some.json() })
             .then(async (res) => {
-                  document.querySelector('form').reset();
-                  // console.log(res)
-                  // instanciate new modal
-                  var modal = new tingle.modal({
-                      footer: true,
-                      stickyFooter: false,
-                      closeMethods: ['button', 'escape', 'overlay'],
-                      closeLabel: "Close",
-                      cssClass: ['custom-class-1', 'custom-class-2'],
-                  });
-  
-                  // set content
-                  modal.setContent( `<h1> ${res.message} </h1>` );
-    
-                  // add button
-                  modal.addFooterBtn('close', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
-                      // here goes some logic
-                      modal.close();
-                      location.reload();
-                  });
-                  modal.open()
+              document.querySelector('form').reset();
+              // console.log(res)
+              // instanciate new modal
+              var modal = new tingle.modal({
+                footer: true,
+                stickyFooter: false,
+                closeMethods: ['button', 'escape', 'overlay'],
+                closeLabel: "Close",
+                cssClass: ['custom-class-1', 'custom-class-2'],
+              });
+
+              // set content
+              modal.setContent( `<h1> ${res.message} </h1>` );
+
+              // add button
+              modal.addFooterBtn('close', 'tingle-btn tingle-btn--primary tingle-btn--pull-right', function() {
+                // here goes some logic
+                modal.close();
+                location.reload();
+              });
+              modal.open()
             })
             .catch((err) => {
                 // instanciate new modal
