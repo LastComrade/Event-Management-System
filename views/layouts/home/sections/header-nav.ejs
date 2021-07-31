@@ -489,26 +489,26 @@
         </div>
         <% } else { %>
           <div class="justify-center row z-50 lg-mb-40">
-            <div class="w-full h-2/3 w-2/3">
+            <div class="w-full h-2/3">
               <div class="mb-48 text-center header-hero-image wow fadeIn" data-wow-duration="1.3s" data-wow-delay="1.4s">
                 <% if (title === "E-Cell | Credits") { %>
                     <img class="rounded-lg mx-auto object-scale-down" src="/img/credits_page_4.svg" alt="hero">
                 <% } else if (title === "E-Cell | Departments") { %>
                     <img class="rounded-lg mx-auto mt-8 md:mt-32 mb-28 h-3/4 w-3/4 lg:h-1/2 lg:w-1/2 xl:h-1/2 xl:w-1/2 2xl:h-1/2 2xl:w-1/2" src="/img/departments.jpeg" alt="hero">
                 <% } else if (title.length > "E-Cell | Departments".length && title.substring(0, 20) === "E-Cell | Departments") { %>
-                    <img class="rounded-lg mx-auto mt-20 object-scale-down h-auto w-1/2" src="<%= foundDept.pic %>" alt="hero">
+                    <img class="rounded-lg mx-auto mt-20 mb-7 h-3/4 w-3/4 lg:h-1/2 lg:w-1/2 xl:h-1/2 xl:w-1/2 2xl:h-1/2 2xl:w-1/2" src="<%= foundDept.pic %>" alt="hero">
                 <% } else if (title === "E-Cell | Live Events") { %>
-                  <img class="rounded-lg mx-auto mt-20 mb-28 h-3/4 w-3/4 lg:h-1/2 lg:w-1/2 xl:h-1/2 xl:w-1/2 2xl:h-1/2 2xl:w-1/2" src="/img/upcoming.jpeg" alt="hero">
+                  <img class="rounded-lg mx-auto mt-20 mb-28 h-3/4 w-3/4 lg:h-1/2 lg:w-1/2 xl:h-1/2 xl:w-1/2 2xl:h-1/2 2xl:w-1/2" src="https://www.engineerica.com/wp-content/uploads/2020/05/VirtualConferenceAttendee.png" alt="hero">
                 <% } else if (title === "E-Cell | Archived Events") { %>
                     <img class="rounded-lg mx-auto mt-20 mb-28 h-3/4 w-3/4 lg:h-1/2 lg:w-1/2 xl:h-1/2 xl:w-1/2 2xl:h-1/2 2xl:w-1/2" src="https://www.clipartkey.com/mpngs/m/69-695086_event-organizer-clipart-png.png" alt="hero">
                 <% } else if (title === "E-Cell | Ongoing Events") { %>
-                  <img class="rounded-lg mx-auto mt-20 mb-28 h-3/4 w-3/4 lg:h-1/2 lg:w-1/2 xl:h-1/2 xl:w-1/2 2xl:h-1/2 2xl:w-1/2" src="/img/upcoming.jpeg" alt="hero">
+                  <img class="rounded-lg mx-auto mt-20 mb-28 h-3/4 w-3/4 lg:h-1/2 lg:w-1/2 xl:h-1/2 xl:w-1/2 2xl:h-1/2 2xl:w-1/2" src="https://www.engineerica.com/wp-content/uploads/2020/05/VirtualConferenceAttendee.png" alt="hero">
                 <% } else if (title === "E-Cell | Upcoming Events") { %>
                   <img class="rounded-lg mx-auto mt-20 mb-28 h-3/4 w-3/4 lg:h-1/2 lg:w-1/2 xl:h-1/2 xl:w-1/2 2xl:h-1/2 2xl:w-1/2" src="/img/upcoming.jpeg" alt="hero">
                   <% } else if (title === "E-Cell | Home") { %>
-                  <div class="lg:max-w-lg mx-auto lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                  <img class="object-cover object-center rounded lg:h-1/2 lg:w-1/2 2xl:h-1/2 2xl:w-1/2  xl:h-1/2 xl:w-1/2" src="/img/home-hero.jpeg" alt="hero">
-                </div>
+                  <!-- <div class="lg:max-w-lg mx-auto lg:w-full w-5/6 mb-10 md:mb-0"> -->
+                  <img class="rounded-lg mx-auto mt-20 mb-28 h-3/4 w-3/4 lg:h-1/2 lg:w-1/2 xl:h-1/2 xl:w-1/2 2xl:h-1/2 2xl:w-1/2" src="/img/home-hero.jpeg" alt="hero">
+                <!-- </div> -->
                 <% } else if (title === "E-Cell | Events") { %>
                     <img class="rounded-lg mx-auto mt-20 mb-28 h-3/4 w-3/4 lg:h-1/2 lg:w-1/2 xl:h-1/2 xl:w-1/2 2xl:h-1/2 2xl:w-1/2" src="/img/events.jpeg" alt="hero">
                 <% } else { %>

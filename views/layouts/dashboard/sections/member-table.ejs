@@ -28,7 +28,7 @@
                       </div>
                     </div>
                     <div>
-                      <p class="font-semibold">
+                      <p class="font-semibold w-24 truncate">
                         <%= member.fullname %>
                       </p>
                       <p class="text-xs text-gray-600 dark:text-gray-400">
@@ -82,7 +82,7 @@
                   <div class="flex items-center text-sm">
                     <a href="/events/<%= event.name %>" target="blank">
                       <div>
-                        <p class="font-semibold w-36">
+                        <p class="font-semibold w-36 truncate">
                           <%= event.name %>
                         </p>
                         <p class="text-xs text-gray-600 dark:text-gray-400">
@@ -157,7 +157,7 @@
             <td class="px-4 py-3">
               <div class="flex items-center text-sm">                   
                 <div class="w-1/2">
-                  <p class="font-semibold">
+                  <p class="font-semibold w-24 truncate">
                     <%= participant.name %>
                   </p>
                 </div>
@@ -172,7 +172,7 @@
             </td>
             <% } %> 
             <td class="px-4 py-3 text-sm capitalize max-w-xs">
-              <%= participant.college_name %>
+              <p class="w-20 truncate"><%= participant.college_name %></p>
             </td>
             <td class="px-4 py-3 text-sm">
               <% function isValidHttpUrl(string) { let url; try { url = new URL(string); } catch (err) { return false; } return url.protocol === "http:www.linkedin.com/" || url.protocol === "https:www.linkedin.com/"; } %> 
@@ -222,7 +222,7 @@
               <td class="px-4 py-3">
                 <div class="flex items-center text-sm">                   
                   <div>
-                    <p class="font-semibold">
+                    <p class="font-semibold w-30 truncate">
                       <%= participant.name %>
                     </p>
                   </div>
@@ -237,7 +237,7 @@
               </td>
               <% } %> 
               <td class="px-4 py-3 text-sm capitalize max-w-xs">
-                <%= participant.college_name %>
+                <p class="w-20 truncate"><%= participant.college_name %></p>
               </td>
               <td class="px-4 py-3 text-sm">
                 <% function isValidHttpUrl(string) { let url; try { url = new URL(string); } catch (err) { return false; } return url.protocol === "http:" || url.protocol === "https:"; } %> 
@@ -286,7 +286,7 @@
                 <div class="flex items-center text-sm">
                   <a href="/events/<%= event.name %>" target="blank">
                     <div>
-                      <p class="font-semibold w-36">
+                      <p class="font-semibold w-36 truncate">
                         <%= event.name %>
                       </p>
                       <p class="text-xs text-gray-600 dark:text-gray-400">
