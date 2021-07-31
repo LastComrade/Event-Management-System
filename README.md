@@ -36,7 +36,7 @@ The official codebase for college-based (event managing) organizations. FOUR-LEV
         <li><a href="#2-front-end">Front-End</a></li>
         <li><a href="#3-back-end">Back-End</a></li>
         <li><a href="#4-seeds">Seeds</a></li>
-        <li><a href="#5-api">APIs</a></li>
+        <li><a href="#5-apis">APIs</a></li>
       </ul>
     </li>
     <li><a href="#contributing">Contributing</a></li>
@@ -46,6 +46,7 @@ The official codebase for college-based (event managing) organizations. FOUR-LEV
 </details>
 
 ## Installation
+
 ---
 
 ### 1. Cloning the repository
@@ -69,14 +70,15 @@ Run the ```npm install``` command to install all the necessary dependencies for 
 ```bash
 npm install
 ```
+
 ### 3. Setup the environment variables
 
 For reference take the help of the [.env.example](https://github.com/LastComrade/Events-based-organizational-website/blob/main/.env.example) file.
 
-
 ## Usage
 
 ---
+
 1. After the successful installation of the MongoDB. Run this command to run the database server locally in your machine
 
 ```bash
@@ -98,64 +100,89 @@ npm run dev
 > For front-end Tailwind CSS and EJS templating engine is used and for back-end Express (NodeJS Framework) is used. MongoDB is used as the database.
 
 ### 1. Routes (GET)
+
 >#### Home Routes
+
 - **/ -** Home page.
 - **/credits -** Credits page.
+
 >#### Event Routes
+
 - **/events -** List the latest top 4 events from available categories.
 - **/events/{name_of_the_event} -** Dedicated event page.
 - **/events/live/all -** List all the live events (webninars or events/content that are streamed live).
+
 ---
+
 - **/events/upcoming/all -** List all the upcoming events.
 - **/events/ongoing/all -** List all the ongoing events.
 - **/events/archived/all -** List all the archived events.
+
 >#### Department Routes
+
 - **/departments -** List all the departments with their name, image, and description.
 - **/departments/{name_of_the_department} -** Dedicated department page.
+
 >#### Authentication Routes
+
 - **/staff-register -** Registration route for staff member.
 - **/staff-login -** Login route for staff member.
 - **/staff-logout -** Logout route for staff member.
 - **/forgot-password -** Forgot password route renders a page asking for the email to verify.
+
 >#### Dashboard Routes
+
 - **/dashboard -** Render the dashboard page.
 - **/dashboard/board -** List all the staff members account and their details in a table.
 - **/dashboard/contact-messages -** List 15 latest contact message notifications.
+
 ---
+
 - **/dashboard/contact-messages/all -** List all the contact message notifications.
 - **/dashboard/contact-messages/{ID_of_the_contact_message} -** Contact message.
 - **/dashboard/department -** Renders a form to edit the department information.
+
 ---
+
 - **/dashboard/events -** Index all the events in a table with all their necessary information.
 - **/dashboard/event-create -** Form to create a new event.
 - **/dashboard/events/{name_of_the_event}/participants/ -** List all the participants that registered for that particular event.
 - **/dashboard/events/{ID_of_the_event}/edit -** Form to edit an existing event.
+
 ---
+
 - **/dashboard/internship-applications -** List 15 latest internship application notifications.
 - **/dashboard/internship-applications/all -** List all internship applicatin notifications.
 - **/dashboard/internship-applications/{ID_of_the_internship_application} -** Internship application.
+
 ---
+
 - **/dashboard/generate-key -** Generate a key, which is used when a user tries to register as a staff member.
 - **/dashboard/magazine-subscribers -** List all the subscribers, who have subscribed to the magazine.
+
 ---
+
 - **/dashboard/participants -** List all the participants, who have recently registered for any event.
 - **/dashboard/participants/{ID_of_the_participant} -** List all the events that are registered by that particular participant.
 - **/dashboard/profile -** Index the profile edit form.
 
 ### 2. Front-End
+
 - **Public Folder -** Folder contains all the static files like CSS, JS scripts, and third party libraries files.
 - **Views Folder -** Folder that contains all the EJS files. It's divided into three sections
   - *Home* - EJS files for home routes
   - *Auth* - EJS files for authentication routes
   - *Dashboard* - EJS files for dashboard routes
   - *Archive* - Archived EJS files that are not used in the main branch
+
 > Note: Every above folder has a sub-folder named sections to organize different sections of pages.
 
 ### 3. Back-End
+
 - **Controllers -** All the core functionality in the form of functions
   - *DashboardCont -* Controller for dashboard functionality
-  - *DeptCont -* Controller for department functionality 
-  - *EventCont -* Controller for event functionality 
+  - *DeptCont -* Controller for department functionality
+  - *EventCont -* Controller for event functionality
   - *HomeCont -* Controller for home functionality
   - *StaffCont -* Controller for staff authentication functionality
 - **Middlewares -** All the request-based functions. For validation of form data, authentication, and authorization.
@@ -163,15 +190,17 @@ npm run dev
   - *Validation* - Middleware for validation of different forms data
 - **Models -** Mongoose used as the ODM for MongoDB.
 
-### 4. **Seeds**
+### 4. Seeds
 
 - For testing purposes, seeds are used to seed the DB with staff, departments, events, and participants data.
 
 ### 5. APIs
+
 - Google Sheets API is used to store the information of the event participants and magazine subscribers.
 - Gmail API is used to send E-Mails.
 
 ## Contributing
+
 ---
 
 Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -183,6 +212,7 @@ Contributions are what makes the open-source community such an amazing place to 
 5. Open a Pull Request
 
 ## License
+
 ---
 
 [MIT](https://choosealicense.com/licenses/mit/) |
@@ -190,11 +220,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-
 Konark Lohat - [@konarklohat](https://www.instagram.com/konarklohat/) - konarklohat123456@gmail.com
 
 Project Link: [https://github.com/LastComrade/Events-based-organizational-website](https://github.com/LastComrade/Events-based-organizational-website)
-
 
 [contributors-shield]: https://img.shields.io/github/contributors/LastComrade/Events-based-organizational-website.svg?style=for-the-badge
 [contributors-url]: https://github.com/LastComrade/Events-based-organizational-website/graphs/contributors
