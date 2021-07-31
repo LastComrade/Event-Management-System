@@ -47,8 +47,6 @@ The official codebase for college-based (event managing) organizations. FOUR-LEV
 
 ## Installation
 
----
-
 ### 1. Cloning the repository
 
 Run the ```git clone``` command to clone this repository locally in your machine. You can run this command in CMD, GIT Bash, and obviously in the terminal (For macOS and Linux machines)
@@ -76,8 +74,6 @@ npm install
 For reference take the help of the [.env.example](https://github.com/LastComrade/Events-based-organizational-website/blob/main/.env.example) file.
 
 ## Usage
-
----
 
 1. After the successful installation of the MongoDB. Run this command to run the database server locally in your machine
 
@@ -201,8 +197,6 @@ npm run dev
 
 ## Contributing
 
----
-
 Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 1. Fork the Project
@@ -212,8 +206,6 @@ Contributions are what makes the open-source community such an amazing place to 
 5. Open a Pull Request
 
 ## License
-
----
 
 [MIT](https://choosealicense.com/licenses/mit/) |
 Distributed under the MIT License. See `LICENSE` for more information.
