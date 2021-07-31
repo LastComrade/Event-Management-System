@@ -175,7 +175,7 @@
               <%= participant.college_name %>
             </td>
             <td class="px-4 py-3 text-sm">
-              <% function isValidHttpUrl(string) { let url; try { url = new URL(string); } catch (err) { return false; } return url.protocol === "http:" || url.protocol === "https:"; } %> 
+              <% function isValidHttpUrl(string) { let url; try { url = new URL(string); } catch (err) { return false; } return url.protocol === "http:www.linkedin.com/" || url.protocol === "https:www.linkedin.com/"; } %> 
               <a href="<%= isValidHttpUrl(participant.linkedin_account) ? participant.linkedin_account : "javascript:void(0)" %>" target="blank">
                 <svg class="fill-current dark:text-white <%= isValidHttpUrl(participant.linkedin_account) ? "text-purple-500 dark:text-purple-300" : "text-red-500 dark:text-red-500" %>" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -368,10 +368,10 @@
               <td class="px-4 py-3 text-sm">
                 <%= moment(key.createdAt).format("MMMM Do YYYY") %>
               </td>
-              <td class="px-4 py-3 text-sm">
-                <%= moment(key.updatedAt).format("MMMM Do YYYY") %>
+              <td class="px-4 py-3 text-sm text-center">
+                <%= !key.used ? "----------" : moment(key.updatedAt).format("MMMM Do YYYY") %>
               </td>
-              <td class="px-4 py-3 text-sm">
+              <td class="px-4 text-center py-3 text-sm">
                 <%= key.usedBy ? key.usedBy : "----------" %>
               </td>
             </tr>

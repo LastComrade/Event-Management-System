@@ -36,7 +36,7 @@ mongoose.connect(DB_URL, {
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", () => {
-    console.log("E-Cell Database Connected!");
+    console.log("Database Connected!");
 });
 
 // express() return a factory function, which is then assigned to the app variable

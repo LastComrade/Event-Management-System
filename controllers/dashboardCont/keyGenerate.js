@@ -21,7 +21,7 @@ const keyGenerate = {
       const eventCount = await Event.countDocuments();
       const deptCount = await Dept.countDocuments();
       const participantCount = await Participant.countDocuments();
-      const keys = await RegKey.find();
+      const keys = await RegKey.find().sort({createdAt: -1});
       return res.render("layouts/dashboard/key-gen", {
         error: req.flash("error"),
         success: req.flash("success"),
