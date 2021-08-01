@@ -31,12 +31,12 @@ const contact = {
           if (res.locals.staff && res.locals.staff.role !== "member") {
             contactMessages = await Contact.find()
               .limit(10)
-              .sort({ createAt: -1 });
+              .sort({ createdAt: -1 });
           } else {
             contactMessages = await Contact.find()
               .limit(10)
               .select("-email")
-              .sort({ createAt: -1 });
+              .sort({ createdAt: -1 });
           }
           // const internshipMessages = await Internship.find().limit(10);
           // const magazineSubs = await magazineReciever
@@ -77,11 +77,11 @@ const contact = {
           const participantCount = await Participant.countDocuments();
           let contactMessages;
           if (res.locals.staff && res.locals.staff.role !== "member") {
-            contactMessages = await Contact.find().sort({ createAt: -1 });
+            contactMessages = await Contact.find().sort({ createdAt: -1 });
           } else {
             contactMessages = await Contact.find()
               .select("-email")
-              .sort({ createAt: -1 });
+              .sort({ createdAt: -1 });
           }
           // console.log(contactMessages)
           return res.render("layouts/dashboard/all-messages", {
