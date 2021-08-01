@@ -41,11 +41,16 @@
   <!-- Scripts -->
   <% const deptId = dept.id %>
   <script>
+    // console.log(document.querySelector("#recruiting_toggle").value = "on");
+    // document.querySelector("#recruiting_toggle").value = true
+    // console.log(document.querySelector("#recruiting_toggle").checked = true);
+    // document.querySelector("#recruiting_toggle").checked = true
     function convertFD2JSON(formData) {
             let obj = {};
             formData.forEach(function(value, key) {
                 obj[key] = value;
             })
+            console.log(obj);
             return obj;
         }
         document.querySelector("form").addEventListener("submit", handleForm);
