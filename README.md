@@ -212,7 +212,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Konark Lohat - [@konarklohat](https://www.instagram.com/konarklohat/) - konarklohat123456@gmail.com
+Konark Lohat - [@konarklohat](https://www.linkedin.com/in/konark-lohat/) - konarklohat123456@gmail.com
 
 Project Link: [https://github.com/LastComrade/Events-based-organizational-website](https://github.com/LastComrade/Events-based-organizational-website)
 
