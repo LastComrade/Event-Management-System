@@ -90,6 +90,7 @@ const event = {
         sponsors,
         hosts,
       } = req.body;
+      name = name.trim();
       await Event.findOne({ name }, async (err, existingEvent) => {
         if (err) {
           next(Errorhandler.serverError());
@@ -232,7 +233,7 @@ const event = {
 
   updateEvent: async (req, res, next) => {
     try {
-      const {
+      let {
         name,
         description,
         tagline,
@@ -249,7 +250,10 @@ const event = {
         hosts,
         sponsors,
       } = req.body;
-
+      // console.log(name.length);
+      name = name.trim();
+      // console.log(name.length);
+      // console.log(name);
       Event.findOne({ _id: req.params.id }, async (err, existingEvent) => {
         if (err) {
           console.log(`server error`);
