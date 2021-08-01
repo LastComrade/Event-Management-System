@@ -59,7 +59,7 @@
             let myForm = ev.target;
             const data = convertFD2JSON(new FormData(myForm));
             const newFormData = {
-              recruiting: data.recruiting === "on" ? false : true,
+              recruiting: true,
               pic: data.pic,
               name: data.name,
               tagline: data.tagline,
