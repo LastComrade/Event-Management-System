@@ -66,8 +66,7 @@
         function handleForm(ev) {
             ev.preventDefault();
             let myForm = ev.target;
-            // console.log("/events/<%= foundEvent.name %>")
-            fetch("/events/<%= foundEvent.name %>", {
+            fetch(`/events/<%- foundEvent.name %>`, {
                 body: JSON.stringify(convertFD2JSON(new FormData(myForm))),
                 method: "POST",
                 headers: {
