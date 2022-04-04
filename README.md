@@ -71,7 +71,7 @@ npm install
 
 ### 3. Setup the environment variables
 
-For reference take the help of the [.env.example](https://github.com/LastComrade/Events-based-organizational-website/blob/main/.env.example) file.
+For reference take the help of the [.env.example](https://github.com/LastComrade/Event-Management-System/blob/main/.env.example) file.
 
 ## Usage
 
@@ -214,17 +214,17 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Konark Lohat - [@konarklohat](https://www.linkedin.com/in/konark-lohat/) - konarklohat123456@gmail.com
 
-Project Link: [https://github.com/LastComrade/Events-based-organizational-website](https://github.com/LastComrade/Events-based-organizational-website)
+Project Link: [https://github.com/LastComrade/Events-based-organizational-website](https://github.com/LastComrade/Event-Management-System)
 
-[contributors-shield]: https://img.shields.io/github/contributors/LastComrade/Events-based-organizational-website.svg?style=for-the-badge
-[contributors-url]: https://github.com/LastComrade/Events-based-organizational-website/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/LastComrade/Events-based-organizational-website.svg?style=for-the-badge
-[forks-url]: https://github.com/LastComrade/Events-based-organizational-website/network/members
-[stars-shield]: https://img.shields.io/github/stars/LastComrade/Events-based-organizational-website.svg?style=for-the-badge
-[stars-url]: https://github.com/LastComrade/Events-based-organizational-website/stargazers
-[issues-shield]: https://img.shields.io/github/issues/LastComrade/Events-based-organizational-website.svg?style=for-the-badge
-[issues-url]: https://github.com/LastComrade/Events-based-organizational-website/issues
-[license-shield]: https://img.shields.io/github/license/LastComrade/Events-based-organizational-website.svg?style=for-the-badge
-[license-url]: https://github.com/LastComrade/Events-based-organizational-website/blob/c2693deb214f7c46411053cfbc5e5ad9573a7b7c/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/LastComrade/Event-Management-System.svg?style=for-the-badge
+[contributors-url]: https://github.com/LastComrade/Event-Management-System/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/LastComrade/Event-Management-System.svg?style=for-the-badge
+[forks-url]: https://github.com/LastComrade/Event-Management-System/network/members
+[stars-shield]: https://img.shields.io/github/stars/LastComrade/Event-Management-System.svg?style=for-the-badge
+[stars-url]: https://github.com/LastComrade/Event-Management-System/stargazers
+[issues-shield]: https://img.shields.io/github/issues/LastComrade/Event-Management-System.svg?style=for-the-badge
+[issues-url]: https://github.com/LastComrade/Event-Management-System/issues
+[license-shield]: https://img.shields.io/github/license/LastComrade/Event-Management-System.svg?style=for-the-badge
+[license-url]: https://github.com/LastComrade/Event-Management-System/blob/c2693deb214f7c46411053cfbc5e5ad9573a7b7c/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/konark-lohat/
