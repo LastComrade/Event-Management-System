@@ -214,7 +214,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Konark Lohat - [@konarklohat](https://www.linkedin.com/in/konark-lohat/) - konarklohat123456@gmail.com
 
-Project Link: [https://github.com/LastComrade/Events-based-organizational-website](https://github.com/LastComrade/Event-Management-System)
+Project Link: [GitHub Repository Link](https://github.com/LastComrade/Event-Management-System)
 
 [contributors-shield]: https://img.shields.io/github/contributors/LastComrade/Event-Management-System.svg?style=for-the-badge
 [contributors-url]: https://github.com/LastComrade/Event-Management-System/graphs/contributors
